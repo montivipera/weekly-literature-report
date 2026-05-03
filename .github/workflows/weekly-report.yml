@@ -1,0 +1,51 @@
+name: Weekly literature report
+
+on:
+  schedule:
+    # Monday 06:00 Europe/Istanbul (UTC+3) -> 03:00 UTC
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Render only, do not send email"
+        type: boolean
+        default: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run report
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+          UNPAYWALL_EMAIL: ${{ secrets.UNPAYWALL_EMAIL }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.0-flash' }}
+          LOG_LEVEL: INFO
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            python -m src.main --dry-run --save-html
+          else
+            python -m src.main --save-html
+          fi
+
+      - name: Upload HTML artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-html
+          path: out/report.html
+          if-no-files-found: ignore

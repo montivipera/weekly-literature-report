@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ subject }}</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f6f7f9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1f2937;
+    line-height: 1.5;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+  }
+  .header-block {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+  }
+  .label {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 11px;
+    color: #6b7280;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+  }
+  .header-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 8px 0;
+  }
+  .header-meta {
+    font-size: 13px;
+    color: #4b5563;
+    margin: 0;
+  }
+  .metric-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .metric-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px 14px;
+    flex: 1 1 140px;
+    min-width: 140px;
+  }
+  .metric-name {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 0 0 4px 0;
+  }
+  .metric-value {
+    font-size: 20px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+  }
+  h3.category-heading {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+    margin: 24px 0 12px 0;
+    padding: 0;
+  }
+  .article-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+  }
+  .pill-row {
+    margin: 0 0 10px 0;
+    font-size: 0;
+  }
+  .pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 5px 9px;
+    border-radius: 999px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+    background: #f3f4f6;
+    color: #4b5563;
+  }
+  .pill-research_article { background: #ede9fe; color: #5b21b6; }
+  .pill-review           { background: #ccfbf1; color: #0f766e; }
+  .pill-meta_analysis    { background: #fef3c7; color: #92400e; }
+  .pill-preprint         { background: #dbeafe; color: #1e40af; }
+  .pill-other            { background: #f3f4f6; color: #4b5563; }
+  .pill-meta             { background: #f3f4f6; color: #4b5563; text-transform: none; }
+  .article-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #111827;
+    margin: 0 0 4px 0;
+  }
+  .article-authors {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 0 0 12px 0;
+  }
+  .section-block {
+    margin: 8px 0;
+  }
+  .section-label {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 10px;
+    color: #6b7280;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+  }
+  .section-block ul {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 13px;
+    color: #1f2937;
+  }
+  .section-block li {
+    margin-bottom: 2px;
+  }
+  .placeholder {
+    font-size: 12px;
+    color: #9ca3af;
+    margin: 0;
+  }
+  .doi-row {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #f3f4f6;
+    font-size: 12px;
+    color: #6b7280;
+  }
+  .doi-row a {
+    color: #2563eb;
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .empty-note {
+    background: #ffffff;
+    border: 1px dashed #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
+  }
+  .footer {
+    margin-top: 32px;
+    text-align: center;
+    color: #9ca3af;
+    font-size: 11px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header-block">
+      <p class="label">Weekly literature report</p>
+      <p class="header-title">Week {{ iso_week }} · {{ since_str }} – {{ until_str }}</p>
+      <p class="header-meta">
+        {{ total_count }} article{% if total_count != 1 %}s{% endif %}
+        across {{ category_count }} categor{% if category_count == 1 %}y{% else %}ies{% endif %}
+        · sources: {{ sources_used | join(", ") }}
+      </p>
+    </div>
+
+    {% if categories %}
+    <div class="metric-row">
+      {% for cat in categories %}
+      <div class="metric-card">
+        <p class="metric-name">{{ cat.name }}</p>
+        <p class="metric-value">{{ cat.count }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% for cat in categories %}
+    <h3 class="category-heading">{{ cat.name }}</h3>
+
+    {% if cat.articles %}
+      {% for item in cat.articles %}
+      {% set art = item.article %}
+      {% set sm = item.summary %}
+      <div class="article-card">
+        <div class="pill-row">
+          <span class="pill pill-{{ sm.article_type or 'other' }}">{{ (sm.article_type or 'other') | replace('_', ' ') }}</span>
+          {% if art.journal or art.year %}
+          <span class="pill pill-meta">{{ art.journal or 'n/a' }}{% if art.year %} · {{ art.year }}{% endif %}</span>
+          {% endif %}
+          <span class="pill pill-meta">{{ art.source }}</span>
+        </div>
+        <p class="article-title">{{ art.title }}</p>
+        <p class="article-authors">{{ art.authors_display }}</p>
+
+        {% for section in [
+            ('Aim', sm.aim),
+            ('Gap', sm.gap),
+            ('Methods', sm.methods),
+            ('Conclusions', sm.conclusions),
+        ] %}
+        <div class="section-block">
+          <p class="section-label">{{ section[0] }}</p>
+          {% if section[1] %}
+          <ul>
+            {% for bullet in section[1] %}
+            <li>{{ bullet }}</li>
+            {% endfor %}
+          </ul>
+          {% else %}
+          <p class="placeholder">Not stated.</p>
+          {% endif %}
+        </div>
+        {% endfor %}
+
+        <div class="doi-row">
+          {% if art.doi %}
+          <a href="https://doi.org/{{ art.doi }}">https://doi.org/{{ art.doi }}</a>
+          {% elif art.url %}
+          <a href="{{ art.url }}">{{ art.url }}</a>
+          {% else %}
+          <span>No DOI available.</span>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+      <div class="empty-note">No new articles this week.</div>
+    {% endif %}
+    {% endfor %}
+    {% else %}
+    <div class="empty-note">
+      No enabled categories. Add Boolean queries to <code>config.yaml</code> to start receiving reports.
+    </div>
+    {% endif %}
+
+    <div class="footer">
+      Generated automatically. {{ generated_at }}
+    </div>
+  </div>
+</body>
+</html>
