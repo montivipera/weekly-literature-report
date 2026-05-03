@@ -39,4 +39,7 @@ settings:
     - arxiv
     - semantic_scholar
 
-categories: []
+categories:
+  - name: "Wetland Ecosystems"
+    query: '"wetland" AND (restoration OR biodiversity OR monitoring OR "climate change" OR conservation)'
+    enabled: true
