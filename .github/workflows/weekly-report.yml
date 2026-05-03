@@ -33,7 +33,7 @@ jobs:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           MAIL_TO: ${{ secrets.MAIL_TO }}
           UNPAYWALL_EMAIL: ${{ secrets.UNPAYWALL_EMAIL }}
-          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.0-flash' }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
           LOG_LEVEL: INFO
         run: |
           if [ "${{ inputs.dry_run }}" = "true" ]; then
