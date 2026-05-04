@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ subject }}</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f4f3ee;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1a1d1f;
+    line-height: 1.55;
+  }
+  .container {
+    max-width: 580px;
+    margin: 0 auto;
+    padding: 32px 20px 40px;
+  }
+  .card {
+    background: #ffffff;
+    border: 1px solid #e3e0d8;
+    border-radius: 8px;
+    padding: 28px 28px 24px;
+  }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #0f4c5c;
+    margin: 0 0 10px 0;
+  }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #1a1d1f;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.005em;
+    line-height: 1.2;
+  }
+  .window {
+    font-size: 13px;
+    color: #6a6a65;
+    margin: 0 0 22px 0;
+  }
+
+  .stats {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 22px;
+  }
+  .stats > div {
+    display: table-cell;
+    text-align: center;
+    padding: 10px 4px;
+    border: 1px solid #f0eee8;
+    background: #fafaf7;
+  }
+  .stats strong {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #1a1d1f;
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stats span {
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #9a9890;
+    font-weight: 600;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #9a9890;
+    margin: 18px 0 10px 0;
+  }
+
+  .domain-row {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .domain-row > a {
+    display: table-row;
+    text-decoration: none;
+    color: inherit;
+  }
+  .domain-cell {
+    display: table-cell;
+    padding: 9px 6px;
+    border-bottom: 1px solid #f0eee8;
+    vertical-align: middle;
+  }
+  .domain-cell.icon-cell {
+    width: 28px;
+    font-size: 16px;
+  }
+  .domain-cell.name-cell {
+    font-size: 13.5px;
+    color: #1a1d1f;
+  }
+  .domain-cell.count-cell {
+    text-align: right;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    color: var(--dc, #1a1d1f);
+    width: 30px;
+  }
+  .dom-mol  { --dc: #be185d; }
+  .dom-eco  { --dc: #15803d; }
+  .dom-hyd  { --dc: #0369a1; }
+  .dom-rs   { --dc: #7c3aed; }
+  .dom-syn  { --dc: #0d9488; }
+  .dom-pol  { --dc: #b45309; }
+
+  .pdf-note {
+    margin: 24px 0 6px 0;
+    padding: 14px 16px;
+    background: #fafaf7;
+    border-left: 3px solid #0f4c5c;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #2a2a25;
+  }
+  .pdf-note strong { color: #0f4c5c; }
+  .pdf-note .filename {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 12px;
+    background: #ffffff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    border: 1px solid #e3e0d8;
+  }
+
+  .query-block {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid #f0eee8;
+    font-size: 11.5px;
+    color: #6a6a65;
+  }
+  .query-block .qtoken {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 3px;
+    background: #d8e4e7;
+    color: #0f4c5c;
+    font-weight: 600;
+    margin: 0 2px;
+  }
+
+  .footer {
+    margin-top: 24px;
+    text-align: center;
+    color: #9a9890;
+    font-size: 10.5px;
+    font-family: Georgia, serif;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="card">
+  <p class="eyebrow">Weekly Literature Report · Week {{ iso_week }}</p>
+  <h1>{{ total_count }} new article{% if total_count != 1 %}s{% endif %} this week</h1>
+  <p class="window">{{ since_full }} — {{ until_full }}</p>
+
+  <div class="stats">
+    <div><strong>{{ total_count }}</strong><span>Articles</span></div>
+    <div><strong>{{ domain_count }}</strong><span>Domain{% if domain_count != 1 %}s{% endif %}</span></div>
+    <div><strong>{{ sources_count }}</strong><span>Sources</span></div>
+    <div><strong>{{ category_count }}</strong><span>Categor{% if category_count == 1 %}y{% else %}ies{% endif %}</span></div>
+  </div>
+
+  {% if active_domains %}
+  <p class="section-label">Breakdown by domain</p>
+  <div class="domain-row">
+    {% for d in active_domains %}
+    {% set cls = {
+      'molecular': 'dom-mol',
+      'ecology': 'dom-eco',
+      'hydrology': 'dom-hyd',
+      'remote_sensing': 'dom-rs',
+      'synthesis': 'dom-syn',
+      'policy': 'dom-pol'
+    }[d.id] %}
+    <a href="#" class="{{ cls }}">
+      <span class="domain-cell icon-cell">{{ d.icon }}</span>
+      <span class="domain-cell name-cell">{{ d.name }}</span>
+      <span class="domain-cell count-cell">{{ d.count }}</span>
+    </a>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="pdf-note">
+    <strong>📎 Full report attached</strong> as <span class="filename">{{ pdf_filename }}</span>.<br>
+    Open the PDF for article titles, abstracts, methods, and key findings grouped by domain.
+  </div>
+
+  {% if categories and categories[0].query_tokens %}
+  <div class="query-block">
+    <strong>Search:</strong>
+    {% for tok in categories[0].query_tokens %}
+      {% if tok.kind == "term" %}<span class="qtoken">{{ tok.text }}</span>{% elif tok.kind == "op" %} {{ tok.text }} {% elif tok.kind == "lparen" %}({% elif tok.kind == "rparen" %}){% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+<p class="footer">Generated automatically · {{ generated_at }}</p>
+</div>
+</body>
+</html>

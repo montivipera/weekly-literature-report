@@ -25,6 +25,13 @@ jobs:
           python-version: "3.11"
           cache: pip
 
+      - name: Install system dependencies for WeasyPrint
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y --no-install-recommends \
+            libpango-1.0-0 libpangoft2-1.0-0 libharfbuzz0b \
+            libcairo2 libgdk-pixbuf-2.0-0 fonts-dejavu fonts-liberation
+
       - name: Install dependencies
         run: pip install -r requirements.txt
 
@@ -44,10 +51,12 @@ jobs:
             python -m src.main --save-html
           fi
 
-      - name: Upload HTML artifact
+      - name: Upload report artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: report-html
-          path: out/report.html
+          name: report
+          path: |
+            out/report.html
+            out/*.pdf
           if-no-files-found: ignore

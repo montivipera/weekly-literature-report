@@ -36,7 +36,8 @@ from .fetchers.pubmed import PubMedFetcher
 from .fetchers.semantic_scholar import SemanticScholarFetcher
 from .full_text import get_full_text
 from .mailer import send_report
-from .renderer import RenderCategory, RenderItem, render
+from .pdf_generator import html_to_pdf
+from .renderer import RenderCategory, RenderItem, render, render_email_summary
 from .summarizer import GeminiSummarizer, Summary
 
 logger = logging.getLogger("weekly_report")
@@ -192,25 +193,51 @@ def run(
         failures[name] = cat_failures
         render_categories.append(RenderCategory(name=name, query=query, items=items))
 
+    iso_week = until.isocalendar()[1]
+    pdf_filename = f"weekly-report-{until.strftime('%Y')}-W{iso_week:02d}.pdf"
+
     html = render(
         categories=render_categories,
         since=since,
         until=until,
         sources_used=list(fetchers.keys()),
+        pdf_filename=pdf_filename,
     )
-
     _maybe_write_html(html, save_html or dry_run)
 
+    # Generate PDF (best-effort — falls back to HTML body if WeasyPrint fails)
+    pdf_path: Optional[Path] = None
+    out_dir = Path("out")
+    pdf_target = out_dir / pdf_filename
+    try:
+        pdf_path = html_to_pdf(html, pdf_target)
+    except Exception as exc:
+        logger.warning("PDF generation raised, will send HTML only: %s", exc)
+        pdf_path = None
+
     total = sum(len(c.items) for c in render_categories)
-    iso_week = until.isocalendar()[1]
     subject = (
         f"[Lit Report] Week {iso_week} · "
         f"{since.strftime('%Y-%m-%d')} – {until.strftime('%Y-%m-%d')} · {total} articles"
     )
 
+    summary_html = render_email_summary(
+        categories=render_categories,
+        since=since,
+        until=until,
+        sources_used=list(fetchers.keys()),
+        subject=subject,
+        pdf_filename=pdf_filename,
+    )
+
     if not dry_run:
         try:
-            send_report(html, subject)
+            send_report(
+                subject=subject,
+                summary_html=summary_html,
+                pdf_path=pdf_path,
+                fallback_html=html,
+            )
         except Exception as exc:
             logger.exception("Failed to send mail: %s", exc)
             return 2

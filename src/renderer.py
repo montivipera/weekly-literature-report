@@ -152,23 +152,19 @@ def _group_by_domain(items: List[RenderItem]) -> List[Dict]:
 # ---------------------------------------------------------------------------
 
 
-def render(
+def _build_context(
     categories: List[RenderCategory],
     since: datetime,
     until: datetime,
     sources_used: List[str],
     subject: Optional[str] = None,
-    template_name: str = "report.html.j2",
-) -> str:
-    env = _make_env()
-    template = env.get_template(template_name)
-
+    pdf_filename: str = "weekly-report.pdf",
+) -> dict:
     cat_payload = []
     total = 0
     domain_counts: Dict[str, int] = {d["id"]: 0 for d in DOMAINS}
 
     for cat in categories:
-        # Attach display string for authors
         for it in cat.items:
             it.article.authors_display = _format_authors(it.article.authors)  # type: ignore[attr-defined]
 
@@ -186,7 +182,6 @@ def render(
         )
         total += len(cat.items)
 
-    # Active domains = those with at least one article anywhere
     active_domains = []
     for d in DOMAINS:
         c = domain_counts[d["id"]]
@@ -201,22 +196,55 @@ def render(
         f"{since.strftime('%Y-%m-%d')} – {until.strftime('%Y-%m-%d')} · {total} articles"
     )
 
-    return template.render(
-        subject=subject,
-        iso_week=iso_week,
-        since_str=since.strftime("%d %b").lstrip("0"),
-        until_str=until.strftime("%d %b").lstrip("0"),
-        since_full=since.strftime("%Y-%m-%d"),
-        until_full=until.strftime("%Y-%m-%d"),
-        total_count=total,
-        category_count=len(cat_payload),
-        domain_count=len(active_domains),
-        sources_used=sources_used,
-        sources_count=len(sources_used),
-        categories=cat_payload,
-        active_domains=active_domains,
-        generated_at=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
-    )
+    return {
+        "subject": subject,
+        "iso_week": iso_week,
+        "since_str": since.strftime("%d %b").lstrip("0"),
+        "until_str": until.strftime("%d %b").lstrip("0"),
+        "since_full": since.strftime("%Y-%m-%d"),
+        "until_full": until.strftime("%Y-%m-%d"),
+        "total_count": total,
+        "category_count": len(cat_payload),
+        "domain_count": len(active_domains),
+        "sources_used": sources_used,
+        "sources_count": len(sources_used),
+        "categories": cat_payload,
+        "active_domains": active_domains,
+        "pdf_filename": pdf_filename,
+        "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+    }
+
+
+def render(
+    categories: List[RenderCategory],
+    since: datetime,
+    until: datetime,
+    sources_used: List[str],
+    subject: Optional[str] = None,
+    template_name: str = "report.html.j2",
+    pdf_filename: str = "weekly-report.pdf",
+) -> str:
+    """Render the full HTML report (used for the standalone HTML and PDF)."""
+    env = _make_env()
+    template = env.get_template(template_name)
+    ctx = _build_context(categories, since, until, sources_used, subject, pdf_filename)
+    return template.render(**ctx)
+
+
+def render_email_summary(
+    categories: List[RenderCategory],
+    since: datetime,
+    until: datetime,
+    sources_used: List[str],
+    subject: Optional[str] = None,
+    template_name: str = "email_summary.html.j2",
+    pdf_filename: str = "weekly-report.pdf",
+) -> str:
+    """Render the short email body that accompanies the PDF attachment."""
+    env = _make_env()
+    template = env.get_template(template_name)
+    ctx = _build_context(categories, since, until, sources_used, subject, pdf_filename)
+    return template.render(**ctx)
 
 
 def html_to_text(html: str) -> str:
