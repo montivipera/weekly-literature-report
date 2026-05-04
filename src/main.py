@@ -190,7 +190,7 @@ def run(
             items.append(RenderItem(article=art, summary=summary))
 
         failures[name] = cat_failures
-        render_categories.append(RenderCategory(name=name, items=items))
+        render_categories.append(RenderCategory(name=name, query=query, items=items))
 
     html = render(
         categories=render_categories,

@@ -31,12 +31,29 @@ Return JSON only, with no markdown fences and no extra prose. The schema is:
 
 {
   "article_type": one of ["research_article", "review", "meta_analysis", "preprint", "other"],
+  "domain":      one of ["molecular", "ecology", "hydrology", "remote_sensing", "synthesis", "policy"],
   "aim":         array of 1-3 short bullet strings (the goal/objective of the study),
   "gap":         array of 0-2 bullet strings (the gap or motivation the authors identify; empty if not stated),
   "methods":     array of 2-4 bullet strings (study area / organism / sample size / analytic approach),
   "conclusions": array of 2-5 bullet strings drawn from the Discussion section
                  (what the authors interpret and recommend, NOT raw measurements)
 }
+
+DOMAIN classification — pick the SINGLE best fit:
+- "molecular":      genetics, eDNA, microbiome, metagenomics, omics, microbial ecology,
+                    sequencing-based studies, molecular biomarkers
+- "ecology":        species, populations, communities, biodiversity, behaviour, ecology
+                    of macro-organisms (plants, animals, invertebrates), trophic interactions
+- "hydrology":      water quality, hydrology, biogeochemistry, carbon/nitrogen cycling,
+                    sediment, nutrients, soil chemistry, gas fluxes
+- "remote_sensing": satellite imagery, GIS, drones, spatial modelling, simulation,
+                    machine-learning prediction, mapping
+- "synthesis":      literature review, systematic review, meta-analysis, evidence synthesis
+- "policy":         conservation policy, restoration management, governance, economics,
+                    citizen science, stakeholder studies, indigenous knowledge
+
+If a study spans two domains, pick the one most central to its METHODS and FINDINGS.
+For preprints with thin abstracts, use journal name and keywords as additional signal.
 
 Rules:
 - Conclusions must reflect what the authors INTERPRET and RECOMMEND in the
@@ -45,14 +62,15 @@ Rules:
 - Each bullet must be a complete, self-contained sentence under 30 words.
 - Do not output any text outside the JSON object.
 - Do not use markdown. Do not wrap the JSON in code fences.
-- If the source text is empty or unintelligible, return all four arrays empty
-  and "article_type": "other".
+- If the source text is empty or unintelligible, return all four arrays empty,
+  "article_type": "other", and pick the closest "domain" you can infer (default "ecology").
 """
 
 
 @dataclass
 class Summary:
     article_type: str = "other"
+    domain: str = "ecology"
     aim: List[str] = field(default_factory=list)
     gap: List[str] = field(default_factory=list)
     methods: List[str] = field(default_factory=list)
@@ -84,6 +102,11 @@ def _normalize_summary(data: dict) -> Summary:
     if at not in valid_types:
         at = "other"
 
+    valid_domains = {"molecular", "ecology", "hydrology", "remote_sensing", "synthesis", "policy"}
+    dom = (data.get("domain") or "ecology").strip().lower()
+    if dom not in valid_domains:
+        dom = "ecology"
+
     def _list(key: str) -> List[str]:
         v = data.get(key) or []
         if isinstance(v, str):
@@ -92,6 +115,7 @@ def _normalize_summary(data: dict) -> Summary:
 
     return Summary(
         article_type=at,
+        domain=dom,
         aim=_list("aim"),
         gap=_list("gap"),
         methods=_list("methods"),

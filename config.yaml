@@ -1,28 +1,6 @@
-# Weekly Literature Report — configuration
-#
-# Add categories below. Each category has:
-#   name:    Display name in the report
-#   query:   Boolean expression with AND, OR, NOT (parentheses supported).
-#            Use double quotes for multi-word phrases, e.g. "remote sensing".
-#   enabled: true|false
-#
-# Boolean syntax:
-#   - Operators: AND, OR, NOT (case-insensitive when parsed; uppercase preferred for clarity)
-#   - Grouping:  parentheses, e.g. (a OR b) AND c
-#   - Phrases:   quoted strings stay together as a single term
-#
-# Example:
-#   categories:
-#     - name: "Vegetation monitoring"
-#       query: '(vegetation OR "plant community") AND (restoration OR monitoring)'
-#       enabled: true
-#     - name: "Soil microbiome"
-#       query: '"soil microbiome" AND (diversity OR function) NOT review'
-#       enabled: true
-
 settings:
   lookback_days: 7
-  per_category_limit: null   # null = no limit
+  per_category_limit: null
   sources:
     - pubmed
     - arxiv
@@ -31,7 +9,6 @@ settings:
     - semantic_scholar
   language: en
   timezone: "Europe/Istanbul"
-  # Source preference order when deduplicating (earlier = preferred)
   dedup_priority:
     - pubmed
     - crossref

@@ -2,8 +2,10 @@ name: Weekly literature report
 
 on:
   schedule:
-    # Monday 06:00 Europe/Istanbul (UTC+3) -> 03:00 UTC
-    - cron: "0 3 * * 1"
+    # Monday 06:17 Europe/Istanbul (UTC+3) -> 03:17 UTC
+    # Note: avoid scheduling at HH:00 — GitHub Actions cron is delayed/dropped
+    # during high-load periods at the top of every hour. Using :17 reduces this.
+    - cron: "17 3 * * 1"
   workflow_dispatch:
     inputs:
       dry_run:
