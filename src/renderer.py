@@ -36,6 +36,99 @@ DOMAINS: List[Dict[str, str]] = [
 DOMAIN_BY_ID = {d["id"]: d for d in DOMAINS}
 
 
+# Localized labels for the PDF template. The web/email templates stay in English.
+LABELS: Dict[str, Dict[str, str]] = {
+    "en": {
+        "report_title":     "Weekly Literature Report",
+        "week":             "Week",
+        "in_watchlist":     "in your watchlist",
+        "new_articles":     "new articles",
+        "new_article":      "new article",
+        "articles":         "Articles",
+        "article":          "article",
+        "domains":          "Domains",
+        "domain":           "Domain",
+        "sources":          "Sources",
+        "categories":       "Categories",
+        "category":         "Category",
+        "search_query":     "Search query",
+        "contents":         "Contents",
+        "in_label":         "in",
+        "aim":              "Aim",
+        "gap":              "Gap",
+        "methods":          "Methods",
+        "key_findings":     "Key findings",
+        "not_stated":       "Not stated.",
+        "no_doi":           "No DOI available.",
+        "page":             "page",
+        "of":               "/",
+        "generated":        "Generated",
+        "domain_names": {
+            "molecular":      "Molecular & Microbial",
+            "ecology":        "Ecology & Biodiversity",
+            "hydrology":      "Hydrology & Biogeochemistry",
+            "remote_sensing": "Remote Sensing & Modeling",
+            "synthesis":      "Synthesis",
+            "policy":         "Policy & Management",
+        },
+        "article_types": {
+            "research_article": "research article",
+            "review":           "review",
+            "meta_analysis":    "meta-analysis",
+            "preprint":         "preprint",
+            "other":            "other",
+        },
+    },
+    "tr": {
+        "report_title":     "Haftalık Literatür Raporu",
+        "week":             "Hafta",
+        "in_watchlist":     "izleme listenizde",
+        "new_articles":     "yeni makale",
+        "new_article":      "yeni makale",
+        "articles":         "Makale",
+        "article":          "makale",
+        "domains":          "Alan",
+        "domain":           "Alan",
+        "sources":          "Kaynak",
+        "categories":       "Kategori",
+        "category":         "Kategori",
+        "search_query":     "Arama sorgusu",
+        "contents":         "İçindekiler",
+        "in_label":         "—",
+        "aim":              "Amaç",
+        "gap":              "Boşluk",
+        "methods":          "Yöntem",
+        "key_findings":     "Temel bulgular",
+        "not_stated":       "Belirtilmemiş.",
+        "no_doi":           "DOI mevcut değil.",
+        "page":             "sayfa",
+        "of":               "/",
+        "generated":        "Oluşturuldu",
+        "domain_names": {
+            "molecular":      "Moleküler ve Mikrobiyal",
+            "ecology":        "Ekoloji ve Biyoçeşitlilik",
+            "hydrology":      "Hidroloji ve Biyojeokimya",
+            "remote_sensing": "Uzaktan Algılama ve Modelleme",
+            "synthesis":      "Sentez",
+            "policy":         "Politika ve Yönetim",
+        },
+        "article_types": {
+            "research_article": "araştırma makalesi",
+            "review":           "derleme",
+            "meta_analysis":    "meta-analiz",
+            "preprint":         "ön baskı",
+            "other":            "diğer",
+        },
+    },
+}
+
+
+def _localized_domain(domain_id: str, lang: str) -> str:
+    return LABELS.get(lang, LABELS["en"])["domain_names"].get(
+        domain_id, DOMAIN_BY_ID.get(domain_id, {}).get("name", domain_id)
+    )
+
+
 @dataclass
 class RenderItem:
     """One article + its summary, in the form the template expects."""
@@ -115,8 +208,13 @@ def _tokenize_query(query: str) -> List[Dict[str, str]]:
     return out
 
 
-def _group_by_domain(items: List[RenderItem]) -> List[Dict]:
-    """Group items by their summary's domain, preserving DOMAINS order."""
+def _group_by_domain(items: List[RenderItem], lang: str = "en") -> List[Dict]:
+    """Group items by their summary's domain, preserving DOMAINS order.
+
+    Domain names are localized to ``lang``. Each entry exposes both the
+    English bullet sections (``aim/gap/methods/conclusions``) and the Turkish
+    ones (``aim_tr/...``); the template chooses based on its own ``lang``.
+    """
     buckets: Dict[str, List[Dict]] = {d["id"]: [] for d in DOMAINS}
     for item in items:
         dom = (item.summary.domain or "ecology").lower()
@@ -131,14 +229,13 @@ def _group_by_domain(items: List[RenderItem]) -> List[Dict]:
         bucket = buckets[d["id"]]
         if not bucket:
             continue
-        # Mark the first card of the largest domain as featured for visual rhythm
         for idx, entry in enumerate(bucket):
             entry["featured"] = (idx == 0 and len(bucket) >= 3)
             entry["wide"] = (idx == 0 and len(bucket) == 2)
         groups.append(
             {
                 "id": d["id"],
-                "name": d["name"],
+                "name": _localized_domain(d["id"], lang),
                 "icon": d["icon"],
                 "count": len(bucket),
                 "articles": bucket,
@@ -160,6 +257,7 @@ def _build_context(
     subject: Optional[str] = None,
     pdf_filename: str = "weekly-report.pdf",
     drive_link: Optional[str] = None,
+    lang: str = "en",
 ) -> dict:
     cat_payload = []
     total = 0
@@ -169,7 +267,7 @@ def _build_context(
         for it in cat.items:
             it.article.authors_display = _format_authors(it.article.authors)  # type: ignore[attr-defined]
 
-        groups = _group_by_domain(cat.items)
+        groups = _group_by_domain(cat.items, lang=lang)
         for g in groups:
             domain_counts[g["id"]] += g["count"]
 
@@ -188,7 +286,12 @@ def _build_context(
         c = domain_counts[d["id"]]
         if c > 0:
             active_domains.append(
-                {"id": d["id"], "name": d["name"], "icon": d["icon"], "count": c}
+                {
+                    "id": d["id"],
+                    "name": _localized_domain(d["id"], lang),
+                    "icon": d["icon"],
+                    "count": c,
+                }
             )
 
     iso_week = _isoweek(until)
@@ -197,8 +300,12 @@ def _build_context(
         f"{since.strftime('%Y-%m-%d')} – {until.strftime('%Y-%m-%d')} · {total} articles"
     )
 
+    labels = LABELS.get(lang, LABELS["en"])
+
     return {
         "subject": subject,
+        "lang": lang,
+        "labels": labels,
         "iso_week": iso_week,
         "since_str": since.strftime("%d %b").lstrip("0"),
         "until_str": until.strftime("%d %b").lstrip("0"),
@@ -226,16 +333,18 @@ def render(
     template_name: str = "report.html.j2",
     pdf_filename: str = "weekly-report.pdf",
     drive_link: Optional[str] = None,
+    lang: str = "en",
 ) -> str:
     """Render the full HTML report (web/email view).
 
     Pass ``template_name="report_pdf.html.j2"`` for the print-optimized
-    journal-style PDF layout instead.
+    journal-style PDF layout. Pass ``lang="tr"`` for Turkish labels and
+    Turkish bullet content.
     """
     env = _make_env()
     template = env.get_template(template_name)
     ctx = _build_context(
-        categories, since, until, sources_used, subject, pdf_filename, drive_link
+        categories, since, until, sources_used, subject, pdf_filename, drive_link, lang
     )
     return template.render(**ctx)
 
@@ -249,12 +358,13 @@ def render_email_summary(
     template_name: str = "email_summary.html.j2",
     pdf_filename: str = "weekly-report.pdf",
     drive_link: Optional[str] = None,
+    lang: str = "en",
 ) -> str:
     """Render the short email body that accompanies the PDF attachment."""
     env = _make_env()
     template = env.get_template(template_name)
     ctx = _build_context(
-        categories, since, until, sources_used, subject, pdf_filename, drive_link
+        categories, since, until, sources_used, subject, pdf_filename, drive_link, lang
     )
     return template.render(**ctx)
 

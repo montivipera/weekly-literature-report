@@ -24,19 +24,28 @@ logger = logging.getLogger(__name__)
 
 SYSTEM_PROMPT = """You are a careful scientific summarizer. You read a scientific
 article (full text when available, otherwise the abstract) and produce a strict
-JSON object describing the article. You never invent facts. If a section is not
-supported by the source text, return an empty list for that section.
+JSON object describing the article in BOTH English and Turkish. You never invent
+facts. If a section is not supported by the source text, return an empty list
+for that section in both languages.
 
 Return JSON only, with no markdown fences and no extra prose. The schema is:
 
 {
   "article_type": one of ["research_article", "review", "meta_analysis", "preprint", "other"],
   "domain":      one of ["molecular", "ecology", "hydrology", "remote_sensing", "synthesis", "policy"],
-  "aim":         array of 1-3 short bullet strings (the goal/objective of the study),
-  "gap":         array of 0-2 bullet strings (the gap or motivation the authors identify; empty if not stated),
-  "methods":     array of 2-4 bullet strings (study area / organism / sample size / analytic approach),
-  "conclusions": array of 2-5 bullet strings drawn from the Discussion section
-                 (what the authors interpret and recommend, NOT raw measurements)
+  "en": {
+    "aim":         array of 1-3 short bullet strings (the goal/objective of the study),
+    "gap":         array of 0-2 bullet strings (the gap or motivation; empty if not stated),
+    "methods":     array of 2-4 bullet strings (study area / organism / sample size / analytic approach),
+    "conclusions": array of 2-5 bullet strings drawn from the Discussion section
+                   (what the authors interpret and recommend, NOT raw measurements)
+  },
+  "tr": {
+    "aim":         same content as en.aim, translated into natural, fluent academic Turkish,
+    "gap":         same content as en.gap, in Turkish,
+    "methods":     same content as en.methods, in Turkish,
+    "conclusions": same content as en.conclusions, in Turkish
+  }
 }
 
 DOMAIN classification — pick the SINGLE best fit:
@@ -60,10 +69,17 @@ Rules:
   Discussion section, not the raw findings reported in Results. If only an
   abstract is provided, use the closing interpretive statements there.
 - Each bullet must be a complete, self-contained sentence under 30 words.
+- The Turkish translation must be a real translation (same meaning, same number
+  of bullets), not a paraphrase or different content. Use natural academic
+  Turkish — translate scientific terms idiomatically (e.g. "biodiversity" →
+  "biyoçeşitlilik", "wetland" → "sulak alan", "remote sensing" → "uzaktan
+  algılama"). Keep proper nouns (place names, taxa, instruments) in their
+  original form.
 - Do not output any text outside the JSON object.
 - Do not use markdown. Do not wrap the JSON in code fences.
-- If the source text is empty or unintelligible, return all four arrays empty,
-  "article_type": "other", and pick the closest "domain" you can infer (default "ecology").
+- If the source text is empty or unintelligible, return all eight arrays
+  (en.* and tr.*) empty, "article_type": "other", and pick the closest
+  "domain" you can infer (default "ecology").
 """
 
 
@@ -71,11 +87,33 @@ Rules:
 class Summary:
     article_type: str = "other"
     domain: str = "ecology"
+    # English bullets (default for backward compatibility)
     aim: List[str] = field(default_factory=list)
     gap: List[str] = field(default_factory=list)
     methods: List[str] = field(default_factory=list)
     conclusions: List[str] = field(default_factory=list)
+    # Turkish bullets
+    aim_tr: List[str] = field(default_factory=list)
+    gap_tr: List[str] = field(default_factory=list)
+    methods_tr: List[str] = field(default_factory=list)
+    conclusions_tr: List[str] = field(default_factory=list)
     error: Optional[str] = None
+
+    def for_lang(self, lang: str) -> dict:
+        """Return the four bullet sections for the requested language."""
+        if lang == "tr":
+            return {
+                "aim": self.aim_tr,
+                "gap": self.gap_tr,
+                "methods": self.methods_tr,
+                "conclusions": self.conclusions_tr,
+            }
+        return {
+            "aim": self.aim,
+            "gap": self.gap,
+            "methods": self.methods,
+            "conclusions": self.conclusions,
+        }
 
 
 def _extract_json(text: str) -> dict:
@@ -107,19 +145,30 @@ def _normalize_summary(data: dict) -> Summary:
     if dom not in valid_domains:
         dom = "ecology"
 
-    def _list(key: str) -> List[str]:
-        v = data.get(key) or []
+    def _list_from(d: dict, key: str) -> List[str]:
+        v = (d or {}).get(key) or []
         if isinstance(v, str):
             v = [v]
         return [str(x).strip() for x in v if str(x).strip()]
 
+    # Bilingual nested layout (preferred). Fall back to flat keys for
+    # backwards compatibility with older prompt outputs.
+    en_block = data.get("en") if isinstance(data.get("en"), dict) else None
+    tr_block = data.get("tr") if isinstance(data.get("tr"), dict) else None
+    en_source = en_block if en_block is not None else data
+    tr_source = tr_block if tr_block is not None else {}
+
     return Summary(
         article_type=at,
         domain=dom,
-        aim=_list("aim"),
-        gap=_list("gap"),
-        methods=_list("methods"),
-        conclusions=_list("conclusions"),
+        aim=_list_from(en_source, "aim"),
+        gap=_list_from(en_source, "gap"),
+        methods=_list_from(en_source, "methods"),
+        conclusions=_list_from(en_source, "conclusions"),
+        aim_tr=_list_from(tr_source, "aim"),
+        gap_tr=_list_from(tr_source, "gap"),
+        methods_tr=_list_from(tr_source, "methods"),
+        conclusions_tr=_list_from(tr_source, "conclusions"),
     )
 
 

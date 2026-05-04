@@ -205,8 +205,11 @@
   {% endif %}
 
   <div class="pdf-note">
-    <strong>📎 Full report attached</strong> as <span class="filename">{{ pdf_filename }}</span>.<br>
-    Open the PDF for article titles, abstracts, methods, and key findings grouped by domain.
+    <strong>📎 Full report attached</strong> in two languages:<br>
+    &nbsp;&nbsp;• English — <span class="filename">{{ pdf_filename }}</span><br>
+    &nbsp;&nbsp;• Türkçe — <span class="filename">{{ pdf_filename | replace('Weekly Literature Report', 'Haftalık Literatür Raporu') }}</span><br>
+    Open either PDF for article titles, abstracts, methods, and key findings
+    grouped by domain.
     {% if drive_link %}<br><br>
     <strong>📁 Archive:</strong> <a href="{{ drive_link }}" style="color:#0f4c5c;">View in Google Drive ↗</a>
     {% endif %}

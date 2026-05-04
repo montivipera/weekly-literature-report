@@ -8,7 +8,7 @@ import os
 import smtplib
 from email.message import EmailMessage
 from pathlib import Path
-from typing import Optional
+from typing import List, Optional, Sequence, Union
 
 from .renderer import html_to_text
 
@@ -26,7 +26,8 @@ def send_report(
     *,
     subject: str,
     summary_html: str,
-    pdf_path: Optional[Path] = None,
+    pdf_paths: Optional[Sequence[Path]] = None,
+    pdf_path: Optional[Path] = None,  # legacy, single attachment
     fallback_html: Optional[str] = None,
     to: Optional[str] = None,
     sender: Optional[str] = None,
@@ -37,8 +38,10 @@ def send_report(
     Args:
         subject: Subject line.
         summary_html: Compact HTML summary used as the email body.
-        pdf_path: If provided and the file exists, attached as the full report.
-        fallback_html: If ``pdf_path`` is missing, this full HTML report is
+        pdf_paths: Sequence of PDF files to attach. Each existing file is
+            attached. If empty/None, no PDFs are attached.
+        pdf_path: Legacy single-PDF parameter, kept for backwards compatibility.
+        fallback_html: If no PDFs end up attached, this full HTML report is
             used as the body instead of the summary so no information is lost.
         to: Recipient. Defaults to ``MAIL_TO`` env var or the sender address.
         sender: Sender Gmail address. Defaults to ``GMAIL_ADDRESS``.
@@ -53,31 +56,38 @@ def send_report(
     if not to:
         raise MailerError("No recipient configured")
 
+    # Normalize attachment list. ``pdf_path`` (legacy) is appended for
+    # backwards compatibility with older callers.
+    paths: List[Path] = []
+    if pdf_paths:
+        paths.extend(pdf_paths)
+    if pdf_path is not None:
+        paths.append(pdf_path)
+    existing = [p for p in paths if p is not None and p.exists()]
+
     msg = EmailMessage()
     msg["Subject"] = subject
     msg["From"] = sender
     msg["To"] = to
 
-    pdf_attached = pdf_path is not None and pdf_path.exists()
-
-    body_html = summary_html if pdf_attached else (fallback_html or summary_html)
+    body_html = summary_html if existing else (fallback_html or summary_html)
     msg.set_content(html_to_text(body_html))
     msg.add_alternative(body_html, subtype="html")
 
-    if pdf_attached:
+    for p in existing:
         try:
-            data = pdf_path.read_bytes()
-            ctype, _ = mimetypes.guess_type(str(pdf_path))
+            data = p.read_bytes()
+            ctype, _ = mimetypes.guess_type(str(p))
             maintype, subtype = (ctype or "application/pdf").split("/", 1)
             msg.add_attachment(
                 data,
                 maintype=maintype,
                 subtype=subtype,
-                filename=pdf_path.name,
+                filename=p.name,
             )
-            logger.info("Attached PDF: %s (%d bytes)", pdf_path.name, len(data))
+            logger.info("Attached PDF: %s (%d bytes)", p.name, len(data))
         except Exception as exc:
-            logger.warning("Failed to attach PDF, sending HTML body only: %s", exc)
+            logger.warning("Failed to attach %s: %s", p, exc)
 
     logger.info("Sending mail to %s via Gmail SMTP", to)
     with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as smtp:

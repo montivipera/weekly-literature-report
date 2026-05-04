@@ -220,46 +220,49 @@ def run(
 
     iso_week = until.isocalendar()[1]
     date_range_tr = _format_turkish_range(since, until)
-    pdf_filename = f"{date_range_tr} Weekly Literature Report.pdf"
+    pdf_filename_en = f"{date_range_tr} Weekly Literature Report.pdf"
+    pdf_filename_tr = f"{date_range_tr} Haftalık Literatür Raporu.pdf"
 
-    # Web/email HTML: the interactive grid layout
+    # Web/email HTML: the interactive grid layout (English)
     html = render(
         categories=render_categories,
         since=since,
         until=until,
         sources_used=list(fetchers.keys()),
-        pdf_filename=pdf_filename,
+        pdf_filename=pdf_filename_en,
     )
     _maybe_write_html(html, save_html or dry_run)
 
-    # PDF HTML: print-native journal layout (different template)
-    pdf_html = render(
-        categories=render_categories,
-        since=since,
-        until=until,
-        sources_used=list(fetchers.keys()),
-        pdf_filename=pdf_filename,
-        template_name="report_pdf.html.j2",
-    )
-
-    # Generate PDF (best-effort — falls back to HTML body if WeasyPrint fails)
-    pdf_path: Optional[Path] = None
     out_dir = Path("out")
-    pdf_target = out_dir / pdf_filename
-    try:
-        pdf_path = html_to_pdf(pdf_html, pdf_target)
-    except Exception as exc:
-        logger.warning("PDF generation raised, will send HTML only: %s", exc)
-        pdf_path = None
-
-    # Best-effort upload to Google Drive — failures don't block the email.
+    pdf_paths: List[Path] = []
     drive_link: Optional[str] = None
-    if pdf_path is not None:
+
+    for lang, pdf_filename in (("en", pdf_filename_en), ("tr", pdf_filename_tr)):
+        pdf_html = render(
+            categories=render_categories,
+            since=since,
+            until=until,
+            sources_used=list(fetchers.keys()),
+            pdf_filename=pdf_filename,
+            template_name="report_pdf.html.j2",
+            lang=lang,
+        )
+        pdf_target = out_dir / pdf_filename
         try:
-            drive_link = upload_to_drive(pdf_path)
+            pdf_path = html_to_pdf(pdf_html, pdf_target)
         except Exception as exc:
-            logger.warning("Drive upload raised: %s", exc)
-            drive_link = None
+            logger.warning("PDF generation raised for %s: %s", lang, exc)
+            pdf_path = None
+        if pdf_path is not None:
+            pdf_paths.append(pdf_path)
+            # Upload English PDF to Drive (Turkish one optional, follows same logic)
+            try:
+                link = upload_to_drive(pdf_path)
+            except Exception as exc:
+                logger.warning("Drive upload raised for %s: %s", lang, exc)
+                link = None
+            if lang == "en" and link:
+                drive_link = link
 
     total = sum(len(c.items) for c in render_categories)
     subject = (
@@ -273,7 +276,7 @@ def run(
         until=until,
         sources_used=list(fetchers.keys()),
         subject=subject,
-        pdf_filename=pdf_filename,
+        pdf_filename=pdf_filename_en,
         drive_link=drive_link,
     )
 
@@ -282,7 +285,7 @@ def run(
             send_report(
                 subject=subject,
                 summary_html=summary_html,
-                pdf_path=pdf_path,
+                pdf_paths=pdf_paths,
                 fallback_html=html,
             )
         except Exception as exc:
