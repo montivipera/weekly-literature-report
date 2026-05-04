@@ -52,6 +52,30 @@ FETCHERS: Dict[str, type[BaseFetcher]] = {
 }
 
 
+TURKISH_MONTHS = {
+    1: "Ocak", 2: "Şubat", 3: "Mart", 4: "Nisan",
+    5: "Mayıs", 6: "Haziran", 7: "Temmuz", 8: "Ağustos",
+    9: "Eylül", 10: "Ekim", 11: "Kasım", 12: "Aralık",
+}
+
+
+def _format_turkish_range(since: datetime, until: datetime) -> str:
+    """Format a date range as e.g. '26 Nisan - 2 Mayıs 2026'.
+
+    The displayed window is ``[since, until - 1 day]`` so the end-date is
+    inclusive of the last full day in the lookback window — this matches how
+    a reader thinks about "this week's papers".
+    """
+    end = until - timedelta(days=1) if until > since else until
+    s_month = TURKISH_MONTHS[since.month]
+    e_month = TURKISH_MONTHS[end.month]
+    if since.year == end.year and since.month == end.month:
+        return f"{since.day}-{end.day} {e_month} {end.year}"
+    if since.year == end.year:
+        return f"{since.day} {s_month} - {end.day} {e_month} {end.year}"
+    return f"{since.day} {s_month} {since.year} - {end.day} {e_month} {end.year}"
+
+
 def _setup_logging() -> None:
     level = os.environ.get("LOG_LEVEL", "INFO").upper()
     logging.basicConfig(
@@ -194,7 +218,8 @@ def run(
         render_categories.append(RenderCategory(name=name, query=query, items=items))
 
     iso_week = until.isocalendar()[1]
-    pdf_filename = f"weekly-report-{until.strftime('%Y')}-W{iso_week:02d}.pdf"
+    date_range_tr = _format_turkish_range(since, until)
+    pdf_filename = f"{date_range_tr} Weekly Literature Report.pdf"
 
     html = render(
         categories=render_categories,
