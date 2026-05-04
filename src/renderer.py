@@ -159,6 +159,7 @@ def _build_context(
     sources_used: List[str],
     subject: Optional[str] = None,
     pdf_filename: str = "weekly-report.pdf",
+    drive_link: Optional[str] = None,
 ) -> dict:
     cat_payload = []
     total = 0
@@ -211,6 +212,7 @@ def _build_context(
         "categories": cat_payload,
         "active_domains": active_domains,
         "pdf_filename": pdf_filename,
+        "drive_link": drive_link,
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
     }
 
@@ -223,11 +225,18 @@ def render(
     subject: Optional[str] = None,
     template_name: str = "report.html.j2",
     pdf_filename: str = "weekly-report.pdf",
+    drive_link: Optional[str] = None,
 ) -> str:
-    """Render the full HTML report (used for the standalone HTML and PDF)."""
+    """Render the full HTML report (web/email view).
+
+    Pass ``template_name="report_pdf.html.j2"`` for the print-optimized
+    journal-style PDF layout instead.
+    """
     env = _make_env()
     template = env.get_template(template_name)
-    ctx = _build_context(categories, since, until, sources_used, subject, pdf_filename)
+    ctx = _build_context(
+        categories, since, until, sources_used, subject, pdf_filename, drive_link
+    )
     return template.render(**ctx)
 
 
@@ -239,11 +248,14 @@ def render_email_summary(
     subject: Optional[str] = None,
     template_name: str = "email_summary.html.j2",
     pdf_filename: str = "weekly-report.pdf",
+    drive_link: Optional[str] = None,
 ) -> str:
     """Render the short email body that accompanies the PDF attachment."""
     env = _make_env()
     template = env.get_template(template_name)
-    ctx = _build_context(categories, since, until, sources_used, subject, pdf_filename)
+    ctx = _build_context(
+        categories, since, until, sources_used, subject, pdf_filename, drive_link
+    )
     return template.render(**ctx)
 
 

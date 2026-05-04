@@ -34,6 +34,7 @@ from .fetchers.biorxiv import BioRxivFetcher
 from .fetchers.crossref import CrossrefFetcher
 from .fetchers.pubmed import PubMedFetcher
 from .fetchers.semantic_scholar import SemanticScholarFetcher
+from .drive_uploader import upload_to_drive
 from .full_text import get_full_text
 from .mailer import send_report
 from .pdf_generator import html_to_pdf
@@ -221,6 +222,7 @@ def run(
     date_range_tr = _format_turkish_range(since, until)
     pdf_filename = f"{date_range_tr} Weekly Literature Report.pdf"
 
+    # Web/email HTML: the interactive grid layout
     html = render(
         categories=render_categories,
         since=since,
@@ -230,15 +232,34 @@ def run(
     )
     _maybe_write_html(html, save_html or dry_run)
 
+    # PDF HTML: print-native journal layout (different template)
+    pdf_html = render(
+        categories=render_categories,
+        since=since,
+        until=until,
+        sources_used=list(fetchers.keys()),
+        pdf_filename=pdf_filename,
+        template_name="report_pdf.html.j2",
+    )
+
     # Generate PDF (best-effort — falls back to HTML body if WeasyPrint fails)
     pdf_path: Optional[Path] = None
     out_dir = Path("out")
     pdf_target = out_dir / pdf_filename
     try:
-        pdf_path = html_to_pdf(html, pdf_target)
+        pdf_path = html_to_pdf(pdf_html, pdf_target)
     except Exception as exc:
         logger.warning("PDF generation raised, will send HTML only: %s", exc)
         pdf_path = None
+
+    # Best-effort upload to Google Drive — failures don't block the email.
+    drive_link: Optional[str] = None
+    if pdf_path is not None:
+        try:
+            drive_link = upload_to_drive(pdf_path)
+        except Exception as exc:
+            logger.warning("Drive upload raised: %s", exc)
+            drive_link = None
 
     total = sum(len(c.items) for c in render_categories)
     subject = (
@@ -253,6 +274,7 @@ def run(
         sources_used=list(fetchers.keys()),
         subject=subject,
         pdf_filename=pdf_filename,
+        drive_link=drive_link,
     )
 
     if not dry_run:

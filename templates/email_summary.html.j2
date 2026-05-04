@@ -207,6 +207,9 @@
   <div class="pdf-note">
     <strong>📎 Full report attached</strong> as <span class="filename">{{ pdf_filename }}</span>.<br>
     Open the PDF for article titles, abstracts, methods, and key findings grouped by domain.
+    {% if drive_link %}<br><br>
+    <strong>📁 Archive:</strong> <a href="{{ drive_link }}" style="color:#0f4c5c;">View in Google Drive ↗</a>
+    {% endif %}
   </div>
 
   {% if categories and categories[0].query_tokens %}

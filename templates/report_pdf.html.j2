@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ subject }}</title>
+<style>
+  @page {
+    size: A4;
+    margin: 18mm 16mm 20mm 16mm;
+    @bottom-left {
+      content: "Weekly Literature Report";
+      font-family: Georgia, serif;
+      font-size: 8pt;
+      color: #9a9890;
+      font-style: italic;
+    }
+    @bottom-right {
+      content: "page " counter(page) " / " counter(pages);
+      font-family: Georgia, serif;
+      font-size: 8pt;
+      color: #9a9890;
+      font-variant-numeric: tabular-nums;
+    }
+  }
+  @page :first {
+    margin: 16mm 16mm 20mm 16mm;
+    @bottom-left { content: ""; }
+    @bottom-right { content: ""; }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    background: #ffffff;
+    color: #1a1d1f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 10.5pt;
+    line-height: 1.5;
+  }
+
+  /* ============ COVER ============ */
+  .cover {
+    page-break-after: always;
+    padding-top: 30mm;
+    padding-bottom: 20mm;
+  }
+  .cover-eyebrow {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #0f4c5c;
+    margin-bottom: 16mm;
+    padding-bottom: 4mm;
+    border-bottom: 1px solid #d0ccc2;
+  }
+  .cover-title {
+    font-family: Georgia, serif;
+    font-size: 36pt;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: #0f1d24;
+    margin-bottom: 8mm;
+  }
+  .cover-title em {
+    font-style: italic;
+    color: #0f4c5c;
+  }
+  .cover-subtitle {
+    font-family: -apple-system, sans-serif;
+    font-size: 11pt;
+    color: #5a5a55;
+    margin-bottom: 18mm;
+    line-height: 1.5;
+  }
+
+  .cover-stats {
+    display: table;
+    width: 100%;
+    border-spacing: 0;
+    border-top: 1px solid #d0ccc2;
+    border-bottom: 1px solid #d0ccc2;
+    margin-bottom: 14mm;
+  }
+  .cover-stats > div {
+    display: table-cell;
+    text-align: center;
+    padding: 7mm 4mm;
+    border-right: 1px solid #f0eee8;
+    width: 25%;
+  }
+  .cover-stats > div:last-child { border-right: 0; }
+  .cover-stats strong {
+    font-family: Georgia, serif;
+    font-size: 26pt;
+    font-weight: 400;
+    color: #0f1d24;
+    display: block;
+    line-height: 1;
+    margin-bottom: 3mm;
+  }
+  .cover-stats span {
+    font-family: -apple-system, sans-serif;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #9a9890;
+    font-weight: 600;
+  }
+
+  .cover-section-label {
+    font-family: -apple-system, sans-serif;
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #9a9890;
+    margin-bottom: 4mm;
+  }
+
+  .cover-query {
+    font-family: -apple-system, sans-serif;
+    font-size: 10pt;
+    color: #2a2a25;
+    line-height: 1.9;
+    margin-bottom: 12mm;
+  }
+  .cover-query .qtoken {
+    display: inline-block;
+    padding: 1.5pt 6pt;
+    border-radius: 2pt;
+    background: #d8e4e7;
+    color: #0f4c5c;
+    font-weight: 600;
+    margin: 0 1pt;
+  }
+  .cover-query .qtoken.primary {
+    background: #0f4c5c;
+    color: #ffffff;
+  }
+  .cover-query .qop {
+    color: #9a9890;
+    font-weight: 700;
+    font-size: 8.5pt;
+    letter-spacing: 0.1em;
+    margin: 0 2pt;
+  }
+
+  .cover-toc {
+    font-family: -apple-system, sans-serif;
+  }
+  .cover-toc-row {
+    display: table;
+    width: 100%;
+    margin-bottom: 4mm;
+    padding: 3mm 0;
+    border-bottom: 1px solid #f0eee8;
+  }
+  .cover-toc-row .icon {
+    display: table-cell;
+    width: 14mm;
+    font-size: 14pt;
+    vertical-align: middle;
+  }
+  .cover-toc-row .name {
+    display: table-cell;
+    font-size: 11pt;
+    color: #1a1d1f;
+    vertical-align: middle;
+  }
+  .cover-toc-row .count {
+    display: table-cell;
+    text-align: right;
+    font-family: Georgia, serif;
+    font-size: 14pt;
+    color: var(--dc, #1a1d1f);
+    vertical-align: middle;
+    width: 14mm;
+  }
+  .cover-toc-row.molecular      { --dc: #be185d; }
+  .cover-toc-row.ecology        { --dc: #15803d; }
+  .cover-toc-row.hydrology      { --dc: #0369a1; }
+  .cover-toc-row.remote_sensing { --dc: #7c3aed; }
+  .cover-toc-row.synthesis      { --dc: #0d9488; }
+  .cover-toc-row.policy         { --dc: #b45309; }
+
+  /* ============ DOMAIN INTRO PAGE ============ */
+  .domain-intro {
+    page-break-before: always;
+    padding-top: 12mm;
+    border-top: 4pt solid var(--dc);
+    margin-bottom: 8mm;
+  }
+  .domain-intro .icon-line {
+    font-size: 22pt;
+    margin-bottom: 4mm;
+  }
+  .domain-intro h2 {
+    font-family: Georgia, serif;
+    font-size: 22pt;
+    font-weight: 400;
+    color: #0f1d24;
+    margin-bottom: 2mm;
+    letter-spacing: -0.01em;
+  }
+  .domain-intro .meta {
+    font-family: -apple-system, sans-serif;
+    font-size: 9pt;
+    color: #9a9890;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 600;
+  }
+  .domain-intro .meta strong { color: var(--dc); }
+
+  /* Domain accent variable for accent borders on articles */
+  .molecular      { --dc: #be185d; }
+  .ecology        { --dc: #15803d; }
+  .hydrology      { --dc: #0369a1; }
+  .remote_sensing { --dc: #7c3aed; }
+  .synthesis      { --dc: #0d9488; }
+  .policy         { --dc: #b45309; }
+
+  /* ============ ARTICLE ============ */
+  .article {
+    page-break-inside: avoid;
+    margin-bottom: 8mm;
+    padding: 0 0 6mm 0;
+    border-bottom: 1px solid #e8e6e0;
+  }
+  .article:last-child { border-bottom: 0; }
+
+  .article-pills {
+    font-family: -apple-system, sans-serif;
+    margin-bottom: 2mm;
+    font-size: 8.5pt;
+  }
+  .pill-type {
+    display: inline-block;
+    padding: 1.5pt 5pt;
+    border-radius: 2pt;
+    background: #f1eee8;
+    color: #5a5a55;
+    font-weight: 600;
+    font-size: 7.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-right: 4pt;
+  }
+  .pill-meta {
+    color: #9a9890;
+    font-size: 8.5pt;
+  }
+  .pill-meta::before {
+    content: " · ";
+    color: #c0bcb2;
+    margin: 0 2pt;
+  }
+  .pill-meta:first-child::before { display: none; }
+
+  .article-title {
+    font-family: Georgia, serif;
+    font-size: 13pt;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #0f1d24;
+    margin: 1.5mm 0 1.5mm 0;
+    letter-spacing: -0.005em;
+  }
+  .article.featured .article-title {
+    font-size: 16pt;
+    line-height: 1.18;
+    margin-top: 2mm;
+  }
+  .article-authors {
+    font-family: -apple-system, sans-serif;
+    font-size: 9pt;
+    color: #6a6a65;
+    font-style: italic;
+    margin-bottom: 3mm;
+  }
+
+  .sections-grid {
+    display: table;
+    width: 100%;
+    border-spacing: 0;
+    margin-top: 2mm;
+  }
+  .section-cell {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    padding-right: 5mm;
+  }
+  .section-cell:last-child { padding-right: 0; padding-left: 5mm; }
+
+  .section-block {
+    margin-bottom: 3mm;
+  }
+  .section-label {
+    font-family: -apple-system, sans-serif;
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dc);
+    margin-bottom: 1.5mm;
+    padding-left: 6pt;
+    border-left: 2pt solid var(--dc);
+  }
+  .section-block ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, sans-serif;
+    font-size: 9.5pt;
+    color: #1a1d1f;
+    line-height: 1.45;
+  }
+  .section-block li {
+    position: relative;
+    padding-left: 8pt;
+    margin-bottom: 1mm;
+  }
+  .section-block li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--dc);
+    font-weight: 700;
+  }
+  .placeholder {
+    font-family: -apple-system, sans-serif;
+    font-size: 9pt;
+    color: #b5b2ab;
+    font-style: italic;
+  }
+
+  .doi-line {
+    margin-top: 3mm;
+    padding-top: 2mm;
+    font-family: ui-monospace, "Menlo", monospace;
+    font-size: 8pt;
+    color: #6a6a65;
+  }
+  .doi-line a { color: #0f4c5c; text-decoration: none; }
+  .doi-line a::after { content: " ↗"; }
+
+  /* Page break helpers */
+  .keep-together { page-break-inside: avoid; }
+</style>
+</head>
+<body>
+
+{# ============ COVER PAGE ============ #}
+<section class="cover">
+  <p class="cover-eyebrow">Weekly Literature Report · Week {{ iso_week }}</p>
+
+  <h1 class="cover-title">
+    {{ total_count }} new article{% if total_count != 1 %}s{% endif %}<br>
+    in <em>your watchlist</em>
+  </h1>
+  <p class="cover-subtitle">{{ since_full }} — {{ until_full }}{% if generated_at %} · Generated {{ generated_at }}{% endif %}</p>
+
+  <div class="cover-stats">
+    <div><strong>{{ total_count }}</strong><span>Articles</span></div>
+    <div><strong>{{ domain_count }}</strong><span>Domain{% if domain_count != 1 %}s{% endif %}</span></div>
+    <div><strong>{{ sources_count }}</strong><span>Sources</span></div>
+    <div><strong>{{ category_count }}</strong><span>Categor{% if category_count == 1 %}y{% else %}ies{% endif %}</span></div>
+  </div>
+
+  {% if categories and categories[0].query_tokens %}
+  <p class="cover-section-label">Search query</p>
+  <div class="cover-query">
+    {% for tok in categories[0].query_tokens %}
+      {% if tok.kind == "term" %}<span class="qtoken{% if tok.primary %} primary{% endif %}">{{ tok.text }}</span>{% elif tok.kind == "op" %}<span class="qop">{{ tok.text }}</span>{% elif tok.kind == "lparen" %}({% elif tok.kind == "rparen" %}){% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if active_domains %}
+  <p class="cover-section-label">Contents</p>
+  <div class="cover-toc">
+    {% for d in active_domains %}
+    <div class="cover-toc-row {{ d.id }}">
+      <span class="icon">{{ d.icon }}</span>
+      <span class="name">{{ d.name }}</span>
+      <span class="count">{{ d.count }}</span>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</section>
+
+{# ============ DOMAIN PAGES ============ #}
+{% for cat in categories %}
+{% for g in cat.groups %}
+<section class="{{ g.id }}">
+  <div class="domain-intro">
+    <div class="icon-line">{{ g.icon }}</div>
+    <h2>{{ g.name }}</h2>
+    <p class="meta"><strong>{{ g.count }} article{% if g.count != 1 %}s{% endif %}</strong> &nbsp;·&nbsp; in {{ cat.name }}</p>
+  </div>
+
+  {% for entry in g.articles %}
+  {% set art = entry.article %}
+  {% set sm = entry.summary %}
+  <article class="article {{ g.id }}{% if loop.first %} featured{% endif %}">
+    <div class="article-pills">
+      <span class="pill-type">{{ (sm.article_type or 'other') | replace('_', ' ') }}</span>
+      {% if art.journal %}<span class="pill-meta">{{ art.journal }}</span>{% endif %}
+      {% if art.year %}<span class="pill-meta">{{ art.year }}</span>{% endif %}
+      <span class="pill-meta">{{ art.source }}</span>
+    </div>
+
+    <h3 class="article-title">{{ art.title }}</h3>
+    {% if art.authors_display %}
+    <p class="article-authors">{{ art.authors_display }}</p>
+    {% endif %}
+
+    <div class="sections-grid">
+      <div class="section-cell">
+        <div class="section-block">
+          <p class="section-label">Aim</p>
+          {% if sm.aim %}
+          <ul>{% for b in sm.aim %}<li>{{ b }}</li>{% endfor %}</ul>
+          {% else %}<p class="placeholder">Not stated.</p>{% endif %}
+        </div>
+        <div class="section-block">
+          <p class="section-label">Methods</p>
+          {% if sm.methods %}
+          <ul>{% for b in sm.methods %}<li>{{ b }}</li>{% endfor %}</ul>
+          {% else %}<p class="placeholder">Not stated.</p>{% endif %}
+        </div>
+      </div>
+      <div class="section-cell">
+        <div class="section-block">
+          <p class="section-label">Gap</p>
+          {% if sm.gap %}
+          <ul>{% for b in sm.gap %}<li>{{ b }}</li>{% endfor %}</ul>
+          {% else %}<p class="placeholder">Not stated.</p>{% endif %}
+        </div>
+        <div class="section-block">
+          <p class="section-label">Key findings</p>
+          {% if sm.conclusions %}
+          <ul>{% for b in sm.conclusions %}<li>{{ b }}</li>{% endfor %}</ul>
+          {% else %}<p class="placeholder">Not stated.</p>{% endif %}
+        </div>
+      </div>
+    </div>
+
+    <p class="doi-line">
+      {% if art.doi %}
+        <a href="https://doi.org/{{ art.doi }}">doi.org/{{ art.doi }}</a>
+      {% elif art.url %}
+        <a href="{{ art.url }}">{{ art.url }}</a>
+      {% else %}
+        No DOI available.
+      {% endif %}
+    </p>
+  </article>
+  {% endfor %}
+</section>
+{% endfor %}
+{% endfor %}
+
+</body>
+</html>
