@@ -58,3 +58,8 @@ Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/ex
 - Rule 8 replaced: precedence Certain → Low → Likely → Potential; driver anchors; new fields analogue_count, tr_funded_pilot, barrier, class_branch; dated horizon adjustment. Decision: private/consumer spend counts as "funding attached" via d6 ≥ 4 branch.
 - IDs are stable (no renumbering); new rows A44+, B23+.
 - inventory.csv now 73 rows × 25 cols (A48, B25); sources.csv S001–S059. Build log: drafts/inventory_build_log.md.
+
+## Step 1c notes (calibration hand-back, 2026-10-03)
+- 5 items scored: A01 Pot/Pot (near-Likely), A24 Pot/Pot, A39 Cert/Cert, B01 Pot/Pot (near-Likely, d6=1 doubtful), B18 Pot/Pot. 48 new sources (calib-001..048).
+- Decisions: enabling regulation = d1 3 (A24 stays Potential); scores capped at 5; outbound HTTP (curl/WebFetch) is BLOCKED by environment network policy → URL verification must rely on WebSearch results; logged as a method limitation. User to be told (can widen network access in environment settings).
+- Concern for Opus check: 4/5 landed in Potential — is the rule too Potential-heavy, or is the sample biased?

@@ -21,6 +21,8 @@ Hard rules
    d5 5 = existing TR profession absorbs it with little retraining; 3 = skills gap but training exists; 1 = no relevant workforce.
    d6 5 = scaled national deployment; 4 = present beyond pilot in several TR orgs; 3 = at least one funded TR pilot or active university/NGO/municipal group; 2 = isolated mentions; 1 = none found.
 
+   Clarifications (planner, 2026-10-03): enabling/permissive regulation (e.g. a type-approval rule that allows but does not require a technology) is d1 = 3, not 4; d1 = 4/5 requires an OBLIGATION or a binding standard actors must meet to operate. All scores are capped at 5 after horizon adjustments. Since outbound HTTP fetch is blocked in this environment, a URL counts as 'seen' when it appears in a WebSearch result; record that in notes as 'URL via search result'.
+
    (1) CERTAIN   if d1 >= 4 OR d6 >= 4 OR (d6 >= 3 AND tr_funded_pilot = yes AND (d2 >= 3 OR d3 >= 4)).
    (2) LOW/DELAYED if barrier != none (sourced) OR min(d4,d5) <= 1 OR mean(d4,d5) < 2.0.
    (3) LIKELY    if (d2 >= 4 OR d3 >= 4) AND analogue_count >= 2 AND mean(d4,d5) >= 2.5.
