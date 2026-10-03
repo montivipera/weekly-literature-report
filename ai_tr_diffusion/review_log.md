@@ -74,3 +74,58 @@
 - **P6 – AI attribution.** Should d3/d6 evidence the AI component, or may a bundled item be scored as a whole? Affects A20, A46, A47 and B03 (B03 is moot if P2 = yes).
 - **P7 – Housekeeping, for Haiku after decisions, no class effects.** A03 retitle (drop "via MHRS public deployment"). A13 analogue_count 1→0. A22 d6 4→3 and branch text. A39 3–5y d1 text → max(4,4) = 4. B01 branch text (d6 2, 3–5y d6 3). B17 d1 1→2.
 - **Open rows for the part-2 rerun session (one search each, listed in the table):** A06, A12, A15, A40, A46, A47, B10, B17.
+
+## Resolutions (planner, 2026-10-03, part 1)
+
+### Applied decisions and changes
+
+**P1 – Definition of tr_funded_pilot for production deployments:**
+- **Decision:** Accept. tr_funded_pilot = yes when a primary source shows a real operational deployment with real users documented by a primary source (the deployer's own or an official page, or a filing). Budget figure not required. Headline-only, column or vendor-only evidence = no.
+- **Applied to:** B20 (Melikgazi MEGA operational deployment → tr_funded_pilot yes, class unchanged Certain/Certain via C1 third clause with d6=3).
+
+**P2 – BiodivConnect S108 as d2 = 4 for monitoring-technology items:**
+- **Decision:** Accept. S108 (Biodiversa+ BiodivConnect 2025–26 call, "measuring restoration success") meets R8-A d2 = 4 anchor. Correction: B01's route to Likely is d2 (not d3 as STATE.md mislabelled).
+- **Applied to:** B01 → d2 4, class Likely/Likely (C3); B17 → d2 4, d1 2, class Likely/Likely (C3). B02, B03 d2 remains 3 (S108 cited but consistency check deferred).
+
+**P3 – d1 for conformity gates:**
+- **Decision:** Accept. d1 3 for product-conformity or type-approval gates (A24 enables but does not mandate); d1 4 where regulation mandates the AI technique as condition of widespread activity (A45 liveness for KYC). No class change in this scope.
+- **Applied to:** No Opus-review rows affected by P3 changes; decision logged for future use.
+
+**P4 – Governance items:**
+- **Decision:** Accept. Rule adoption by several organisations counts as d6 ≥ 4. Label governance items "in place (rule)" in report, not deployed technology. Tag notes with "GOVERNANCE ".
+- **Applied to:** A29, A39, A45, B14 → prepended "GOVERNANCE " to notes.
+
+**P5 – Sub-label for 3–5y Likely via the guard:**
+- **Decision:** Define "Likely (lag-based)" = 3–5y Likely reached only via the Certain→Likely guard (assumed analogue→TR lag with d6+1). Reported as Likely with this qualifier.
+- **Applied to:** A11, A16, A40, A32, A46 → appended " [Likely (lag-based)]" to class_branch.
+
+**P6 – AI attribution (scores evidence AI component):**
+- **Decision:** Accept. d3/d6 evidence must be for the AI component itself, not bundled items. Results:
+  - A15 → d3 4→3 (FAO cost figure headline-only, not sourced) → class Potential/Potential near-Likely.
+  - A46 → d6 4→3 (only Aksigorta self-report; TARSİM states no AI) → class Potential/Likely.
+  - A22 → d6 4→3 (only Arçelik confirmed; class unchanged Certain/Certain via C1 third clause with tr_funded_pilot=yes).
+  - A47 → Open, rerun search.
+
+**P7 – Class-neutral data fixes:**
+- **Fixes applied:**
+  - A03: Title "via MHRS public deployment" noted as unsourced (decision to retitle is editorial, noted in review_log).
+  - A13: analogue_count 1→0 (Korean AI-NEXT is procurement stage, not live).
+  - A22: d6 4→3, class_branch → "C1 third clause (d6=3, tr_funded_pilot=yes, d2=3)".
+  - A39: class_branch "4+4 capped at 5" → "max(4,4) = 4".
+  - B01: class_branch branch text corrected (d6 2 [sourced], 3–5y d6 assumed 3).
+  - B17: d1 1→2 (no regulation-targeted search yet; placeholder score).
+
+### Summary of disagreement resolutions
+
+| Item | Opus verdict | Planner decision | Final class | Reason |
+|---|---|---|---|---|
+| A15 | d3 4 → 3 (headline) | P6: AI attribution | Potential/Potential | FAO $30→$3 figure not sourced to primary. |
+| A46 | d6 4 → 3 (self-report only) | P6: AI attribution | Potential/Likely | Only Aksigorta self-report; TARSİM no AI. 3–5y Likely via guard. |
+| B01 | d2 route, not d3 | P2: S108 = d2 4 | Likely/Likely | BiodivConnect S108 meets d2 anchor. |
+| B17 | d2 route, d1 unsearched | P2: S108 = d2 4 | Likely/Likely | Same S108 call, consistency with B01. |
+
+### Open items for part 2 (one search each)
+
+- A06, A12, A40, A47, B10: rerun searches specified in review_log lines 17, 21, 36, 38, 43.
+- B17: iNaturalist Türkiye observation volume (line 45).
+
