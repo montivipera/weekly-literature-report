@@ -111,3 +111,4 @@ Planner decisions (Fable, 2026-10-03):
 
 ## Step 2 RERUNS (2026-10-03, user: "web araması da yap")
 - WebSearch cap found RESET on the new user turn (test query succeeded). Launched 5 rerun agents with strict per-agent budgets (total ≈160): r1 ecology unscored (B04 B05 B06 B07 B09 B23 B24, ≤52 searches), r2 six open targeted searches (A06 A12 A40 A47 B10 B17, ≤12), r3 degraded Tier B (B21 B22 B26 B27 B11 B15 B12 B13 B25, ≤38), r4a degraded Tier A (A04 A08 A09 A10 A49 A50 A18 A19 A17 A23 A25, ≤34), r4b degraded Tier A (A26 A27 A28 A41 A42 A44 A48 A30 A35 A32, ≤31). Outputs drafts/scores_r*.csv + sources_r*.csv → Haiku merge → step 2h → step 3 part 2.
+- r2 done (12 searches): A40 → Likely/Likely (TR sectoral LLM grant call, d2 4); A12 Cert/Cert confirmed (KURGAN in production 2025-10-01; funded=yes under P1); A06, A47, B10, B17 unchanged — Opus part 2 to rule: A06 d6 3/4, A47 AI component, B17 d6 3/4.
