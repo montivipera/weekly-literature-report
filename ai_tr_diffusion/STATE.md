@@ -4,7 +4,7 @@ Working dir: `ai_tr_diffusion/`. Brief: `BRIEF.md` (Sections 1–9 define everyt
 Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/extract/draft/HTML), Opus (review, pre-decision advice).
 
 ## Status
-- Current step: 2 merge — Haiku merging 9 batches + calib into master; next: user decision on WebSearch cap → reruns (new session likely) → step 2h → step 3 Opus review.
+- Current step: 2 PAUSED — awaiting user decision on WebSearch cap (recommend new session with CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION=1500) to run the RERUN LIST; then step 2h, then step 3 Opus review. Resume instructions: read this file, AGENT_RULES.md, SCORING_TASK.md, drafts/calibration_exemplars.md; rerun agents write drafts/scores_r1..rN.csv; Haiku merges as before (see drafts/merge_log.md for mapping conventions).
 - Last updated: 2026-10-03
 
 ## Step plan (model per step)
@@ -93,3 +93,5 @@ A04 A08 A09 A10 A49 A50(Omnibus Art.4) | A18 A19 A17(EPDK) | A23 A25 A26 A27 A28
 = 6 unscored Tier B items + ~28 degraded items.
 ## Opus review flags collected (step 3 input)
 A36 d6=4?, A51 d1 3/4, A02 analogue URLs, A50 Omnibus, A29 Omnibus Art.50, B20 d6 3 vs 4, B17 3-5y, B14 governance=present?, A12 d6 press-only, A40 d6/d2, A47 DSİ AI label, A15 FAO cost figure, A06 d6 press-level, B03 d3=4, A21 mean 2.0 borderline, B25 near-Low.
+- MERGE DONE: inventory.csv 73 rows (67 scored), sources.csv S001–S500. Class dist 1-2y: C16/L4/P47 (6 blank); 3-5y: C16/L9/P42. Haiku's NEEDS_RERUN flag hit 66 rows (over-inclusive regex) — the consolidated RERUN LIST above is authoritative.
+- B01 still Potential/Potential in master: scores_calib_reviewed.csv predates R8-A adoption (Opus said B01 → Likely under R8-A if d3=4 is sourced). → step 3 Opus review item.
