@@ -95,3 +95,14 @@ A04 A08 A09 A10 A49 A50(Omnibus Art.4) | A18 A19 A17(EPDK) | A23 A25 A26 A27 A28
 A36 d6=4?, A51 d1 3/4, A02 analogue URLs, A50 Omnibus, A29 Omnibus Art.50, B20 d6 3 vs 4, B17 3-5y, B14 governance=present?, A12 d6 press-only, A40 d6/d2, A47 DSİ AI label, A15 FAO cost figure, A06 d6 press-level, B03 d3=4, A21 mean 2.0 borderline, B25 near-Low.
 - MERGE DONE: inventory.csv 73 rows (67 scored), sources.csv S001–S500. Class dist 1-2y: C16/L4/P47 (6 blank); 3-5y: C16/L9/P42. Haiku's NEEDS_RERUN flag hit 66 rows (over-inclusive regex) — the consolidated RERUN LIST above is authoritative.
 - B01 still Potential/Potential in master: scores_calib_reviewed.csv predates R8-A adoption (Opus said B01 → Likely under R8-A if d3=4 is sourced). → step 3 Opus review item.
+
+## Step 3 (part 1 of 2) — Opus review of 36 robust rows → review_log.md. 27 agree / 4 disagree / 5 open.
+Planner decisions (Fable, 2026-10-03):
+- P1 ACCEPT: tr_funded_pilot = yes when a primary source shows a real operational deployment with users; no budget figure required. (B20 stays Certain via third clause with d6=3.)
+- P2 ACCEPT: Biodiversa+ BiodivConnect call (S108) = d2 4 for biodiversity-monitoring items (R8-A anchor met). B01 → Likely/Likely, B17 → Likely/Likely. Correction: B01's Likely route is d2 (not d3) as earlier noted.
+- P3 DECIDE: conformity requirement that is a precondition to market access (A02 MDR-harmonised devices) = d1 4; permissive type approval that only enables (A24) = d1 3. Both current scores stand; rule text clarified.
+- P4 ACCEPT: governance items (A29, A39, A45, B14) get tag GOVERNANCE in notes and are labelled "in place (rule), not a deployed technology" in the report.
+- P5 DEFINE new sub-label: "Likely (lag-based)" = 3–5y Likely reached only via the Certain→Likely guard (assumed analogue→TR lag). Reported as Likely with this qualifier; defined explicitly in report §2 (brief §5 allows defined additions). Applies A11, A16, A40, B17(if via guard), A32.
+- P6 ACCEPT: scores must evidence the AI component itself. A46 → Potential/Likely(near-Likely) with d6 3; A15 → Potential/Potential near-Likely (FAO figure headline-only → d3 3); A22 d6 4→3 (class unchanged); A47 → open, rerun search.
+- P7: class-neutral data fixes → Haiku.
+- Open (one search each, added to RERUN LIST): A06, A12, A40, A47, B10, B17 (iNaturalist TR volume).
