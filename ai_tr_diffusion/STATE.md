@@ -4,7 +4,7 @@ Working dir: `ai_tr_diffusion/`. Brief: `BRIEF.md` (Sections 1–9 define everyt
 Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/extract/draft/HTML), Opus (review, pre-decision advice).
 
 ## Status
-- Current step: 3r — Haiku applying part-2 resolutions to inventory.csv + review_log.md; next step 4 (Opus memo → Sonnet draft → Fable synthesis → Opus full-report review).
+- Current step: 4 — Opus memo (4a) ∥ Sonnet report draft (4b) running; then Fable writes §1 and §6; then Opus full-report review (4c).
 - Last updated: 2026-10-03
 
 ## Step plan (model per step)
@@ -135,3 +135,5 @@ Planner decisions (Fable, 2026-10-03):
 - Q6 (A06): scope confirmed (transaction + alternative-data scoring) → Certain stands.
 - A25 → Potential/Potential (offline research, not a live pilot). Expected dist if all applied: 1-2y ≈ C18/L8/P47; 3-5y ≈ C18/L16/P39.
 - USER APPROVED (2026-10-03): step 7 = 5-minute Turkish audio summary via vidIQ voiceover (≈6,000 chars, single narrator, ~84 credits of 91). Deliver MP3 URL + file in repo (ai_tr_diffusion/podcast_tr.mp3 if downloadable; HTTP blocked → at least the hosted URL) and podcast_tr.md script. User will listen on phone. Run after Section 9 gates pass.
+- 3r part 2 APPLIED. FINAL inventory: 1-2y C17/L8/P48/Low0; 3-5y C17/L16/P40/Low0. sources.csv S001–S674. Note for report §2: no item reached Low — state why (readiness floors rarely ≤1 for TR; barrier field never sourced) as a limitation.
+- Step 4b: Sonnet drafting report_en.md §2–§5, §7 (drafts/report_en_draft.md). Step 4a Opus memo running (drafts/synthesis_memo.md).

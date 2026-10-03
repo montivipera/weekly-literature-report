@@ -221,3 +221,32 @@
 - **Q6 – A06 scope.** Confirm that the definition ("transaction and non-traditional data") includes ML on bank transaction data, which keeps Certain. Under a strict alternative-data reading, d6 3 → Potential/Potential.
 - **Haiku data fixes (class-neutral):** A40 and B17 stale text, plus the A40 duplicate S231; A10 and A17 remove "lag-based"; A09 GOVERNANCE tag and drop the unsourced Ankara/AKU claims; A35 d2 2→3; B21 d6 3→2; B24 analogue_count 2→0 and drop near-Likely; B04/B06/B09/B23 drop S096 as the d2-4 basis; B07 TSRS thresholds and deciding condition; A25 funded no with the 2022 offline-study note. New sources, all "URL via search result": TALIS 2024 country notes TR, KR and BR; Getir Applied Intelligence 2022 (avesis.itu.edu.tr); BiodivConnect themes (fondationbiodiversite.fr); Bağcılar İSTKA (dha.com.tr); Colendi (paradergi.com.tr); TSRS thresholds (cms.law); DNR 2026 global 10% (reutersinstitute.politics.ox.ac.uk podcast page).
 - **Step 2h verifications owed:** A10 TALIS TR 24%; A27 DNR TR figure in S639; B27 S496 (Seoul) author affiliation; A12, A50 and A29 Omnibus dates against OJ text (carried over from part 1).
+
+## Resolutions (planner, 2026-10-03, part 2)
+
+### Planner decisions applied (Q1–Q6)
+
+- **Q1 – P6 evidence threshold (A47):** AI-component evidence needs a primary source that names an AI function. A bare "AI-supported" label over a described non-AI system does not count. Applied: A47 → d6 2, funded no → Potential/Potential.
+- **Q2 – B09 reframing:** Türkiye has no NRL duty. Reword development to "Satellite/ML indicators for national biodiversity and restoration reporting (CBD/GBF framework)"; d1 2, d2 3 → Potential (near-Likely)/Potential.
+- **Q3 – Survey shares as d6 = 4:** A primary national survey showing ≥10% use counts as d6 4, with the figure confirmed on the publisher's page. Applied: A10 → Certain/Certain on OECD TALIS 2024 TR (24% of teachers), analogues replaced by TALIS KR/BR figures. A27 stays Certain only if S639 contains TR figure; S639 not verified → d6 2 → Potential/Potential.
+- **Q4 – A44 d1 = 3:** A binding generic law that does not mandate the AI technique scores 3. Law 7545 is binding but imposes no AI-specific duty. Confirmed.
+- **Q5 – S108 scope (monitoring-technique items):** Keep the "monitoring-core" reading: B01, B17, B04, B23 keep d2 4; B06 qualifies; B09 does not.
+- **Q6 – A06 scope:** Scope confirmed (transaction + alternative-data scoring) → Certain stands.
+
+### Changed rows (old class → new class)
+
+| id | 1-2y | 3-5y | change |
+|---|---|---|---|
+| A47 | Certain → Potential | Certain → Potential | P6: bare label without function; d6 3→2, funded yes→no |
+| A25 | Certain → Potential | Certain → Potential | Getir offline R&D, not live pilot; funded yes→no |
+| B09 | Likely → Potential | Likely → Potential | Reframed: no NRL duty in TR; d1 1→2, d2 4→3 |
+| A10 | Likely → Certain | Likely → Certain | TALIS 2024 TR 24% primary survey; d6 3→4, analogues to TALIS KR/BR |
+| A27 | Certain → Potential | Certain → Potential | S639 unverified for TR; 14% unsourced; d6 4→2 |
+| A44 | Potential → Potential | Likely → Likely | d1=3 confirmed (no class change in this pass) |
+| A09 | Certain → Certain | Certain → Certain | Added GOVERNANCE tag; d6 4 limited to sourced bodies (BAU, Gazi, YÖK) |
+
+### Summary
+- Expected distribution if all Q1–Q6 applied: 1–2y ≈ C18/L8/P47; 3–5y ≈ C18/L16/P39.
+- S378 marked duplicate_of:S500.
+- Sources S672–S674 added (TALIS 2024 country notes TR, KR, BR).
+- A27 branch taken: Q3 conditional – S639 not verified in source → Potential/Potential.
