@@ -4,7 +4,7 @@ Working dir: `ai_tr_diffusion/`. Brief: `BRIEF.md` (Sections 1–9 define everyt
 Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/extract/draft/HTML), Opus (review, pre-decision advice).
 
 ## Status
-- Current step: 2 — nine Sonnet scoring batches running in parallel (drafts/scores_b1..b9.csv, drafts/sources_b1..b9.csv). After: Haiku merges into inventory.csv/sources.csv (renumber provisional ids, fix calib-008/027/028/029), then step 2h URL check via search, then step 3 Opus review.
+- Current step: 2 merge — Haiku merging 9 batches + calib into master; next: user decision on WebSearch cap → reruns (new session likely) → step 2h → step 3 Opus review.
 - Last updated: 2026-10-03
 
 ## Step plan (model per step)
@@ -85,3 +85,11 @@ b1 health+education: A02 A03 A04 A49 A08 A09 A10 A50 | b2 finance+retail+law: A0
 - b8 done (DEGRADED): B14 Cert/Cert (governance item; d6=4 on YÖK/TÜBİTAK guides — Opus to rule whether policy existence = "present"); B10 B11 B12 B13 B15 B25 Pot/Pot (analogue counts = "none sourced"). RERUN LIST (analogue + TR): B11 B15 (likeliest flips), B12 B13 B25.
 - b3 done (DEGRADED tail): A12 Cert/Cert (d6=4 on KURGAN/GİB press; Opus), A11 Pot(near-Likely)/Likely, A40 Pot(near-Likely)/Likely (BİLGE announced, HAVELSAN MAIN vendor-only; Opus to rule d6/d2), A13 Pot/Pot; A41 A42 A44 A48 Pot/Pot LOW. RERUN LIST: A41 A42 A44 A48. Dedupe calib-008 vs b3 row at merge.
 - Only b2 (finance+retail+law) outstanding.
+- b2 done (DEGRADED tail): A06 A45 A46 A34 Cert/Cert (A06 d6=4 press-level; Opus), A05 Pot/Pot (scope question: agentic vs generic fraud detection → planner: keep agentic scope as defined), A07 Pot(near-Likely)/Pot, A32 Pot/Likely; A35 A30 Pot/Pot LOW. RERUN LIST: A30 A35 A32.
+- ALL 9 BATCHES IN. Haiku merging → inventory.csv, sources.csv, drafts/merge_log.md.
+
+## Consolidated RERUN LIST (TR baseline + analogue searches only; needs raised WebSearch cap)
+A04 A08 A09 A10 A49 A50(Omnibus Art.4) | A18 A19 A17(EPDK) | A23 A25 A26 A27 A28 | A41 A42 A44 A48 | A30 A35 A32 | B04(provisional) B05 B06 B07 B09 B23 B24 (not scored at all) | B21 B22 B26 B27 | B11 B15 B12 B13 B25
+= 6 unscored Tier B items + ~28 degraded items.
+## Opus review flags collected (step 3 input)
+A36 d6=4?, A51 d1 3/4, A02 analogue URLs, A50 Omnibus, A29 Omnibus Art.50, B20 d6 3 vs 4, B17 3-5y, B14 governance=present?, A12 d6 press-only, A40 d6/d2, A47 DSİ AI label, A15 FAO cost figure, A06 d6 press-level, B03 d3=4, A21 mean 2.0 borderline, B25 near-Low.
