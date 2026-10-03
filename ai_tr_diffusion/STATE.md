@@ -37,3 +37,4 @@ Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/ex
 
 ## Decisions log
 - 2026-10-03: Driver scores on 1–5 scale; classification rule mapping to be fixed before step 2 (see inventory.csv header comment).
+- 2026-10-03 (user): Do NOT read papers in full this session; abstracts/summaries suffice. Not an academic study, but what academia recommends matters and should be checked against global practice. Peer-reviewed sources used for direction and corroboration, not exhaustive reading.
