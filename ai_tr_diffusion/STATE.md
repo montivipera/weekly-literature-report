@@ -83,3 +83,5 @@ b1 health+education: A02 A03 A04 A49 A08 A09 A10 A50 | b2 finance+retail+law: A0
 - b5 done but DEGRADED: A20 Cert/Cert, A22 Cert/Cert, A29 Cert/Cert (Omnibus Art.50 grace-period check), A21 Pot/Pot; A23 A25 A26 A27 A28 Pot/Pot LOW (no TR search). RERUN LIST: A23 A25 A26 A27 A28.
 - b4 done (DEGRADED tail): A14 Cert/Cert, A15 Likely/Likely (d3=4 on FAO cost figure, unconfirmed page), A16 Pot(near-Likely)/Likely, A47 Cert/Cert (shaky: DSİ "AI-supported" label; Opus), A17 Likely/Likely; A18 A19 Pot/Pot LOW. RERUN LIST: A18 A19 (+A17 EPDK/TEİAŞ check).
 - b8 done (DEGRADED): B14 Cert/Cert (governance item; d6=4 on YÖK/TÜBİTAK guides — Opus to rule whether policy existence = "present"); B10 B11 B12 B13 B15 B25 Pot/Pot (analogue counts = "none sourced"). RERUN LIST (analogue + TR): B11 B15 (likeliest flips), B12 B13 B25.
+- b3 done (DEGRADED tail): A12 Cert/Cert (d6=4 on KURGAN/GİB press; Opus), A11 Pot(near-Likely)/Likely, A40 Pot(near-Likely)/Likely (BİLGE announced, HAVELSAN MAIN vendor-only; Opus to rule d6/d2), A13 Pot/Pot; A41 A42 A44 A48 Pot/Pot LOW. RERUN LIST: A41 A42 A44 A48. Dedupe calib-008 vs b3 row at merge.
+- Only b2 (finance+retail+law) outstanding.
