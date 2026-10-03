@@ -4,7 +4,7 @@ Working dir: `ai_tr_diffusion/`. Brief: `BRIEF.md` (Sections 1–9 define everyt
 Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/extract/draft/HTML), Opus (review, pre-decision advice).
 
 ## Status
-- Current step: 2h (Haiku source hygiene) ∥ 3 part 2 (Opus review of 43 rerun rows) running.
+- Current step: 3r — Haiku applying part-2 resolutions to inventory.csv + review_log.md; next step 4 (Opus memo → Sonnet draft → Fable synthesis → Opus full-report review).
 - Last updated: 2026-10-03
 
 ## Step plan (model per step)
@@ -125,3 +125,12 @@ Planner decisions (Fable, 2026-10-03):
 - USER REQUEST (2026-10-03): convert the final report to a podcast "with the NotebookLM skill". Checked: no NotebookLM skill or connector exists in this session (SearchSkills/ListSkills/ListConnectors returned none). Plan: after rapor_tr.html is final, (a) upload report_en.md + rapor_tr.html to the user's Google Drive (connector available) so they can add them as NotebookLM sources and generate an Audio Overview themselves; (b) optionally write podcast_tr.md (two-host Turkish script) as a text fallback. Step 7 in plan.
 - Update: user's NotebookLM skill lives in their LOCAL Claude Code (not visible from this cloud session; user is on phone). Step 7 revised: after gates pass, write `podcast_brief.md` (audience, length, tone, three recommendations to stress, source files) so the user can run their local skill on the pulled branch with one command. No Drive upload needed unless asked.
 - Podcast automation check: NotebookLM plugin/connector not in catalog (SearchPlugins/SearchMcpRegistry). Automatic fallback available in-session: vidIQ voiceover (ElevenLabs multilingual voices, 14 credits/1000 chars); balance 91 credits ≈ 6,500 chars ≈ 5–6 min audio. Plan for step 7 if user agrees: Sonnet writes ~6,000-char Turkish podcast script (podcast_tr.md) from rapor_tr.html → generate MP3 via vidiq_voiceover_generate → save URL + file; full-length episode left to user's local NotebookLM skill.
+
+## Step 3 part 2 — Opus review of 43 rerun rows: 38 agree / 4 disagree / 1 open. Planner decisions (Fable, 2026-10-03):
+- Q1 (A47): a bare "AI-supported" label does NOT satisfy P6 → d6 2, Potential/Potential.
+- Q2 (B09): reword as Opus proposes — "Satellite/ML indicators for national biodiversity and restoration reporting (CBD/GBF framework)"; d2 3 → Potential (near-Likely)/Potential.
+- Q3 (survey evidence): a primary institutional survey showing ≥10% of the relevant national population using the development counts as d6 4. A10 → Certain/Certain on OECD TALIS 2024 TR note (24% of teachers), analogues replaced by TALIS KR/BR figures. A27: Certain ONLY if S639 is the Reuters DNR 2026 Türkiye page/PDF itself; otherwise Potential/Potential with the 14% figure labelled unsourced estimate (Haiku checks S639).
+- Q4 (A44): d1 3 confirmed.
+- Q5 (S108 scope): keep the "monitoring is the core activity" reading — B01, B17, B04, B23 keep d2 4; B06 qualifies; B09 does not. Logged as an assumption in report §2 limitations.
+- Q6 (A06): scope confirmed (transaction + alternative-data scoring) → Certain stands.
+- A25 → Potential/Potential (offline research, not a live pilot). Expected dist if all applied: 1-2y ≈ C18/L8/P47; 3-5y ≈ C18/L16/P39.
