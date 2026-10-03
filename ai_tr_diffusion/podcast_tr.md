@@ -45,3 +45,11 @@ Birincisi, sulak alan ve delta restorasyonunun yapay zekâ destekli izlenmesi, g
 Neden bu sıra? Birincide sahadaki avantajınız en büyük, ikinci dış fon istemiyor, üçüncü belediye bütçesine bağlı. Yani en çok emeği birinciye verin, ama zaman olarak ikinciden başlayın.
 
 Son söz: bu ay kanıt sentezi gösterimiyle başlayın, çünkü bunun için ne izne ne de fona ihtiyacınız var.
+
+
+---
+
+## Ses dosyası
+
+- `ai_tr_diffusion/podcast_tr.mp3` — 7 dk 05 sn, 6,8 MB, tek anlatıcı (ElevenLabs/vidIQ, ses: Daniel), 4.991 karakterlik kısa sürümden üretildi, 3 Ekim 2026.
+- Barındırılan geçici bağlantı 12 saat içinde süresi dolar; kalıcı kopya depodaki MP3'tür.

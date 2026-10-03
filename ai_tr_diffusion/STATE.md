@@ -4,7 +4,7 @@ Working dir: `ai_tr_diffusion/`. Brief: `BRIEF.md` (Sections 1–9 define everyt
 Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/extract/draft/HTML), Opus (review, pre-decision advice).
 
 ## Status
-- Current step: 7 — awaiting TTS job; then final commit + handover (user must confirm İzmir BB).
+- Current step: COMPLETE (2026-10-03). Deliverables: report_en.md, rapor_tr.html, inventory.csv, sources.csv, STATE.md, review_log.md, podcast_tr.md, podcast_tr.mp3.
 - Last updated: 2026-10-03
 
 ## Step plan (model per step)
@@ -149,3 +149,5 @@ Planner decisions (Fable, 2026-10-03):
 - Step 7 script (podcast_tr.md) being written by Sonnet; then TTS via vidIQ.
 - Step 5h DONE: rapor_tr.html synced to report v2 (25 edits), rebuilt (~152 KB, 4,768 words ≈ 19–24 min read — top of target). Build files moved to drafts/ (drafts/build_rapor_tr.py, drafts/rapor_tr_body.html). GATES a–d all PASS (drafts/gates_check.md, gates_check.py). Planner ran a real Chromium render: 390px light/dark → scrollWidth 390 = no horizontal scroll; dark background applied.
 - Step 7: podcast_tr.md written (5,826-char full script + 4,991-char spoken version; TTS limit is 5,000/call). vidIQ voiceover job job_ce5fdd8e-d1bf-4625-ba9d-e9a459ef6b41 submitted (voice Daniel, ~70 credits); awaiting URL.
+- Step 7 DONE: podcast_tr.mp3 (424 s, 6.8 MB) downloaded into repo (S3 host was reachable); podcast_tr.md updated. vidIQ credits used ≈70.
+- ALL STEPS COMPLETE. Open item: user to confirm İzmir BB as the municipality (one-line edit in report_en.md §6, rapor_tr_body.html + rebuild, podcast script note).
