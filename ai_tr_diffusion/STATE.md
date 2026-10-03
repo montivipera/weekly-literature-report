@@ -4,7 +4,7 @@ Working dir: `ai_tr_diffusion/`. Brief: `BRIEF.md` (Sections 1–9 define everyt
 Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/extract/draft/HTML), Opus (review, pre-decision advice).
 
 ## Status
-- Current step: 2 reruns running (r1 r2 r3 r4a r4b).
+- Current step: 2 merge-2 (Haiku) → then 2h ∥ 3 part 2.
 - Last updated: 2026-10-03
 
 ## Step plan (model per step)
@@ -117,3 +117,5 @@ Planner decisions (Fable, 2026-10-03):
 - r4a done (30 searches): A08 Cert/Cert (MEBİ/KANKA 719k students), A09 Cert/Cert (univ. policies as d6=4 — Opus), A50 Cert/Cert (Omnibus Reg. 2026/1744 keeps Art.4 binding, softened wording), A25 Cert/Cert (Getir deep-RL dispatch — single summary; Opus), A10 Likely/Likely(lag), A17 Likely/Likely(lag) (TEİAŞ TEKİS operational? Opus), A04 A49 A18 A19 A23 Pot/Pot. Claims with "URL not recorded" must be labelled unsourced estimate or dropped at step 2h.
 - r3 done (34 searches): B27 → Pot(near-Likely)/Likely(lag) (Bağcılar İSTKA digital twin; funded pilot & d2 3/4 → Opus); B21 B22 B26 B11 B15 B12 B13 B25 Pot/Pot. d2 raised to 3 on 7 items (Sivil Düşün, TÜBİTAK 1007 Kamu YZ, EKUAL, TRUBA, Horizon RAISE). Opus flags: B26 ALO 153 funded?, B11 analogues under-detected, B15 d2 unsourced.
 - Only r1 (ecology) outstanding.
+- r1 done (41 searches + 17 Consensus): B06 Likely/Likely, B09 Likely/Likely, B23 Likely/Likely, B04 Pot/Pot, B05 Pot/Pot, B07 Pot/Pot (TSRS mandatory since 2024-01-01 — nature-specific duty? Opus; d6=1 under-detected), B24 Pot(near-Likely)/Pot. Opus part 2 flags: P2 scope (does Biodiversa+ d2=4 extend to MRV/drones/EU reporting? B06 B09 B23 B04 depend on it), B09 reframing (TR has no NRL duty), B07 d1 via TSRS, B24 analogues = announced pilots.
+- ALL RERUNS IN. Haiku merge 2 running → drafts/merge_log_2.md. Next: step 2h (Haiku source hygiene) ∥ step 3 part 2 (Opus review of 43 rerun rows + planner flags).
