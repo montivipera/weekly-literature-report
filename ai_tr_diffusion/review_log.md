@@ -129,3 +129,95 @@
 - A06, A12, A40, A47, B10: rerun searches specified in review_log lines 17, 21, 36, 38, 43.
 - B17: iNaturalist Türkiye observation volume (line 45).
 
+
+## Part 2 — rerun rows (43)
+
+- **Date:** 2026-10-03
+- **Reviewer:** Opus review agent (part 2 of 2). 10 WebSearch calls (standard), all URLs "URL via search result".
+- **Scope:** B04 B05 B06 B07 B09 B23 B24 | A06 A12 A40 A47 B10 B17 | B21 B22 B26 B27 B11 B15 B12 B13 B25 | A04 A08 A09 A10 A49 A50 A18 A19 A17 A23 A25 | A26 A27 A28 A41 A42 A44 A48 A30 A35 A32.
+- **Method:** script re-run of rule 8 (C1→C4, d1 = max step, d6+1 only if analogue_count ≥2, projected-Certain guard, cap 5) on all 43 rows; every 4/5 and 1 checked against R8-A anchors, planner clarifications P1–P6 and cited S-ids. Part-1 Resolutions not re-opened. `inventory.csv` not edited.
+- **Result:** both horizons recompute correctly from the recorded scores in all 43 rows. **38 agree, 4 disagree, 1 open.** Disagreements come from evidence (P1/P6 application, P2 scope, a new primary survey), not arithmetic.
+
+### Searches run (settle-the-doubt only)
+1. BiodivConnect 2025 call themes → Topic 1 "Setting restoration targets and measuring success" (indicators, policy alignment); Topics 2–3 scaling and long-term sustainability; no technology (EO, drones, acoustics, AI) named; EUR ~40M; full proposals 14 Apr 2026 (fondationbiodiversite.fr/en/?p=30400; tubitak.gov.tr/en/announcement/biodiversa-2025-call-restoration-ecosystem-functioning-integrity-and-connectivity-biodivconnect-open-application).
+2–3. Reuters DNR 2026 Türkiye (TR and EN queries) → global weekly AI-chatbot news use 10% confirmed (reutersinstitute.politics.ox.ac.uk/news/our-podcast-digital-news-report-2026-episode-4-how-people-are-using-ai-chatbots-news); TR trust 28% and news avoidance >60% confirmed; **the 14% Türkiye chatbot figure was not reproduced** in either search.
+4. Getir deep RL → Applied Intelligence 52(4) 2022, ITU + Getir; DQN trained and evaluated on 30 days of real data (9,880 orders) and "outperform the rule-based heuristic employed in practice" (avesis.itu.edu.tr/publication/details/9ea4a0d8-4422-4bf3-876e-985462d5e51e/...). Offline R&D, not a deployment.
+5. TSRS nature duty → TSRS = IFRS S1/S2, materiality-based; no nature/biodiversity-specific requirement found; revised thresholds TRY 1bn assets / TRY 2bn revenue / 500 staff for periods from 1 Jan 2025 (cms.law/en/tur/legal-updates/revised-thresholds-under-the-tsrs-framework).
+6. DSİ irrigation → the ministry primary page (S284) and repeats describe soil-moisture sensors, weather stations, plant sensors and a cloud platform giving "real-time irrigation"; ~40% water saving claimed for the automation; **no model, forecasting or scheduling algorithm described.**
+7. A06 alternative data → Colendi AI "ColendiMind" alternative credit-scoring module offered to financial institutions (paradergi.com.tr/teknoloji/2024/09/10/colendi-aidan-finans-ve-bankacilik-hizmetlerinde-yapay-zeka-devrimi; vendor-level); press: "all financial institutions now score with ML" (S160 family).
+8. Bağcılar twin → İSTKA 2025 AI Technologies Financial Support Programme, 90% grant; AI + LIDAR building-stock inventory, building inspection, disaster/risk, "environmental monitoring"; GIZ Connective Cities good practice (dha.com.tr/kurumsal/bagcilar-belediyesinin-projesi-yuzde-90-oraninda-destek-kazandi-2713690). No canopy, heat or flood modelling shown.
+9–10. TALIS 2024 (OECD country notes) → **Türkiye: 24% of lower-secondary teachers used AI in their work; 70% of those to generate lesson plans/activities** (oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/turkiye_754c2c1a-en.html, figure via search summary). Korea 43% (58% lesson plans; .../korea_3d2c0051-en.html). Brazil 56% (77% lesson plans; .../brazil_1e93d3b5-en.html). OECD average 36%.
+
+### Row verdicts (part 2)
+
+| id | current 1-2y / 3-5y | Opus verdict | reason (≤25 words) | action |
+|---|---|---|---|---|
+| B04 | Potential / Potential | agree | d2 4 holds only under the monitoring-core reading of S108; S096 (2022) is outside 24 months. Class fixed by analogue_count 1 either way. | data fix: drop S096 as d2-4 basis |
+| B05 | Potential / Potential | agree | EO foundation models are not named in S108, so d2 3 is correct per planner guidance. d1 1 after 7 searches; one analogue. | none |
+| B06 | Likely / Likely | agree | Best S108 fit: Topic 1 "setting restoration targets and measuring success" is this item's application area. d1 3 enabling (Law 7552, draft offset regulation). | data fix: cite S108 Topic 1; drop S096 basis |
+| B07 | Potential / Potential | agree | Search confirms TSRS is IFRS S1/S2, materiality-based, with no nature-specific duty. d1 3 stands; no Certain route via TSRS today. | data fix: TSRS thresholds; reword deciding condition (duty + AI-tool use) |
+| B09 | Likely / Likely | **disagree → Potential (near-Likely) / Potential** | TR has no NRR duty; S108 names restoration-success indicators, not EU reporting or EO. Planner guidance gives d2 3 → C4. Reframe proposed below. | planner decision Q2 |
+| B23 | Likely / Likely | agree (conditional on Q5) | Drone habitat mapping is monitoring-core, the same reading that gave B01/B17 d2 4; S108 names no technology. Strict reading → Potential near-Likely. | planner decision Q5 |
+| B24 | Potential / Potential | agree (score fix) | BR/ID are announced pilots, not issued credits; rule 6 excludes plans → analogue_count 0, near-Likely flag drops. Class unchanged. | data fix: analogue_count 2→0, drop near-Likely |
+| A06 | Certain / Certain | agree | Definition covers "transaction and non-traditional data"; press says ML scoring is universal in TR lenders; Colendi alternative-data scoring (vendor). d6 4, medium confidence. | data fix: add Colendi source; planner Q6 (scope) |
+| A12 | Certain / Certain | agree | VDK/HMB primary pages show KURGAN risk triage operational since 2025-10-01; definition is algorithmic triage, so an ML label is not required. Robust via third clause. | none |
+| A40 | Likely / Likely | agree | Sectoral Turkish-LLM call (≤50m TL per project, 2026) meets d2 4 (arguably 5). d6 3 correct: BİLGE/MAIN not multi-org production. | data fix: delete stale NEAR-LIKELY and "d2=3 not 4" text; dedupe S231 |
+| A47 | Certain / Certain | **disagree → Potential / Potential** | Primary page describes sensors, weather stations and a cloud platform; no model or scheduling algorithm. A label-only claim fails P6 → d6 2, funded no. | planner decision Q1 |
+| B10 | Potential / Potential | agree | No EKUAL AI-assistant licence found; the generic GenAI survey supports d6 3, not 4. One analogue. | none |
+| B17 | Likely / Likely | agree | 218k/31k are community project totals with observer origin unknown; anchor 4 needs several TR orgs. d6 3 stands; d2 4 per P2. | data fix: delete stale NEAR-LIKELY, d1=1, d2=3 text |
+| B21 | Potential / Potential | agree (score fix) | e-Gönüllü (2021, secondary) is volunteer matching, not data/AI skills volunteering; STGM is training. P6 → d6 2. Class unchanged. | data fix: d6 3→2, tr_status absent |
+| B22 | Potential / Potential | agree | d1 1 sourced after search; d2 3 generic TÜBİTAK 1007; no TR brief-generation use found. | none |
+| B26 | Potential / Potential | agree | ALO 153 is request routing by unspecified algorithms (secondary news), not LLM consultation analysis, so funded = no under P1/P6. | none |
+| B27 | Potential / Likely | agree | Bağcılar twin (İSTKA 2025 AI programme, 90%) targets building stock and disaster; no canopy/heat/flood use → funded no. 3-5y Likely rests on KR affiliation. | data fix: add DHA source; step 2h check S496 affiliation |
+| B11 | Potential / Potential | agree | d3 4 well sourced; the class is blocked only by analogues 0 (likely under-detection). Highest-value follow-up in Tier B academia. | none |
+| B15 | Potential / Potential | agree | iThenticate similarity checks are adjacent tooling; d6 3 is borderline; no analogue. Unsourced d2 2 has no class effect. | none |
+| B12 | Potential / Potential | agree | No TR or analogue deployment; d2 3 via S108 as topic-adjacent is correct. | none |
+| B13 | Potential / Potential | agree | TRUBA is a compute allocation and RAISE TR eligibility is unshown, so d2 3 is borderline. No class effect. | none |
+| B25 | Potential / Potential | agree | C2 misses only because mean(d4,d5) is exactly 2.0; the KR moonshot is a programme. Low/delayed if d4 or d5 drops. | none |
+| A04 | Potential / Potential | agree | DrugGEN is R&D (active group, d6 3); one analogue; d3 3 is projection-only. | none |
+| A08 | Certain / Certain | agree | The MEB primary page names the KANKA AI assistant and reports 719k users, beyond pilot. An AI function is described, unlike A47. | none |
+| A09 | Certain / Certain | agree (P4) | Under P4, rule adoption counts: BAU (exams), Gazi, YÖK guide. Governance item; shares S416 with B14. | data fix: add GOVERNANCE tag; drop Ankara/AKU claims (no URL) |
+| A10 | Likely / Likely | **disagree → Certain / Certain** (if step 2h confirms figure) | TALIS 2024 TR note: 24% of teachers use AI, 70% of those for lesson plans → d6 4. KR/BR TALIS figures replace the training-programme analogues. | planner decision Q3; data fix analogues/sources |
+| A49 | Potential / Potential | agree | No TR secondary-use regime; the National Data Library is a target (d1 3). One analogue. | none |
+| A50 | Certain / Certain | agree | S618 confirms Art. 4 remains mandatory after the Omnibus; d1 4 via EU reach as in A39. Trainings ≠ funded pilot. | none |
+| A18 | Potential / Potential | agree | d6 1 after 2 shallow searches (flagged); no analogue; no score near a threshold. | none |
+| A19 | Potential / Potential | agree | KOSGEB VAP is generic; press is isolated. Field savings of 5–27% stay below anchor 4. | none |
+| A17 | Likely / Likely | agree (label fix) | d2 4 plus 2 analogues gives C3 at both horizons; TEKİS (S625) is a Zenodo research record, not operational evidence. | data fix: remove "Likely (lag-based)" (C3 holds unadjusted) |
+| A23 | Potential / Potential | agree | Two analogues, but the d3 simulation (−14.5 to −24.1%) is below 25%; near-Likely flag correct. | none |
+| A25 | Certain / Certain | **disagree → Potential / Potential** | The Getir paper (Appl. Intell. 2022) is an offline evaluation on 30 days of data against the rule-based heuristic used in practice: R&D, so funded = no. | data fix: funded no, d6 3 kept (active group) |
+| A26 | Potential / Potential | agree | d3 4 (Science RCT, −40%) is acceptable; one analogue; TR use is likely under-detected. | none |
+| A27 | Certain / Certain | open (keep provisionally) | 14% TR figure not reproduced in two searches; only an unattributed Bianet summary. Unverified → d6 2 → Potential/Potential. | step 2h: read Türkiye page in S639; planner Q3 |
+| A28 | Potential / Potential | agree | d1 1 and d6 1 sourced after searches; one analogue (BR). | none |
+| A41 | Potential / Likely | agree | Ugi's agentic status is unconfirmed; analogues are weak but countable; 3-5y lag-based label correct. | none |
+| A42 | Potential / Likely | agree | Turkcell–Google DC is planned for 2028, not operating; d6 3, 3 analogues; lag-based label correct. | none |
+| A44 | Potential / Likely | agree (d1 3) | Law 7545 binds generic security duties but does not mandate AI detection; by P3/A45 logic d1 3. Planner leaning confirmed. | planner ratify Q4 |
+| A48 | Potential / Potential | agree | AFAD-RED AI is future-tense and pre-event; no analogue. | none |
+| A30 | Potential / Potential | agree | PL/KR were unattributed and rightly not counted; formally not near-Likely (count 1). | none |
+| A35 | Potential / Potential | agree (score fix) | d2 2 is inconsistent with A41/A42/A44/A48, which use generic Action Plan S133; set 3. No class effect (funded no). | data fix: d2 2→3 |
+| A32 | Potential / Likely | agree | UYAP AI was announced 12 May 2026 in mixed tense via news; funded no is correct until a primary operational source appears. | none |
+
+### Requested rulings
+- **P2 scope (B04 B06 B09 B23).** S108's call text names "setting restoration targets and measuring success" (indicators, regulation alignment) and no technology. S096 (BiodivMon 2022) is outside the 24-month window and cannot carry d2 4 any more. Applying the planner guidance: **B06 qualifies** (measuring restoration outcomes is the named area). **B04 and B23 qualify only under the monitoring-core reading**, the same reading that already carries B01 and B17. **B09, B05 and B24 do not qualify.** The class changes from this are B09 Likely → Potential, and B23 if the planner chooses the strict reading (Q5).
+- **A44 d1:** 3. Law 7545 is binding, but it imposes no AI-specific or SOC-automation duty. This matches P3 (d1 4 only where the rule mandates the AI technique, as in A45).
+- **A09 (university policies as d6 = 4):** accepted under P4, provided the row is tagged GOVERNANCE and rests only on sourced organisations: BAU S614, Gazi S615 and YÖK S416/S613. The Ankara and AKU claims have no URL and are dropped. The report should note that S416 also underpins B14.
+- **B09 reframing.** Türkiye has no NRR duty, so the current row scores a duty that does not reach TR. Proposed development: "EO/AI-derived ecosystem-extent and restoration indicators for national biodiversity reporting (CBD KM-GBF national reports/NBSAP, Ramsar; EU NRR + Copernicus as leader model)". Proposed definition: "Satellite time series and ML classifiers that produce ecosystem-extent, condition and restoration-progress indicators for national and international biodiversity reporting." Re-score: d1 2 (international reporting commitments do not require EO/AI; unsourced estimate pending a KM-GBF/NBSAP check), d2 3, all other scores unchanged → **Potential (near-Likely) / Potential**. That makes the change class-changing (Likely → Potential), not class-neutral. The alternative is to merge B09 into B06 as leader context (Tier B 25 → 24).
+
+## Systemic observations (part 2)
+- **Mechanics are clean and labels are not.** All 43 rows recompute correctly. A10 and A17 carry "Likely (lag-based)" although C3 holds unadjusted at 3–5y. A40 and B17 keep stale "NEAR-LIKELY" notes and superseded d1/d2 values. Step 2h should remove superseded rerun text before report drafting.
+- **Label-only AI.** A47 rests on a deployer's "AI-supported" label with no described AI function. A44 (NTV snippet) and partly A12 have the same shape, although A12 survives because its definition is algorithmic triage. P6 needs an explicit evidence threshold (Q1).
+- **R&D read as deployment.** In A25, a peer-reviewed offline evaluation on company data was treated as an operational deployment. Under P1, studies that use firm data without a live rollout count as R&D: d6 ≤ 3 and funded = no.
+- **Survey shares as d6.** A27 (DNR, 14% unverified) and A10 (TALIS, 24% from an OECD primary page) use population or profession shares to score d6. The rule needs a stated threshold and a primary-source requirement, applied symmetrically (Q3). TALIS also gives same-use analogue evidence (KR, BR) that is stronger than the training programmes now counted in A10.
+- **Tier B ecology Likely rests on one call reading.** B01, B06, B17 and B23 are Likely, and B04 holds d2 4, all through a single call (S108) whose text names no technology. The report should label these "funding-led (one call, 2025–26 edition)". The deciding condition is a 2026–27 Biodiversa+ edition that keeps a monitoring topic open to TR.
+- **Loose analogue counting in reruns.** B24 counts announced pilots; A10 counts training programmes; B27 (KR) and B23 rest on affiliations inferred from titles. Rule 6 says plans and trainings do not count. B27's 3–5y Likely depends on the unchecked KR affiliation.
+- **d2 defaults are inconsistent.** A35 kept d2 2, while sibling rows used generic S133 for 3. B13 and B25 take 3 from programmes whose TR eligibility is unshown. None of this changes a class today, but d2 3 is what opens the C1 third clause.
+- **Distribution if all part-2 proposals are adopted** (A25 and A47 C→P, B09 L→P, A10 L→C): 1–2y C18/L8/P47; 3–5y C18/L16/P39. If A27 also reverts: C17 at both horizons.
+
+## Planner decisions required (part 2)
+- **Q1 – P6 evidence threshold (A47).** Proposed: AI-component evidence needs a primary source that names an AI function (a model, a prediction or classification task, or a named assistant). A bare "AI-supported" label over a described non-AI system does not count. Effect: A47 → d6 2, funded no → Potential/Potential. A08 (KANKA named assistant) and A12 (algorithmic-triage definition) are unaffected.
+- **Q2 – B09.** Either (a) reframe as above → Potential (near-Likely)/Potential, or (b) merge B09 into B06 as leader context. Recommendation: (a). It keeps an item that matches the researcher's monitoring and reporting profile, and it scores what reaches TR.
+- **Q3 – Survey shares as d6 = 4.** Proposed: a primary national survey showing ≥10% use by the relevant population or profession = "beyond pilot" (d6 4), with the figure confirmed on the publisher's page. Effects: A10 → Certain/Certain once step 2h confirms 24% on the OECD TR country note. A27 stays Certain only if step 2h finds the TR figure in S639; otherwise d6 2 → Potential/Potential.
+- **Q4 – A44 d1 = 3 (ratify).** A binding generic law that does not mandate the AI technique scores 3. This extends P3 and also governs B07's deciding condition.
+- **Q5 – S108 reach to monitoring-technique items.** Confirm the "monitoring-core" reading (B01, B17, B04, B23 keep d2 4) or adopt the strict "technology named in call text" reading. Under the strict reading, B01, B17 and B23 → Potential (near-Likely)/Potential and B04 is unchanged. B06 qualifies under either reading. Recommendation: keep the monitoring-core reading for consistency with P2, and disclose it as a single-call dependency.
+- **Q6 – A06 scope.** Confirm that the definition ("transaction and non-traditional data") includes ML on bank transaction data, which keeps Certain. Under a strict alternative-data reading, d6 3 → Potential/Potential.
+- **Haiku data fixes (class-neutral):** A40 and B17 stale text, plus the A40 duplicate S231; A10 and A17 remove "lag-based"; A09 GOVERNANCE tag and drop the unsourced Ankara/AKU claims; A35 d2 2→3; B21 d6 3→2; B24 analogue_count 2→0 and drop near-Likely; B04/B06/B09/B23 drop S096 as the d2-4 basis; B07 TSRS thresholds and deciding condition; A25 funded no with the 2022 offline-study note. New sources, all "URL via search result": TALIS 2024 country notes TR, KR and BR; Getir Applied Intelligence 2022 (avesis.itu.edu.tr); BiodivConnect themes (fondationbiodiversite.fr); Bağcılar İSTKA (dha.com.tr); Colendi (paradergi.com.tr); TSRS thresholds (cms.law); DNR 2026 global 10% (reutersinstitute.politics.ox.ac.uk podcast page).
+- **Step 2h verifications owed:** A10 TALIS TR 24%; A27 DNR TR figure in S639; B27 S496 (Seoul) author affiliation; A12, A50 and A29 Omnibus dates against OJ text (carried over from part 1).
