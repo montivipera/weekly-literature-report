@@ -4,7 +4,7 @@ Working dir: `ai_tr_diffusion/`. Brief: `BRIEF.md` (Sections 1–9 define everyt
 Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/extract/draft/HTML), Opus (review, pre-decision advice).
 
 ## Status
-- Current step: 1r→2 prep — Haiku building master inventory.csv + sources.csv from drafts + review decisions; AGENT_RULES rule 8 replaced with Opus mechanical rule; next: 5-item calibration (Sonnet scores, Opus checks), then step 2 batches.
+- Current step: 1c — calibration batch (A01,A24,A39,B01,B18) being scored by Sonnet → drafts/scores_calib.csv; next: Opus checks it, then step 2 fans out in ~8 batches of 8–10 items using SCORING_TASK.md.
 - Last updated: 2026-10-03
 
 ## Step plan (model per step)
@@ -13,7 +13,7 @@ Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/ex
 | 0 | Create STATE.md, inventory.csv, present plan | Fable | done (approved) |
 | 1 | Build inventory: Tier A (~30–50) + Tier B (~15–25), one-line definitions | Sonnet ×2 (A, B in parallel) | done (A43, B22) |
 | 1r | Opus check of inventory coverage/gaps before scanning | Opus | done (review_1_inventory.md) |
-| 1c | Calibration: Sonnet scores 5 items (A01,A24,A39,B01,B18), Opus checks → exemplars for batch prompts | Sonnet + Opus | pending |
+| 1c | Calibration: Sonnet scores 5 items (A01,A24,A39,B01,B18), Opus checks → exemplars for batch prompts | Sonnet + Opus | in progress |
 | 2 | Per-item evidence: leader / analogue / TR status, driver scores (1–5 ×6), provisional class ×2 horizons, sources → inventory.csv + sources.csv | Sonnet ×N batches (~8–10 items each) | pending |
 | 2h | URL verification of every source row (HTTP reachable, DOI resolves) | Haiku | pending |
 | 3 | Review pass: Opus checks each classification vs Section 5 rules, flags disagreements → review_log.md | Opus | pending |
@@ -39,6 +39,7 @@ Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/ex
 ## Decisions log
 - 2026-10-03: Driver scores on 1–5 scale; classification rule mapping to be fixed before step 2 (see inventory.csv header comment).
 - 2026-10-03 (user): Do NOT read papers in full this session; abstracts/summaries suffice. Not an academic study, but what academia recommends matters and should be checked against global practice. Peer-reviewed sources used for direction and corroboration, not exhaustive reading.
+- SCORING_TASK.md — step 2 instructions for scoring agents (outputs to drafts/scores_<batch>.csv, drafts/sources_<batch>.csv; planner merges)
 - AGENT_RULES.md — shared rules + mechanical classification thresholds for all worker agents
 - drafts/ — intermediate agent outputs (inventory_A.csv, inventory_B.csv, *_sources.csv)
 
@@ -56,3 +57,4 @@ Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/ex
 - Tier A: 43 + 8 adds − 3 merges (A43→A40, A07+A33, A30+A31) = 48. Tier B: 22 + 5 adds + B04 split − 2 merges (B08→B07, B16→B14), restoration-prioritisation folded into B06 = 25. Total 73. No drops; tourism excluded (not in brief §2; note in limitations).
 - Rule 8 replaced: precedence Certain → Low → Likely → Potential; driver anchors; new fields analogue_count, tr_funded_pilot, barrier, class_branch; dated horizon adjustment. Decision: private/consumer spend counts as "funding attached" via d6 ≥ 4 branch.
 - IDs are stable (no renumbering); new rows A44+, B23+.
+- inventory.csv now 73 rows × 25 cols (A48, B25); sources.csv S001–S059. Build log: drafts/inventory_build_log.md.
