@@ -141,3 +141,5 @@ Planner decisions (Fable, 2026-10-03):
 - Pending: Sonnet draft (4b) → assemble report_en.md (§1 planner, §2–5 Sonnet, §6 planner, §7 Sonnet) → Opus full review (4c).
 - Step 4b DONE: drafts/report_en_draft.md (§2 ~825w, §3 ~3,100w incl. 48-row table, §4 ~4,400w, §5 ~470w, §7 666 refs; 370 sources cited). Drafting agent found data inconsistencies (A10 source_ids, B23 S476 misattribution, stale lag-based text A17/A40/B17, stale notes A27/A46/B09, A03 title, 10 rows w/o deciding_condition, 6 review-2 sources never added).
 - Haiku now fixing those + assembling report_en.md (§1/§6 from planner_sections.md). Next: Opus full-report review (4c) → fixes → step 5 HTML.
+- Step 4 assembled: report_en.md (≈11,200 words body; §7 = 372 sources cited in the report text; the full register of 682 sources stays in sources.csv — §2 must say so). Data fixes applied; sources S677–S682 added.
+- Launching 4c Opus full-report review ∥ step 5 Sonnet rapor_tr.html (classes from inventory.csv; text from report_en.md); then 5h consistency sync.
