@@ -4,7 +4,7 @@ Working dir: `ai_tr_diffusion/`. Brief: `BRIEF.md` (Sections 1–9 define everyt
 Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/extract/draft/HTML), Opus (review, pre-decision advice).
 
 ## Status
-- Current step: PAUSED after step 3 part 1 — awaiting user decision on WebSearch cap. Remaining: reruns (37 rows + 6 open searches) → Haiku merge → step 2h URL check → step 3 part 2 Opus review → step 4 synthesis → step 5 HTML → gates. Resume: read STATE.md, AGENT_RULES.md, SCORING_TASK.md, drafts/calibration_exemplars.md, review_log.md.
+- Current step: 2 reruns running (r1 r2 r3 r4a r4b).
 - Last updated: 2026-10-03
 
 ## Step plan (model per step)
@@ -108,3 +108,6 @@ Planner decisions (Fable, 2026-10-03):
 - Open (one search each, added to RERUN LIST): A06, A12, A40, A47, B10, B17 (iNaturalist TR volume).
 - Resolutions part 1 APPLIED to inventory.csv and review_log.md. Dist 1-2y: C15/L5/P47/blank6; 3-5y: C15/L10/P42/blank6.
 - Step 3 part 2 (Opus review of the 37 rerun rows) happens after reruns.
+
+## Step 2 RERUNS (2026-10-03, user: "web araması da yap")
+- WebSearch cap found RESET on the new user turn (test query succeeded). Launched 5 rerun agents with strict per-agent budgets (total ≈160): r1 ecology unscored (B04 B05 B06 B07 B09 B23 B24, ≤52 searches), r2 six open targeted searches (A06 A12 A40 A47 B10 B17, ≤12), r3 degraded Tier B (B21 B22 B26 B27 B11 B15 B12 B13 B25, ≤38), r4a degraded Tier A (A04 A08 A09 A10 A49 A50 A18 A19 A17 A23 A25, ≤34), r4b degraded Tier A (A26 A27 A28 A41 A42 A44 A48 A30 A35 A32, ≤31). Outputs drafts/scores_r*.csv + sources_r*.csv → Haiku merge → step 2h → step 3 part 2.
