@@ -4,7 +4,7 @@ Working dir: `ai_tr_diffusion/`. Brief: `BRIEF.md` (Sections 1–9 define everyt
 Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/extract/draft/HTML), Opus (review, pre-decision advice).
 
 ## Status
-- Current step: 2 merge-2 (Haiku) → then 2h ∥ 3 part 2.
+- Current step: 2h (Haiku source hygiene) ∥ 3 part 2 (Opus review of 43 rerun rows) running.
 - Last updated: 2026-10-03
 
 ## Step plan (model per step)
@@ -119,3 +119,5 @@ Planner decisions (Fable, 2026-10-03):
 - Only r1 (ecology) outstanding.
 - r1 done (41 searches + 17 Consensus): B06 Likely/Likely, B09 Likely/Likely, B23 Likely/Likely, B04 Pot/Pot, B05 Pot/Pot, B07 Pot/Pot (TSRS mandatory since 2024-01-01 — nature-specific duty? Opus; d6=1 under-detected), B24 Pot(near-Likely)/Pot. Opus part 2 flags: P2 scope (does Biodiversa+ d2=4 extend to MRV/drones/EU reporting? B06 B09 B23 B04 depend on it), B09 reframing (TR has no NRL duty), B07 d1 via TSRS, B24 analogues = announced pilots.
 - ALL RERUNS IN. Haiku merge 2 running → drafts/merge_log_2.md. Next: step 2h (Haiku source hygiene) ∥ step 3 part 2 (Opus review of 43 rerun rows + planner flags).
+- MERGE 2 DONE: inventory.csv 73/73 scored; sources.csv S001–S671. Dist 1-2y C19/L10/P44; 3-5y C19/L18/P36. 10 upgrades (A08 A09 A10 A25 A27 A40 A41 A42 A44 B27) + B06 B09 B23 new Likely.
+- Planner guidance for Opus part 2 on P2 scope: d2=4 via Biodiversa+ applies only where the call text (S096/S108) explicitly names the item's application area (biodiversity monitoring incl. remote sensing, eDNA, acoustics, citizen science). Restoration MRV and drone habitat mapping qualify only if monitoring is the item's core activity; EU reporting infrastructure (B09), EO foundation models (B05) and nature credits (B24) do not unless the call names them. Opus verifies and applies.
