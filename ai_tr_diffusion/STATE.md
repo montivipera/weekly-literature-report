@@ -4,7 +4,7 @@ Working dir: `ai_tr_diffusion/`. Brief: `BRIEF.md` (Sections 1–9 define everyt
 Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/extract/draft/HTML), Opus (review, pre-decision advice).
 
 ## Status
-- Current step: 4 assembly (Haiku) → 4c Opus review.
+- Current step: 4c Opus full-report review (drafts/review_4c_report.md) ∥ 5 Sonnet rapor_tr.html — both running. Then: apply 4c fixes (Haiku/Fable), 5h EN↔TR consistency + gates (Haiku), step 6 commit, step 7 audio summary.
 - Last updated: 2026-10-03
 
 ## Step plan (model per step)
