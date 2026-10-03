@@ -137,3 +137,5 @@ Planner decisions (Fable, 2026-10-03):
 - USER APPROVED (2026-10-03): step 7 = 5-minute Turkish audio summary via vidIQ voiceover (≈6,000 chars, single narrator, ~84 credits of 91). Deliver MP3 URL + file in repo (ai_tr_diffusion/podcast_tr.mp3 if downloadable; HTTP blocked → at least the hosted URL) and podcast_tr.md script. User will listen on phone. Run after Section 9 gates pass.
 - 3r part 2 APPLIED. FINAL inventory: 1-2y C17/L8/P48/Low0; 3-5y C17/L16/P40/Low0. sources.csv S001–S674. Note for report §2: no item reached Low — state why (readiness floors rarely ≤1 for TR; barrier field never sourced) as a limitation.
 - Step 4b: Sonnet drafting report_en.md §2–§5, §7 (drafts/report_en_draft.md). Step 4a Opus memo running (drafts/synthesis_memo.md).
+- Step 4a DONE: drafts/synthesis_memo.md. Planner wrote §1 and §6 → drafts/planner_sections.md. Sources S675–S676 (BiodivFuture) added. Open question to user: is the metropolitan municipality partner İzmir BB? (report currently says "if the partner is İzmir").
+- Pending: Sonnet draft (4b) → assemble report_en.md (§1 planner, §2–5 Sonnet, §6 planner, §7 Sonnet) → Opus full review (4c).
