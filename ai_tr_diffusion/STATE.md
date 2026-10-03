@@ -4,7 +4,7 @@ Working dir: `ai_tr_diffusion/`. Brief: `BRIEF.md` (Sections 1–9 define everyt
 Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/extract/draft/HTML), Opus (review, pre-decision advice).
 
 ## Status
-- Current step: 1c — calibration batch (A01,A24,A39,B01,B18) being scored by Sonnet → drafts/scores_calib.csv; next: Opus checks it, then step 2 fans out in ~8 batches of 8–10 items using SCORING_TASK.md.
+- Current step: 2 — nine Sonnet scoring batches running in parallel (drafts/scores_b1..b9.csv, drafts/sources_b1..b9.csv). After: Haiku merges into inventory.csv/sources.csv (renumber provisional ids, fix calib-008/027/028/029), then step 2h URL check via search, then step 3 Opus review.
 - Last updated: 2026-10-03
 
 ## Step plan (model per step)
@@ -13,8 +13,8 @@ Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/ex
 | 0 | Create STATE.md, inventory.csv, present plan | Fable | done (approved) |
 | 1 | Build inventory: Tier A (~30–50) + Tier B (~15–25), one-line definitions | Sonnet ×2 (A, B in parallel) | done (A43, B22) |
 | 1r | Opus check of inventory coverage/gaps before scanning | Opus | done (review_1_inventory.md) |
-| 1c | Calibration: Sonnet scores 5 items (A01,A24,A39,B01,B18), Opus checks → exemplars for batch prompts | Sonnet + Opus | in progress |
-| 2 | Per-item evidence: leader / analogue / TR status, driver scores (1–5 ×6), provisional class ×2 horizons, sources → inventory.csv + sources.csv | Sonnet ×N batches (~8–10 items each) | pending |
+| 1c | Calibration: Sonnet scores 5 items (A01,A24,A39,B01,B18), Opus checks → exemplars for batch prompts | Sonnet + Opus | done (drafts/calibration_exemplars.md, scores_calib_reviewed.csv) |
+| 2 | Per-item evidence: leader / analogue / TR status, driver scores (1–5 ×6), provisional class ×2 horizons, sources → inventory.csv + sources.csv | Sonnet ×N batches (~8–10 items each) | in progress (9 batches b1–b9) |
 | 2h | URL verification of every source row (HTTP reachable, DOI resolves) | Haiku | pending |
 | 3 | Review pass: Opus checks each classification vs Section 5 rules, flags disagreements → review_log.md | Opus | pending |
 | 3r | Resolve disagreements (Fable decides, logs reasons in review_log.md; Haiku applies CSV edits) | Fable + Haiku | pending |
@@ -63,3 +63,13 @@ Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/ex
 - 5 items scored: A01 Pot/Pot (near-Likely), A24 Pot/Pot, A39 Cert/Cert, B01 Pot/Pot (near-Likely, d6=1 doubtful), B18 Pot/Pot. 48 new sources (calib-001..048).
 - Decisions: enabling regulation = d1 3 (A24 stays Potential); scores capped at 5; outbound HTTP (curl/WebFetch) is BLOCKED by environment network policy → URL verification must rely on WebSearch results; logged as a method limitation. User to be told (can widen network access in environment settings).
 - Concern for Opus check: 4/5 landed in Potential — is the rule too Potential-heavy, or is the sample biased?
+
+## Step 1c decisions (Fable, 2026-10-03) — all Opus proposals adopted
+- R8-A: added d2=4 and d3=4 anchors (Likely was artificially rare because levels 4 were undefined). B01 moves to Likely/Likely under R8-A.
+- tr_funded_pilot = funded OPERATIONAL pilot in TR only (R&D prototypes, trainings, committees = no).
+- d1 horizon step = max(d1, level) not addition. A 3–5y Certain that rests only on the assumed +1 to d6 → Likely.
+- Calibration final: A01 Pot/Pot (near-Likely), A24 Pot/Pot, A39 Cert/Cert, B01 Likely/Likely (R8-A; d6 recheck still owed), B18 Pot/Pot. Reviewed rows: drafts/scores_calib_reviewed.csv.
+- Source fixes owed at merge: calib-027 attribution (hlc.com), calib-028/029 aggregators → primary, calib-008 → primary 2026–2030 Action Plan text.
+
+## Step 2 batch map
+b1 health+education: A02 A03 A04 A49 A08 A09 A10 A50 | b2 finance+retail+law: A05 A06 A07 A45 A46 A34 A35 A30 A32 | b3 public_admin+cross_cutting: A11 A12 A13 A48 A40 A41 A42 A44 | b4 agriculture+energy: A14 A15 A16 A47 A17 A18 A19 | b5 manufacturing+logistics+media: A20 A21 A22 A23 A25 A26 A27 A28 A29 | b6 labour_market: A36 A37 A38 A51 | b7 ecology: B02 B03 B04 B05 B06 B07 B09 B23 B24 (+B01 d6 recheck) | b8 academia: B10 B11 B12 B13 B14 B15 B25 | b9 civil_society: B17 B19 B20 B21 B22 B26 B27
