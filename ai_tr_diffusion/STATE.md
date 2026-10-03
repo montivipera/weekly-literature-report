@@ -4,7 +4,7 @@ Working dir: `ai_tr_diffusion/`. Brief: `BRIEF.md` (Sections 1–9 define everyt
 Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/extract/draft/HTML), Opus (review, pre-decision advice).
 
 ## Status
-- Current step: 2 PAUSED — awaiting user decision on WebSearch cap (recommend new session with CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION=1500) to run the RERUN LIST; then step 2h, then step 3 Opus review. Resume instructions: read this file, AGENT_RULES.md, SCORING_TASK.md, drafts/calibration_exemplars.md; rerun agents write drafts/scores_r1..rN.csv; Haiku merges as before (see drafts/merge_log.md for mapping conventions).
+- Current step: PAUSED after step 3 part 1 — awaiting user decision on WebSearch cap. Remaining: reruns (37 rows + 6 open searches) → Haiku merge → step 2h URL check → step 3 part 2 Opus review → step 4 synthesis → step 5 HTML → gates. Resume: read STATE.md, AGENT_RULES.md, SCORING_TASK.md, drafts/calibration_exemplars.md, review_log.md.
 - Last updated: 2026-10-03
 
 ## Step plan (model per step)
@@ -106,3 +106,5 @@ Planner decisions (Fable, 2026-10-03):
 - P6 ACCEPT: scores must evidence the AI component itself. A46 → Potential/Likely(near-Likely) with d6 3; A15 → Potential/Potential near-Likely (FAO figure headline-only → d3 3); A22 d6 4→3 (class unchanged); A47 → open, rerun search.
 - P7: class-neutral data fixes → Haiku.
 - Open (one search each, added to RERUN LIST): A06, A12, A40, A47, B10, B17 (iNaturalist TR volume).
+- Resolutions part 1 APPLIED to inventory.csv and review_log.md. Dist 1-2y: C15/L5/P47/blank6; 3-5y: C15/L10/P42/blank6.
+- Step 3 part 2 (Opus review of the 37 rerun rows) happens after reruns.
