@@ -4,15 +4,15 @@ Working dir: `ai_tr_diffusion/`. Brief: `BRIEF.md` (Sections 1–9 define everyt
 Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/extract/draft/HTML), Opus (review, pre-decision advice).
 
 ## Status
-- Current step: 1 — Tier A and Tier B inventories being built by two Sonnet agents (drafts/inventory_A.csv, drafts/inventory_B.csv). Plan approved by user 2026-10-03.
+- Current step: 1r — Opus coverage review of both inventories (drafts/review_1_inventory.md); next: merge into inventory.csv, then step 2 scoring batches.
 - Last updated: 2026-10-03
 
 ## Step plan (model per step)
 | # | Step | Model | Status |
 |---|------|-------|--------|
 | 0 | Create STATE.md, inventory.csv, present plan | Fable | done (approved) |
-| 1 | Build inventory: Tier A (~30–50) + Tier B (~15–25), one-line definitions | Sonnet ×2 (A, B in parallel) | in progress |
-| 1r | Opus check of inventory coverage/gaps before scanning | Opus | pending |
+| 1 | Build inventory: Tier A (~30–50) + Tier B (~15–25), one-line definitions | Sonnet ×2 (A, B in parallel) | done (A43, B22) |
+| 1r | Opus check of inventory coverage/gaps before scanning | Opus | in progress |
 | 2 | Per-item evidence: leader / analogue / TR status, driver scores (1–5 ×6), provisional class ×2 horizons, sources → inventory.csv + sources.csv | Sonnet ×N batches (~8–10 items each) | pending |
 | 2h | URL verification of every source row (HTTP reachable, DOI resolves) | Haiku | pending |
 | 3 | Review pass: Opus checks each classification vs Section 5 rules, flags disagreements → review_log.md | Opus | pending |
@@ -45,3 +45,8 @@ Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/ex
 - 43 items (A01–A43), 23 URLs. Thin sectors: agriculture, law, energy, retail; A41 (freelance AI-service models) unsourced so far.
 - Candidate merges for Opus check: A29 into A40 (AI Act Art. 50); A23 humanoids maybe drop/merge into A22; A43 open-weight models is an enabler.
 - Secondary anchors to replace in step 2: WEF via etradeforall reprint; Gibson Dunn, Bolster, Asian Banker, Malay Mail, ai2.work, TNW, Yahoo Finance, Moroğlu Arseven. TR Action Plan 2026–2030 / TÜBİTAK facts came from search summaries only → verify in step 2.
+
+## Step 1 notes (Tier B agent hand-back, 2026-10-03)
+- 22 items (B01–B22): ecology 9, academia 7, civil society 6. 36 URLs. Strong examples: B01 BirdNET/Perch, B02 MegaDetector/SpeciesNet, B05 EO foundation models, B10 Elicit/Consensus, B15 integrity screeners, B17 iNaturalist/Pl@ntNet.
+- Verify in step 2: B08 ESRS E4 Omnibus facts (vendor blog only), B20 İBB assistant (search summary only), B11 DOI seen only via Consensus. Possible merges: B16→B14, B10/B11 overlap. B21 DataKind weak.
+- Step 1r: Opus coverage review running → drafts/review_1_inventory.md
