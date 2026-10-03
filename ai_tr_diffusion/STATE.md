@@ -4,7 +4,7 @@ Working dir: `ai_tr_diffusion/`. Brief: `BRIEF.md` (Sections 1–9 define everyt
 Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/extract/draft/HTML), Opus (review, pre-decision advice).
 
 ## Status
-- Current step: 5 Sonnet rapor_tr.html running; then 5h (Haiku) EN↔TR consistency + §9 gates; then 6 commit; then 7 audio.
+- Current step: 5h sync+gates (Sonnet) ∥ 7 script (Sonnet). Then TTS, final commit, user handover.
 - Last updated: 2026-10-03
 
 ## Step plan (model per step)
@@ -145,3 +145,5 @@ Planner decisions (Fable, 2026-10-03):
 - Launching 4c Opus full-report review ∥ step 5 Sonnet rapor_tr.html (classes from inventory.csv; text from report_en.md); then 5h consistency sync.
 - 4c Opus review DONE: 4 blockers / 20 should-fix / 10 nits (drafts/review_4c_report.md). Script-checked OK: structure, all classes/scores vs CSV, counts 17/8/48 & 17/16/40, 8 lag-based, 372 refs valid. Blockers: stale "not recorded" conditions (A15 A17 A25 A46 A47, B09) + wrong A46 condition; duplicate §6 heading; stale source counts (682 rows now) + §7-vs-register sentence; Bağcılar 90% misattributed. Sonnet applying all 34 + CSV fixes (A46, B09 branch, S639 URL) → drafts/review_4c_applied.md. Ranking defence paragraph added by planner instruction.
 - 4c fixes APPLIED (34/34): report_en.md v2; §7 now 376 refs; source counts 682/593 ok/74 weak/7 orphan/7 via-search/1 dup; CSV conditions/branch text fixed (A46 A25 A27 A40 B09), S639 URL encoded. rapor_tr.html still needs sync with A46/B09 condition text (5h).
+- Step 5 DONE (v1): rapor_tr.html 147 KB, ~3,850 words, 5 SVGs + CSS matrix, JSON #classes block = inventory.csv, phone-width check passed. Built from report v1 → 5h sync to v2 running (Sonnet) + gates check → drafts/gates_check.md. Build files to move into drafts/.
+- Step 7 script (podcast_tr.md) being written by Sonnet; then TTS via vidIQ.
