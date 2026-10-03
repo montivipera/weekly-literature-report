@@ -4,7 +4,7 @@ Working dir: `ai_tr_diffusion/`. Brief: `BRIEF.md` (Sections 1–9 define everyt
 Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/extract/draft/HTML), Opus (review, pre-decision advice).
 
 ## Status
-- Current step: 4 — Opus memo (4a) ∥ Sonnet report draft (4b) running; then Fable writes §1 and §6; then Opus full-report review (4c).
+- Current step: 4 assembly (Haiku) → 4c Opus review.
 - Last updated: 2026-10-03
 
 ## Step plan (model per step)
@@ -139,3 +139,5 @@ Planner decisions (Fable, 2026-10-03):
 - Step 4b: Sonnet drafting report_en.md §2–§5, §7 (drafts/report_en_draft.md). Step 4a Opus memo running (drafts/synthesis_memo.md).
 - Step 4a DONE: drafts/synthesis_memo.md. Planner wrote §1 and §6 → drafts/planner_sections.md. Sources S675–S676 (BiodivFuture) added. Open question to user: is the metropolitan municipality partner İzmir BB? (report currently says "if the partner is İzmir").
 - Pending: Sonnet draft (4b) → assemble report_en.md (§1 planner, §2–5 Sonnet, §6 planner, §7 Sonnet) → Opus full review (4c).
+- Step 4b DONE: drafts/report_en_draft.md (§2 ~825w, §3 ~3,100w incl. 48-row table, §4 ~4,400w, §5 ~470w, §7 666 refs; 370 sources cited). Drafting agent found data inconsistencies (A10 source_ids, B23 S476 misattribution, stale lag-based text A17/A40/B17, stale notes A27/A46/B09, A03 title, 10 rows w/o deciding_condition, 6 review-2 sources never added).
+- Haiku now fixing those + assembling report_en.md (§1/§6 from planner_sections.md). Next: Opus full-report review (4c) → fixes → step 5 HTML.
