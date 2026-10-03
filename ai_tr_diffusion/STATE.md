@@ -134,3 +134,4 @@ Planner decisions (Fable, 2026-10-03):
 - Q5 (S108 scope): keep the "monitoring is the core activity" reading — B01, B17, B04, B23 keep d2 4; B06 qualifies; B09 does not. Logged as an assumption in report §2 limitations.
 - Q6 (A06): scope confirmed (transaction + alternative-data scoring) → Certain stands.
 - A25 → Potential/Potential (offline research, not a live pilot). Expected dist if all applied: 1-2y ≈ C18/L8/P47; 3-5y ≈ C18/L16/P39.
+- USER APPROVED (2026-10-03): step 7 = 5-minute Turkish audio summary via vidIQ voiceover (≈6,000 chars, single narrator, ~84 credits of 91). Deliver MP3 URL + file in repo (ai_tr_diffusion/podcast_tr.mp3 if downloadable; HTTP blocked → at least the hosted URL) and podcast_tr.md script. User will listen on phone. Run after Section 9 gates pass.
