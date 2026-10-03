@@ -40,3 +40,8 @@ Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/ex
 - 2026-10-03 (user): Do NOT read papers in full this session; abstracts/summaries suffice. Not an academic study, but what academia recommends matters and should be checked against global practice. Peer-reviewed sources used for direction and corroboration, not exhaustive reading.
 - AGENT_RULES.md — shared rules + mechanical classification thresholds for all worker agents
 - drafts/ — intermediate agent outputs (inventory_A.csv, inventory_B.csv, *_sources.csv)
+
+## Step 1 notes (Tier A agent hand-back, 2026-10-03)
+- 43 items (A01–A43), 23 URLs. Thin sectors: agriculture, law, energy, retail; A41 (freelance AI-service models) unsourced so far.
+- Candidate merges for Opus check: A29 into A40 (AI Act Art. 50); A23 humanoids maybe drop/merge into A22; A43 open-weight models is an enabler.
+- Secondary anchors to replace in step 2: WEF via etradeforall reprint; Gibson Dunn, Bolster, Asian Banker, Malay Mail, ai2.work, TNW, Yahoo Finance, Moroğlu Arseven. TR Action Plan 2026–2030 / TÜBİTAK facts came from search summaries only → verify in step 2.
