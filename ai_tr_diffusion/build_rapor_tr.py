@@ -47,6 +47,7 @@ LAG = [r['id'] for r in rows if is_lag(r)]
 assert sorted(LAG) == sorted(['A11','A16','A32','A41','A42','A44','A46','B27']), LAG
 
 def esc(s): return html.escape(s, quote=True)
+def fmt(x): return format(x, '.1f').replace('.', ',')
 def cnt(key, cls): return sum(1 for r in rows if r[key] == cls)
 C1 = {c: cnt('class_1_2y', c) for c in CLS_TR}
 C2 = {c: cnt('class_3_5y', c) for c in CLS_TR}
@@ -97,9 +98,10 @@ def matrix_html():
          f'<thead><tr><th scope="col"><span class="sr">Sınıf</span></th><th scope="col">{H1}</th><th scope="col">{H2}</th></tr></thead><tbody>']
     for cls in ['Certain', 'Likely', 'Potential', 'Low']:
         k = CLS_KEY[cls]
-        rowh = (f'<th scope="row" class="rh rh-{k}"><svg class="lg" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">'
-                f'{marker(cls,10,10) if cls!="Low" else "<polygon class=md points=\"10,2 18,10 10,18 2,10\"/>"}</svg>'
-                f'<b>{CLS_TR[cls]}</b><span class="rd">{desc[cls]}</span></th>')
+        low_shape = '<polygon class="md" points="10,2 18,10 10,18 2,10"/>'
+        shape = marker(cls, 10, 10) if cls != 'Low' else low_shape
+        rowh = ('<th scope="row" class="rh rh-' + k + '"><svg class="lg" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">'
+                + shape + '</svg><b>' + CLS_TR[cls] + '</b><span class="rd">' + desc[cls] + '</span></th>')
         tds = []
         for key, hd, counts in (('class_1_2y', H1, C1), ('class_3_5y', H2, C2)):
             n = counts[cls]
@@ -111,7 +113,7 @@ def matrix_html():
                 inner += (f'<details><summary>{n} gelişmeyi listele</summary>{chip_list(all_ids)}</details>')
             elif cls == 'Likely' and key == 'class_3_5y':
                 a = [i for i in all_ids if i not in LAG]; b = [i for i in all_ids if i in LAG]
-                inner += (f'<p class="sub">Türkiye’de somut kanıtla ({len(a)})</p>{chip_list(a)}'
+                inner += (f'<p class="sub">Fon ya da maliyet çekişiyle ({len(a)})</p>{chip_list(a)}'
                           f'<p class="sub">Olası (gecikme temelli) ({len(b)})</p>{chip_list(b, True)}')
             else:
                 inner += chip_list(all_ids)
@@ -135,7 +137,7 @@ def arrival(r):
     return 2
 
 def timeline_svg():
-    W = 480; LX = 8; LW = 112; CX0 = 124; CW = 118; HDR = 46; PER = 7; SP = 16
+    W = 430; LX = 4; LW = 96; CX0 = 104; CW = 108; HDR = 46; PER = 6; SP = 17
     cols = {s: [[], [], []] for s in SECT_ORDER}
     for r in rows: cols[r['sector']][arrival(r)].append(r)
     order = {'Certain': 0, 'Likely': 1, 'Potential': 2}
@@ -167,7 +169,7 @@ def timeline_svg():
         for ci, c in enumerate(cols[s]):
             for j, r in enumerate(c):
                 cls = r['class_1_2y'] if ci == 0 else r['class_3_5y']
-                cx = CX0 + ci * CW + 14 + (j % PER) * 15.5
+                cx = CX0 + ci * CW + 13 + (j % PER) * 16.5
                 cy = y + 14 + (j // PER) * SP
                 lag = is_lag(r) and ci == 1
                 lbl = CLS_TR[cls] + (' (gecikme temelli)' if lag else '')
@@ -185,7 +187,7 @@ def timeline_table():
             cls = r['class_1_2y'] if a == 0 else r['class_3_5y']
             lag = is_lag(r) and a == 1
             cells[a].append(f'{esc(SHORT[r["id"]])} ({r["id"]}, {CLS_TR[cls]}{", gecikme temelli" if lag else ""})')
-        t.append(f'<tr><th scope="row">{esc(SECT[s])}</th>' + ''.join(f'<td>{"; ".join(c) if c else "–"}</td>' for c in cells) + '</tr>')
+        t.append(f'<tr><th scope="row">{esc(SECT[s])}</th>' + ''.join(f'<td data-h="{h}">{"; ".join(c) if c else "–"}</td>' for h, c in zip(["2026–2028","2028–2031","Koşula bağlı"], cells)) + '</tr>')
     t.append('</tbody></table>')
     return ''.join(t)
 
@@ -196,7 +198,7 @@ def lum(h):
     return .2126 * c[0] + .7152 * c[1] + .0722 * c[2]
 def contrast(a, b):
     la, lb = lum(a), lum(b); hi, lo = max(la, lb), min(la, lb); return (hi + .05) / (lo + .05)
-BINS_L = ['#ebeae5', '#cde2fb', '#86b6ef', '#2a78d6', '#1c5cab', '#0d366b']
+BINS_L = ['#ebeae5', '#cde2fb', '#86b6ef', '#3987e5', '#1c5cab', '#0d366b']
 BINS_D = ['#2c2c2a', '#104281', '#1c5cab', '#3987e5', '#6da7ec', '#9ec5f4']
 BIN_LAB = ['%0', '%1–19', '%20–39', '%40–59', '%60–79', '%80–100']
 def binof(f):
@@ -244,7 +246,7 @@ def heat_legend():
 # ---------------------------------------------------------------- (d) Tier B charts (SVG)
 DRV = [('d1_regulatory', 'Mevzuat'), ('d2_funding', 'Fon'), ('d3_cost', 'Maliyet'),
        ('d4_infra_data', 'Altyapı'), ('d5_workforce', 'İşgücü'), ('d6_local_activity', 'Yerel')]
-def wrap(s, n=20):
+def wrap(s, n=18):
     words = s.split(); lines = []; cur = ''
     for w in words:
         if len(cur) + len(w) + 1 <= n or not cur: cur = (cur + ' ' + w).strip()
@@ -255,31 +257,31 @@ def tierb_svg(sector, sid):
     items = [r for r in rows if r['sector'] == sector]
     order = {'Certain': 0, 'Likely': 1, 'Potential': 2}
     items.sort(key=lambda r: (order[r['class_1_2y']], order[r['class_3_5y']], r['id']))
-    W = 470; LX = 6; X0 = 138; CW = 44; MX0 = X0 + 6 * CW + 8; HDR = 44; RH = 34
+    W = 442; LX = 4; X0 = 128; CW = 44; MX0 = X0 + 6 * CW + 10; HDR = 44; RH = 40
     H = HDR + RH * len(items) + 44
     o = [f'<svg class="viz" viewBox="0 0 {W} {H}" role="img" aria-labelledby="{sid}-t {sid}-d">'
          f'<title id="{sid}-t">{esc(SECT[sector])}: altı itici güç puanı</title>'
          f'<desc id="{sid}-d">Her satır bir gelişme; çubuk uzunluğu 1 ile 5 arasındaki puanı, renk ve şekil 1–2 yıllık sınıfı gösterir.</desc>']
     for j, (_, nm) in enumerate(DRV):
         o.append(f'<text class="lab s" x="{X0+j*CW+CW/2-2}" y="30" text-anchor="middle">{nm}</text>')
-    o.append(f'<text class="lab s" x="{MX0+12}" y="16" text-anchor="middle">Sınıf</text>')
-    o.append(f'<text class="lab s" x="{MX0}" y="34" text-anchor="middle">1–2</text><text class="lab s" x="{MX0+26}" y="34" text-anchor="middle">3–5 yıl</text>')
+    o.append(f'<text class="lab s" x="{MX0+12}" y="18" text-anchor="middle">Sınıf (yıl)</text>')
+    o.append(f'<text class="lab s" x="{MX0}" y="34" text-anchor="middle">1–2</text><text class="lab s" x="{MX0+24}" y="34" text-anchor="middle">3–5</text>')
     y = HDR
     o.append(f'<line class="axis" x1="{LX}" x2="{W-4}" y1="{y-2}" y2="{y-2}"/>')
     for r in items:
         ls = wrap(SHORT[r['id']])
-        ty = y + RH / 2 - (len(ls) - 1) * 6 + 4
-        tsp = ''.join(f'<tspan x="{LX}" dy="{0 if k==0 else 13}">{esc(t)}</tspan>' for k, t in enumerate(ls))
-        o.append(f'<text class="lab" x="{LX}" y="{ty}">{tsp}</text>')
+        ty = y + RH / 2 - (len(ls) - 1) * 6.2 + 4
+        tsp = ''.join(f'<tspan x="{LX}" dy="{0 if k==0 else 12.4}">{esc(t)}</tspan>' for k, t in enumerate(ls))
+        o.append(f'<text class="lab tl" x="{LX}" y="{ty}">{tsp}</text>')
         k1 = CLS_KEY[r['class_1_2y']]
         for j, (col, nm) in enumerate(DRV):
             v = int(r[col]); x = X0 + j * CW
             tip = f'{r["id"]} · {SHORT[r["id"]]} · {nm}: {v}/5'
-            o.append(f'<g><title>{esc(tip)}</title><rect class="trk" x="{x+2}" y="{y+RH/2-4}" width="28" height="8" rx="2"/>'
-                     f'<rect class="m{k1}" x="{x+2}" y="{y+RH/2-4}" width="{v*5.6:.1f}" height="8" rx="2"/>'
-                     f'<text class="lab n{" w" if v<=2 else ""}" x="{x+33}" y="{y+RH/2+4}">{v}</text></g>')
+            o.append(f'<g><title>{esc(tip)}</title><rect class="trk" x="{x+2}" y="{y+RH/2-4}" width="24" height="8" rx="2"/>'
+                     f'<rect class="m{k1}" x="{x+2}" y="{y+RH/2-4}" width="{v*4.8:.1f}" height="8" rx="2"/>'
+                     f'<text class="lab n{" w" if v<=2 else ""}" x="{x+28}" y="{y+RH/2+4}">{v}</text></g>')
         o.append(marker(r['class_1_2y'], MX0, y + RH / 2, False, f'{r["id"]} · 1–2 yıl: {CLS_TR[r["class_1_2y"]]}'))
-        o.append(marker(r['class_3_5y'], MX0 + 26, y + RH / 2, is_lag(r), f'{r["id"]} · 3–5 yıl: {CLS_TR[r["class_3_5y"]]}' + (' (gecikme temelli)' if is_lag(r) else '')))
+        o.append(marker(r['class_3_5y'], MX0 + 24, y + RH / 2, is_lag(r), f'{r["id"]} · 3–5 yıl: {CLS_TR[r["class_3_5y"]]}' + (' (gecikme temelli)' if is_lag(r) else '')))
         y += RH
         o.append(f'<line class="grid" x1="{LX}" x2="{W-4}" y1="{y}" y2="{y}"/>')
     # mean row
@@ -287,9 +289,9 @@ def tierb_svg(sector, sid):
     means = []
     for j, (col, nm) in enumerate(DRV):
         m = sum(int(r[col]) for r in items) / len(items); means.append(m); x = X0 + j * CW
-        o.append(f'<g><title>{esc(SECT[sector]+" · "+nm+" ortalaması: "+format(m,".1f").replace(".",","))}</title><rect class="trk" x="{x+2}" y="{y+RH/2-4}" width="28" height="8" rx="2"/>'
-                 f'<rect class="mean" x="{x+2}" y="{y+RH/2-4}" width="{m*5.6:.1f}" height="8" rx="2"/>'
-                 f'<text class="lab n" x="{x+33}" y="{y+RH/2+4}">{m:.1f}</text></g>'.replace('.', '.') )
+        o.append(f'<g><title>{esc(SECT[sector]+" · "+nm+" ortalaması: "+format(m,".1f").replace(".",","))}</title><rect class="trk" x="{x+2}" y="{y+RH/2-4}" width="24" height="8" rx="2"/>'
+                 f'<rect class="mean" x="{x+2}" y="{y+RH/2-4}" width="{m*4.8:.1f}" height="8" rx="2"/>'
+                 f'<text class="lab n" x="{x+28}" y="{y+RH/2+4}">{fmt(m)}</text></g>')
     o.append('</svg>')
     s = ''.join(o)
     return s, means, len(items)
@@ -357,8 +359,8 @@ figure .ft{font-weight:650;font-size:16px;margin:0 4px 8px}
 figcaption{font-size:14.5px;color:var(--ink2);margin:10px 4px 0;line-height:1.5}
 svg.viz{display:block;width:100%;height:auto;max-width:560px;margin:0 auto}
 svg.viz text{font-family:inherit;font-size:12.5px;fill:var(--ink2)}
-svg .labb{fill:var(--ink);font-weight:650}svg .s{font-size:11.5px}svg .n{font-size:11.5px}svg .n.w{font-weight:700;fill:var(--ink)}
-svg .hv{font-size:12.5px;font-weight:600}
+svg.viz text.labb{fill:var(--ink);font-weight:650}svg.viz text.s{font-size:11.5px}svg.viz text.tl{font-size:12px}svg.viz text.n{font-size:11.5px}svg.viz text.n.w{font-weight:700;fill:var(--ink)}
+svg.viz text.hv{font-size:12.5px;font-weight:650}
 .grid{stroke:var(--grid);stroke-width:1}.axis{stroke:var(--axis);stroke-width:1}
 .band0{fill:var(--band0)}.band1{fill:var(--band1)}
 .mk{fill:var(--ck);stroke:var(--surface);stroke-width:1.5}.mo{fill:var(--co);stroke:var(--surface);stroke-width:1.5}
@@ -408,7 +410,7 @@ footer .box{color:var(--ink)}
  table.tv td::before{content:attr(data-h);display:block;font-weight:700;font-size:12px;color:var(--ink2)}
 }
 @media print{body{background:#fff}details>*{display:block}}
-'''.replace('@@BL@@', BL).replace('@@BD@@', BD).replace('@@HB@@', ''.join(f'.hb{i}{{fill:var(--hb{i})}}.hb{i}t{{fill:var(--hb{i}t)}}' for i in range(6)))
+'''.replace('@@BL@@', BL).replace('@@BD@@', BD).replace('@@HB@@', ''.join(f'.hb{i}{{fill:var(--hb{i})}}svg.viz text.hb{i}t{{fill:var(--hb{i}t)}}' for i in range(6)))
 
 # ---------------------------------------------------------------- text
 ew, aw, sw = weakest('ecology_environment'), weakest('academia_research'), weakest('civil_society')
