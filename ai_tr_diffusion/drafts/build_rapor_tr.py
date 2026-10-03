@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Builds rapor_tr.html (single self-contained file) from inventory.csv.
+Run from ai_tr_diffusion/: python3 drafts/build_rapor_tr.py  (body template: drafts/rapor_tr_body.html).
 All classes, counts, charts and the hidden JSON block are generated from the CSV."""
 import csv, json, collections, html, os, re
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-rows = list(csv.DictReader(open(os.path.join(HERE, 'inventory.csv'), encoding='utf-8')))
+HERE = os.path.dirname(os.path.abspath(__file__))   # drafts/ (holds rapor_tr_body.html)
+ROOT = os.path.dirname(HERE)                         # project root (inventory.csv in, rapor_tr.html out)
+rows = list(csv.DictReader(open(os.path.join(ROOT, 'inventory.csv'), encoding='utf-8')))
 assert len(rows) == 73
 by_id = {r['id']: r for r in rows}
 
@@ -432,5 +434,5 @@ tok = {
 for k, v in tok.items():
     BODY = BODY.replace(k, str(v))
 assert '@@' not in BODY, re.findall(r'@@\w+@@', BODY)
-open(os.path.join(HERE, 'rapor_tr.html'), 'w', encoding='utf-8').write(BODY)
+open(os.path.join(ROOT, 'rapor_tr.html'), 'w', encoding='utf-8').write(BODY)
 print('ok', len(BODY.encode('utf-8')), 'min text contrast on heat bins', round(MIN_CONTRAST, 2))

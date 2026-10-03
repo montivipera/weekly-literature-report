@@ -4,7 +4,7 @@ Working dir: `ai_tr_diffusion/`. Brief: `BRIEF.md` (Sections 1–9 define everyt
 Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/extract/draft/HTML), Opus (review, pre-decision advice).
 
 ## Status
-- Current step: 5h sync+gates (Sonnet) ∥ 7 script (Sonnet). Then TTS, final commit, user handover.
+- Current step: 7 — awaiting TTS job; then final commit + handover (user must confirm İzmir BB).
 - Last updated: 2026-10-03
 
 ## Step plan (model per step)
@@ -147,3 +147,5 @@ Planner decisions (Fable, 2026-10-03):
 - 4c fixes APPLIED (34/34): report_en.md v2; §7 now 376 refs; source counts 682/593 ok/74 weak/7 orphan/7 via-search/1 dup; CSV conditions/branch text fixed (A46 A25 A27 A40 B09), S639 URL encoded. rapor_tr.html still needs sync with A46/B09 condition text (5h).
 - Step 5 DONE (v1): rapor_tr.html 147 KB, ~3,850 words, 5 SVGs + CSS matrix, JSON #classes block = inventory.csv, phone-width check passed. Built from report v1 → 5h sync to v2 running (Sonnet) + gates check → drafts/gates_check.md. Build files to move into drafts/.
 - Step 7 script (podcast_tr.md) being written by Sonnet; then TTS via vidIQ.
+- Step 5h DONE: rapor_tr.html synced to report v2 (25 edits), rebuilt (~152 KB, 4,768 words ≈ 19–24 min read — top of target). Build files moved to drafts/ (drafts/build_rapor_tr.py, drafts/rapor_tr_body.html). GATES a–d all PASS (drafts/gates_check.md, gates_check.py). Planner ran a real Chromium render: 390px light/dark → scrollWidth 390 = no horizontal scroll; dark background applied.
+- Step 7: podcast_tr.md written (5,826-char full script + 4,991-char spoken version; TTS limit is 5,000/call). vidIQ voiceover job job_ce5fdd8e-d1bf-4625-ba9d-e9a459ef6b41 submitted (voice Daniel, ~70 credits); awaiting URL.
