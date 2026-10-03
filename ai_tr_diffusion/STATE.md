@@ -73,3 +73,7 @@ Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/ex
 
 ## Step 2 batch map
 b1 health+education: A02 A03 A04 A49 A08 A09 A10 A50 | b2 finance+retail+law: A05 A06 A07 A45 A46 A34 A35 A30 A32 | b3 public_admin+cross_cutting: A11 A12 A13 A48 A40 A41 A42 A44 | b4 agriculture+energy: A14 A15 A16 A47 A17 A18 A19 | b5 manufacturing+logistics+media: A20 A21 A22 A23 A25 A26 A27 A28 A29 | b6 labour_market: A36 A37 A38 A51 | b7 ecology: B02 B03 B04 B05 B06 B07 B09 B23 B24 (+B01 d6 recheck) | b8 academia: B10 B11 B12 B13 B14 B15 B25 | b9 civil_society: B17 B19 B20 B21 B22 B26 B27
+
+## Step 2 incident (2026-10-03)
+- b7 (ecology) stopped: WebSearch budget exhausted ("200 of 200 per session") mid-B04. Scored: B02 Likely/Likely, B03 Likely/Likely (d3=4 borderline → Opus), B04 PROVISIONAL (rerun needed). Not scored: B05 B06 B07 B09 B23 B24. B01 recheck: suggest d6=2 (TRDizin Aras CNN/LSTM paper; İTÜ ARIS lab unverified), class unchanged.
+- Risk: if the 200-search cap is shared session-wide, other batches will hit it too. Awaiting other hand-backs; user to be told. Fallback: Consensus/Scholar Gateway MCP + Haiku-free reruns in a fresh session.
