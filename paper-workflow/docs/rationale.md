@@ -89,11 +89,11 @@ Written 2026-10-04 (Phase 3 of the design job). This file has one entry per desi
 
 ### D11 · Enforcement: hooks for hard rules, CLAUDE.md for the rest
 - **Decision:** hard rules are enforced by hooks, not by text in CLAUDE.md. Nothing depends on the Workflow tool; fan-out in stages 08–09 uses subagents.
-- **As built (build-spec §7, D22):** `.claude/settings.json` and `.claude/hooks/guard.sh` are the approved exception to the file structure; there is no JSON for the user to paste from CLAUDE.md.
+- **As built (build-spec §7, D22):** `.claude/settings.json` and `.claude/hooks/guard.sh` are the approved exception to the file structure; CLAUDE.md §10 shows the same JSON for reference and describes guard.sh.
   - guard.sh denies edits to analysis-plan.md once a `plan-<slug>-*` tag exists, and enforces the live-file rule (D15).
   - The SessionStart hook re-injects the newest STATE.md.
   - The Stop hook only reminds; it never blocks.
-  - The citation gate is enforced by the stage 09 and 10 checklists and by the drafter and critic rules, not by a blocking hook.
+  - The citation gate is enforced indirectly by guard.sh: `draft/` becomes the live file only when the stage 09 gate passes, so draft writes are denied before verification; the stage 09 and 10 checklists and the drafter and critic rules cover claim-level support.
 - **Why:** CLAUDE.md is context, not configuration. PreToolUse hooks block in every permission mode. Blocking Stop hooks are overridden after 8 consecutive blocks and do not fire on interrupts, so keeping Stop as a reminder is a judgement call. Workflows take no input mid-run.
 - **Evidence:** [B23, A-vendor]; [B20, A-vendor]; [G22, A-vendor]; [B21, A-vendor]; [B22, A-vendor]; [B16, A-vendor]; [B39, C UNVERIFIED] (workflow model key).
 - **Would change if:** guard.sh misfires in practice, in which case the `ask` rules are the fallback; or Claude Code ships a native file allowlist or a reliable blocking gate for drafts.
