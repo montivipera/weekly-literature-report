@@ -2,7 +2,7 @@
 Goal: a short, logged literature scan (≥2 databases, 10–20 key papers with resolved DOIs) that places the data in context before any question or plan is fixed.
 
 ## Entry modes
-- `a-data-only`: all steps run in full, but the gate status is `RETRO-AUDIT` noted `post-design` (synthesis §11.1): the data were designed and collected before the scan, so it can inform the questions and the plan, not the design or sample size.
+- `a-data-only`: all steps run in full, but the gate status is `RETRO-AUDIT` noted `post-design` (mode table, stage 00): the data were designed and collected before the scan, so it can inform the questions and the plan, not the design or sample size.
 - RETRO-AUDIT in `b-analysis-done`, `c-half-draft`, `d-finished-manuscript`, `e-under-revision`: rebuild search-log.md from dated artefacts (proposal, reference-manager export dates, early drafts) and mark those rows `reconstructed`. A row gets `consulted: before-results` only if a dated artefact predates the first outcome result; all others get `consulted: after-results`. Each hypothesis whose only literature support is `after-results` is flagged as HARKing form (b) [C2] in one inbox.md item targeting questions.md.
 - NOT-PASSABLE: when no dated artefact shows any literature consulted before results. Queue the disclosure item "literature search postdates the results; hypotheses drawn from it are post hoc".
 
@@ -11,7 +11,7 @@ Goal: a short, logged literature scan (≥2 databases, 10–20 key papers with r
 - **Live files:** `search-log.md` (steps 1–3), then `scan-notes.md` (steps 4–9). The main session switches `live_file:` in STATE.md between them; only one is live at a time.
 - **Outputs:**
   - `search-log.md`: header `derives-from: data-inventory.md@<short-commit>`; rows `ID (Qnn) | date | database | string (exact, as approved) | filters | hits | rows kept`.
-  - `scan-notes.md`: header `derives-from: search-log.md@<short-commit>`; ledger rows `ID (SCnn) | DOI | resolver | resolve date | authors, year, title (from resolver) | source (Qnn) | status UNRESOLVED or RESOLVED | fulltext: yes|no | consulted: before-results | key: yes|no | relevance (one extracted line, not a summary)`. Stage 08 imports these rows into doi-ledger.md with IDs unchanged.
+  - `scan-notes.md`: header `derives-from: search-log.md@<short-commit>`; ledger rows `ID (SCnn) | DOI | resolver | resolve date | authors, year, title (from resolver) | source (Qnn) | status UNRESOLVED or RESOLVED | fulltext: yes|no | consulted: before-results | key: yes|no | relevance (one extracted line, not a summary)`. Stage 08 imports these rows into doi-ledger.md with IDs unchanged. A `fulltext: no` row is orientation only and is not citable until stage 08 extracts it from the full text, because abstracts tend to overstate results [D20].
 
 ## Model and agent
 - `agents/lit-extractor.md` (claude-sonnet-5-5, effort medium; scan budget ≤100k source tokens, a judgement call well under the 300k stream cap): runs approved strings with retrieval tools only (database APIs, WebSearch/WebFetch, bibliographic MCP tools such as PubMed, Consensus, Scholar Gateway), never from memory [A21, D5].
@@ -29,8 +29,6 @@ Goal: a short, logged literature scan (≥2 databases, 10–20 key papers with r
 8. The user reviews the key list; main session reads scan-notes.md only and adds nothing from memory.
 9. Commit search-log.md and scan-notes.md and write the hash to STATE.md as `scan_commit:`; this commit must precede the plan tag `plan-<slug>-v1` (checked again at stage 04).
 10. Run the gate and set `live_file: questions.md` for stage 03.
-
-Rule: a `fulltext: no` row is orientation only and cannot be cited until stage 08 has extracted it from the full text, because abstracts tend to overstate results [D20].
 
 ## Gate (pass/fail)
 - [ ] search-log.md: every row has string, database, date and hits, and at least 2 distinct databases appear.

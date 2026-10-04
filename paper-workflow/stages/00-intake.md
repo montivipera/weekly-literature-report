@@ -4,7 +4,7 @@ Goal: list everything that already exists for this paper, classify the entry mod
 ## Entry modes
 - Runs first in every mode (`a-data-only`, `b-analysis-done`, `c-half-draft`, `d-finished-manuscript`, `e-under-revision`). It is the audit set-up itself, so it has no RETRO-AUDIT variant.
 - NOT-PASSABLE: never as a whole. An artefact whose date cannot be shown gets `date evidence: none`, is treated as made after outcome inspection, and queues the disclosure item "provenance of <artefact> unknown".
-- Mode table (condensed from synthesis §11.1; S01–S10 = stage files 01–10):
+- Mode table (condensed; full table and sources in docs/rationale.md; S01–S10 = stage files 01–10):
   - `a-data-only`: normal S01 (+ data-access log), S03, S04 if no outcome-level look, S05–S10 · RETRO-AUDIT S02 (logged post-design) · NOT-PASSABLE S04 for design and sample size (the freeze covers analysis only) · disclose collection and freeze dates, any prior looks, when inclusion rules were fixed.
   - `b-analysis-done`: normal S01, S07 (from as-run scripts), S08–S10 · RETRO-AUDIT S02 (flag literature HARKing), S03, S05 (as-run log), S06 (built backwards, all rows post hoc) · NOT-PASSABLE S04 and any `confirmatory` label on these data · disclose no plan, all exploratory, every analysis in order, how the question was chosen, post hoc subsection, robustness.
   - `c-half-draft`: as b, plus S08–S09 re-extract the draft's citations from full text and an Introduction audit (hypotheses first dated after a result are post hoc; orphan claims flagged) · disclose as b, plus hypotheses written or changed after results (from version history).
