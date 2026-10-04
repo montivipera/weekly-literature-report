@@ -54,7 +54,7 @@ Goal: write methods.md and results.md along the question-map axis, with every ma
 6. Call the drafter for Results, one subsection per question in question-map order, with nulls included and not-mapped analyses in a supplement list.
 7. Each Results sentence with a number reports label, n, effect and uncertainty and ends with its `[log: A<nn>]` pointer, so every number traces to one results/A<nn>.md file (judgement call) [C19].
 8. The main session checks that every number before a `[log: A<nn>]` occurs in papers/<slug>/results/A<nn>.md (a grep per sentence), fixes drafter misses in results.md, and sends errors inside results/A<nn>.md to inbox.md.
-9. Each `[GAP: cite — …]` gets one inbox.md line targeting doi-ledger.md, to be resolved in stages 08–09.
+9. Each `[GAP: cite — …]` gets one inbox.md line targeting doi-ledger.md: stage 08 makes its CL row, stage 09 verifies it, and stage 10 fills in `[ledger: CL<nn>]`.
 10. Run the gate, write STATE.md, commit, run `/rename <slug>-S07`, then `/clear`.
 
 ## Gate (pass/fail)
@@ -74,7 +74,7 @@ Results (results.md):
 - [ ] Every mapped analysis has n, effect, uncertainty and its label [C19].
 - [ ] `grep -Ev '^(#|$|derives-from:)' papers/<slug>/results.md | grep -vc '\[log: A'` prints 0, and the number-trace check finds 0 misses.
 - [ ] Modes b–e: results.md points to the Discussion's post hoc subsection [F31].
-- [ ] `grep -c '\[ledger: ' papers/<slug>/methods.md papers/<slug>/results.md` prints 0 for both: citations are `[GAP: cite — …]` markers only, each with an inbox.md line, and Results makes no literature claims.
+- [ ] Every citation in methods.md and results.md is a `[GAP: cite — …]` marker with an inbox.md line, or (on re-entry) a `[ledger: CL<nn>]` whose CL row exists; `grep -c '\[ledger: R' papers/<slug>/methods.md papers/<slug>/results.md` prints 0; Results makes no literature claims.
 - [ ] STATE.md updated: gate status, live_file for next stage, stale flags, open inbox count. Next: `live_file: doi-ledger.md`.
 
 ## Propagate step

@@ -48,7 +48,7 @@ Goal: turn the global, regional, national and local literature into verifiable l
 4. Use NotebookLM, if at all, only to decide what to read, upload published sources only (never unpublished data, results or drafts), and list each NotebookLM output in the provenance list as `NOT-CITABLE`.
 5. Run one lit-extractor stream per layer, in the order global, regional, national, local. It runs each string in ≥2 databases and logs Q rows before any reading [C43, C44, C45], then writes R rows (layer, `risk: high` for regional, national and local [D4, D9], `consulted: after-results`, `UNRESOLVED`) and CL rows (verbatim quote, page/section, `UNRESOLVED`).
 6. After each stream, write the layer's row counts and source tokens into STATE.md, commit, and `/clear` before starting the next stream.
-7. For each `[GAP: cite — …]` in methods.md and results.md, make sure a CL row words that claim; close its inbox.md line only when stage 09 passes.
+7. For each `[GAP: cite — …]` in methods.md and results.md, make sure a CL row words that claim; its inbox.md line closes at stage 10, when the GAP is replaced by `[ledger: CL<nn>]`.
 8. Write each layer synthesis from CL rows only, every sentence ending in `[ledger: <CL-ids>]` and never citing another synthesis or a NotebookLM output [D21].
 9. Write the to-be-cited list (CL-ID, R-ID, draft section, human check), since stage 09 verifies exactly that set.
 10. Run the gate, write STATE.md, commit, run `/rename <slug>-S08`, then `/clear`.
