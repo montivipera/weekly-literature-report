@@ -38,7 +38,7 @@ Each draft file starts with its own `derives-from:` line. Placeholders: `[ledger
 - Candidate model set and selection rule: response distribution, random-effect structure and dependence, the selection criterion, and the protocol followed [C33, C35, C36] [ledger: <R-ids>]
 - Labels: by question, which analyses are `confirmatory` (with plan-ids) and which are `exploratory` [log: <A-ids>]
 - n, effect and uncertainty: Results gives them for every mapped analysis, and Methods states the estimand of each [C19, C39] [log: <A-ids>]
-- Robustness and sensitivity checks, with each rule written before the check ran (required in modes b–e) [F17, F18, F36] [log: <A-ids>]
+- Robustness and sensitivity checks, with each rule written before the check ran (required in every mode except `a-data-only`) [F17, F18, F36] [log: <A-ids>]
 - Software and package versions [log: <A-ids>]
 - Data and code availability: the block below, or a cross-reference to it if the journal puts it in Methods [C18, C20]
 - AI-use statement, placed where the target journal requires it (Methods, Acknowledgements or a declaration section), with wording taken from the doi-ledger.md disclosure fields [D27–D32]
@@ -58,13 +58,14 @@ Each draft file starts with its own `derives-from:` line. Placeholders: `[ledger
 - Conclusion: exploratory findings are stated as preliminary until new data test them [F5] [ledger: <R-ids>]
 
 ### Transparent post hoc analyses [F1, F31]
-This subsection is mandatory in modes b–e. In mode a it is required whenever an `exploratory` row is discussed.
+This subsection is mandatory in modes `b-analysis-done` to `e-under-revision`. In `a-data-only` it is required whenever an `exploratory` row is discussed.
 - Each post hoc analysis: what it was, when it ran (after which result), why it was run, and that it is hypothesis-generating [log: <A-ids>]
 - Hypotheses with `origin: data`, and the new data that would test them [ledger: <R-ids>]
 - Robustness results (multiverse or specification curve, second analyst, never-explored hold-out) [F17–F22] [log: <A-ids>]
 - Questions with no analysis and dropped hypotheses, taken from question-map.md "Not mapped" [C2] [log: <A-ids>]
 
-## Disclosure statement (modes b–e; also mode a when any gate is `NOT-PASSABLE`) [F4, F16]
+## Disclosure statement [F4, F16]
+Required in modes `b-analysis-done`, `c-half-draft`, `d-finished-manuscript` and `e-under-revision`, and in `a-data-only` when any gate is `NOT-PASSABLE`.
 Fill this from the disclosure queue in STATE.md and delete the slots that do not apply. Never use "preregistered" or "registered" for a plan written after the outcomes were seen [F16].
 - Registration: "This study was not preregistered." or "The analysis plan was fixed on <date> (git tag `plan-<slug>-v1`) after data collection and before any outcome model was run."
 - Prior exposure: "Before this analysis, the authors had <never worked with these data | analysed <variables> for <purpose or publication>>."
@@ -72,7 +73,7 @@ Fill this from the disclosure queue in STATE.md and delete the slots that do not
 - How hypotheses were chosen: "Hypotheses <H-ids> were stated before the outcomes were inspected, based on <the literature | advisor input>. Hypotheses <H-ids> were formed after <A-ids> and are exploratory." [C2, F16]
 - Criteria: "Inclusion and exclusion criteria were fixed <before | after> data analysis." [F4]
 - Labels: "<n> analyses are labelled confirmatory because they use new data or a never-explored hold-out. All others are exploratory."
-- Revision (mode e): "The analyses requested by reviewers (<A-ids>) are labelled exploratory, and changes between versions are listed in <file>." [F23]
+- Revision (`e-under-revision`): "The analyses requested by reviewers (<A-ids>) are labelled exploratory, and changes between versions are listed in <file>." [F23]
 - Pointer: "Post hoc analyses are reported in the Discussion under '<subsection title>'."
 
 ## Data and code availability (stage 07; checked at stage 10) [C18, C20, C37]

@@ -7,6 +7,8 @@ The ledger has three linked tables:
 - (b) reference rows `R..` record whether a source exists, matches its metadata and has been retracted;
 - (c) claim rows `CL..` record whether a passage supports a claim.
 
+It also holds the layer syntheses, the to-be-cited list, the AI-summary provenance list and the disclosure fields.
+
 Rows are appended and never deleted; only status cells change. EXAMPLE rows show the format only: their dates and statuses are illustrative, not checks that were run. Delete them when the paper's ledger starts.
 
 ## Rules
@@ -40,7 +42,7 @@ Stage 02 rows are copied from search-log.md, and stage 08 appends its own.
 ## (b) Reference rows
 | ID | Source (first author, year, venue) | DOI | Resolver | Resolve date | Metadata match | Retraction check | Fulltext | Consulted | Status |
 |---|---|---|---|---|---|---|---|---|---|
-| R<nn> | <author, year, venue> | <10.xxxx/...> | <Crossref \| OpenAlex \| PubMed \| MCP: tool name> | <YYYY-MM-DD> | <yes \| no: field(s) wrong> | <none found YYYY-MM-DD via <source> \| retracted> | `fulltext: <yes \| no>` | `consulted: <before-results \| after-results>` | <status> |
+| R<nn> | <author, year, venue> | <10.xxxx/...> | <Crossref \| OpenAlex \| PubMed \| MCP: tool name> | <YYYY-MM-DD> | <yes \| no: field(s) wrong> | <none found YYYY-MM-DD via <source> \| retracted> | `fulltext: <yes \| no>` <sources/<file>.pdf> | `consulted: <before-results \| after-results>` | <status> |
 | EXAMPLE R01 | Zuur & Ieno 2016, Methods Ecol Evol | 10.1111/2041-210x.12577 | Crossref | <YYYY-MM-DD> | yes | none found <YYYY-MM-DD> | `fulltext: yes` | `consulted: before-results` | `SUPPORT-CHECKED` |
 | EXAMPLE R02 | Fraser et al. 2018, PLOS ONE | 10.1371/journal.pone.0200303 | OpenAlex | <YYYY-MM-DD> | yes | none found <YYYY-MM-DD> | `fulltext: no` | `consulted: after-results` | `METADATA-OK` (no claim may cite it until the full text is read) |
 
@@ -51,19 +53,38 @@ Stage 02 rows are copied from search-log.md, and stage 08 appends its own.
 | EXAMPLE CL01 | Data exploration (outliers, collinearity, dependence) should come before model fitting. | R01 | "<verbatim sentence from the R01 full text>" | <§n> | citation-verifier (agent) | <YYYY-MM-DD> | `SUPPORT-CHECKED` |
 | EXAMPLE CL02 | About half of surveyed ecologists reported presenting an unexpected finding as if it had been hypothesised. | R02 | none (abstract only) | none | citation-verifier (agent) | <YYYY-MM-DD> | `UNRESOLVED` (needs `fulltext: yes`) |
 
+## Layer syntheses (stage 08)
+There is one short synthesis per layer, built only from claim rows. Every sentence ends with its row IDs, and a sentence with no IDs is deleted [D19, D21].
+A synthesis is never cited itself: drafts cite the R rows behind it.
+### Global
+- <one finding> [<CL-ids>; <R-ids>]
+### Regional
+- <one finding> [<CL-ids>; <R-ids>]
+### National
+- <one finding> [<CL-ids>; <R-ids>]
+### Local
+- <one finding> [<CL-ids>; <R-ids>]
+
+## To-be-cited list (stage 09 checks every row; the gate needs all at `SUPPORT-CHECKED`)
+| R-ID | Claim IDs | Draft section | Human spot-check needed (regional, national, local or post-2020) | Checked by | Status |
+|---|---|---|---|---|---|
+| R<nn> | <CL-ids> | <intro \| methods \| discussion> | <yes \| no> | <agent \| human: initials> | <status> |
+| EXAMPLE R01 | CL01 | methods | no | citation-verifier (agent) | `SUPPORT-CHECKED` |
+| EXAMPLE R02 | CL02 | intro | no | none yet | `METADATA-OK` (blocks the gate) |
+
 ## AI-summary provenance list (every row `NOT-CITABLE`)
 These outputs are for orientation only, and no draft sentence may rest on them. A fact first found here can be cited only after it has its own R and CL rows [D19, D24, D25, D36].
 | AI-ID | Tool (name, version or model ID) | Date | Scope (sources loaded; question asked) | Output kept at | Used for | Status |
 |---|---|---|---|---|---|---|
 | AI<nn> | <tool> | <YYYY-MM-DD> | <n sources, layer; prompt> | <path> | <which S searches or outline it prompted> | `NOT-CITABLE` |
 | EXAMPLE AI01 | NotebookLM | 2026-11-18 | 34 PDFs, regional layer; "What drives amphibian decline in <region> wetlands?" | ai01-notebooklm-regional.md | suggested search S02 | `NOT-CITABLE` |
-| EXAMPLE AI02 | claude-sonnet-5-5 (lit-extractor) | 2026-11-21 | layer synthesis built from R02–R12 | ai02-national-synthesis.md | outline of Introduction paragraph 2; it cites only R and CL IDs | `NOT-CITABLE` |
+| EXAMPLE AI02 | Scopus AI (search assistant) | 2026-11-21 | answer to the S02 query, 8 papers summarised | ai02-search-summary.md | which hits to screen first | `NOT-CITABLE` |
 
 ## Disclosure fields
 Fill these at stage 07 and re-check them at stage 10 against the live policy page. Policy wording in our research comes from search snippets, so treat it as UNVERIFIED [D27–D32].
 - Target journal and AI policy: <journal> · <policy URL> · live page re-read on <YYYY-MM-DD>
 - AI tools used: <name and model ID or version of each tool, including NotebookLM>
-- Used for what: <data inventory \| analysis code \| literature extraction \| citation checks \| drafting \| language editing>. Not used for: <research figures [D30] \| scientific judgements, which stay with the authors>
+- Used for what: <data inventory | analysis code | literature extraction | citation checks | drafting | language editing>. Not used for: <research figures [D30] | scientific judgements, which stay with the authors>
 - Human oversight: <who checked which outputs>. The authors take full responsibility [D26, D31].
-- Where disclosed: <Methods \| Acknowledgements \| declaration section before References \| cover letter>, as the target journal requires [D27, D28, D30, D32]
+- Where disclosed: <Methods | Acknowledgements | declaration section before References | cover letter>, as the target journal requires [D27, D28, D30, D32]
 - Reference declaration, used only if every cited row is `SUPPORT-CHECKED`: "All references were checked to exist, to be cited accurately and to support the claims made." [D17]

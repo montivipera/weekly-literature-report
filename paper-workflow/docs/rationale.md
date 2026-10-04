@@ -38,7 +38,7 @@ Written 2026-10-04 (Phase 3 of the design job). This file has one entry per desi
   - [C33, A]: the regression protocol starts from design and questions.
   - [D16, B]: valid links do not mean factual support.
   - [D17, A]: a journal now requires authors to declare that their references support their claims.
-- **Would change if:** across pilot papers a stage never catches anything, so it can be merged; or a target journal imposes another order, such as a Registered Report Stage 1 before data access.
+- **Would change if:** over the first real papers a stage never catches anything, so it can be merged; or a target journal imposes another order, such as a Registered Report Stage 1 before data access.
 
 ### D4 · Plan registration route
 - **Decision:**
@@ -73,7 +73,7 @@ Written 2026-10-04 (Phase 3 of the design job). This file has one entry per desi
 - **Decision:** the Opus agents and the main session read only md hand-offs. For a disputed row, Opus calls source-rechecker (Sonnet 5.5, ≤20k tokens per call), which re-opens one passage and returns the quote and its location.
 - **Why:** reading raw sources drives the cost, but hand-offs can lose details, and supplied records get accepted uncritically. Re-opening a single passage restores grounding cheaply.
 - **Evidence:** [A25, B] (supplied records accepted; Opus 5, not 5.5); [D21, B] (re-injecting source context mitigates errors); [E23, A-vendor] (1–2k-token subagent summaries); [E25, A-vendor] (outputs stored outside the coordinator); [E26, B] (information withheld between agents). The E worked estimate puts reading a 5k md file at about $0.02 and 300k raw tokens at about $3–9.
-- **Would change if:** a pilot measures how often hand-offs drop decisive details (E, Gaps). Frequent loss would mean letting Opus open single passages directly; rare loss would mean fewer re-check calls.
+- **Would change if:** the first real papers show how often hand-offs drop decisive details (E, Gaps). Frequent loss would mean letting Opus open single passages directly; rare loss would mean fewer re-check calls.
 
 ### D9 · Fable 5.1 is for escalation only
 - **Decision:** Fable 5.1 runs only after Opus 5.5 at higher effort fails an acceptance check (a methods critique or the final polish), and only once its data-retention terms have been checked for unpublished data.
@@ -106,7 +106,7 @@ Written 2026-10-04 (Phase 3 of the design job). This file has one entry per desi
   Frontmatter pins the full model ID, the tools and maxTurns; the body states effort, budget, inputs, the output schema and a "never do" list. The orchestrator never passes `model`, and nobody sets CLAUDE_CODE_SUBAGENT_MODEL_FORCE=1.
 - **Why:** a per-invocation model outranks frontmatter, and FORCE=1 puts every agent on one model, which defeats routing. Switching models re-reads the history uncached. A separate critic exists because models fail at self-evaluation.
 - **Evidence:** [B2, A-vendor]; [B3, A-vendor]; [B4, A-vendor]; [B37, A-vendor]; [E6, A-vendor]; [E30, A-vendor] (`low` effort suits subagents); [A5, A-vendor]; [A24, A].
-- **Would change if:** pilot data on cost per accepted output favour Opus readers (cached Sonnet and Opus readers differ only about 1.5x; E worked estimate); or the `effort` frontmatter key listed in [B2] replaces the body rule.
+- **Would change if:** usage data from the first real papers show Opus readers cost less per accepted output (cached Sonnet and Opus readers differ only about 1.5x; E worked estimate); or the `effort` frontmatter key listed in [B2] replaces the body rule.
 
 ### D13 · DOI resolution is a procedure inside citation-verifier
 - **Decision:** the Crossref, OpenAlex and PubMed lookups run through Bash or bibliographic MCP tools inside the citation-verifier agent, documented in its body. There is no separate script file.
@@ -122,7 +122,7 @@ Written 2026-10-04 (Phase 3 of the design job). This file has one entry per desi
 
 ### D15 · One live file per session
 - **Decision:** a static `deny` rule protects raw data, and `ask` rules cover the plan, CLAUDE.md, stages/, agents/ and templates/. A PreToolUse guard allows writes only to STATE.md, inbox.md and the `live_file:` path. `mode: propagate` lifts the allowlist but never the plan freeze.
-- **As built:** guard.sh is a script file (build-spec §7, D22), not the inline command D15 named.
+- **As built:** guard.sh is a script file (build-spec §7, D22), not the inline command D15 named. Agents write per-paper files only with Write or Edit, never with Bash redirects, so the guard sees every write (build-spec §2).
 - **Why:** each edit is a full-context request, so a six-file cascade costs six requests. CLAUDE.md cannot enforce anything. `Edit(path)` rules cover every built-in edit tool, deny beats allow, and hooks block in every mode.
 - **Evidence:** [G6, A-vendor]; [G15, A-vendor]; [G20, A-vendor]; [G21, A-vendor] (R and Python writes escape deny rules); [G22, A-vendor]. G, Gaps: there is no built-in "edit only these files" setting, so the allowlist logic is inference.
 - **Residual risk:** guard.sh reads `live_file:` from STATE.md, which Claude may write; a copy that only the user sets would be stronger (inference). Subprocess writes are not caught, so scripts write only to results/.
@@ -148,7 +148,7 @@ Written 2026-10-04 (Phase 3 of the design job). This file has one entry per desi
   - The disclosure block lives in templates/section-skeleton.md.
 - **Why:** papers arrive in any state, and claiming that early gates were passed would be exactly the misrepresentation the HARKing literature describes.
 - **Evidence:** [F16, A]; [F13, A]; [F2, A]; [F1, A] (transparent post hoc subsection); [F4, A UNVERIFIED] (disclosure statement); [F23, A] (deviations reported).
-- **Would change if:** a pilot on a mode-d paper finds an artefact with no stage to map to. The mapping itself has no source; F built it (F, Entry scenarios).
+- **Would change if:** the first mode-d paper has an artefact with no stage to map to (the planned pilot was cancelled, so the mapping is untested). The mapping itself has no source; F built it (F, Entry scenarios).
 
 ### D19 · /clear at stage boundaries
 - **Decision:**
@@ -210,7 +210,7 @@ Every gate ends with the same item: "STATE.md updated: gate status, live_file fo
 - **Would change if:** a second analyst re-runs the plan; then their log is added alongside. Many-analyst spread: [F21, A].
 
 ### Gate 06 · Question map
-- **Gate:** the analysis-to-question table has exactly one row per analysis-log row (count check); nulls and unmapped analyses are kept; questions with no analysis are listed; orphan claims are flagged; and the advisor package is exported.
+- **Gate:** the analysis-to-question table (Part A of question-map.md) has exactly one row per analysis-log row (count check); nulls and unmapped analyses are kept; questions with no analysis are listed; orphan claims are flagged; and the advisor package is exported.
 - **Why:** a single narrative axis can silently drop unsupported hypotheses, and unexpected findings tend to be played down.
 - **Evidence:** [C2, A] (form c: silently dropped hypotheses); [C12, A]; [C47, C]; [F1, A]; [F31, A]; [C31, A] (advisors at 06 have already seen results).
 - **Would change if:** advisors ask for a different package format (judgement call). The completeness rule is not relaxed.
@@ -222,7 +222,7 @@ Every gate ends with the same item: "STATE.md updated: gate status, live_file fo
 - **Would change if:** the target journal's checklist adds items. They are added; none of these is removed.
 
 ### Gate 08 · Literature extraction
-- **Gate:** every ledger row has a DOI or ID, a verbatim quote, a page or section, the `fulltext:` and `consulted:` fields, and full-text extraction behind it. AI outputs appear only in the provenance list, as `NOT-CITABLE`, and layer syntheses cite row IDs only.
+- **Gate:** every ledger row has a DOI or ID, a verbatim quote, a page or section, the `fulltext:` and `consulted:` fields, and full-text extraction behind it. AI outputs appear only in the provenance list, as `NOT-CITABLE`. The layer syntheses, which live inside doi-ledger.md, cite row IDs only.
 - **Why:** summaries overgeneralise and drift when chained, and regional and post-2020 topics have the highest fabrication rates.
 - **Evidence:** [D19, A]; [D21, B]; [D25, A]; [D20, B]; [D4, A]; [D9, A]; [D36, UNVERIFIED].
 - **Would change if:** a direct test shows page-numbered quotes add nothing (none exists; D, Gaps). The quotes would still be kept for verification.
