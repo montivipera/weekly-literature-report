@@ -36,7 +36,7 @@ Close an item by appending a new row with the same ID, text and target file and 
 |---|---|---|---|
 ```
   - `disclosure.md` (modes b–e): `# disclosure.md — papers/<slug>/`, then `## Queue` with rows `ID | gate | full text the paper must state | queued date`; stage 10 completes the file.
-- **Queueing a disclosure item (every stage uses this rule):** one line in the STATE.md disclosure queue (ID = queuing stage + number, e.g. `S04.1`, plus ≤6 words) and the full text in disclosure.md under the same ID. disclosure.md is live only at step 7 here and at stage 10; from any other stage the full text is appended as an inbox.md item with target file `disclosure.md`.
+- **Queueing a disclosure item (every stage uses this rule):** one line in the STATE.md disclosure queue (ID = queuing stage + number, e.g. `S04.1`, plus ≤6 words). disclosure.md is live only at step 7 here (modes b–e) and at stage 10; from any other stage the full text goes to inbox.md as an item with target file `disclosure.md` and is written into disclosure.md at stage 10, under the same ID.
 
 ## Model and agent
 - `agents/data-reader.md` (claude-sonnet-5-5, effort medium, ≤100k input tokens, output ≤150 lines): lists artefacts, reads dates from `git log`, file metadata and document headers, and writes the intake.md rows. It does not analyse content.

@@ -10,7 +10,7 @@ Goal: put every analysis that was run onto one axis of questions, with nulls and
   - analyses with no claim go to "Not mapped" [F1, F31].
   The checklist is never shortened (judgement call).
 - In `e-under-revision`, analyses requested by reviewers (run in stage 05) are added as new rows marked `reviewer-requested`. This part is a normal run.
-- `NOT-PASSABLE` only when the set of analyses actually run cannot be reconstructed, for example because scripts or outputs were lost. Queue this disclosure item (one STATE.md line, ID + ≤6 words; full text appended to disclosure.md, switching live_file to it for that append only): "The full set of analyses run could not be reconstructed; the reported analyses are those recoverable from <artefacts>."
+- `NOT-PASSABLE` only when the set of analyses actually run cannot be reconstructed, for example because scripts or outputs were lost. Queue this disclosure item (one STATE.md line, ID + ≤6 words; full text goes to inbox.md as an item with target file `disclosure.md` and is written into disclosure.md at stage 10): "The full set of analyses run could not be reconstructed; the reported analyses are those recoverable from <artefacts>."
 
 ## Inputs / Live file / Outputs
 - **Inputs:**

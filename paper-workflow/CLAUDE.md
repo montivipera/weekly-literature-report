@@ -29,7 +29,7 @@ Every session reads papers/<slug>/STATE.md, this file and the current stage file
 | S07 | 07-methods-results.md | methods.md, results.md |
 | S08 | 08-literature-extraction.md | doi-ledger.md (R and CL rows) |
 | S09 | 09-citation-verification.md | doi-ledger.md (verification cells) |
-| S10 | 10-discussion-critique-submission.md | draft/, then critique.md, then disclosure.md |
+| S10 | 10-discussion-critique-submission.md | draft/ (intro, discussion, abstract, references.md), then critique.md, then disclosure.md |
 
 - STATE.md, inbox.md and data-access.md are always writable. Other folders: agents/ (8 subagents), templates/ (question-map, doi-ledger, section-skeleton, analysis-to-question), docs/rationale.md (why each rule exists).
 
@@ -52,7 +52,7 @@ Use these strings exactly.
 - Hypothesis origin on every hypothesis: `origin: literature | data | advisor` [C2].
 - Row IDs: `Q<nn>` search strings · `R<nn>` reference rows · `CL<nn>` claim-support rows · `A<nn>` analysis-log rows · `D<nn>` deviations · `I<nn>` inbox items. No `S<nn>`, no `SC<nn>`. Stage IDs are `S04` style; session names are `/rename <slug>-S<NN>`.
 - R status: `UNRESOLVED` → `RESOLVED` → `METADATA-OK` (terminal for R), or `RETRACTED` / `NOT-CITABLE`; the retraction check happens before `METADATA-OK` is set. CL status: `UNRESOLVED` → `SUPPORT-CHECKED`, or `NOT-CITABLE`. Flags: `fulltext: yes|no`, `consulted: before-results|after-results`, `risk: high|normal` [C2, D20].
-- Markers: `[ledger: CL12, CL15]` (claim-support rows only) and `[log: A03]` for any number taken from an analysis. No other marker forms (`[res:]`, `<!-- src -->`, `[own result]`, `[ledger: R..]`).
+- Markers: `[ledger: CL12, CL15]` (claim-support rows only) and `[log: A03]` for any number taken from an analysis. Stage 07 may leave `[GAP: cite — <what it must support>]` placeholders (one inbox.md item each); stage 10 replaces every one with `[ledger: CL<nn>]`, and any remaining `[GAP` fails the stage 10 gate. No other marker forms (`[res:]`, `<!-- src -->`, `[own result]`, `[ledger: R..]`).
 - STATE.md: `mode: work | propagate` and `live_file: <path relative to papers/<slug>/>`. A trailing `/` means a directory, and several paths are comma-separated (judgement call).
 - Evidence grades in docs/rationale.md: A / B / C, plus `UNVERIFIED` where the research file says so. Never upgrade a grade (judgement call).
 

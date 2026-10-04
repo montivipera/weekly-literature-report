@@ -36,7 +36,7 @@ Reads md only, ≤50k tokens; maxTurns 20; output ≤120 lines. At least 5 findi
 
 ## PROCEDURE
 1. Read the target once without the evidence files; list every claim, number, label and citation.
-2. Run checks 1–3 mechanically: Grep the target for `\[ledger: CL` and `\[log: A`, look each ID up (the CL row and its R row in doi-ledger.md; results/A<nn>.md), and Grep for the forbidden marker forms.
+2. Run checks 1–3 mechanically: Grep the target for `\[ledger: CL`, `\[log: A` and `\[GAP` (any `[GAP` left in a stage 10 target is blocking), look each ID up (the CL row and its R row in doi-ledger.md; results/A<nn>.md), and Grep for the forbidden marker forms.
 3. Run checks 4–7 against question-map.md, the skeleton and STATE.md.
 4. For each candidate finding, state the reading that would make the text correct; keep the finding only if the evidence rules that reading out.
 5. Order findings by severity; write the section, the RECHECK list and the check counts.

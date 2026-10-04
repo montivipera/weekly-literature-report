@@ -12,7 +12,7 @@ Goal: write methods.md and results.md along the question-map axis, with every ma
   - a disclosure block in methods.md: "not preregistered"; every analysis reported in run order; how the questions were chosen; when the inclusion rules were fixed [F4 UNVERIFIED];
   - a pointer in results.md to the post hoc subsection of the Discussion [F1, F31].
 - `e-under-revision`: analyses requested by reviewers are reported and labelled as such, and changes since submission are listed the way deviations are [F23].
-- `NOT-PASSABLE` when a mandatory item cannot be established from any artefact, for example unknown prior exposure, or a reported number whose script is lost. Queue this disclosure item (one STATE.md line, ID + ≤6 words; full text appended to disclosure.md, switching live_file to it for that append only): "<item> could not be established and is stated as unknown in Methods."
+- `NOT-PASSABLE` when a mandatory item cannot be established from any artefact, for example unknown prior exposure, or a reported number whose script is lost. Queue this disclosure item (one STATE.md line, ID + ≤6 words; full text goes to inbox.md as an item with target file `disclosure.md` and is written into disclosure.md at stage 10): "<item> could not be established and is stated as unknown in Methods."
 
 ## Inputs / Live files / Outputs
 - **Inputs:**

@@ -17,7 +17,7 @@ You turn sources into ledger rows that a separate verifier can check and a draft
 - MCP tool names in `tools` follow this account's connectors; if yours differ, edit that line. Crossref and OpenAlex are queried with curl.
 
 ## OUTPUT
-Stage 02: Q rows to papers/<slug>/search-log.md and R rows to papers/<slug>/scan-notes.md, plus any extra column stages/02 names. Stage 08: Q, R and CL rows to tables (a)–(c) of papers/<slug>/doi-ledger.md. Columns exactly as in templates/doi-ledger.md:
+Stage 02: Q rows to papers/<slug>/search-log.md and R rows to papers/<slug>/scan-notes.md, plus the `## Key` section (R<nn> | concept block | relevance) that stages/02 names. Stage 08: Q, R and CL rows to tables (a)–(c) of papers/<slug>/doi-ledger.md. Columns exactly as in templates/doi-ledger.md:
 - (a) `Q<nn> | date | database | string | filters | hits | rows kept | consulted (before-results|after-results)`; rows kept reads `<n>: <R-ids>`.
 - (b) `R<nn> | DOI | source (first author, year, venue) | layer (scan|global|regional|national|local) | resolver | resolve date | metadata match (yes|no) | retraction check (clear|RETRACTED|not-run) | fulltext (yes|no) | sources path | risk (high|normal) | consulted | status`. You write resolver, resolve date and metadata match as `NA`, retraction check `not-run`, risk `high` for the regional, national and local layers (else `normal`), status `UNRESOLVED`.
 - (c) `CL<nn> | R<nn> | claim (as worded in the draft) | verbatim quote | page or section | verifier | date | status`. The claim is ≤25 words and no broader than the quote (1–3 sentences, exact, in quotes); verifier and date `NA`; status `UNRESOLVED`.

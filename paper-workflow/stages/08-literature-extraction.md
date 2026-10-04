@@ -10,7 +10,7 @@ Goal: turn the global, regional, national and local literature into verifiable l
   - its quote is re-extracted from the full text;
   - `consulted:` is set from dated artefacts, defaulting to `after-results` [F11].
 - `NOT-PASSABLE`: never for the gate as a whole. R rows without a full text stay `fulltext: no`, and their CL rows can never reach `SUPPORT-CHECKED`.
-- If the Introduction's hypotheses rest on literature consulted after results, queue this disclosure item (one STATE.md line, ID + ≤6 words; full text appended to disclosure.md, switching live_file to it for that append only): "Introduction literature was searched after results were known; hypotheses are not presented as derived from it" [C2 form b].
+- If the Introduction's hypotheses rest on literature consulted after results, queue this disclosure item (one STATE.md line, ID + ≤6 words; full text goes to inbox.md as an item with target file `disclosure.md` and is written into disclosure.md at stage 10): "Introduction literature was searched after results were known; hypotheses are not presented as derived from it" [C2 form b].
 
 ## Inputs / Live file / Outputs
 - **Inputs:**
