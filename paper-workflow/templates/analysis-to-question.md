@@ -19,7 +19,7 @@ It is a lookup, not prose: no interpretation and no rewording of results. EXAMPL
 - `none` under "Reported where" needs a reason in Notes. The row still appears in the archived analysis log and in the disclosure "all analyses reported" statement.
 
 ## Completeness rule
-One row per analysis-log row, in log order. Nulls, failed fits, abandoned models and reruns all get rows, and two log rows are never merged.
+One row per analysis-log row, in log order. Nulls, failed fits, abandoned models and reruns all get rows, and two log rows are never merged [C5, C19, F31].
 Count check (this assumes row IDs are `A` followed by digits in both files; adapt the pattern if yours differ). EXAMPLE rows do not match the pattern.
 ```
 grep -c '^| A[0-9]' analysis-log.md
@@ -33,9 +33,9 @@ Outcome-independence check, for every `confirmatory` row:
 git tag -l 'plan-<slug>-*'
 git log -1 --format=%cs plan-<slug>-v1
 ```
-The plan tag must exist, and its date must be earlier than the date of the first outcome-model row in analysis-log.md.
+The plan tag must exist, and its date must be earlier than the date of the first outcome-model row in analysis-log.md [C7, C25].
 
-## Orphan rules
+## Orphan rules [C2, F1, F31]
 - Analysis with no question: set Question to `none`. List the row under question-map.md "Not mapped"; never delete it.
 - Question with no analysis: it gets no row here. List it under question-map.md "Not mapped" with the reason, because a dropped hypothesis must be disclosed.
 - Planned analysis that never ran (a plan-id with no log row): list it under question-map.md "Not mapped" and add an inbox line that targets deviations.md.

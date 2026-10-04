@@ -5,10 +5,12 @@ Template: copy to papers/<slug>/STATE.md at stage 00. Overwritten every burst (n
 slug: <slug>
 title: <working title>
 entry_mode: <a-data-only | b-analysis-done | c-half-draft | d-finished-manuscript | e-under-revision>
+prior_exposure: <none | descriptive | outcome-looked | analysed | published>   # highest level reached before the plan tag
 mode: work                # work | propagate (propagate only after the user types "propagate inbox")
 current_stage: 00-intake  # stages/<NN-name>.md
 live_file: intake.md      # relative to papers/<slug>/; trailing "/" = directory; several: comma-separated
 plan_tag: <none | plan-<slug>-v1>
+scan_commit: <none | short commit of search-log.md at the time of the plan tag>
 stale: []                 # downstream files flagged by an upstream change, e.g. [methods.md]
 ```
 

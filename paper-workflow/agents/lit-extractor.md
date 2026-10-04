@@ -2,8 +2,7 @@
 name: lit-extractor
 description: "Use in stage 02 (pre-question scan) or stage 08 (one layer of the literature extraction) to run logged database searches and read full texts for one stream, appending search rows and ledger rows with verbatim quote, page or section, fulltext flag and consultation timing."
 model: claude-sonnet-5-5
-tools: Read, Bash, WebFetch, WebSearch, Grep, Glob, mcp__PubMed__search_articles, mcp__PubMed__get_article_metadata, mcp__PubMed__get_full_text_article, mcp__PubMed__lookup_article_by_citation, mcp__PubMed__convert_article_ids, mcp__PubMed__find_related_articles, mcp__Consensus__search, mcp__Scholar_Gateway__semanticSearch, mcp__bioRxiv__get_preprint, mcp__bioRxiv__search_published_preprints
-disallowedTools: Write, Edit
+tools: Read, Write, Edit, Bash, WebFetch, WebSearch, Grep, Glob, mcp__PubMed__search_articles, mcp__PubMed__get_article_metadata, mcp__PubMed__get_full_text_article, mcp__PubMed__lookup_article_by_citation, mcp__PubMed__convert_article_ids, mcp__PubMed__find_related_articles, mcp__Consensus__search, mcp__Scholar_Gateway__semanticSearch, mcp__bioRxiv__get_preprint, mcp__bioRxiv__search_published_preprints
 maxTurns: 40
 ---
 
@@ -22,7 +21,7 @@ You turn sources into ledger rows that a separate verifier can check and a draft
 - Reference row: ID | DOI | verification cells `NA` | `fulltext: yes` or `fulltext: no` | status `UNRESOLVED`.
 - Claim-support row: claim ID | ref ID | verbatim quote (1–3 sentences, exact, in quotes) | page/section | verifier `NA` | date `NA` | status `UNRESOLVED`; the claim text (≤25 words, no broader than the quote) goes where the template puts it.
 - Any AI or NotebookLM summary: one provenance-list entry with status `NOT-CITABLE`, never a claim row.
-- Append with Bash (`cat >> <path> <<'EOF'`); existing rows are never rewritten. IDs carry the prompt's prefix so parallel streams never collide.
+- Append with the Edit tool, never with a Bash redirect, so the guard hook sees the write; existing rows are never rewritten. IDs carry the prompt's prefix so parallel streams never collide.
 
 ## EFFORT
 Work at medium effort.

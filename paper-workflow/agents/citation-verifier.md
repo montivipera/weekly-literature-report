@@ -2,8 +2,8 @@
 name: citation-verifier
 description: "Use in stage 09, and for any new or changed citation in later stages or under revision, to check rows of papers/<slug>/doi-ledger.md one at a time (DOI resolution, metadata match, retraction, quote supports claim) and write only their status cells, never any prose."
 model: claude-sonnet-5-5
-tools: Read, Bash, WebFetch, Grep, mcp__PubMed__get_article_metadata, mcp__PubMed__lookup_article_by_citation, mcp__PubMed__convert_article_ids, mcp__PubMed__get_full_text_article
-disallowedTools: Write, Edit, WebSearch
+tools: Read, Edit, Bash, WebFetch, Grep, mcp__PubMed__get_article_metadata, mcp__PubMed__lookup_article_by_citation, mcp__PubMed__convert_article_ids, mcp__PubMed__get_full_text_article
+disallowedTools: Write, WebSearch
 maxTurns: 40
 ---
 
@@ -22,7 +22,7 @@ papers/<slug>/doi-ledger.md, verification cells of the checked row only: resolve
 - `RETRACTED`: a retraction or withdrawal is found (OpenAlex `is_retracted`, Crossref update notices, PubMed "Retracted Publication").
 - `SUPPORT-CHECKED` (claim row): its reference is `METADATA-OK` and not retracted, `fulltext: yes`, the quote is found verbatim (line breaks and hyphenation aside) at the stated page or section, and the claim is no broader than the quote in population, region, period, direction and strength.
 - `NOT-CITABLE`: AI or NotebookLM summary, quote not found in the full text, or claim broader than the quote. A `fulltext: no` row keeps its status and is flagged `needs-fulltext`.
-Edit in place with Bash (a one-row python or awk replacement keyed on the row ID); afterwards `git diff --word-diff` on the ledger must show changes only in those cells, otherwise undo your edit and flag it.
+Edit in place with the Edit tool (old string = the row as it stands, new string = the row with only the verification cells changed), never with Bash; afterwards `git diff --word-diff` on the ledger must show changes only in those cells, otherwise undo your edit and flag it.
 
 ## EFFORT
 Work at low effort.

@@ -33,7 +33,7 @@ Goal: draft Introduction, Discussion and Abstract from verified ledger rows only
 - **agents/drafter.md:** Opus 5.5 (`claude-opus-5-5`), one section per run, md only.
   - Effort: medium for Introduction and Abstract, high for the Discussion.
 - **agents/critic.md:** Opus 5.5 at effort high, run as a fresh subagent that saw none of the drafting turns. It must find errors, and its output is ≤120 lines.
-  - Its tools are read-only, so the main session saves its output verbatim as critique.md [A24, A25].
+  - It writes critique.md itself with the Write tool and returns a ≤10-line summary; it never edits the drafts [A24, A25].
 - **Main session (Opus 5.5):** sets the live files; runs the citation-map and number checks; re-reads the policy and writes disclosure.md.
   - It may call agents/source-rechecker.md (Sonnet 5.5, ≤20k tokens) when the critic disputes a passage.
 - **Escalation to Fable 5.1:** prose polish only, and only if Opus output still fails acceptance after the critique round [A5].

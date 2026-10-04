@@ -18,7 +18,8 @@ paper-workflow/
 Stage file names: 00-intake, 01-data-inventory, 02-pre-question-scan, 03-question-framing, 04-method-and-plan-freeze, 05-analysis, 06-question-map, 07-methods-results, 08-literature-extraction, 09-citation-verification, 10-discussion-critique-submission.
 
 ## 2. Per-paper files (papers/<slug>/), dependency order = update order (upstream → downstream only)
-STATE.md (copied from template; the only file every burst overwrites; ≤60 lines) · inbox.md (append-only) · intake.md → data/ (raw, read-only) → data-inventory.md → search-log.md, scan-notes.md → questions.md → method-rationale.md → analysis-plan.md (frozen by git tag `plan-<slug>-v1`) → scripts/, results/*.md, analysis-log.md, deviations.md → question-map.md → methods.md, results.md → doi-ledger.md → draft/intro.md, draft/discussion.md, draft/abstract.md, critique.md, disclosure.md.
+STATE.md (copied from template; the only file every burst overwrites; ≤60 lines) · inbox.md (append-only) · intake.md → data/ (raw, read-only), sources/ (full-text PDFs, read-only) → data-inventory.md → search-log.md, scan-notes.md → questions.md → method-rationale.md → analysis-plan.md (frozen by git tag `plan-<slug>-v1`) → scripts/, results/*.md, analysis-log.md, deviations.md → question-map.md → methods.md, results.md → doi-ledger.md → draft/intro.md, draft/discussion.md, draft/abstract.md, critique.md, disclosure.md.
+Placements decided in Phase 3: the analysis-to-question table is Part A of question-map.md (template: templates/analysis-to-question.md); layer syntheses and the to-be-cited list live inside doi-ledger.md; critique.md and method-rationale.md are written directly by their Opus agents with the Write tool. Agents write per-paper files only with Write/Edit (never Bash redirects) so the guard hook sees every write.
 Every derived file starts with a header line: `derives-from: <file>@<short-commit>`. An upstream change never edits downstream files; it sets `stale:` entries in STATE.md. A change to the frozen plan is only ever a row in deviations.md.
 
 ## 3. Vocabulary (use exactly these strings)
@@ -33,14 +34,14 @@ Every derived file starts with a header line: `derives-from: <file>@<short-commi
 ## 4. Agents (agents/<name>.md) — frontmatter fields only as documented in research/B (name, description, model, tools, disallowedTools, maxTurns, permissionMode); anything else goes in the body as a rule
 | name | model (full ID) | effort (body rule) | role | tools | maxTurns | budget (body rule) |
 |---|---|---|---|---|---|---|
-| data-reader | claude-sonnet-5-5 | medium | inventory raw data and artefacts; never run outcome–predictor tests | Read, Grep, Glob, Bash | 25 | ≤100k input tokens; output ≤150 lines |
+| data-reader | claude-sonnet-5-5 | medium | inventory raw data and artefacts; never run outcome–predictor tests | Read, Write, Edit, Grep, Glob, Bash | 25 | ≤100k input tokens; output ≤150 lines |
 | analyst | claude-sonnet-5-5 | medium | write/run scripts exactly per analysis-plan.md; log every run | Read, Write, Edit, Bash, Grep, Glob | 60 | one analysis per turn; results/*.md ≤100 lines each |
-| lit-extractor | claude-sonnet-5-5 | medium | read full texts, write ledger rows with verbatim quote, page/section, fulltext flag | Read, Bash, WebFetch, WebSearch, Grep, Glob + bibliographic MCP tools if present | 40 | ≤300k source tokens per stream; ≤150 ledger rows per run |
-| citation-verifier | claude-sonnet-5-5 | low | resolve DOI/metadata (Crossref/OpenAlex/PubMed), check claim–passage support; never the drafter | Read, Bash, WebFetch, Grep + bibliographic MCP tools | 40 | one ledger row per check; writes status only |
+| lit-extractor | claude-sonnet-5-5 | medium | read full texts, write ledger rows with verbatim quote, page/section, fulltext flag | Read, Write, Edit, Bash, WebFetch, WebSearch, Grep, Glob + bibliographic MCP tools if present | 40 | ≤300k source tokens per stream; ≤150 ledger rows per run |
+| citation-verifier | claude-sonnet-5-5 | low | resolve DOI/metadata (Crossref/OpenAlex/PubMed), check claim–passage support; never the drafter | Read, Edit, Bash, WebFetch, Grep + bibliographic MCP tools | 40 | one ledger row per check; writes status only |
 | source-rechecker | claude-sonnet-5-5 | medium | re-open a single source passage on request from Opus; returns quote + location | Read, Bash, WebFetch, Grep | 10 | ≤20k tokens per call |
-| methods-advisor | claude-opus-5-5 | high | propose and justify candidate models against named protocols (Zuur & Ieno 2016, Bolker 2009, Harrison 2018); list assumptions, selection rule, sensitivity checks | Read, Grep, Glob | 20 | reads md only (≤50k tokens); output ≤150 lines |
+| methods-advisor | claude-opus-5-5 | high | propose and justify candidate models against named protocols (Zuur & Ieno 2016, Bolker 2009, Harrison 2018); list assumptions, selection rule, sensitivity checks | Read, Write, Grep, Glob | 20 | reads md only (≤50k tokens); output ≤150 lines |
 | drafter | claude-opus-5-5 | medium (high for Discussion) | write section text to the skeleton; cite only ledger rows with status SUPPORT-CHECKED | Read, Write, Edit, Grep, Glob | 30 | reads md only; one section per run |
-| critic | claude-opus-5-5 | high | fresh-context adversarial review; must find errors; checks every citation maps to a verified row | Read, Grep, Glob | 20 | reads md only; output ≤120 lines |
+| critic | claude-opus-5-5 | high | fresh-context adversarial review; must find errors; checks every citation maps to a verified row | Read, Write, Grep, Glob | 20 | reads md only; output ≤120 lines |
 Rules for every agent body: state inputs (paths), output file + schema, budget, "never do" list, and the return message (≤10 lines: path, counts, flags). Sonnet readers never summarise prose; they extract to schema. Opus agents never read raw sources or data. Haiku is not used (A4, A33, E4).
 
 ## 5. Stage file schema (every stages/*.md, in this order, ≤120 lines)

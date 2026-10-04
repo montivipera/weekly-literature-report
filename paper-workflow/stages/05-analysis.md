@@ -26,9 +26,9 @@ Goal: run exactly the frozen plan (5a, confirmatory), then labelled exploration 
 
 ## Procedure
 1. Check S04 in STATE.md and `git tag -l plan-<slug>-v1`; if S04 is not `PASSED`, skip 5a and label every row `exploratory`.
-2. Main session sends analyst the plan-ids still open and sets `live_file: scripts/`.
+2. Main session sends analyst the plan-ids still open and sets `live_file: scripts/, analysis-log.md, deviations.md` (comma list; results/ is written by the scripts themselves).
 3. 5a: analyst writes one script per plan-id exactly as planned, runs it, and the script writes results/<run-ID>.md.
-4. Analyst sets `live_file: analysis-log.md` and appends one row per run carrying its plan-id, including failed runs, nulls and abandoned models.
+4. Analyst appends to analysis-log.md one row per run carrying its plan-id, including failed runs, nulls and abandoned models.
 5. Any departure from the plan (data fix, non-convergence, changed exclusion or model) gets a deviations.md row with its reason before the run is reported [C27].
 6. If analyst stops with plan-ids open, main session sends a continuation naming them, at most 3 times, then asks the user [A15].
 7. 5b starts only after the 5a checklist is complete (judgement call); each further analysis is labelled `exploratory` and logged the same way [C7].

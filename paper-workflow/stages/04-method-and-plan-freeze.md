@@ -22,13 +22,13 @@ Goal: justify every candidate model against a named protocol, then freeze a stru
     8. everything not listed above is `exploratory`.
 
 ## Model and agent
-- `agents/methods-advisor.md` (claude-opus-5-5, effort high; reads md only ≤50k tokens; output ≤150 lines): drafts method-rationale.md. It has no Write tool, so the main session saves its returned text unchanged.
+- `agents/methods-advisor.md` (claude-opus-5-5, effort high; reads md only ≤50k tokens; output ≤150 lines): writes method-rationale.md directly with the Write tool and returns a ≤10-line summary.
 - `agents/critic.md` (claude-opus-5-5, effort high, fresh context; output ≤120 lines): must find errors in method-rationale.md; it never edits.
 - `agents/analyst.md` (claude-sonnet-5-5) in template-fill mode, with the task message setting effort low: fills analysis-plan.md from questions.md and method-rationale.md and adds nothing new (judgement call, no direct evidence).
 - Main session (Opus 5.5, effort medium): records critic dispositions with the user, checks the plan, prepares the advisor export. It never reads data/. The user, not Claude, commits and tags.
 
 ## Procedure
-1. Set `live_file: method-rationale.md`; methods-advisor reads questions.md and data-inventory.md and returns the per-RQ rationale, which the main session saves unchanged.
+1. Set `live_file: method-rationale.md`; methods-advisor reads questions.md and data-inventory.md and writes the per-RQ rationale to method-rationale.md.
 2. critic attacks method-rationale.md in a fresh context, and the main session writes each finding with a user-approved disposition under `## Critic`.
 3. Main session fixes the rationale for every finding marked `fixed`; a model-written justification is not trusted without this pass [A20, A25].
 4. Main session sets `live_file: analysis-plan.md`, and analyst fills the plan template from questions.md and method-rationale.md.

@@ -14,7 +14,7 @@ Delete every EXAMPLE row before export. EXAMPLE values are illustrative only: th
 5. Please reply as comments on the export by <YYYY-MM-DD>. Each point becomes one line in inbox.md and is answered at the next gate, never by a silent edit.
 
 ## Single-axis table
-Questions follow questions.md order, and analyses within a question follow analysis-log.md order. Each analysis gets its own line, so a question with two analyses has two lines.
+Questions follow questions.md order, and analyses within a question follow analysis-log.md order [C12, F31]. Each analysis gets its own line, so a question with two analyses has two lines.
 
 | Question | Hypothesis + origin tag | Analysis ID + label | Result (incl. null) | Deviation ref | Figure/table | Status |
 |---|---|---|---|---|---|---|
@@ -31,7 +31,7 @@ These rows are kept on purpose. If a subsection is empty, write "none"; never le
 | <A-id> · `exploratory` | <one line> | <estimate, uncertainty, n \| null \| failed: reason> | <abandoned model \| diagnostic \| side question \| advisor request> | <methods \| results \| none: reason> |
 
 ### Questions with no analysis
-Dropping a hypothesis without saying so is a form of HARKing, so a question that lost its analysis is listed here and named in the Discussion.
+Dropping a hypothesis without saying so is a form of HARKing [C2], so a question that lost its analysis is listed here and named in the Discussion.
 | Question | Hypothesis + origin tag | Why no analysis | What happens next |
 |---|---|---|---|
 | <Q-id>: <question> | <H-id> · `origin: <literature \| data \| advisor>` | <data cannot answer it \| dropped after <A-id> \| not yet run> | <disclose as dropped \| run as `exploratory` \| future work> |
