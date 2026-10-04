@@ -15,7 +15,8 @@ Higher models read only md outputs, never raw sources.
 
 ## Phase status
 - [x] Phase 1 — Research (5 parallel Sonnet streams) — DONE 2026-10-04. Files: research/A..E (77–111 lines each). Haiku check: all ≤150 lines, sections present; 5 grade cells normalised (A UNVERIFIED = official source read via secondary copy; C UNVERIFIED = open question).
-- [x] Phase 2 — Synthesis (Opus, analysis/synthesis.md, 255 lines, 191 claims: 148 A / 21 B / 21 C) + Checkpoint 1 (Fable decisions D3–D14 below) — DONE 2026-10-04. STOPPED for user approval.
+- [x] Phase 2 — Synthesis (Opus, analysis/synthesis.md, 255 lines, 191 claims: 148 A / 21 B / 21 C) + Checkpoint 1 (Fable decisions D3–D14 below) — presented 2026-10-04.
+- [ ] Phase 2b — Checkpoint 1 RE-OPENED by user (not approved yet). Two new requirements: R1 = the structure must accept half-finished and finished papers (entry at any stage, no pretence that early gates passed); R2 = stop update cascades across linked files and reconcile compaction loss vs usage limits. Streams F (entry points) and G (context cascade / usage limits) running; then Opus appends §11 to synthesis.md; then Fable decides and re-presents the Turkish summary.
 - [ ] Phase 3 — Build `paper-workflow/` (after approval)
 - [ ] Phase 4 — Fresh Opus audit, fixes, Checkpoint 2 (Fable)
 - [ ] Phase 5 — Turkish HTML report (≥5 inline SVGs)
@@ -43,4 +44,7 @@ Higher models read only md outputs, never raw sources.
 - OQ1: Egress proxy denies CONNECT (403) to publisher/COPE/ICMJE/COS/arxiv hosts (e.g. www.elsevier.com, www.springer.com, publicationethics.org). Policy wording in research/D rests on search snippets, marked UNVERIFIED. Tell user at Checkpoint 1; fix is the environment's Network access setting.
 
 ## Next step
+Wait for research/F-entry-points.md and research/G-context-cascade.md → Haiku format check → Opus appends §11 (entry modes + cascade control) to analysis/synthesis.md (file ≤ 330 lines) → Fable decisions D15+ → re-present Turkish summary (10 lines + the two additions) and WAIT FOR USER APPROVAL.
+
+## Previous next step (superseded)
 WAITING FOR USER APPROVAL of the Checkpoint 1 summary (Turkish, in chat). On approval → Phase 3: Opus drafts paper-workflow/ per D3–D14 (CLAUDE.md <200 lines, no file >500 lines, every stage ends with a pass/fail gate), Haiku/Sonnet-low format check, then Phase 4 fresh-Opus audit against research/*.md, then Checkpoint 2, then Phase 5 Turkish HTML report.
