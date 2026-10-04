@@ -2,38 +2,39 @@
 Goal: turn the global, regional, national and local literature into verifiable ledger rows (DOI, verbatim quote, page/section, full-text flag), never into prose summaries.
 
 ## Entry modes
-- Runs normally in every mode after stage 07. Rows are always `consulted: after-results`, except stage 02 rows carried over. Gate status: `PASSED`.
+- Runs normally in every mode after stage 07. New Q and R rows are always `consulted: after-results`; stage 02 rows keep their value. Gate status: `PASSED`.
 - `c-half-draft`: additionally imports every citation already in the draft and re-extracts it from the full text [F27, F28].
 - `d-finished-manuscript`: runs for every source never read in full. `e-under-revision`: runs for new or changed citations and for references the reviewers suggest.
 - `RETRO-AUDIT` variant, used when the ledger is reconstructed from an existing reference list (modes c–e). Instead of a fresh extraction, each existing citation is audited:
-  - it is imported as a row;
+  - it is imported as an R row, with a CL row for each claim it supports in the text;
   - its quote is re-extracted from the full text;
   - `consulted:` is set from dated artefacts, defaulting to `after-results` [F11].
-- `NOT-PASSABLE`: never for the gate as a whole. Rows without a full text stay `fulltext: no` and cannot be cited for claims.
-- If the Introduction's hypotheses rest on literature consulted after results, queue this disclosure item in STATE.md: "Introduction literature was searched after results were known; hypotheses are not presented as derived from it" [C2 form b].
+- `NOT-PASSABLE`: never for the gate as a whole. R rows without a full text stay `fulltext: no`, and their CL rows can never reach `SUPPORT-CHECKED`.
+- If the Introduction's hypotheses rest on literature consulted after results, queue this disclosure item (one STATE.md line, ID + ≤6 words; full text appended to disclosure.md, switching live_file to it for that append only): "Introduction literature was searched after results were known; hypotheses are not presented as derived from it" [C2 form b].
 
 ## Inputs / Live file / Outputs
 - **Inputs:**
-  - STATE.md, search-log.md, scan-notes.md (stage 02 rows), question-map.md;
-  - methods.md and results.md, for their `[ledger: Rn]` placeholders;
+  - STATE.md, search-log.md (stage 02 Q rows), scan-notes.md (stage 02 R rows), question-map.md;
+  - methods.md and results.md, for their `[GAP: cite — …]` markers;
   - inbox.md items targeting doi-ledger.md;
-  - full texts at the paths the user lists;
+  - full texts in papers/<slug>/sources/ (read-only) or at the URLs the user lists;
   - optional NotebookLM notes, for orientation only.
 - **Live file:** `live_file: doi-ledger.md`.
-- **Output:** doi-ledger.md, header `derives-from: question-map.md@<short-commit>`, built from templates/doi-ledger.md:
-  - **(a) search-and-consultation log**, one row per layer search: string | databases (≥2) | date | hits | `consulted: before-results|after-results`;
-  - **(b) reference rows:** ID | DOI or other ID | layer | resolver | resolve date | metadata-match | retraction check | `fulltext: yes|no` | status (`UNRESOLVED` at entry) | `risk: high` for the regional, national and local layers;
-  - **(c) claim-support rows:** claim ID | ref ID | verbatim quote | page/section | verifier | date | status;
-  - the **AI-summary provenance list**: every NotebookLM or other AI summary, each marked `NOT-CITABLE`;
-  - **layer syntheses:** a section of at most 15 lines per layer. Every sentence ends in ledger row IDs. Build-spec §2 gives syntheses no separate file, so they live here.
+- **Output:** doi-ledger.md, header `derives-from: question-map.md@<short-commit>`, built from templates/doi-ledger.md with its columns exactly:
+  - **(a) search log:** `Q<nn> | date | database | string | filters | hits | rows kept | consulted (before-results|after-results)`;
+  - **(b) reference rows:** `R<nn> | DOI | source (first author, year, venue) | layer (scan|global|regional|national|local) | resolver | resolve date | metadata match (yes|no) | retraction check (clear|RETRACTED|not-run) | fulltext (yes|no) | sources path | risk (high|normal) | consulted | status`, status `UNRESOLVED` at entry;
+  - **(c) claim-support rows:** `CL<nn> | R<nn> | claim (as worded in the draft) | verbatim quote | page or section | verifier | date | status`, status `UNRESOLVED` at entry;
+  - the **AI-summary provenance list**: every NotebookLM or other AI summary, each `NOT-CITABLE`;
+  - **layer syntheses:** at most 15 lines per layer, each sentence ending in `[ledger: <CL-ids>]`;
+  - the **to-be-cited list:** the CL rows meant to be cited, one for every `[GAP: cite — …]` in methods.md and results.md included.
 
 ## Model and agent
-- **agents/lit-extractor.md:** Sonnet 5.5 (`claude-sonnet-5-5`) at effort medium. One stream per layer. Budget per stream: ≤300k source tokens and ≤150 ledger rows per run.
-  - It extracts to schema and never summarises prose.
+- **agents/lit-extractor.md:** Sonnet 5.5 (`claude-sonnet-5-5`), `effort: medium` in its frontmatter. One stream per layer. Budget per stream: ≤300k source tokens and ≤150 ledger rows per run.
+  - It extracts to the template's columns and never summarises prose.
 - **Main session (Opus 5.5, `claude-opus-5-5`, effort medium):**
   - agrees the search strings with the user;
   - reads only ledger rows;
-  - writes the layer syntheses;
+  - writes the layer syntheses and the to-be-cited list;
   - never opens full texts.
 - **agents/source-rechecker.md:** Sonnet 5.5, ≤20k tokens per call. It re-opens one passage when a row looks wrong.
 - **Session control:**
@@ -41,27 +42,28 @@ Goal: turn the global, regional, national and local literature into verifiable l
   - `/compact Focus on stage 08` is allowed mid-stage, only if one layer cannot finish within a session. This is the only stage besides 05 where it is allowed.
 
 ## Procedure
-1. Read STATE.md and question-map.md, agree one search string per layer with the user, and log each search in ledger table (a) (string, ≥2 databases, date, hits) before any reading [C43, C44, C45].
-2. Carry the stage 02 rows from scan-notes.md into the ledger unchanged, keeping `consulted: before-results`.
-3. Collect a full text for every candidate source, entering any source without one as `fulltext: no`.
+1. Read STATE.md and question-map.md, and agree one search string per layer with the user.
+2. Copy the stage 02 Q rows from search-log.md into table (a) and the stage 02 R rows from scan-notes.md into table (b), IDs and cells unchanged; new IDs continue from the highest Q, R and CL numbers.
+3. The user puts each candidate's full text in papers/<slug>/sources/ (read-only for Claude), or lit-extractor reads it from PubMed full text or an open-access URL; a source with neither is `fulltext: no`.
 4. Use NotebookLM, if at all, only to decide what to read, upload published sources only (never unpublished data, results or drafts), and list each NotebookLM output in the provenance list as `NOT-CITABLE`.
-5. Run one lit-extractor stream per layer, in the order global, regional, national, local, writing reference rows and claim-support rows (verbatim quote, page/section, `fulltext:`, `consulted: after-results`, `UNRESOLVED`).
+5. Run one lit-extractor stream per layer, in the order global, regional, national, local. It runs each string in ≥2 databases and logs Q rows before any reading [C43, C44, C45], then writes R rows (layer, `risk: high` for regional, national and local [D4, D9], `consulted: after-results`, `UNRESOLVED`) and CL rows (verbatim quote, page/section, `UNRESOLVED`).
 6. After each stream, write the layer's row counts and source tokens into STATE.md, commit, and `/clear` before starting the next stream.
-7. Mark every reference row from the regional, national and local layers `risk: high`, so that stage 09 checks them first [D4, D9].
-8. Write each layer synthesis from ledger rows only, with every sentence ending in row IDs and never citing another synthesis or a NotebookLM output [D21].
-9. List in the syntheses' header which claim rows are meant to be cited, since stage 09 verifies exactly that set.
-10. Run the gate, write STATE.md, commit, run `/rename stage-08`, then `/clear`.
+7. For each `[GAP: cite — …]` in methods.md and results.md, make sure a CL row words that claim; close its inbox.md line only when stage 09 passes.
+8. Write each layer synthesis from CL rows only, every sentence ending in `[ledger: <CL-ids>]` and never citing another synthesis or a NotebookLM output [D21].
+9. Write the to-be-cited list (CL-ID, R-ID, draft section, human check), since stage 09 verifies exactly that set.
+10. Run the gate, write STATE.md, commit, run `/rename <slug>-S08`, then `/clear`.
 
 ## Gate (pass/fail)
-- [ ] Table (a) has, for each of the four layers, at least one search with string, ≥2 databases, date, hits and the consulted field.
-- [ ] Every reference row has a DOI or other ID, its layer, a `fulltext:` flag and a status.
-- [ ] Every claim-support row has a ref ID, a verbatim quote in quotation marks, a page or section, and the consulted field.
-- [ ] There is no prose summary outside the layer syntheses, and every synthesis sentence ends in ledger IDs. Checked by grep: 0 synthesis lines without `[R`.
+Run gate commands from paper-workflow/ (the project root for Claude Code).
+- [ ] For each of the four layers, the Q rows whose "rows kept" name that layer's R rows cover ≥2 databases, each with string, date, hits and consulted.
+- [ ] Every R row has a DOI or other ID, its layer, fulltext, sources path, risk, consulted and status; every R row is named under "rows kept" of a Q row.
+- [ ] Every CL row has an R-ID, a verbatim quote in quotation marks, and a page or section.
+- [ ] There is no prose summary outside the layer syntheses: `sed -n '/^## Layer syntheses/,/^## To-be-cited/p' papers/<slug>/doi-ledger.md | grep '^- ' | grep -vc '\[ledger: CL'` prints 0.
 - [ ] The AI-summary provenance list is complete, and no `NOT-CITABLE` item is cited in any synthesis.
-- [ ] Every regional, national and local reference row carries `risk: high`.
+- [ ] `awk -F'|' '$2 ~ /^ R[0-9]/ && $5 ~ /regional|national|local/ && $12 !~ /high/' papers/<slug>/doi-ledger.md` prints nothing.
 - [ ] Stream budgets are recorded in STATE.md: ≤300k source tokens per layer stream and ≤150 rows per run.
-- [ ] Modes c–e: every citation in the existing text has a ledger row. Checked by count match.
-- [ ] The to-be-cited list is present.
+- [ ] Modes c–e: every citation in the existing text has an R row and a CL row. Checked by count match.
+- [ ] The to-be-cited list is present and has a CL row for every `[GAP: cite — …]` in methods.md and results.md (count match).
 - [ ] STATE.md updated: gate status, live_file for next stage, stale flags, open inbox count. Next: `live_file: doi-ledger.md` for stage 09.
 
 ## Propagate step
@@ -72,7 +74,7 @@ This runs at this gate, or when the user types "propagate inbox".
 4. Edit upstream first. A methods claim is fixed in methods.md, and a new question goes to questions.md as `origin: literature`, post hoc.
 5. A changed or added ledger row returns to `UNRESOLVED`.
 6. Mark draft/ as `stale:` where it exists.
-7. Close each item with a commit pointer, then set `mode: work`.
+7. Close each item as `CLOSED -> <file>@<commit>`, then set `mode: work`.
 
 ## Evidence
 - [D19] A: LLM summaries overgeneralise 4.85 times as often as human summaries, even when told to be accurate.

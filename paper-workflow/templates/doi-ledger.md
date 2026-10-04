@@ -1,90 +1,93 @@
 # DOI ledger: <paper short title> (`<slug>`)
-derives-from: search-log.md@<short-commit>, scan-notes.md@<short-commit>
-Updated: <YYYY-MM-DD> · reference rows: <n> · claim rows: <n> · refs to be cited at `SUPPORT-CHECKED`: <n>/<n> · plan tag date: <YYYY-MM-DD | no plan>
+derives-from: question-map.md@<short-commit>
+Updated: <YYYY-MM-DD> · Q rows: <n> · R rows: <n> · CL rows: <n> · plan tag date: <YYYY-MM-DD | no plan>
+to-be-cited: <N> | SUPPORT-CHECKED: <n> | other: <n> | checked <YYYY-MM-DD>
 
 The ledger has three linked tables:
-- (a) search rows `S..` record what was searched;
-- (b) reference rows `R..` record whether a source exists, matches its metadata and has been retracted;
-- (c) claim rows `CL..` record whether a passage supports a claim.
+- (a) search rows `Q<nn>` record what was searched;
+- (b) reference rows `R<nn>` record whether a source exists, matches its metadata and has been retracted;
+- (c) claim-support rows `CL<nn>` record whether a passage supports a claim as worded.
 
-It also holds the layer syntheses, the to-be-cited list, the AI-summary provenance list and the disclosure fields.
+It also holds the layer syntheses, the to-be-cited list, the AI-summary provenance list and the disclosure checklist.
 
-Rows are appended and never deleted; only status cells change. EXAMPLE rows show the format only: their dates and statuses are illustrative, not checks that were run. Delete them when the paper's ledger starts.
+Rows are appended and never deleted; only verification cells change. Cells hold the bare values shown in each header. In prose, `risk: high` means the risk cell reads `high`; the same holds for `fulltext:` and `consulted:`. EXAMPLE rows show the format only: their dates and statuses are illustrative, not checks that were run. Delete them when the paper's ledger starts.
 
 ## Rules
-1. Existence ≠ metadata accuracy ≠ claim support. A DOI that resolves is only `RESOLVED`, and drafts cite only `SUPPORT-CHECKED` rows [D1, D4, D16].
-2. Retrieval, never memory: every R row traces to an S row (a database or MCP tool hit). No reference is ever typed from recall [A21, D5].
-3. Regional, national, local and post-2020 references get a human spot-check before `SUPPORT-CHECKED`, with the human named as verifier [D4, D9].
-4. A summary (layer synthesis, NotebookLM note or agent report) may cite only row IDs (`R..`, `CL..`), never another summary [D19, D21].
-5. The verifier is never the drafting model. Claim support comes only from full text (`fulltext: yes`), never from an abstract [D14, D18, D20].
-6. Every R row gets a retraction check before `METADATA-OK`. A retracted source becomes `RETRACTED` and is never cited as support [F29, D17].
+1. Existence ≠ metadata accuracy ≠ claim support. An R row stops at `METADATA-OK`; only a CL row reaches `SUPPORT-CHECKED` [D1, D4, D16].
+2. Drafts cite CL rows only, as `[ledger: CL12, CL15]`, and only at `SUPPORT-CHECKED`. The reference list is generated from the R rows of the cited CL rows, and each of those R rows is `METADATA-OK`.
+3. Retrieval, never memory: every R row is named under "rows kept" of a Q row (a database or MCP tool hit). No reference is ever typed from recall [A21, D5].
+4. Human check: every `risk: high` row, plus a sample of ≥10 rows or 10% of the rest. The human is named in the verifier cell [D4, D9]. `risk: high` marks the regional, national and local layers.
+5. A summary (layer synthesis, NotebookLM note or agent report) may cite only row IDs, never another summary [D19, D21].
+6. The verifier is never the drafting or extracting model. Claim support comes only from full text (R row `fulltext: yes`), never from an abstract [D14, D18, D20].
+7. The retraction check runs before `METADATA-OK` is set. A retracted source becomes `RETRACTED` and is never cited as support [F29, D17].
+8. Opus agents (drafter, critic) read a grep-extracted slice of this file (the CL rows named in the skeleton or the question map, plus their R rows), never the whole ledger.
 
-## Status ladder
-`UNRESOLVED` → `RESOLVED` → `METADATA-OK` → `SUPPORT-CHECKED`, with two exits: `RETRACTED` and `NOT-CITABLE`.
-- `UNRESOLVED`: the row was entered from a search hit but not yet looked up.
+## Status ladders
+R rows: `UNRESOLVED` → `RESOLVED` → `METADATA-OK` (terminal), with two exits: `RETRACTED` and `NOT-CITABLE`.
+- `UNRESOLVED`: entered from a search hit, not yet looked up.
 - `RESOLVED`: the DOI or PMID resolves in Crossref, OpenAlex, PubMed or an MCP tool.
-- `METADATA-OK`: authors, year, title, venue and volume/pages match the resolver record, and the retraction check is clean.
-- `SUPPORT-CHECKED`: every claim row that cites this reference is `SUPPORT-CHECKED`.
-- `RETRACTED`: a retraction or withdrawal notice was found.
-- `NOT-CITABLE`: there is no stable record, the item is an AI output, or support could not be confirmed.
+- `METADATA-OK`: the retraction check reads `clear`, then authors, year, title and venue match the resolver record.
+- `RETRACTED`: a retraction or withdrawal notice was found. To discuss a retraction, cite the notice as its own R row.
+- `NOT-CITABLE`: no stable record, an AI output, or the DOI resolves to a different work.
 
-Claim rows use three of these values: `UNRESOLVED` (not checked yet), `SUPPORT-CHECKED` (the passage supports the claim as worded) and `NOT-CITABLE` (the passage does not support it, or the row has `fulltext: no`).
+CL rows: `UNRESOLVED` → `SUPPORT-CHECKED`, or `NOT-CITABLE`. `SUPPORT-CHECKED` needs its R row at `METADATA-OK` with `fulltext: yes`, and the quote found word for word at its page or section, supporting the claim as worded.
 
-## (a) Search-and-consultation log
-A search is `consulted: before-results` if it ran before the first outcome model (compare its date with the plan tag date). Otherwise it is `consulted: after-results`.
-Stage 02 rows are copied from search-log.md, and stage 08 appends its own.
-| S-ID | Date | Stage · layer | Database or tool | Search string (verbatim) | Filters | Hits | Screened → R rows | Consulted |
-|---|---|---|---|---|---|---|---|---|
-| S<nn> | <YYYY-MM-DD> | <02 \| 08> · <global \| regional \| national \| local> | <database or MCP tool> | <exact string as run> | <years, language, type> | <n> | <n> → <R-ids> | `consulted: <before-results \| after-results>` |
-| EXAMPLE S01 | 2026-10-06 | 02 · global | OpenAlex | ("hydroperiod" OR "pond permanence") AND (Odonata OR dragonfl*) AND richness | 2000–2026; articles | 212 | 31 → R01 | `consulted: before-results` |
-| EXAMPLE S02 | 2026-11-20 | 08 · national | Scopus | (wetland OR marsh) AND amphibian* AND "<country>" | none | 47 | 12 → R02 | `consulted: after-results` |
+## (a) Search log
+Stage 08 copies the stage 02 Q rows from search-log.md with IDs unchanged and appends its own. A search is `before-results` if it ran before the first outcome model (compare its date with the plan tag date); otherwise it is `after-results`.
+| Q-ID | date | database | string | filters | hits | rows kept | consulted |
+|---|---|---|---|---|---|---|---|
+| Q<nn> | <YYYY-MM-DD> | <database or MCP tool> | <exact string as run> | <years, language, type \| none> | <n> | <n>: <R-ids> | <before-results \| after-results> |
+| EXAMPLE Q01 | 2026-10-06 | OpenAlex | ("data exploration" OR "regression-type analyses") AND protocol AND ecolog* | 2000–2026; articles | 212 | 1: R01 | before-results |
+| EXAMPLE Q02 | 2026-11-20 | Scopus | ("questionable research practices" OR HARKing) AND ecolog* | none | 47 | 1: R02 | after-results |
 
 ## (b) Reference rows
-| ID | Source (first author, year, venue) | DOI | Resolver | Resolve date | Metadata match | Retraction check | Fulltext | Consulted | Status |
-|---|---|---|---|---|---|---|---|---|---|
-| R<nn> | <author, year, venue> | <10.xxxx/...> | <Crossref \| OpenAlex \| PubMed \| MCP: tool name> | <YYYY-MM-DD> | <yes \| no: field(s) wrong> | <none found YYYY-MM-DD via <source> \| retracted> | `fulltext: <yes \| no>` <sources/<file>.pdf> | `consulted: <before-results \| after-results>` | <status> |
-| EXAMPLE R01 | Zuur & Ieno 2016, Methods Ecol Evol | 10.1111/2041-210x.12577 | Crossref | <YYYY-MM-DD> | yes | none found <YYYY-MM-DD> | `fulltext: yes` | `consulted: before-results` | `SUPPORT-CHECKED` |
-| EXAMPLE R02 | Fraser et al. 2018, PLOS ONE | 10.1371/journal.pone.0200303 | OpenAlex | <YYYY-MM-DD> | yes | none found <YYYY-MM-DD> | `fulltext: no` | `consulted: after-results` | `METADATA-OK` (no claim may cite it until the full text is read) |
+Stage 02 rows arrive from scan-notes.md as R rows with IDs unchanged (layer `scan`); stage 08 numbers on from the highest R.
+| R-ID | DOI | source (first author, year, venue) | layer | resolver | resolve date | metadata match | retraction check | fulltext | sources path | risk | consulted | status |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| R<nn> | <10.xxxx/...> | <author, year, venue> | <scan \| global \| regional \| national \| local> | <crossref \| openalex \| pubmed \| mcp:<tool> \| user \| NA> | <YYYY-MM-DD \| NA> | <yes \| no: field(s) \| NA> | <clear \| RETRACTED \| not-run> <YYYY-MM-DD> | <yes \| no> | <sources/<file>.pdf \| URL \| none> | <high \| normal> | <before-results \| after-results> | <status> |
+| EXAMPLE R01 | 10.1111/2041-210X.12577 | Zuur, 2016, Methods Ecol Evol | scan | crossref | <YYYY-MM-DD> | yes | clear <YYYY-MM-DD> | yes | sources/zuur2016.pdf | normal | before-results | `METADATA-OK` |
+| EXAMPLE R02 | 10.1371/journal.pone.0200303 | Fraser, 2018, PLOS ONE | global | openalex | <YYYY-MM-DD> | yes | clear <YYYY-MM-DD> | no | none | normal | after-results | `METADATA-OK` (its CL rows cannot pass until the full text is read) |
+| EXAMPLE R03 | <10.xxxx/...> | <author, year, regional venue> | regional | NA | NA | NA | not-run | yes | sources/<file>.pdf | high | after-results | `UNRESOLVED` |
 
 ## (c) Claim-support rows
-| Claim ID | Claim (as worded in the draft) | Ref ID | Verbatim quote | Page or section | Verifier | Date | Status |
+| CL-ID | R-ID | claim (as worded in the draft) | verbatim quote | page or section | verifier | date | status |
 |---|---|---|---|---|---|---|---|
-| CL<nn> | <one sentence> | R<nn> | "<copied exactly from the full text>" | <p. n \| §n.n \| Table n> | <citation-verifier (agent) \| human: initials> | <YYYY-MM-DD> | <status> |
-| EXAMPLE CL01 | Data exploration (outliers, collinearity, dependence) should come before model fitting. | R01 | "<verbatim sentence from the R01 full text>" | <§n> | citation-verifier (agent) | <YYYY-MM-DD> | `SUPPORT-CHECKED` |
-| EXAMPLE CL02 | About half of surveyed ecologists reported presenting an unexpected finding as if it had been hypothesised. | R02 | none (abstract only) | none | citation-verifier (agent) | <YYYY-MM-DD> | `UNRESOLVED` (needs `fulltext: yes`) |
+| CL<nn> | R<nn> | <one sentence, no broader than the quote> | "<copied exactly from the full text>" | <p. n \| §n.n \| Table n> | <citation-verifier \| citation-verifier + human: initials \| NA> | <YYYY-MM-DD \| NA> | <status> |
+| EXAMPLE CL01 | R01 | Data exploration (outliers, collinearity, dependence) should come before model fitting. | "<verbatim sentence from the R01 full text>" | <§n> | citation-verifier | <YYYY-MM-DD> | `SUPPORT-CHECKED` |
+| EXAMPLE CL02 | R02 | About half of surveyed ecologists reported presenting an unexpected finding as if it had been hypothesised. | none (R02 has `fulltext: no`) | none | NA | NA | `UNRESOLVED` |
 
-## Layer syntheses (stage 08)
-There is one short synthesis per layer, built only from claim rows. Every sentence ends with its row IDs, and a sentence with no IDs is deleted [D19, D21].
-A synthesis is never cited itself: drafts cite the R rows behind it.
+## Layer syntheses (stage 08; at most 15 lines per layer)
+Built only from CL rows. Every sentence ends with `[ledger: <CL-ids>]`, and a sentence without one is deleted [D19, D21]. A synthesis is never cited itself: drafts cite the CL rows behind it.
 ### Global
-- <one finding> [<CL-ids>; <R-ids>]
+- <one finding> [ledger: <CL-ids>]
 ### Regional
-- <one finding> [<CL-ids>; <R-ids>]
+- <one finding> [ledger: <CL-ids>]
 ### National
-- <one finding> [<CL-ids>; <R-ids>]
+- <one finding> [ledger: <CL-ids>]
 ### Local
-- <one finding> [<CL-ids>; <R-ids>]
+- <one finding> [ledger: <CL-ids>]
 
-## To-be-cited list (stage 09 checks every row; the gate needs all at `SUPPORT-CHECKED`)
-| R-ID | Claim IDs | Draft section | Human spot-check needed (regional, national, local or post-2020) | Checked by | Status |
-|---|---|---|---|---|---|
-| R<nn> | <CL-ids> | <intro \| methods \| discussion> | <yes \| no> | <agent \| human: initials> | <status> |
-| EXAMPLE R01 | CL01 | methods | no | citation-verifier (agent) | `SUPPORT-CHECKED` |
-| EXAMPLE R02 | CL02 | intro | no | none yet | `METADATA-OK` (blocks the gate) |
+## To-be-cited list (stage 08 writes it; stage 09 checks every row)
+The stage 09 gate needs every CL row here at `SUPPORT-CHECKED` and its R row at `METADATA-OK`. Statuses live in tables (b) and (c) only.
+| CL-ID | R-ID | draft section | human check |
+|---|---|---|---|
+| CL<nn> | R<nn> | <methods \| results \| intro \| discussion \| abstract> | <risk-high \| sample \| no> |
+| EXAMPLE CL01 | R01 | methods | sample |
+| EXAMPLE CL02 | R02 | intro | no (blocks the gate until CL02 is `SUPPORT-CHECKED`) |
 
 ## AI-summary provenance list (every row `NOT-CITABLE`)
 These outputs are for orientation only, and no draft sentence may rest on them. A fact first found here can be cited only after it has its own R and CL rows [D19, D24, D25, D36].
-| AI-ID | Tool (name, version or model ID) | Date | Scope (sources loaded; question asked) | Output kept at | Used for | Status |
+| AI-ID | tool (name, version or model ID) | date | scope (sources loaded; question asked) | output kept at | used for | status |
 |---|---|---|---|---|---|---|
-| AI<nn> | <tool> | <YYYY-MM-DD> | <n sources, layer; prompt> | <path> | <which S searches or outline it prompted> | `NOT-CITABLE` |
-| EXAMPLE AI01 | NotebookLM | 2026-11-18 | 34 PDFs, regional layer; "What drives amphibian decline in <region> wetlands?" | ai01-notebooklm-regional.md | suggested search S02 | `NOT-CITABLE` |
-| EXAMPLE AI02 | Scopus AI (search assistant) | 2026-11-21 | answer to the S02 query, 8 papers summarised | ai02-search-summary.md | which hits to screen first | `NOT-CITABLE` |
+| AI<nn> | <tool> | <YYYY-MM-DD> | <n sources, layer; prompt> | <path> | <which Q searches or outline it prompted> | `NOT-CITABLE` |
+| EXAMPLE AI01 | NotebookLM | 2026-11-18 | 34 PDFs, regional layer; "What drives amphibian decline in <region> wetlands?" | ai01-notebooklm-regional.md | suggested search Q02 | `NOT-CITABLE` |
+| EXAMPLE AI02 | Scopus AI (search assistant) | 2026-11-21 | answer to the Q02 query, 8 papers summarised | ai02-search-summary.md | which hits to screen first | `NOT-CITABLE` |
 
-## Disclosure fields
-Fill these at stage 07 and re-check them at stage 10 against the live policy page. Policy wording in our research comes from search snippets, so treat it as UNVERIFIED [D27–D32].
+## Disclosure fields: fill at stage 10 (disclosure.md)
+This is the checklist the main session completes in disclosure.md at stage 10; nothing is filled in here. Policy wording in our research comes from search snippets, so treat it as UNVERIFIED and re-read the live policy page [D27–D32].
 - Target journal and AI policy: <journal> · <policy URL> · live page re-read on <YYYY-MM-DD>
 - AI tools used: <name and model ID or version of each tool, including NotebookLM>
 - Used for what: <data inventory | analysis code | literature extraction | citation checks | drafting | language editing>. Not used for: <research figures [D30] | scientific judgements, which stay with the authors>
 - Human oversight: <who checked which outputs>. The authors take full responsibility [D26, D31].
 - Where disclosed: <Methods | Acknowledgements | declaration section before References | cover letter>, as the target journal requires [D27, D28, D30, D32]
-- Reference declaration, used only if every cited row is `SUPPORT-CHECKED`: "All references were checked to exist, to be cited accurately and to support the claims made." [D17]
+- Reference declaration, used only if every cited CL row is `SUPPORT-CHECKED` and every listed R row is `METADATA-OK`: "All references were checked to exist, to be cited accurately and to support the claims made." [D17]

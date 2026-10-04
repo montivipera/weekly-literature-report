@@ -1,11 +1,11 @@
 {
   "permissions": {
     "deny": ["Edit(/papers/*/data/**)"],
-    "ask": ["Edit(/papers/*/analysis-plan.md)", "Edit(/CLAUDE.md)", "Edit(/stages/**)", "Edit(/agents/**)", "Edit(/templates/**)"]
+    "ask": ["Edit(/papers/*/analysis-plan.md)", "Edit(/CLAUDE.md)", "Edit(/stages/**)", "Edit(/agents/**)", "Edit(/templates/**)", "Edit(/.claude/**)"]
   },
   "hooks": {
     "PreToolUse": [{"matcher": "Edit|Write", "hooks": [{"type": "command", "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/guard.sh"}]}],
-    "SessionStart": [{"matcher": "compact|resume|startup", "hooks": [{"type": "command", "command": "cd \"$CLAUDE_PROJECT_DIR\" && ls -t papers/*/STATE.md 2>/dev/null | head -1 | xargs -r cat"}]}],
-    "Stop": [{"hooks": [{"type": "command", "command": "cd \"$CLAUDE_PROJECT_DIR\" && if [ -n \"$(git status --porcelain papers/ 2>/dev/null)\" ]; then echo 'Reminder: papers/ has uncommitted changes. Update STATE.md (gate status, live_file, stale, open inbox count) and commit before /clear.'; fi; exit 0"}]}]
+    "SessionStart": [{"matcher": "startup|resume|clear|compact", "hooks": [{"type": "command", "command": "cd \"$CLAUDE_PROJECT_DIR\" && ls -t papers/*/STATE.md 2>/dev/null | head -1 | xargs -r cat"}]}],
+    "Stop": [{"hooks": [{"type": "command", "command": "cd \"$CLAUDE_PROJECT_DIR\" && if [ -n \"$(git status --porcelain papers/ 2>/dev/null)\" ]; then echo '{\"systemMessage\": \"Reminder: papers/ has uncommitted changes. Update STATE.md (gate status, live_file, stale, open inbox count) and commit before /clear.\"}'; fi; exit 0"}]}]
   }
 }
