@@ -26,7 +26,7 @@ Goal: generate many candidate research questions from the inventory and the scan
 6. The user ranks the candidates and chooses at most 4 RQs (cap is a judgement call against question trolling [C4]); more than 4 needs a one-line reason in questions.md.
 7. Main session writes the origin tag and a one-line theoretical rationale for each chosen RQ [C2, C13], and the user confirms the wording.
 8. Unchosen candidates stay in the table with `chosen: no`, so every candidate is logged.
-9. Run the gate, commit, and set `live_file: method-rationale.md` for stage 04.
+9. Run the gate, commit, and set `live_file: method-rationale.md, critique.md` for stage 04.
 
 ## Gate (pass/fail)
 Run gate commands from paper-workflow/ (the project root for Claude Code).
