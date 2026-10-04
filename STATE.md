@@ -20,7 +20,7 @@ Higher models read only md outputs, never raw sources.
 - [x] Phase 3 — Build `paper-workflow/` — APPROVED by user 2026-10-04 ("Onay"), DONE 2026-10-04: 28 files, 2,111 lines, all caps met (CLAUDE.md 140, STATE template 54, stages 52–97, agents 48–59, templates 40–90, rationale 320). Writer reconciliation applied (agents write only via Write/Edit; live_file comma lists; STATE fields prior_exposure/scan_commit; sources/). Spec: analysis/build-spec.md (authoritative). Five Opus writers in parallel: W1 CLAUDE.md+STATE template+.claude/; W2 stages 00–05; W3 stages 06–10; W4 agents/ (8); W5 templates/ (4)+docs/rationale.md.
 - [x] Phase 4 — Fresh Opus audit DONE (0 BLOCKER / 16 MAJOR / 32 MINOR; 76 refs checked, 13 bad; report in scratchpad phase4-audit.md). Haiku consistency pass: clean. Fable decisions → analysis/phase4-fixes.md (canonical IDs Q/R/CL/A/D/I, markers [ledger: CL..] and [log: A..], effort: frontmatter, SessionStart clear, data-access.md + SHA256SUMS added, b–e confirmatory rule tightened, mode-e re-entry branch). Three Opus fixers (A/B/C) DONE; cross-fixer reconciliation applied (disclosure-queue rule via inbox.md; [GAP: cite] marker; draft/references.md; RQ<n> IDs; critic has Edit). Structure checker clean; CLAUDE.md 149 lines; settings copy byte-identical; guard.sh 101 lines, 20 test cases pass. CHECKPOINT 2 (Fable): APPROVED 2026-10-04 with residual risks R1–R4 below.
 - [x] Phase 4b — PILOT: CANCELLED by user 2026-10-04 ("Örneği boşver sen yapıyı kur"). Demo dataset removed; papers/ is created only when a real paper starts.
-- [ ] Phase 5 — Turkish HTML report (≥5 inline SVGs) — IN PROGRESS: draft at scratchpad/report/makale-akisi-raporu.html (8 sections, 5 SVGs, changes table, 10-step checklist, evidence note, 30 sources); publishing as an artifact.
+- [x] Phase 5 — Turkish HTML report DONE 2026-10-04: published as artifact https://claude.ai/artifact/ESmdh1BJQgws1TdXtHNbDV (8 sections, 5 inline SVGs, changes table, 10-step checklist, evidence note, 30 sources; source file in session scratchpad report/makale-akisi-raporu.html).
 
 ## Decisions so far
 - D1: research/ and analysis/ live at repo root beside paper-workflow/ so Phase 4 can audit the structure against the evidence files.
@@ -54,7 +54,7 @@ Higher models read only md outputs, never raw sources.
 - OQ1: Egress proxy denies CONNECT (403) to publisher/COPE/ICMJE/COS/arxiv hosts (e.g. www.elsevier.com, www.springer.com, publicationethics.org). Policy wording in research/D rests on search snippets, marked UNVERIFIED. Tell user at Checkpoint 1; fix is the environment's Network access setting.
 
 ## Next step
-Publish the Turkish HTML report as an artifact, send the link, final STATE.md update, commit, push. Then stop.
+JOB COMPLETE. Deliverables: research/A–G, analysis/{synthesis,build-spec,phase4-fixes}.md, paper-workflow/ (28 files), Turkish report artifact. If the user resumes: first real paper = first test of the structure; start with CLAUDE.md §1 "First session".
 
 ## Superseded
 Wait for W1–W5 → run scratchpad/check_structure.sh → Haiku consistency pass → Phase 4 fresh-Opus audit against research/*.md + build-spec → fix → Checkpoint 2 (Fable) → Phase 5 report.
