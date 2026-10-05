@@ -4,7 +4,7 @@ Working dir: `ai_tr_diffusion/`. Brief: `BRIEF.md` (Sections 1–9 define everyt
 Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/extract/draft/HTML), Opus (review, pre-decision advice).
 
 ## Status
-- Current step: COMPLETE (2026-10-03). Deliverables: report_en.md, rapor_tr.html, inventory.csv, sources.csv, STATE.md, review_log.md, podcast_tr.md, podcast_tr.mp3.
+- Current step: Phase 2 market research — R1–R4 running.
 - Last updated: 2026-10-03
 
 ## Step plan (model per step)
@@ -151,3 +151,6 @@ Planner decisions (Fable, 2026-10-03):
 - Step 7: podcast_tr.md written (5,826-char full script + 4,991-char spoken version; TTS limit is 5,000/call). vidIQ voiceover job job_ce5fdd8e-d1bf-4625-ba9d-e9a459ef6b41 submitted (voice Daniel, ~70 credits); awaiting URL.
 - Step 7 DONE: podcast_tr.mp3 (424 s, 6.8 MB) downloaded into repo (S3 host was reachable); podcast_tr.md updated. vidIQ credits used ≈70.
 - ALL STEPS COMPLETE. Open item: user to confirm İzmir BB as the municipality (one-line edit in report_en.md §6, rapor_tr_body.html + rebuild, podcast script note).
+
+## Phase 2 — Market research for P1 (wetland benchmark dataset) and P2 (ÇED pre-screening pipeline), 2026-10-05
+- Plan: market/PLAN.md (approved by user). Four Sonnet workstreams running in parallel (R1 P1 global, R2 P1 TR/Med, R3 P2 TR ÇED, R4 P2 global tools), ≤40 searches each → market/R*_*.md + R*_sources.csv. Next: Opus product-model synthesis (4–6 models per product) → Fable ranking → market/market_en.md + market/pazar_tr.md.
