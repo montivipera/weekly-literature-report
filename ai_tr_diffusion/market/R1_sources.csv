@@ -1,0 +1,112 @@
+id,title,url,date_accessed,used_for
+R1-001,PANGAEA: A Global and Inclusive Benchmark for Geospatial Foundation Models (arXiv HTML),https://arxiv.org/html/2412.04204v1,2026-10-05,Q1 PANGAEA scope; relation to GEO-Bench
+R1-002,pangaea-bench GitHub repository,https://github.com/VMarsocci/pangaea-bench,2026-10-05,Q1 PANGAEA host; GEO-Bench integration
+R1-003,PANGAEA - ESA Phi-lab challenges portfolio,https://challenges.philab.esa.int/portfolio/pangaea/,2026-10-05,Q1 PANGAEA listed on ESA Phi-lab portal
+R1-004,PANGAEA GRSM 2026 (Consensus record),https://consensus.app/papers/details/c9ba28e94dd65684b5faeb66aa594a86/,2026-10-05,Q1 citations; geographic bias statement
+R1-005,"GEO-Bench: Toward Foundation Models for Earth Monitoring (Consensus record, DOI 10.48550/arxiv.2306.03831)",https://consensus.app/papers/details/dd82e678bd1958719afb3ec4e7cedcd9/,2026-10-05,Q1 GEO-Bench size/citations
+R1-006,"GEO-Bench-2 (Consensus record, arXiv 2511.15658)",https://consensus.app/papers/details/7925bb243326541fb6732abfdf0e3f44/,2026-10-05,Q1/Q2 GEO-Bench-2 19 datasets; TerraMind/Prithvi/Clay evaluated
+R1-007,BigEarthNet - A Large-Scale Sentinel Benchmark Archive,https://bigearth.net/,2026-10-05,Q1 BigEarthNet host
+R1-008,Description of BigEarthNet-MM,https://bigearth.net/static/documents/Description_BigEarthNet-MM.pdf,2026-10-05,"Q1 BigEarthNet size, labels, countries"
+R1-009,BigEarthNet on Source Cooperative (TU Berlin),https://source.coop/tu-berlin/bigearthnet,2026-10-05,Q1/Q3 BigEarthNet hosted on Source Coop
+R1-010,BigEarthNet v2 (Zenodo record 10891137),https://zenodo.org/records/10891137,2026-10-05,Q1/Q3 BigEarthNet on Zenodo
+R1-011,bigearthnet - TensorFlow Datasets catalog,https://www.tensorflow.org/datasets/catalog/bigearthnet,2026-10-05,Q1 BigEarthNet size/licence/usage signal
+R1-012,Landsat-Bench (Consensus record),https://consensus.app/papers/details/a8fc97628a2f50ffa190dc720930100e/,2026-10-05,Q1 BigEarthNet reused in downstream benchmark
+R1-013,harshinde/sen1floods11 - Hugging Face,https://huggingface.co/datasets/harshinde/sen1floods11,2026-10-05,"Q1 Sen1Floods11 size, licence (mirror)"
+R1-014,Sen1Floods11 CVPRW 2020 paper,https://openaccess.thecvf.com/content_CVPRW_2020/papers/w11/Bonafilia_Sen1Floods11_A_Georeferenced_Dataset_to_Train_and_Test_Deep_Learning_CVPRW_2020_paper.pdf,2026-10-05,Q1 Sen1Floods11 origin
+R1-015,ESA WorldCover 2021 Product Validation Report v2.0,https://worldcover2021.esa.int/data/docs/WorldCover_PVR_V2.0.pdf,2026-10-05,Q1 WorldCover validation set size/accuracy
+R1-016,Documentation - ESA WorldCover 2021,https://worldcover2021.esa.int/documentation,2026-10-05,"Q1 WorldCover validation (Wageningen, IIASA)"
+R1-017,Accuracy assessment of global and regional land cover maps: a case study in Northern Greece (SPIE),https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13816/138160O/Accuracy-assessment-of-global-and-regional-land-cover-maps/10.1117/12.3072484.full,2026-10-05,Q5 regional validation of WorldCover in Greece
+R1-018,Uncertainty and Generalizability in Foundation Models for Earth Observation (Consensus record),https://consensus.app/papers/details/4aa1a7ff041651c280bec08e5a0667a2/,2026-10-05,Q1/Q5 WorldCover classes used as FM downstream tasks
+R1-019,Eurostat compact guide: LUCAS,https://ec.europa.eu/eurostat/documents/4031688/14187915/KS-09-21-309-EN-N.pdf/7b948a5b-9135-1ee3-3a2b-a26d58c6f2f7?t=1644247217894,2026-10-05,Q1 LUCAS design
+R1-020,LUCAS 2018 TOPSOIL data - ESDAC,https://esdac.jrc.ec.europa.eu/content/lucas-2018-topsoil-data,2026-10-05,"Q1 LUCAS topsoil size, access"
+R1-021,From parcel to continental scale: European crop type map from Sentinel-1 and LUCAS Copernicus (arXiv 2105.09261),https://arxiv.org/pdf/2105.09261,2026-10-05,Q1 LUCAS usage signal
+R1-022,Towards a global high-resolution inventory of wetland typologies - Global Wetland Watch,https://www.globalwetlandwatch.org/news/2024/towards-a-global-high-resolution-inventory-of-wetland-typologies/,2026-10-05,"Q1 GWW method, inputs"
+R1-023,Global Wetland Watch (Ramsar PDF),https://www.ramsar.org/sites/default/files/2024-12/5.%20Global%20Wetland%20Watch%20Towards%20a%20global%20high%20resolution%20inventory%20of%20wetland%20typologies.pdf,2026-10-05,Q1 GWW and Ramsar link
+R1-024,GWL_FCS30: global 30 m wetland map (ESSD 2023),https://essd.copernicus.org/articles/15/265/2023/,2026-10-05,Q1/Q5 global wetland product
+R1-025,Mapping Mediterranean Wetlands With Remote Sensing: A Good-Looking Map Is Not Always a Good Map (ScienceDirect),https://www.sciencedirect.com/science/article/abs/pii/S0065250417300272,2026-10-05,"Q1/Q5 Mediterranean wetland mapping, 31 classes"
+R1-026,DBD-research-group/BirdSet - Hugging Face,https://huggingface.co/datasets/DBD-research-group/BirdSet,2026-10-05,"Q1 BirdSet size, licence, host"
+R1-027,BirdSet: A Large-Scale Dataset for Audio Classification in Avian Bioacoustics (arXiv 2403.10380),https://arxiv.org/pdf/2403.10380,2026-10-05,Q1 BirdSet
+R1-028,BirdSet (Consensus record),https://consensus.app/papers/details/8d4de344813059adbb97dbd0f0bf1a9c/,2026-10-05,Q1 BirdSet citations
+R1-029,Foundation models for bioacoustics - A comparative review (Consensus record),https://consensus.app/papers/details/3306b2c4a6a6584182010a9df3512578/,2026-10-05,Q1/Q2 BEANS/BirdSet usage; Perch 2.0 results
+R1-030,A dataset for benchmarking Neotropical anuran calls identification in passive acoustic monitoring (Sci Data),https://www.nature.com/articles/s41597-023-02666-2,2026-10-05,Q1 AnuraSet
+R1-031,AnuraSet (Zenodo record 8056090),https://zenodo.org/records/8056090,2026-10-05,"Q1/Q3 AnuraSet host, licence"
+R1-032,Xeno-canto - GBIF dataset page,https://www.gbif.org/dataset/b1047888-ae52-4179-9dd5-5448ea342a24,2026-10-05,Q1/Q3 xeno-canto on GBIF
+R1-033,Xeno-canto - Wikipedia,https://en.wikipedia.org/wiki/Xeno-canto,2026-10-05,Q1 xeno-canto size and licences (secondary source)
+R1-034,Unsupervised classification to improve the quality of a bird song recording dataset (Consensus record),https://consensus.app/papers/details/d63fde153d785d7294ea3789a92ad2f4/,2026-10-05,Q1/Q5 xeno-canto labels are weak
+R1-035,BEANS: The Benchmark of Animal Sounds (arXiv 2210.12300),https://arxiv.org/pdf/2210.12300,2026-10-05,Q1 BEANS
+R1-036,earthspecies/beans GitHub,https://github.com/earthspecies/beans,2026-10-05,Q1 BEANS host
+R1-037,Prithvi-EO-2.0-300M - Hugging Face,https://huggingface.co/ibm-nasa-geospatial/Prithvi-EO-2.0-300M,2026-10-05,Q2 Prithvi release
+R1-038,Prithvi-EO-2.0 (Consensus record),https://consensus.app/papers/details/5da6c765346b55f6a0fdae3cd549c8fc/,2026-10-05,"Q2 Prithvi validation, SME involvement"
+R1-039,NASA-IMPACT/Prithvi-EO-2.0 GitHub,https://github.com/NASA-IMPACT/Prithvi-EO-2.0,2026-10-05,Q2 Prithvi team
+R1-040,Terramind: the new generative AI model for Earth observation - IBM Research,https://research.ibm.com/blog/terramind-esa-earth-observation-model,2026-10-05,Q2 TerraMind/TerraMesh
+R1-041,ESA Open Sourced AI Model for Earth Observation - Open Source Observatory,https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/esa-open-sourced-ai-model-earth-observation,2026-10-05,Q2 TerraMind licence Apache 2.0
+R1-042,FAST-EO - eo science for society (ESA),https://eo4society.esa.int/projects/fast-eo/,2026-10-05,"Q2 TerraMind consortium, six use cases"
+R1-043,TerraMesh (Consensus record),https://consensus.app/papers/details/f71a01ba73ae5fef99e7b386b39b3bda/,2026-10-05,Q2 TerraMesh size
+R1-044,An Open Foundation Model for Earth - Development Seed (Clay),https://developmentseed.org/projects/clay/,2026-10-05,Q2 Clay
+R1-045,Clay Model v0 Embeddings - Source Cooperative,https://source.coop/clay/clay-model-v0-embeddings,2026-10-05,Q2/Q3 Clay on Source Coop
+R1-046,AlphaEarth Foundations - Google DeepMind blog,https://deepmind.google/blog/alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail/,2026-10-05,Q2 AlphaEarth partners
+R1-047,AlphaEarth Foundations (arXiv 2507.22291),https://arxiv.org/pdf/2507.22291,2026-10-05,"Q2 AlphaEarth label scarcity, training, evaluation"
+R1-048,AI-powered pixels: Introducing Google's Satellite Embedding dataset,https://medium.com/google-earth/ai-powered-pixels-introducing-googles-satellite-embedding-dataset-31744c1f4650,2026-10-05,"Q2/Q3 AlphaEarth licence CC-BY 4.0, 50+ partners"
+R1-049,Introducing Custom Satellite Embeddings (Google Maps Platform),https://mapsplatform.google.com/resources/blog/introducing-custom-satellite-embeddings-powered-by-alphaearth-foundations/,2026-10-05,Q2 AlphaEarth commercial product
+R1-050,Scalable Geospatial Data Generation Using AlphaEarth (Consensus record),https://consensus.app/papers/details/04729c78811b5927b21a14429c4a57ef/,2026-10-05,Q2 labelled data extension with AEF
+R1-051,BirdNET-Analyzer GitHub,https://github.com/birdnet-team/BirdNET-Analyzer,2026-10-05,Q2/Q3 BirdNET licences
+R1-052,BirdNET about page (Cornell),https://birdnet.cornell.edu/about/,2026-10-05,Q2 BirdNET team
+R1-053,BirdNET: A deep learning solution for avian diversity monitoring (Consensus record),https://consensus.app/papers/details/85fe0ab9300d59e9a3215a75fe338eaf/,2026-10-05,"Q2 BirdNET citations, species coverage"
+R1-054,Perch 2.0: The Bittern Lesson for Bioacoustics (arXiv 2508.04665),https://arxiv.org/pdf/2508.04665,2026-10-05,"Q2 Perch 2.0 training data, benchmarks"
+R1-055,How AI trained on birds is surfacing underwater mysteries (Google Research),https://research.google/blog/how-ai-trained-on-birds-is-surfacing-underwater-mysteries/,2026-10-05,Q2 Perch release
+R1-056,BirdCLEF+ 2025 - Kaggle,https://www.kaggle.com/competitions/birdclef-2025,2026-10-05,"Q2/Q3 BirdCLEF prize, taxa"
+R1-057,BirdCLEF+ 2025 - ImageCLEF,https://www.imageclef.org/BirdCLEF2025,2026-10-05,Q2 BirdCLEF organisers
+R1-058,microsoft/MegaDetector GitHub,https://github.com/microsoft/MegaDetector/tree/main,2026-10-05,Q2 Microsoft AI for Good Lab MegaDetector
+R1-059,Google releases SpeciesNet (TechCrunch),https://techcrunch.com/2025/03/03/google-releases-speciesnet-an-ai-model-designed-to-identify-wildlife/,2026-10-05,Q2 SpeciesNet is Google; training data
+R1-060,Fine-tuning SpeciesNet outperforms local models (ScienceDirect),https://www.sciencedirect.com/science/article/pii/S0048969726005905,2026-10-05,Q2/Q5 local data value
+R1-061,Introducing NatureLM-audio (Earth Species Project),https://earthspecies.org/2024/11/11/introducing-naturelm-audio-an-audio-language-foundation-model-for-bioacoustics/,2026-10-05,Q2 ESP data sources
+R1-062,EarthSpeciesProject/BEANS-Zero - Hugging Face,https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Zero,2026-10-05,Q1/Q2 BEANS-Zero
+R1-063,What is Source Cooperative? (Radiant Earth),https://radiant.earth/blog/2023/10/what-is-source-cooperative/,2026-10-05,Q3 Source Coop model
+R1-064,Source Cooperative Update: 1PB and Growing,https://radiant.earth/blog/2025/06/source-cooperative-update-1pb-and-growing/,2026-10-05,"Q3 Source Coop scale, sponsors"
+R1-065,GBIF occurrence license processing - GBIF Data Blog,https://data-blog.gbif.org/post/gbif-occurrence-license-processing/,2026-10-05,Q3 GBIF licences
+R1-066,"Analyzing the licenses of all 11,000+ GBIF registered datasets",https://peterdesmet.com/posts/analyzing-gbif-data-licenses.html,2026-10-05,Q3 GBIF licence shares
+R1-067,"GBIF's API Returns CC BY-NC Images by Default, Which Breaks Commercial Use",https://apicoding.com/gbifs-api-returns-cc-by-nc-images-by-default-which-breaks-commercial-use/,2026-10-05,Q3 CC BY-NC friction (secondary blog)
+R1-068,Planet Insights Platform Pricing,https://www.planet.com/pricing/,2026-10-05,Q3 Planet price list
+R1-069,Planet Mosaics - Lens - Upstream Tech,https://www.upstream.tech/lens/planet-basemaps,2026-10-05,Q3 Planet basemaps price via reseller
+R1-070,Maxar Open Data Program - Registry of Open Data on AWS,https://registry.opendata.aws/maxar-open-data/,2026-10-05,Q3 Maxar open data licence
+R1-071,Satellite Image Cost & Pricing Guide (OnGeo),https://ongeo-intelligence.com/blog/satellite-imagery-pricing-guide,2026-10-05,Q3 VHR imagery price per km2 (vendor blog)
+R1-072,How Much Does Satellite Imagery Cost in 2026? (Geopera),https://geopera.com/blog/satellite-imagery-cost-guide,2026-10-05,Q3 imagery price per km2 (vendor blog)
+R1-073,Satellite Image Annotation: Ground Truth for Geospatial AI (Label Your Data),https://labelyourdata.com/articles/data-annotation/satellite-image-annotation,2026-10-05,Q3 annotation price signals
+R1-074,Hire Satellite Imagery Annotators (OpenTrain),https://www.opentrain.ai/solutions/satellite-imagery-annotation,2026-10-05,Q3 annotator hourly rate
+R1-075,Data labeling services price benchmark (Kili Technology),https://kili-technology.com/data-labeling/data-labeling-services-price-q3-2023-benchmark,2026-10-05,Q3 audio annotation price
+R1-076,How Much Do Data Annotation Services Cost? (BasicAI),https://www.basic.ai/blog-post/how-much-do-data-annotation-services-cost-complete-guide,2026-10-05,Q3 audio annotation price
+R1-077,Where to Buy ML Training Data in 2026 (LabelSets),https://labelsets.ai/blog-buy-training-data,2026-10-05,Q3 pre-labelled dataset prices (vendor blog)
+R1-078,AWS Marketplace: Geospatial Data for Entire US - Building Footprints,https://aws.amazon.com/marketplace/pp/prodview-mzfuul6m4bxh6,2026-10-05,Q3 geospatial dataset contract price
+R1-079,BeZero Carbon partners with Chloris Geospatial,https://bezerocarbon.com/insights/bezero-carbon-partners-with-chloris-geospatial-to-strengthen-global-forest-carbon-measurement,2026-10-05,Q4 ground-truth exchange
+R1-080,Data - Chloris Geospatial,https://www.chloris.earth/data,2026-10-05,Q4 Chloris validation
+R1-081,Chloris Geospatial Strengthens Carbon-Market Role With Verra Validation (TipRanks),https://www.tipranks.com/news/private-companies/chloris-geospatial-strengthens-carbon-market-role-with-verra-validation-and-new-biomass-risk-tool,2026-10-05,Q4 Chloris Verra data provider
+R1-082,Forest Biomass & Carbon Stock Data (Sylvera),https://www.sylvera.com/products/forest-biomass-data,2026-10-05,Q4 Sylvera LiDAR ground truthing
+R1-083,How Accurate Is Forest Carbon Measurement in 2025? (Sylvera),https://www.sylvera.com/blog/forest-carbon-measurement,2026-10-05,Q4 Sylvera field scientists
+R1-084,Above-ground biomass - Space Intelligence,https://www.space-intelligence.com/land-cover-mapping/above-ground-biomass/,2026-10-05,Q4 Space Intelligence field plots
+R1-085,"Ed Mitchard interview, Space Intelligence (Carbon Herald)",https://carbonherald.com/the-best-solution-to-ensure-trust-in-the-forest-carbon-markets-is-to-base-projects-on-high-quality-datasets-ed-mitchard-co-founder-space-intelligence/,2026-10-05,Q4 Space Intelligence
+R1-086,Kanop - AI & Satellite Intelligence for Nature-based Solutions,https://www.kanop.io/,2026-10-05,Q4 Kanop
+R1-087,kanop - ESA Commercialisation Gateway,https://commercialisation.esa.int/startups/kanop/,2026-10-05,Q4 Kanop Isometric partner
+R1-088,NatureMetrics,https://naturemetrics.com/,2026-10-05,Q4 NatureMetrics model
+R1-089,NatureMetrics shop,https://www.naturemetrics.shop/,2026-10-05,Q3/Q4 NatureMetrics kit price
+R1-090,eDNA & Biodiversity Monitoring for Renewable Energy (NatureMetrics),https://www.naturemetrics.com/sectors/renewable-energy,2026-10-05,Q4 NatureMetrics renewable-energy customers
+R1-091,"Forest Carbon: Reliable, Scalable Carbon Estimates (Planet)",https://www.planet.com/products/forest-carbon/,2026-10-05,Q4 Planet Forest Carbon
+R1-092,Planet Forest Carbon Diligence Validation Report,https://docs.planet.com/data/planetary-variables/forest-carbon-diligence/validation/,2026-10-05,Q4 Planet validation datasets
+R1-093,Forest Carbon Diligence: Breaking Down the Validation and Intercomparison Report (Planet),https://www.planet.com/pulse/forest-carbon-diligence-breaking-down-the-validation-and-intercomparison-report/,2026-10-05,Q4 Planet validation r values
+R1-094,Pachama and Planet Partner to Protect and Restore Forests Globally,https://www.planet.com/pulse/pachama-and-planet-partner-to-protect-and-restore-forests-globally/,2026-10-05,Q4 Pachama
+R1-095,This startup ensures that forestry-based carbon offsets deliver on their promises (Fast Company),https://www.fastcompany.com/90658983/this-startup-makes-sure-that-forestry-based-carbon-offsets-deliver-on-their-promises,2026-10-05,Q4 Pachama LiDAR ground-truth
+R1-096,Carbon Direct Acquires Pachama (hyper.ai summary),https://hyper.ai/en/stories/ac86e282e51d9a7c074fa8270bb12d48,2026-10-05,Q4 Pachama acquisition (secondary source)
+R1-097,An ecoacoustic dataset collected on the island of Cyprus (Consensus record),https://consensus.app/papers/details/44ec5eea11dc5a29b40e617ca0a6c46e/,2026-10-05,Q5 Mediterranean acoustic data
+R1-098,Annotated dataset for European Orthoptera and Cicadidae (Consensus record),https://consensus.app/papers/details/e6347e9daeed52bba9624d8096482585/,2026-10-05,Q5 insect acoustics Europe
+R1-099,WABAD: world annotated bird acoustic dataset (Consensus record),https://consensus.app/papers/details/c099d9b67a1d52f7af939eef0a36c1d5/,2026-10-05,Q1/Q5 annotated bird dataset CC-BY
+R1-100,From croaks to species: review of automated acoustic analysis for anurans (Consensus record),https://consensus.app/papers/details/f69b334b0d655d36a36419362d44fd6a/,2026-10-05,Q5 anuran dataset gap
+R1-101,VicFrogNET (Consensus record),https://consensus.app/papers/details/d8ecae71751c54a9918ec8fec81a3f78/,2026-10-05,Q5 amphibian model gap
+R1-102,PAM of European green toad (Consensus record),https://consensus.app/papers/details/88a279679d235f7cbc54d237887e6cb7/,2026-10-05,Q5 European anuran PAM
+R1-103,"Aquatic vegetation classification in temperate wetlands, multi-temporal Sentinel-2 (Consensus record)",https://consensus.app/papers/details/31ce74991d485d17a42cd7f70c5bbf9c/,2026-10-05,Q5 wetland reference data
+R1-104,Wetland Mapping: Assessing Spatial Transferability (Consensus record),https://consensus.app/papers/details/fe4256f2f79158b388e4d2577cfe46ea/,2026-10-05,"Q5 Camargue transfer, aquatic vegetation hardest"
+R1-105,"Co-Orbital Sentinel 1 and 2 for LULC Mapping, wetlands, Greece (Consensus record)",https://consensus.app/papers/details/6c082bf023a459f89a5e6cfe2bdeb5f1/,2026-10-05,Q5 site-specific Mediterranean wetland mapping
+R1-106,"Deep learning vs ML for wetland water areas, Turkey, EuroSAT (Consensus record)",https://consensus.app/papers/details/5d0dcc5030875eaaa71bb1322d966d0a/,2026-10-05,"Q5 Turkish wetlands, labelled-data cost"
+R1-107,EarthShift (Consensus record),https://consensus.app/papers/details/a2f633807ef450d3bcd42b354c92ed7a/,2026-10-05,Q5 out-of-distribution drop
+R1-108,PhilEO Bench (Consensus record),https://consensus.app/papers/details/666b62bc35bb5db3ac56ec9b83bb8268/,2026-10-05,Q1/Q2 annotated data bottleneck statement
+R1-109,Common Ground: labelling burden in time-series mapping (Consensus record),https://consensus.app/papers/details/f976376e6491522399cdab3876882893/,2026-10-05,Q5 temporal labels
+R1-110,Odonata identification using Customized Convolutional Neural Networks,https://www.researchgate.net/publication/361096362_Odonata_identification_using_Customized_Convolutional_Neural_Networks,2026-10-05,Q5 Odonata image data scraped
+R1-111,YOLOv8 Automated Dragonfly Species Classification Using Wing Images (bioRxiv),https://www.biorxiv.org/content/10.1101/2024.09.01.610694v1.full,2026-10-05,Q5 Odonata small datasets
