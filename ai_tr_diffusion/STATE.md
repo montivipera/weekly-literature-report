@@ -4,7 +4,7 @@ Working dir: `ai_tr_diffusion/`. Brief: `BRIEF.md` (Sections 1–9 define everyt
 Planner: Fable (coordination only). Workers: Haiku (mechanical), Sonnet (scan/extract/draft/HTML), Opus (review, pre-decision advice).
 
 ## Status
-- Current step: Phase 2 market research — R1–R4 running.
+- Current step: Phase 2 complete; awaiting user feedback.
 - Last updated: 2026-10-03
 
 ## Step plan (model per step)
@@ -159,3 +159,4 @@ Planner decisions (Fable, 2026-10-03):
 - R2 done (40 searches): NO evidence of any purchase/licence/tender for labelled EO/acoustic data in TR; demand appears as DKMP provincial inventory tenders (Ankara IKN 2026/1788766, bids 16 Oct 2026) and grants. Action Plan 2026–2030 targets ≥2,000 public datasets in Ulusal Veri Kütüphanesi (health/agri/defence/e-commerce named; env. unclear) = contribution channel, not buyer. Nuh'un Gemisi ≈2M records, SAYBİS 6,418 wetlands; no imagery/audio. MWO (Tour du Valat) validates GEOclassifier against local inventories (≤95%); Copernicus HRL W&W 80–85% and weak for temporary wet areas → in-situ validation need; no Turkish MWO partner found. Amounts: TÜBİTAK 1071 €160k/project; 1001 ≈3M TL; RES/GES ornithological assessment 140–176k TL (unverified). No Turkish anuran acoustic dataset.
 - R1 done (40 searches + 5 Consensus): benchmarks are open/permissive (BigEarthNet, Sen1Floods11 CC-BY, AnuraSet CC0); NO case of an FM team paying for labels; only cash buyers of ground truth = forest-carbon MRV (Sylvera >$10M LiDAR, BeZero, Chloris, Planet) — forest biomass only, nothing for wetlands/fauna. Routes in: benchmark inclusion (GEO-Bench-2, PANGAEA, BirdSet, BEANS), BirdCLEF-style Kaggle ($50k, includes amphibians), AlphaEarth pilots (labels = scarce input). Gaps real: WorldCover weak on herbaceous wetland; no TR area in BigEarthNet; AnuraSet Neotropical; no reptile acoustic benchmark; no co-located Sentinel+drone+acoustic+vegetation set. Adjacent price signals: annotators $30–50/h, audio annotation $0.1–10/min, Planet $1.1–12k/yr. Correction: SpeciesNet is Google's.
 - ALL R1–R4 IN → Opus synthesis of product models (market/market_en.md) → Fable ranking → Sonnet pazar_tr.md.
+- Phase 2 COMPLETE (2026-10-05): market/market_en.md (evidence, 11 product models, 3 design sketches, sequencing, open questions, planner ranking §7: P2-1 > P1-2 > P2-2), market/pazar_tr.md (~3,900 words TR, 134 citations), market/sources_market.csv (352). Key decision for user: which side of the ÇED table; three cheap checks before building.
