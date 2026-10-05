@@ -1,0 +1,78 @@
+id,title,url,date_accessed,used_for
+R4-001,IBAT pricing page,https://www.ibat-alliance.org/pricing,2026-10-05,"IBAT tiers, PAYG prices"
+R4-002,IBAT subscriptions (test site),https://web-testing.ibat-alliance.org/subscriptions,2026-10-05,IBAT tier contents
+R4-003,IBAT Services Catalogue PDF,https://app.ibat-alliance.org/pdf/IBAT-Services-overview.pdf,2026-10-05,IBAT report types and datasets
+R4-004,IBAT major update to PS6/ESS6 report,https://www.ibat-alliance.org/news/major-update-to-ps6-ess6-report,2026-10-05,"PS6 report scope, $1,250 PAYG, screening-only positioning"
+R4-005,IBAT Estimated Species report news,https://www.ibat-alliance.org/news/species-report,2026-10-05,"Estimated Species report 1km, reptiles, STAR"
+R4-006,IBAT Species Report FAQs PDF,https://cdn.prod.website-files.com/67af053fb172299b5f9ad632/693c0bccd5d5bd74254e0af5_IBAT%20Species%20Report%20FAQs.pdf,2026-10-05,"IBAT limits: global screening, local calibration"
+R4-007,IBAT Alliance celebrates investment,https://www.ibat-alliance.org/news/ibat-alliance-celebrates-investment,2026-10-05,IBAT user base and 2024 data investment (snippet; 200 orgs figure from secondary summary https://currentaffairs.khanglobalstudies.com/ibat-alliance/)
+R4-008,IBAT collaborations page,https://www.ibat-alliance.org/collaborations,2026-10-05,"IBAT consultancy users (ERM, TBC), PAYG for consultancies, licensing for embedding"
+R4-009,Zero Extinction/AZE financial institutions factsheet,https://zeroextinction.org/wp-content/uploads/2018/08/Financial-institutions-KBA-IBA-AZE-IBAT-factsheet-09-02-18.pdf,2026-10-05,Screening limits; WDPA-only misses CH
+R4-010,An update to the global Critical Habitat screening layer (Sci Data),https://www.nature.com/articles/s41597-025-06117-y,2026-10-05,CH screening layer; global-level assessment
+R4-011,Global screening for Critical Habitat in the terrestrial realm (PMC),https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5863962/,2026-10-05,"12 features, likely/potential CH, in-situ assessment needed"
+R4-012,IFC Guidance Note 6 (2019),https://www.ifc.org/content/dam/ifc/doc/2010/20190627-ifc-ps-guidance-note-6-en.pdf,2026-10-05,CH tiers; external experts requirement
+R4-013,IFC Performance Standard 6 (2012),https://www.ifc.org/content/dam/ifc/doc/2010/2012-ifc-performance-standard-6-en.pdf,2026-10-05,"PS6 net gain, CH"
+R4-014,IBAT map layers March 2012 (BirdLife),https://tokyo.birdlife.org/action/pdf/ibatmaplayers.pdf,2026-10-05,IBAT national and international protected-area layers (2012; may be outdated)
+R4-015,IBAT tutorials and FAQs,https://www.ibat-alliance.org/ibat-tutorials,2026-10-05,Language support (Spanish only mentioned)
+R4-016,NatureServe Explorer Pro pricing,https://www.natureserve.org/access-data/explorer-pro-pricing,2026-10-05,NatureServe licence prices
+R4-017,NC Natural Heritage Data Explorer project review,https://ncnhde.natureserve.org/information-request,2026-10-05,NatureServe state review fees (also https://www.ncnhp.org/faqs)
+R4-018,Calculate biodiversity value with the statutory biodiversity metric (GOV.UK),https://www.gov.uk/guidance/calculate-biodiversity-value-with-the-statutory-biodiversity-metric,2026-10-05,UK statutory metric
+R4-019,ACP Consultants Statutory Biodiversity Metric 4.0,https://acp-consultants.com/biodiversity-net-gain/statutory-biodiversity-metric/,2026-10-05,UK consultant metric fee from GBP399+VAT
+R4-020,BNG Cost Calculator for Developers (landbng),https://landbng.uk/blog/bng-cost-calculator-for-developers/,2026-10-05,UK BNG cost signals
+R4-021,Pricing for our BNG tools (Joe's Blooms),https://www.joesblooms.com/pricing-for-bng-tools,2026-10-05,Joe's Blooms prices
+R4-022,bng.ai pricing,https://www.bng.ai/pricing/,2026-10-05,bng.ai prices and expert-verified tiers
+R4-023,AiDASH BNG article,https://www.aidash.com/realising-biodiversity-net-gain-with-aidash-a-streamlined-data-driven-approach/,2026-10-05,bng.ai/AiDASH relationship
+R4-024,MAGIC (Defra),https://magic.defra.gov.uk/,2026-10-05,"MAGIC free, 400 layers"
+R4-025,How to access Natural England's maps and data (GOV.UK),https://gov.uk/how-to-access-natural-englands-maps-and-data,2026-10-05,MAGIC access
+R4-026,Natura 2000 protected areas network (EEA),https://www.eea.europa.eu/themes/biodiversity/natura-2000/the-natura-2000-protected-areas-network,2026-10-05,Natura 2000 viewer
+R4-027,ENCORE launch (UNEP FI),https://www.unepfi.org/themes/ecosystems/groundbreaking-new-tool-enables-financial-institutions-to-see-their-exposure-to-natural-capital-risk/,2026-10-05,"ENCORE features, free"
+R4-028,ENCORE (Green Policy Platform),https://www.greenpolicyplatform.org/tools-and-platforms/encore-exploring-natural-capital-opportunities-risks-and-exposure,2026-10-05,ENCORE free tool
+R4-029,NatureMetrics eDNA and biodiversity FAQs,https://www.naturemetrics.com/faqs,2026-10-05,eDNA price per sample
+R4-030,NatureMetrics shop,https://www.naturemetrics.shop/,2026-10-05,eDNA kit prices
+R4-031,NatureMetrics Nature Intelligence platform,https://www.naturemetrics.com/platform,2026-10-05,Platform features
+R4-032,NatureMetrics portfolio assessment launch,https://www.naturemetrics.com/news/portfolio-assessment-launch,2026-10-05,"Portfolio assessment, lender DD/PS6 baseline claim"
+R4-033,NatureMetrics Intelligence Platform pricing (F6S),https://www.f6s.com/software/nature-metrics-naturemetrics-intelligence-platform,2026-10-05,Platform pricing GBP5-7.5k per site (aggregator snippet)
+R4-034,NatureMetrics subscribe,https://www.naturemetrics.shop/pages/subscribe,2026-10-05,Subscription terms
+R4-035,NatureMetrics infrastructure sector page,https://www.naturemetrics.com/sectors/infrastructure,2026-10-05,Infrastructure use case
+R4-036,NatureAlpha Geoverse 2.0 launch (BusinessWire),https://www.businesswire.com/news/home/20250324805768/en/NatureAlpha-Exploits-Transformative-Power-of-AI-to-Launch-Its-Most-Comprehensive-Nature-Risk-Platform-Geoverse-2-0,2026-10-05,NatureAlpha coverage and free tier
+R4-037,NatureAlpha site,https://www.naturealpha.ai/,2026-10-05,NatureAlpha product
+R4-038,Kuyua,https://www.kuyua.com/,2026-10-05,Kuyua subscription model (also https://startupcity.hamburg/startups-ecosystem/kuyua)
+R4-039,Ecometrica Global Biodiversity Metric,https://ecometrica.com/our-biodiversity-metric,2026-10-05,Ecometrica product
+R4-040,Kayrros Nature Impact Platform,https://www.kayrros.com/press_release/kayrros-launches-nature-impact-platform-to-transform-nature-risk-assessment-in-finance/,2026-10-05,Kayrros FI nature platform
+R4-041,Habitat Forward,https://habitatforward.com/,2026-10-05,EU site due diligence platform
+R4-042,Ecobot,https://ecobot.com/,2026-10-05,Ecobot features and vendor-claimed users
+R4-043,V7 Go EIA review,https://www.v7labs.com/automations/environmental-impact-assessment-review,2026-10-05,AI EIA document review
+R4-044,Generative AI in automated urban ecological assessments needs human oversight,https://www.sciencedirect.com/science/article/pii/S0169204626000393,2026-10-05,Limits of AI ecological reports
+R4-045,Wildlife Acoustics Song Meter SM4,https://www.wildlifeacoustics.com/products/song-meter-sm4,2026-10-05,SM4 price
+R4-046,Kaleidoscope Pro annual subscription (NHBS),https://www.nhbs.com/kaleidoscope-pro-one-year-subscription,2026-10-05,Kaleidoscope price
+R4-047,AudioMoth 1.2.0 (Open Acoustic Devices),https://www.openacousticdevices.info/product-page/audiomoth-1-2-0,2026-10-05,AudioMoth price
+R4-048,Arbimon (WILDLABS inventory),https://wildlabs.net/en/inventory/products/arbimon,2026-10-05,Arbimon free/Pro/Enterprise tiers
+R4-049,Rainforest Connection,https://rfcx.org/,2026-10-05,RFCx Guardian/Arbimon
+R4-050,EBRD Performance Requirement 6 guidance,https://www.ebrd.com/content/dam/ebrd_dxp/assets/pdfs/environment---sustainability/implement-performance-requirements/prs/pr6/ebrd-performance-requirement-6.pdf,2026-10-05,EBRD PR6 2020
+R4-051,Harmancik WPP Critical Habitat Assessment (DFC),https://www3.dfc.gov/environment/eia/enerjisa/6-HarmancikWPP/Harmancik%20WPP_CHA_20240614_clean.pdf,2026-10-05,Turkish CHA workflow (Enerjisa)
+R4-052,Enerjisa Wind (EBRD PSD 54230),https://www.ebrd.com/home/work-with-us/projects/psd/54230.html,2026-10-05,EBRD-financed Turkish wind package
+R4-053,BankTrack tracking the Equator Principles,https://www.banktrack.org/ourproject/tracking_the_equator_principles,2026-10-05,EP adopter counts (126-128; unverified; see also https://equator-principles.com/about-us/)
+R4-054,Equator Principles EP4 July 2020,https://equator-principles.com/app/uploads/The-Equator-Principles_EP4_July2020.pdf,2026-10-05,"EP4 Principle 2, IFC PS alignment"
+R4-055,EP guidance note on biodiversity data sharing for EPFIs,https://equator-principles.com/app/uploads/Biodiversity_Data_Sharing_EPFIs_Jul2020.pdf,2026-10-05,EP biodiversity data and KBAs as likely CH
+R4-056,GBIF: Equator Principles encourage open access,https://www.gbif.org/news/6wybKvTFVZPWTLioIcOuB3/the-equator-principles-encourage-open-access-to-environmental-impact-data-through-the-gbif-network,2026-10-05,EP data sharing
+R4-057,MIGA TL Solar IPP Critical Habitat Assessment,https://www.miga.org/sites/default/files/2026-01/TL%20Solar%20IPP%20-%20Appendix%204%20Critical%20Habitat%20Assessment%20and%20Habitat%20mapping-V2_0.pdf,2026-10-05,Example lender CHA using screening
+R4-058,Autumn 2025 Ecology Salary and Market Overview (JSM),https://jsm-associates.co.uk/blog?+Market+Overview=&id=48&title=Autumn+2025+Ecology+Salary+,2026-10-05,UK ecologist day rate signals
+R4-059,"UK tender search (Find a Tender, generic)",https://www.find-tender.service.gov.uk/Notice/077902-2025?origin=SearchResults&p=1,2026-10-05,No CHA tender values found (negative result)
+R4-060,Nuh'un Gemisi new database public (DKMP),https://www.tarimorman.gov.tr/DKMP/Haber/57/Yeni-Nuhun-Gemisi-Ulusal-Biyolojik-Cesitlilik-Veri-Tabani-Halka-Acildi,2026-10-05,"Nuh'un Gemisi taxa, access"
+R4-061,Ulusal Biyolojik Cesitlilik Veri Tabani 2 milyona yaklasti (AA),https://www.aa.com.tr/tr/yesilhat/dogal-yasam/ulusal-biyolojik-cesitlilik-veri-tabanindaki-veri-sayisi-2-milyona-yaklasti/1823119,2026-10-05,Nuh'un Gemisi record count
+R4-062,Turkiye'de 13 bin 404 farkli canli turu yasiyor (TRT Haber),https://www.trthaber.com/haber/cevre/turkiyede-13-bin-404-farkli-canli-turu-yasiyor-890274.html,2026-10-05,Nuh'un Gemisi species count Dec 2024
+R4-063,e-Taksonomi'de Sanal Herbaryumlarin Onemi (Duzce Univ.),https://cdn.duzce.edu.tr/File/GetFile/2025e52c-e502-4bd6-90a1-e16e9af5eab3,2026-10-05,TUBIVES not updated ~10 years (snippet)
+R4-064,CSB ÇED 2026 birim fiyat listesi (Canakkale),https://webdosya.csb.gov.tr/v2/canakkale/2026/03/2026-Birim-Fiyat-Listesi-20260102-20260303154736.pdf,2026-10-05,Ministry ÇED fee list (regulator charge; see also https://www.casem.com.tr/ced-raporu-ucretleri/)
+R4-065,Ekosistem Degerlendirme Raporu (CEVTAS),https://www.cevtas.net/ekosistem-degerlendirme-raporu/,2026-10-05,Turkish ecosystem assessment report for RES/GES
+R4-066,Species list of Amphibians and Reptiles from Turkey (ResearchGate),https://www.researchgate.net/publication/348182429_Species_list_of_Amphibians_and_Reptiles_from_Turkey,2026-10-05,Turkish herpetofauna counts/assessment gaps (snippet; verify)
+R4-067,European Red List of Dragonflies and Damselflies (IUCN 2024),https://iucn.org/sites/default/files/2024-08/european-red-list-of-dragonflies-and-damselflies-_de-knijf-and-al-2024.pdf,2026-10-05,Odonata assessment scope incl. Turkiye-in-Europe
+R4-068,Dragonflies go thirsty in the Mediterranean (IUCN),https://iucn.org/content/dragonflies-go-thirsty-mediterranean,2026-10-05,Mediterranean Odonata status
+R4-069,Emerald Network (Bern Convention),https://www.coe.int/en/web/bern-convention/emerald-network,2026-10-05,"Bern Emerald Network, Turkiye participation"
+R4-070,TNFD locate assessment tools (IBAT),https://tnfd.global/assessment-guidance/locate-assessment-tools/,2026-10-05,IBAT in TNFD LEAP tooling
+R4-071,IPBES IBAT entry,https://www.ipbes.net/policy-support/tools-instruments/integrated-biodiversity-assessment-tool-ibat,2026-10-05,IBAT alliance partners and users
+R4-072,Biodiversity screening (The Biodiversity Consultancy),https://www.thebiodiversityconsultancy.com/fileadmin/uploads/tbc/Documents/Resources/Biodiversity-Screening-IBN_20170123-FINAL-1.pdf,2026-10-05,Consultancy screening practice
+R4-073,IBAT now helping over 70 companies (CSRwire),https://csrwire.com/press-release/integrated-biodiversity-assessment-tool-now-helping-over-70-companies-assess-biodiversity-risks/,2026-10-05,Older IBAT user count
+R4-074,AIIB Critical Habitat Assessment,https://www.aiib.org/en/projects/details/2024/_download/Multicountry/57342-001-eia-en.pdf,2026-10-05,"CHA example, IBAT-type limits"
+R4-075,IBAT freemium (Embedding Project),https://embeddingproject.org/resources/integrated-biodiversity-assessment-tool/,2026-10-05,IBAT freemium model
+R4-076,Ecologist salary guide UK 2026 (Gaia),https://gaia-search.com/ecologist-salary-guide-uk-2026.html,2026-10-05,UK senior ecologist day rate GBP280-450
+R4-077,Halpin Robbins terms and conditions,https://halpinrobbins.co.uk/terms-conditions/,2026-10-05,Published consultancy hourly rates

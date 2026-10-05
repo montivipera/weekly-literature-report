@@ -1,0 +1,66 @@
+id,title,url,date_accessed,used_for
+R3-001,Ministry ÇED statistics page,https://ced.csb.gov.tr/ced-istatistikleri-111186,2026-10-05,"1993-2025 olumlu/gerekli degildir tables, updated 02.03.2026"
+R3-002,ÇED raporları çevresel etkiyi değerlendirebilir mi (Boell),https://tr.boell.org/tr/2014/06/16/ced-raporlari-cevresel-etkiyi-degerlendirebilir-mi-yayinlar,2026-10-05,1993-2010 decision counts
+R3-003,Resmi verilerle Çevre Bakanlığı'nın ÇED tablosu (Medyascope),https://medyascope.tv/2024/03/11/resmi-verilerle-cevre-bakanliginin-ced-tablosu-akp-doneminde-72-bin-kez-ced-gerekli-degildir-karari-verildi/,2026-10-05,"72,295 gerekli degildir 2002-2023; sector shares"
+R3-004,Bakanlığın raporu ortaya koydu (T24),"https://t24.com.tr/cevre/bakanligin-raporu-ortaya-koydu-binlerce-projeye-cevre-onayi-verildi,1304795",2026-10-05,2025 decision counts; energy 422 olumlu / 395 GD
+R3-005,Bakanlık yeni yıla hızlı başladı (Cumhuriyet),https://www.cumhuriyet.com.tr/turkiye/bakanlik-yeni-yila-hizli-basladi-2026-nin-ortasinda-projelerin-verileri-dikkat-cekti-2507875,2026-10-05,2026 Jan-May decisions; 92 RES
+R3-006,Enerji Projeleri ÇED Sonuçları Temmuz 2025 (insaattedarik),https://insaattedarik.com.tr/enerji/enerji-projeleri-ced-sonuclari-temmuz-2025/,2026-10-05,monthly energy ÇED digest; possible scrape source
+R3-007,Rüzgar Enerjisinde Lider Şehirler (GMKA),https://www.gmka.gov.tr/haber/ruzgar-enerjisinde-lider-sehirler-balikesir-ve-canakkale,2026-10-05,Aegean/Marmara RES capacity by province
+R3-008,Aydın'da 6 ilçeye ÇED vizesi (Aydın Times),https://www.aydintimes.com/aydinda-6-ilceye-ced-vizesi-9-proje-onaylandi,2026-10-05,Aydın olumlu decisions 2025-2026
+R3-009,ÇED Yönetmeliğinde Önemli Değişiklikler (Mondaq),https://www.mondaq.com/turkey/climate-change/1644674/%C3%87evresel-etki-de%C4%9Ferlendirmesi-y%C3%B6netmeli%C4%9Finde-%C3%96nemli-de%C4%9Fi%C5%9Fiklikler,2026-10-05,2022 regulation changes Ek-1/Ek-2
+R3-010,ÇED Yönetmeliği formatı duyuru 2022,https://www.cevremuhendisligi.org/index.php/cevre-aktuel/haberler/2124-ced-yonetmeligi-formati-hakkinda,2026-10-05,"29.07.2022 regulation, Ek-3/Ek-4 formats"
+R3-011,"ÇED Yönetmeliği değişti, ÇED gerekli değildir kaldırıldı (Alomaliye)",https://www.alomaliye.com/2026/03/05/ced-yonetmeligi-degisti-ced-gerekli-degildir-kaldirildi-ced-raporu-hazirlanmalidir-donemi-basladi/,2026-10-05,05.03.2026 amendment
+R3-012,ÇED yönetmeliği duyarlı yöreler (Emlakkulisi),https://emlakkulisi.com/guncel/ced-yonetmeligi-duyarli-yoreler/622747,2026-10-05,Ek-5 sensitive areas widened
+R3-013,Resmi Gazete 5 Eylül 2026,https://www.resmigazete.gov.tr/eskiler/2026/09/20260905-24.htm,2026-10-05,Wetland regulation amendment
+R3-014,Suni sulak alanlarda enerji izni (Yeşil Haber),https://yesilhaber.net/suni-sulak-alanlar-enerji-izni-cevresel-akis/,2026-10-05,Wetland regulation summary
+R3-015,Biyolojik Çeşitliliği Koruma Kanunu 4. kez Meclis'e gelecek,https://www.tarimhukuku.org/biyolojik-cesitliligi-koruma-kanunu-4-kez-meclise-gelecek/,2026-10-05,nature law draft history
+R3-016,Doğa Korumaya Yasayla Darbe (WWF Türkiye),https://www.wwf.org.tr/?1354%2Fdogakorumayayasayladarbe=,2026-10-05,NGO position on nature law
+R3-017,Milli parklar kanun teklifi TBMM (Ajans344),https://www.ajans344.com/gundem/milli-parklar-ve-doga-korumada-yeni-donem-kanun-teklifi-tbmmde-kabul-edildi/400479,2026-10-05,"Milli Parklar law proposal, DKMP powers"
+R3-018,Ekosistem Değerlendirme Raporu (Uluş Çevre),https://uluscevre.com.tr/hizmet/ced-cevresel-etki-degerlendirme/ekosistem-degerlendirme-raporu,2026-10-05,DKMP 2011 instructions on ecosystem report for RES/mining (vendor page)
+R3-019,Ornitolojik Değerlendirme Raporu (Enpark),https://www.enpark.com.tr/hizmetler/ornitolojik-degerlendirme-raporu/,2026-10-05,ODR requested by DKMP for RES/GES
+R3-020,ÇED Yeterlik Belgesi Tebliği (Resmi Gazete 2022),https://www.resmigazete.gov.tr/eskiler/2022/12/20221231-5.htm,2026-10-05,"competency certificate rules, 75 points"
+R3-021,Yeterlik belgeli kurum-kuruluşlar listesi (Bakanlık),https://ced.csb.gov.tr/yeterlik-belgesi-tebligi-kapsaminda-yeterlik-belgesine-sahip-kurum---kuruluslar-i-4104,2026-10-05,list page of certified firms (count not visible)
+R3-022,ÇED GM 2024 faaliyet raporu,https://webdosya.csb.gov.tr/db/ced/icerikler/08.10.2025_tfr_2024_nihai-1-20251008163544.pdf,2026-10-05,possible source of competency statistics (not read)
+R3-023,Çınar Mühendislik raporu bilimsel bulunmadı (BirGün),https://www.birgun.net/haber/cinar-muhendislik-in-hazirladigi-rapor-bilimsel-bulunmadi-saibeli-raporlarda-bir-cinar-282190,2026-10-05,named large ÇED firm; tender history
+R3-024,Kanal İstanbul'un ÇED raporunu kim hazırladı (Bianet),https://bianet.org/haber/kanal-istanbul-un-ced-raporunu-kim-hazirladi-217697,2026-10-05,Çınar Mühendislik Kanal İstanbul report
+R3-025,Çedfem Mühendislik,https://www.cedfem.com.tr/,2026-10-05,Turkish ÇED consultancy example
+R3-026,ÇEVTAŞ ÇED raporu hazırlayan firmalar,https://www.cevtas.net/ced-raporu-hazirlayan-firmalar/,2026-10-05,Turkish ÇED consultancy example
+R3-027,Tusay ÇED raporu hazırlayan firmalar,https://tusay.com.tr/ced-raporu-hazirlayan-firmalar/,2026-10-05,Turkish ÇED consultancy example
+R3-028,Enerjisa Hacıhıdırlar WPP ESIA SEP (DFC),https://www3.dfc.gov/environment/eia/enerjisa/4-HacihidirlarWPP/Hacihidirlar%20WPP_Final%20Draft%20SEP_Rev%20D.pdf,2026-10-05,Mott MacDonald Türkiye as ESIA consultant
+R3-029,Falp WPP Biodiversity Management Plan (EBRD),https://www.ebrd.com/content/dam/ebrd_dxp/documents/project/54892/Falp%20WPP%20-%20Biodiversity%20Management%20Plan%20(ENG).pdf,2026-10-05,"ERM as BMP author, ESR6, Oct 2025"
+R3-030,Wind and solar (Ramboll),https://www.ramboll.com/energy/wind-and-solar,2026-10-05,international consultancy profile
+R3-031,ÇED'de Canlı Kavramı etik ihlaller (ResearchGate),https://www.researchgate.net/publication/339244299_Cevresel_Etki_Degerlendirmelerinde_Canli_Kavraminin_Kullanimi_Baglaminda_Yasanan_Etik_Ihlaller,2026-10-05,academic critique of species lists in ÇED
+R3-032,Ekosistem Değerlendirme Raporu (Türkçev),https://turkcev.com.tr/ekosistem-degerlendirme-raporu/,2026-10-05,consultancy field methods description
+R3-033,2026 ÇED harç bedelleri (Tusay),https://tusay.com.tr/2026-yili-ced-surecleri-harc-bedelleri-ced-harclari-ne-kadar-oldu/,2026-10-05,2026 ÇED report fee tiers
+R3-034,2026 döner sermaye birim fiyat listesi (ÇED GM),https://webdosya.csb.gov.tr/v2/ced/2026/01/ED-2026-D-NER-SERMAYE-2-20260105111458.pdf,2026-10-05,Ministry unit price list 2026 (not read)
+R3-035,ÇED Muafiyet Raporu GES (Piagrid),https://www.piagrid.com/rehber/ced-raporu,2026-10-05,vendor-quoted PTD consulting fee 5k-25k TL
+R3-036,ÇED Raporu Harçları/Ücretleri (Casem),https://www.casem.com.tr/ced-raporu-ucretleri/,2026-10-05,"ÇED consultancy fee market-set, no standard"
+R3-037,Asgari fiyat tarifesi duyuru (ÇED GM),https://ced.csb.gov.tr/asgari-fiyat-tarifesinin-uygulanmasina-iliskin-duyuru-haber-280961,2026-10-05,minimum fee tariff excludes ÇED reports
+R3-038,DKMP ihaleler (Muğla biyolojik çeşitlilik envanter),https://www.tarimorman.gov.tr/DKMP/Sayfalar/Detay.aspx?OgeId=93&Liste=Ihaleler,2026-10-05,public biodiversity inventory tender example
+R3-039,Yeni Nuh'un Gemisi veri tabanı halka açıldı (DKMP),https://www.tarimorman.gov.tr/DKMP/Haber/57/Yeni-Nuhun-Gemisi-Ulusal-Biyolojik-Cesitlilik-Veri-Tabani-Halka-Acildi,2026-10-05,Nuh'un Gemisi database description
+R3-040,Ulusal Biyolojik Çeşitlilik Veri Tabanı 2 milyona yaklaştı (AA),https://www.aa.com.tr/tr/ekonomi/ulusal-biyolojik-cesitlilik-veri-tabanindaki-veri-sayisi-2-milyona-yaklasti/3226919,2026-10-05,database record count
+R3-041,Ihlamur RES Teknik Olmayan Özet (DFC),https://www3.dfc.gov/environment/eia/enerjisa/9-IhlamurWPP/Ihlamur%20RES_TOO.pdf,2026-10-05,"one-year monitoring, bird/bat/herp methods"
+R3-042,"Seasonal acoustic monitoring of bat activity, N. Marmara (Commagene)",https://dergipark.org.tr/en/pub/commagene/article/1680176,2026-10-05,acoustic bat monitoring in Türkiye
+R3-043,Update to the global Critical Habitat screening layer (PMC),https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12627699/,2026-10-05,global CH screening layer
+R3-044,Ihlamur WPP Critical Habitat Assessment (DFC),https://www3.dfc.gov/environment/eia/enerjisa/9-IhlamurWPP/Ihlamur%20WPP_CHA_20240614_clean.pdf,2026-10-05,CHA example; priority features
+R3-045,Enerjisa YEKA9 BAP Framework (DFC),https://www.dfc.gov/sites/default/files/esia/2024/enerjisa/11-Project_wide_documents/Enerjisa_YEKA9_BAPFramework_Final.pdf,2026-10-05,framework BAP
+R3-046,EBRD Enerjisa Wind project 54230,https://www.ebrd.com/home/work-with-us/projects/psd/54230.html,2026-10-05,EBRD project page
+R3-047,SUEZ Wind interim BAP (EBRD),https://www.ebrd.com/content/dam/ebrd_dxp/documents/project/55457/55457-updated-bap.pdf,2026-10-05,Turkish wind BAP
+R3-048,EBRD project 56056 BMP,https://www.ebrd.com/content/dam/ebrd_dxp/documents/project/56056/56056_BMP_EN.pdf,2026-10-05,Turkish BMP example
+R3-049,TSKB Sustainable Finance Framework 2024,https://www.tskb.com.tr/uploads/file/tskb-sustainable-finance-framework-2024.pdf,2026-10-05,"TSKB biodiversity exclusions, ERET"
+R3-050,TSKB Integrated Annual Report 2025,https://www.tskb.com.tr/tskbentegrerapor2025/tskb-integrated-annual-report-2025.html,2026-10-05,TSKB Nature and Biodiversity Policy
+R3-051,Garanti BBVA sustainable finance (GFMag),https://gfmag.com/sustainable-finance/garanti-bbva-the-next-frontier-of-sustainable-finance-in-turkey/,2026-10-05,first Turkish EP bank; biodiversity blue bond
+R3-052,IFC Performans Standardı 6 (Türkçe),https://www.ifc.org/content/dam/ifc/doc/2010/2012-ifc-performance-standard-6-tr.pdf,2026-10-05,PS6 Turkish text
+R3-053,"Türbinler kuruldu, iptal geldi (Ege'de Son Söz)",https://www.egedesonsoz.com/turbinler-kuruldu-iptal-geldi-sabancinin-resi-yeniden-masada,2026-10-05,Gaia RES annulment
+R3-054,Danıştay'dan dönmüştü Sabancı RES (Ege'de Son Söz),https://www.egedesonsoz.com/danistaydan-donmustu-sabancinin-projesine-bakanlik-onayi,2026-10-05,Gaia RES new olumlu
+R3-055,Germencik bilirkişi heyeti raporu (Aydın 2. İdare Mahkemesi),https://akinyakan.av.tr/wp-content/uploads/2025/10/GERMENCIK-BILIRKISI-RAPORU-1.pdf,2026-10-05,6 amphibian / 6 reptile species vs literature
+R3-056,91 bin ağaç Danıştay ÇED olumlu (Manşetiz),https://www.mansetiz.com/91-bin-agac-icin-kritik-donemec-danistay-ced-olumlu-iptal-kararini-bozdu,2026-10-05,fauna assessment omissions in court
+R3-057,Mahkemenin ÇED iptalini Danıştay iptal etti (Halk TV),https://halktv.com.tr/gundem/mahkemenin-ced-iptalini-danistay-iptal-etti-1055728h,2026-10-05,Danıştay reversal example
+R3-058,ÇED Bilirkişi Raporları ve Ekosistemlerin Korunması (Sadafag),https://sadafag.org/ced-raporlari-ve-ekosistemlerin-korunmasi-arasindaki-iliski/,2026-10-05,critique of ÇED biodiversity content
+R3-059,RES raporunda kuş ve yarasa çarpışma riski (Cumhuriyet),https://www.cumhuriyet.com.tr/turkiye/res-raporunda-kus-ve-yarasalar-icin-carpisma-riski-vurgusu-ekolojik-alarm-uyarisi-2538306,2026-10-05,"bat monitoring gaps, Kütahya RES"
+R3-060,ÇED Yönetmeliği değişikliği 2026 (LBF Partners),https://www.lbfpartners.com/haberler-yayinlar/ced-yonetmeligi-nde-koklu-degisiklikler-baslica-yenilikler-ve-uygulamaya-yansimalari,2026-10-05,2026 amendment analysis
+R3-061,ÇED yönetmeliği 05.03.2026 (Mondaq),https://www.mondaq.com/turkey/environmental-law/1767728/05032026-tarihli-resmi-gazetede-yay%C4%B1mlanan-%C3%87evresel-etki-de%C4%9Ferlendirmesi-y%C3%B6netmeli%C4%9Finde-de%C4%9Fi%C5%9Fiklik-yap%C4%B1lmas%C4%B1na-dair-y%C3%B6netmelik-hakk%C4%B1nda,2026-10-05,2026 amendment analysis
+R3-062,Bakanlık raporu: Binlerce projeye çevre onayı (dokuz8HABER),https://dokuz8haber.net/bakanlik-raporu-binlerce-projeye-cevre-onayi-verildi,2026-10-05,2025 ÇED counts (second outlet)
+R3-063,Bakanlık'tan Yeni ÇED İzinleri Temmuz'da Sürüyor (Polen Ekoloji),https://www.polenekoloji.org/bakanliktan-yeni-ced-izinleri-temmuzda-suruyor/,2026-10-05,monthly energy ÇED digest
+R3-064,Rüzgar İzleme ve Tahmin Sistemi RES'ler (RİTM),https://ritm.enerji.gov.tr/news/res.php,2026-10-05,RES list by province
+R3-065,EBRD project 55854 framework BMP,https://www.ebrd.com/content/dam/ebrd_dxp/documents/project/55854/55854-bmp.pdf,2026-10-05,Turkish framework BMP example
