@@ -1,0 +1,353 @@
+id,workstream,title,url,date_accessed,used_for
+R1-001,R1,PANGAEA: A Global and Inclusive Benchmark for Geospatial Foundation Models (arXiv HTML),https://arxiv.org/html/2412.04204v1,2026-10-05,Q1 PANGAEA scope; relation to GEO-Bench
+R1-002,R1,pangaea-bench GitHub repository,https://github.com/VMarsocci/pangaea-bench,2026-10-05,Q1 PANGAEA host; GEO-Bench integration
+R1-003,R1,PANGAEA - ESA Phi-lab challenges portfolio,https://challenges.philab.esa.int/portfolio/pangaea/,2026-10-05,Q1 PANGAEA listed on ESA Phi-lab portal
+R1-004,R1,PANGAEA GRSM 2026 (Consensus record),https://consensus.app/papers/details/c9ba28e94dd65684b5faeb66aa594a86/,2026-10-05,Q1 citations; geographic bias statement
+R1-005,R1,"GEO-Bench: Toward Foundation Models for Earth Monitoring (Consensus record, DOI 10.48550/arxiv.2306.03831)",https://consensus.app/papers/details/dd82e678bd1958719afb3ec4e7cedcd9/,2026-10-05,Q1 GEO-Bench size/citations
+R1-006,R1,"GEO-Bench-2 (Consensus record, arXiv 2511.15658)",https://consensus.app/papers/details/7925bb243326541fb6732abfdf0e3f44/,2026-10-05,Q1/Q2 GEO-Bench-2 19 datasets; TerraMind/Prithvi/Clay evaluated
+R1-007,R1,BigEarthNet - A Large-Scale Sentinel Benchmark Archive,https://bigearth.net/,2026-10-05,Q1 BigEarthNet host
+R1-008,R1,Description of BigEarthNet-MM,https://bigearth.net/static/documents/Description_BigEarthNet-MM.pdf,2026-10-05,"Q1 BigEarthNet size, labels, countries"
+R1-009,R1,BigEarthNet on Source Cooperative (TU Berlin),https://source.coop/tu-berlin/bigearthnet,2026-10-05,Q1/Q3 BigEarthNet hosted on Source Coop
+R1-010,R1,BigEarthNet v2 (Zenodo record 10891137),https://zenodo.org/records/10891137,2026-10-05,Q1/Q3 BigEarthNet on Zenodo
+R1-011,R1,bigearthnet - TensorFlow Datasets catalog,https://www.tensorflow.org/datasets/catalog/bigearthnet,2026-10-05,Q1 BigEarthNet size/licence/usage signal
+R1-012,R1,Landsat-Bench (Consensus record),https://consensus.app/papers/details/a8fc97628a2f50ffa190dc720930100e/,2026-10-05,Q1 BigEarthNet reused in downstream benchmark
+R1-013,R1,harshinde/sen1floods11 - Hugging Face,https://huggingface.co/datasets/harshinde/sen1floods11,2026-10-05,"Q1 Sen1Floods11 size, licence (mirror)"
+R1-014,R1,Sen1Floods11 CVPRW 2020 paper,https://openaccess.thecvf.com/content_CVPRW_2020/papers/w11/Bonafilia_Sen1Floods11_A_Georeferenced_Dataset_to_Train_and_Test_Deep_Learning_CVPRW_2020_paper.pdf,2026-10-05,Q1 Sen1Floods11 origin
+R1-015,R1,ESA WorldCover 2021 Product Validation Report v2.0,https://worldcover2021.esa.int/data/docs/WorldCover_PVR_V2.0.pdf,2026-10-05,Q1 WorldCover validation set size/accuracy
+R1-016,R1,Documentation - ESA WorldCover 2021,https://worldcover2021.esa.int/documentation,2026-10-05,"Q1 WorldCover validation (Wageningen, IIASA)"
+R1-017,R1,Accuracy assessment of global and regional land cover maps: a case study in Northern Greece (SPIE),https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13816/138160O/Accuracy-assessment-of-global-and-regional-land-cover-maps/10.1117/12.3072484.full,2026-10-05,Q5 regional validation of WorldCover in Greece
+R1-018,R1,Uncertainty and Generalizability in Foundation Models for Earth Observation (Consensus record),https://consensus.app/papers/details/4aa1a7ff041651c280bec08e5a0667a2/,2026-10-05,Q1/Q5 WorldCover classes used as FM downstream tasks
+R1-019,R1,Eurostat compact guide: LUCAS,https://ec.europa.eu/eurostat/documents/4031688/14187915/KS-09-21-309-EN-N.pdf/7b948a5b-9135-1ee3-3a2b-a26d58c6f2f7?t=1644247217894,2026-10-05,Q1 LUCAS design
+R1-020,R1,LUCAS 2018 TOPSOIL data - ESDAC,https://esdac.jrc.ec.europa.eu/content/lucas-2018-topsoil-data,2026-10-05,"Q1 LUCAS topsoil size, access"
+R1-021,R1,From parcel to continental scale: European crop type map from Sentinel-1 and LUCAS Copernicus (arXiv 2105.09261),https://arxiv.org/pdf/2105.09261,2026-10-05,Q1 LUCAS usage signal
+R1-022,R1,Towards a global high-resolution inventory of wetland typologies - Global Wetland Watch,https://www.globalwetlandwatch.org/news/2024/towards-a-global-high-resolution-inventory-of-wetland-typologies/,2026-10-05,"Q1 GWW method, inputs"
+R1-023,R1,Global Wetland Watch (Ramsar PDF),https://www.ramsar.org/sites/default/files/2024-12/5.%20Global%20Wetland%20Watch%20Towards%20a%20global%20high%20resolution%20inventory%20of%20wetland%20typologies.pdf,2026-10-05,Q1 GWW and Ramsar link
+R1-024,R1,GWL_FCS30: global 30 m wetland map (ESSD 2023),https://essd.copernicus.org/articles/15/265/2023/,2026-10-05,Q1/Q5 global wetland product
+R1-025,R1,Mapping Mediterranean Wetlands With Remote Sensing: A Good-Looking Map Is Not Always a Good Map (ScienceDirect),https://www.sciencedirect.com/science/article/abs/pii/S0065250417300272,2026-10-05,"Q1/Q5 Mediterranean wetland mapping, 31 classes"
+R1-026,R1,DBD-research-group/BirdSet - Hugging Face,https://huggingface.co/datasets/DBD-research-group/BirdSet,2026-10-05,"Q1 BirdSet size, licence, host"
+R1-027,R1,BirdSet: A Large-Scale Dataset for Audio Classification in Avian Bioacoustics (arXiv 2403.10380),https://arxiv.org/pdf/2403.10380,2026-10-05,Q1 BirdSet
+R1-028,R1,BirdSet (Consensus record),https://consensus.app/papers/details/8d4de344813059adbb97dbd0f0bf1a9c/,2026-10-05,Q1 BirdSet citations
+R1-029,R1,Foundation models for bioacoustics - A comparative review (Consensus record),https://consensus.app/papers/details/3306b2c4a6a6584182010a9df3512578/,2026-10-05,Q1/Q2 BEANS/BirdSet usage; Perch 2.0 results
+R1-030,R1,A dataset for benchmarking Neotropical anuran calls identification in passive acoustic monitoring (Sci Data),https://www.nature.com/articles/s41597-023-02666-2,2026-10-05,Q1 AnuraSet
+R1-031,R1,AnuraSet (Zenodo record 8056090),https://zenodo.org/records/8056090,2026-10-05,"Q1/Q3 AnuraSet host, licence"
+R1-032,R1,Xeno-canto - GBIF dataset page,https://www.gbif.org/dataset/b1047888-ae52-4179-9dd5-5448ea342a24,2026-10-05,Q1/Q3 xeno-canto on GBIF
+R1-033,R1,Xeno-canto - Wikipedia,https://en.wikipedia.org/wiki/Xeno-canto,2026-10-05,Q1 xeno-canto size and licences (secondary source)
+R1-034,R1,Unsupervised classification to improve the quality of a bird song recording dataset (Consensus record),https://consensus.app/papers/details/d63fde153d785d7294ea3789a92ad2f4/,2026-10-05,Q1/Q5 xeno-canto labels are weak
+R1-035,R1,BEANS: The Benchmark of Animal Sounds (arXiv 2210.12300),https://arxiv.org/pdf/2210.12300,2026-10-05,Q1 BEANS
+R1-036,R1,earthspecies/beans GitHub,https://github.com/earthspecies/beans,2026-10-05,Q1 BEANS host
+R1-037,R1,Prithvi-EO-2.0-300M - Hugging Face,https://huggingface.co/ibm-nasa-geospatial/Prithvi-EO-2.0-300M,2026-10-05,Q2 Prithvi release
+R1-038,R1,Prithvi-EO-2.0 (Consensus record),https://consensus.app/papers/details/5da6c765346b55f6a0fdae3cd549c8fc/,2026-10-05,"Q2 Prithvi validation, SME involvement"
+R1-039,R1,NASA-IMPACT/Prithvi-EO-2.0 GitHub,https://github.com/NASA-IMPACT/Prithvi-EO-2.0,2026-10-05,Q2 Prithvi team
+R1-040,R1,Terramind: the new generative AI model for Earth observation - IBM Research,https://research.ibm.com/blog/terramind-esa-earth-observation-model,2026-10-05,Q2 TerraMind/TerraMesh
+R1-041,R1,ESA Open Sourced AI Model for Earth Observation - Open Source Observatory,https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/esa-open-sourced-ai-model-earth-observation,2026-10-05,Q2 TerraMind licence Apache 2.0
+R1-042,R1,FAST-EO - eo science for society (ESA),https://eo4society.esa.int/projects/fast-eo/,2026-10-05,"Q2 TerraMind consortium, six use cases"
+R1-043,R1,TerraMesh (Consensus record),https://consensus.app/papers/details/f71a01ba73ae5fef99e7b386b39b3bda/,2026-10-05,Q2 TerraMesh size
+R1-044,R1,An Open Foundation Model for Earth - Development Seed (Clay),https://developmentseed.org/projects/clay/,2026-10-05,Q2 Clay
+R1-045,R1,Clay Model v0 Embeddings - Source Cooperative,https://source.coop/clay/clay-model-v0-embeddings,2026-10-05,Q2/Q3 Clay on Source Coop
+R1-046,R1,AlphaEarth Foundations - Google DeepMind blog,https://deepmind.google/blog/alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail/,2026-10-05,Q2 AlphaEarth partners
+R1-047,R1,AlphaEarth Foundations (arXiv 2507.22291),https://arxiv.org/pdf/2507.22291,2026-10-05,"Q2 AlphaEarth label scarcity, training, evaluation"
+R1-048,R1,AI-powered pixels: Introducing Google's Satellite Embedding dataset,https://medium.com/google-earth/ai-powered-pixels-introducing-googles-satellite-embedding-dataset-31744c1f4650,2026-10-05,"Q2/Q3 AlphaEarth licence CC-BY 4.0, 50+ partners"
+R1-049,R1,Introducing Custom Satellite Embeddings (Google Maps Platform),https://mapsplatform.google.com/resources/blog/introducing-custom-satellite-embeddings-powered-by-alphaearth-foundations/,2026-10-05,Q2 AlphaEarth commercial product
+R1-050,R1,Scalable Geospatial Data Generation Using AlphaEarth (Consensus record),https://consensus.app/papers/details/04729c78811b5927b21a14429c4a57ef/,2026-10-05,Q2 labelled data extension with AEF
+R1-051,R1,BirdNET-Analyzer GitHub,https://github.com/birdnet-team/BirdNET-Analyzer,2026-10-05,Q2/Q3 BirdNET licences
+R1-052,R1,BirdNET about page (Cornell),https://birdnet.cornell.edu/about/,2026-10-05,Q2 BirdNET team
+R1-053,R1,BirdNET: A deep learning solution for avian diversity monitoring (Consensus record),https://consensus.app/papers/details/85fe0ab9300d59e9a3215a75fe338eaf/,2026-10-05,"Q2 BirdNET citations, species coverage"
+R1-054,R1,Perch 2.0: The Bittern Lesson for Bioacoustics (arXiv 2508.04665),https://arxiv.org/pdf/2508.04665,2026-10-05,"Q2 Perch 2.0 training data, benchmarks"
+R1-055,R1,How AI trained on birds is surfacing underwater mysteries (Google Research),https://research.google/blog/how-ai-trained-on-birds-is-surfacing-underwater-mysteries/,2026-10-05,Q2 Perch release
+R1-056,R1,BirdCLEF+ 2025 - Kaggle,https://www.kaggle.com/competitions/birdclef-2025,2026-10-05,"Q2/Q3 BirdCLEF prize, taxa"
+R1-057,R1,BirdCLEF+ 2025 - ImageCLEF,https://www.imageclef.org/BirdCLEF2025,2026-10-05,Q2 BirdCLEF organisers
+R1-058,R1,microsoft/MegaDetector GitHub,https://github.com/microsoft/MegaDetector/tree/main,2026-10-05,Q2 Microsoft AI for Good Lab MegaDetector
+R1-059,R1,Google releases SpeciesNet (TechCrunch),https://techcrunch.com/2025/03/03/google-releases-speciesnet-an-ai-model-designed-to-identify-wildlife/,2026-10-05,Q2 SpeciesNet is Google; training data
+R1-060,R1,Fine-tuning SpeciesNet outperforms local models (ScienceDirect),https://www.sciencedirect.com/science/article/pii/S0048969726005905,2026-10-05,Q2/Q5 local data value
+R1-061,R1,Introducing NatureLM-audio (Earth Species Project),https://earthspecies.org/2024/11/11/introducing-naturelm-audio-an-audio-language-foundation-model-for-bioacoustics/,2026-10-05,Q2 ESP data sources
+R1-062,R1,EarthSpeciesProject/BEANS-Zero - Hugging Face,https://huggingface.co/datasets/EarthSpeciesProject/BEANS-Zero,2026-10-05,Q1/Q2 BEANS-Zero
+R1-063,R1,What is Source Cooperative? (Radiant Earth),https://radiant.earth/blog/2023/10/what-is-source-cooperative/,2026-10-05,Q3 Source Coop model
+R1-064,R1,Source Cooperative Update: 1PB and Growing,https://radiant.earth/blog/2025/06/source-cooperative-update-1pb-and-growing/,2026-10-05,"Q3 Source Coop scale, sponsors"
+R1-065,R1,GBIF occurrence license processing - GBIF Data Blog,https://data-blog.gbif.org/post/gbif-occurrence-license-processing/,2026-10-05,Q3 GBIF licences
+R1-066,R1,"Analyzing the licenses of all 11,000+ GBIF registered datasets",https://peterdesmet.com/posts/analyzing-gbif-data-licenses.html,2026-10-05,Q3 GBIF licence shares
+R1-067,R1,"GBIF's API Returns CC BY-NC Images by Default, Which Breaks Commercial Use",https://apicoding.com/gbifs-api-returns-cc-by-nc-images-by-default-which-breaks-commercial-use/,2026-10-05,Q3 CC BY-NC friction (secondary blog)
+R1-068,R1,Planet Insights Platform Pricing,https://www.planet.com/pricing/,2026-10-05,Q3 Planet price list
+R1-069,R1,Planet Mosaics - Lens - Upstream Tech,https://www.upstream.tech/lens/planet-basemaps,2026-10-05,Q3 Planet basemaps price via reseller
+R1-070,R1,Maxar Open Data Program - Registry of Open Data on AWS,https://registry.opendata.aws/maxar-open-data/,2026-10-05,Q3 Maxar open data licence
+R1-071,R1,Satellite Image Cost & Pricing Guide (OnGeo),https://ongeo-intelligence.com/blog/satellite-imagery-pricing-guide,2026-10-05,Q3 VHR imagery price per km2 (vendor blog)
+R1-072,R1,How Much Does Satellite Imagery Cost in 2026? (Geopera),https://geopera.com/blog/satellite-imagery-cost-guide,2026-10-05,Q3 imagery price per km2 (vendor blog)
+R1-073,R1,Satellite Image Annotation: Ground Truth for Geospatial AI (Label Your Data),https://labelyourdata.com/articles/data-annotation/satellite-image-annotation,2026-10-05,Q3 annotation price signals
+R1-074,R1,Hire Satellite Imagery Annotators (OpenTrain),https://www.opentrain.ai/solutions/satellite-imagery-annotation,2026-10-05,Q3 annotator hourly rate
+R1-075,R1,Data labeling services price benchmark (Kili Technology),https://kili-technology.com/data-labeling/data-labeling-services-price-q3-2023-benchmark,2026-10-05,Q3 audio annotation price
+R1-076,R1,How Much Do Data Annotation Services Cost? (BasicAI),https://www.basic.ai/blog-post/how-much-do-data-annotation-services-cost-complete-guide,2026-10-05,Q3 audio annotation price
+R1-077,R1,Where to Buy ML Training Data in 2026 (LabelSets),https://labelsets.ai/blog-buy-training-data,2026-10-05,Q3 pre-labelled dataset prices (vendor blog)
+R1-078,R1,AWS Marketplace: Geospatial Data for Entire US - Building Footprints,https://aws.amazon.com/marketplace/pp/prodview-mzfuul6m4bxh6,2026-10-05,Q3 geospatial dataset contract price
+R1-079,R1,BeZero Carbon partners with Chloris Geospatial,https://bezerocarbon.com/insights/bezero-carbon-partners-with-chloris-geospatial-to-strengthen-global-forest-carbon-measurement,2026-10-05,Q4 ground-truth exchange
+R1-080,R1,Data - Chloris Geospatial,https://www.chloris.earth/data,2026-10-05,Q4 Chloris validation
+R1-081,R1,Chloris Geospatial Strengthens Carbon-Market Role With Verra Validation (TipRanks),https://www.tipranks.com/news/private-companies/chloris-geospatial-strengthens-carbon-market-role-with-verra-validation-and-new-biomass-risk-tool,2026-10-05,Q4 Chloris Verra data provider
+R1-082,R1,Forest Biomass & Carbon Stock Data (Sylvera),https://www.sylvera.com/products/forest-biomass-data,2026-10-05,Q4 Sylvera LiDAR ground truthing
+R1-083,R1,How Accurate Is Forest Carbon Measurement in 2025? (Sylvera),https://www.sylvera.com/blog/forest-carbon-measurement,2026-10-05,Q4 Sylvera field scientists
+R1-084,R1,Above-ground biomass - Space Intelligence,https://www.space-intelligence.com/land-cover-mapping/above-ground-biomass/,2026-10-05,Q4 Space Intelligence field plots
+R1-085,R1,"Ed Mitchard interview, Space Intelligence (Carbon Herald)",https://carbonherald.com/the-best-solution-to-ensure-trust-in-the-forest-carbon-markets-is-to-base-projects-on-high-quality-datasets-ed-mitchard-co-founder-space-intelligence/,2026-10-05,Q4 Space Intelligence
+R1-086,R1,Kanop - AI & Satellite Intelligence for Nature-based Solutions,https://www.kanop.io/,2026-10-05,Q4 Kanop
+R1-087,R1,kanop - ESA Commercialisation Gateway,https://commercialisation.esa.int/startups/kanop/,2026-10-05,Q4 Kanop Isometric partner
+R1-088,R1,NatureMetrics,https://naturemetrics.com/,2026-10-05,Q4 NatureMetrics model
+R1-089,R1,NatureMetrics shop,https://www.naturemetrics.shop/,2026-10-05,Q3/Q4 NatureMetrics kit price
+R1-090,R1,eDNA & Biodiversity Monitoring for Renewable Energy (NatureMetrics),https://www.naturemetrics.com/sectors/renewable-energy,2026-10-05,Q4 NatureMetrics renewable-energy customers
+R1-091,R1,"Forest Carbon: Reliable, Scalable Carbon Estimates (Planet)",https://www.planet.com/products/forest-carbon/,2026-10-05,Q4 Planet Forest Carbon
+R1-092,R1,Planet Forest Carbon Diligence Validation Report,https://docs.planet.com/data/planetary-variables/forest-carbon-diligence/validation/,2026-10-05,Q4 Planet validation datasets
+R1-093,R1,Forest Carbon Diligence: Breaking Down the Validation and Intercomparison Report (Planet),https://www.planet.com/pulse/forest-carbon-diligence-breaking-down-the-validation-and-intercomparison-report/,2026-10-05,Q4 Planet validation r values
+R1-094,R1,Pachama and Planet Partner to Protect and Restore Forests Globally,https://www.planet.com/pulse/pachama-and-planet-partner-to-protect-and-restore-forests-globally/,2026-10-05,Q4 Pachama
+R1-095,R1,This startup ensures that forestry-based carbon offsets deliver on their promises (Fast Company),https://www.fastcompany.com/90658983/this-startup-makes-sure-that-forestry-based-carbon-offsets-deliver-on-their-promises,2026-10-05,Q4 Pachama LiDAR ground-truth
+R1-096,R1,Carbon Direct Acquires Pachama (hyper.ai summary),https://hyper.ai/en/stories/ac86e282e51d9a7c074fa8270bb12d48,2026-10-05,Q4 Pachama acquisition (secondary source)
+R1-097,R1,An ecoacoustic dataset collected on the island of Cyprus (Consensus record),https://consensus.app/papers/details/44ec5eea11dc5a29b40e617ca0a6c46e/,2026-10-05,Q5 Mediterranean acoustic data
+R1-098,R1,Annotated dataset for European Orthoptera and Cicadidae (Consensus record),https://consensus.app/papers/details/e6347e9daeed52bba9624d8096482585/,2026-10-05,Q5 insect acoustics Europe
+R1-099,R1,WABAD: world annotated bird acoustic dataset (Consensus record),https://consensus.app/papers/details/c099d9b67a1d52f7af939eef0a36c1d5/,2026-10-05,Q1/Q5 annotated bird dataset CC-BY
+R1-100,R1,From croaks to species: review of automated acoustic analysis for anurans (Consensus record),https://consensus.app/papers/details/f69b334b0d655d36a36419362d44fd6a/,2026-10-05,Q5 anuran dataset gap
+R1-101,R1,VicFrogNET (Consensus record),https://consensus.app/papers/details/d8ecae71751c54a9918ec8fec81a3f78/,2026-10-05,Q5 amphibian model gap
+R1-102,R1,PAM of European green toad (Consensus record),https://consensus.app/papers/details/88a279679d235f7cbc54d237887e6cb7/,2026-10-05,Q5 European anuran PAM
+R1-103,R1,"Aquatic vegetation classification in temperate wetlands, multi-temporal Sentinel-2 (Consensus record)",https://consensus.app/papers/details/31ce74991d485d17a42cd7f70c5bbf9c/,2026-10-05,Q5 wetland reference data
+R1-104,R1,Wetland Mapping: Assessing Spatial Transferability (Consensus record),https://consensus.app/papers/details/fe4256f2f79158b388e4d2577cfe46ea/,2026-10-05,"Q5 Camargue transfer, aquatic vegetation hardest"
+R1-105,R1,"Co-Orbital Sentinel 1 and 2 for LULC Mapping, wetlands, Greece (Consensus record)",https://consensus.app/papers/details/6c082bf023a459f89a5e6cfe2bdeb5f1/,2026-10-05,Q5 site-specific Mediterranean wetland mapping
+R1-106,R1,"Deep learning vs ML for wetland water areas, Turkey, EuroSAT (Consensus record)",https://consensus.app/papers/details/5d0dcc5030875eaaa71bb1322d966d0a/,2026-10-05,"Q5 Turkish wetlands, labelled-data cost"
+R1-107,R1,EarthShift (Consensus record),https://consensus.app/papers/details/a2f633807ef450d3bcd42b354c92ed7a/,2026-10-05,Q5 out-of-distribution drop
+R1-108,R1,PhilEO Bench (Consensus record),https://consensus.app/papers/details/666b62bc35bb5db3ac56ec9b83bb8268/,2026-10-05,Q1/Q2 annotated data bottleneck statement
+R1-109,R1,Common Ground: labelling burden in time-series mapping (Consensus record),https://consensus.app/papers/details/f976376e6491522399cdab3876882893/,2026-10-05,Q5 temporal labels
+R1-110,R1,Odonata identification using Customized Convolutional Neural Networks,https://www.researchgate.net/publication/361096362_Odonata_identification_using_Customized_Convolutional_Neural_Networks,2026-10-05,Q5 Odonata image data scraped
+R1-111,R1,YOLOv8 Automated Dragonfly Species Classification Using Wing Images (bioRxiv),https://www.biorxiv.org/content/10.1101/2024.09.01.610694v1.full,2026-10-05,Q5 Odonata small datasets
+R2-001,R2,2026-2030 Türkiye Yapay Zeka Eylem Planı açıklandı (KLU YZ Ofisi),https://yzo.klu.edu.tr/Sayfalar/45371-turkiye-2026-2030-yapay-zeka-eylem-plani-aciklandi.klu,2026-10-05,"Q1 action plan: Ulusal Veri Kütüphanesi >=2000 public datasets, >=100 API; RG 18 Aug 2026"
+R2-002,R2,2026-2030 Yapay Zekâ Eylem Planı'nın tüm detayları (Webrazzi),https://webrazzi.com/2026/08/18/turkiye-nin-2026-2030-yapay-zek-eylem-plani-yururluge-girdi/,2026-10-05,Q1 action plan entry into force
+R2-003,R2,Türkiye'nin dijital egemenlik rotasında 2026-2030 YZ Eylem Planı (AA),https://www.aa.com.tr/tr/analiz/turkiye-nin-dijital-egemenlik-rotasinda-2026-2030-yapay-zeka-eylem-plani/4031396,2026-10-05,Q1 action plan; datasets in environment among fields (via search summary)
+R2-004,R2,Teknokutup Çağda Türkiye'nin Yapay Zekâ Eylem Planı (SETA),https://www.setav.org/teknokutup-cagda-turkiyenin-yapay-zeka-eylem-plani-2026-2030,2026-10-05,Q1 action plan; Sanayi ve Teknoloji Bakanlığı coordination
+R2-005,R2,Türkiye Yapay Zeka Eylem Planı (2026-2030) YZTD,https://yztd.org.tr/tr/yayinlar/turkiye-yapay-zeka-eylem-plani,2026-10-05,Q1 action plan summary page
+R2-006,R2,Yeni Nuh'un Gemisi Ulusal Biyolojik Çeşitlilik Veri Tabanı Halka Açıldı (DKMP),https://www.tarimorman.gov.tr/DKMP/Haber/57/Yeni-Nuhun-Gemisi-Ulusal-Biyolojik-Cesitlilik-Veri-Tabani-Halka-Acildi,2026-10-05,Q1 Nuh'un Gemisi public database
+R2-007,R2,Ulusal Biyolojik Çeşitlilik Veri Tabanındaki veri sayısı 2 milyona yaklaştı (AA),https://www.aa.com.tr/tr/ekonomi/ulusal-biyolojik-cesitlilik-veri-tabanindaki-veri-sayisi-2-milyona-yaklasti/3226919,2026-10-05,Q1 Nuh'un Gemisi record count ~2 million
+R2-008,R2,Türkiye'nin biyolojik çeşitliliğine 853 bin noktadan yakın takip (AA),https://www.aa.com.tr/tr/bilim-teknoloji/turkiyenin-biyolojik-cesitliligine-853-bin-noktadan-yakin-takip/1768717,2026-10-05,Q1 UBENİS monitoring points/species
+R2-009,R2,"Nuh'un Gemisi'ne 1,5 milyon veri yüklendi (AA)",https://www.aa.com.tr/tr/yasam/nuhun-gemisine-1-5-milyon-veri-yuklendi/1084850,2026-10-05,Q1 Nuh'un Gemisi growth
+R2-010,R2,Ulusal Biyolojik Çeşitlilik Envanter ve İzleme Projesi Muğla ihalesi (DKMP),https://www.tarimorman.gov.tr/DKMP/Sayfalar/Detay.aspx?OgeId=93&Liste=Ihaleler,2026-10-05,"Q1/Q4 DKMP commissions provincial biodiversity inventory via open tender, 540 days"
+R2-011,R2,Ankara İli Karasal ve İç Su Ekosistemleri Biyolojik Çeşitlilik Envanter ve İzleme İşi (Ticari Hayat),https://www.ticarihayat.com/ankara-ilinin-karasal-ve-ic-su-ekosistemleri-biyolojik-cesitlilik-envanter-ve-izleme-isi,2026-10-05,"Q4 DKMP 9. Bölge tender IKN 2026/1788766, 16.10.2026, 730 days; amount not shown"
+R2-012,R2,Ulusal Biyolojik Çeşitlilik Envanter ve İzleme Projesi fizibilite raporu (silo.tips),https://silo.tips/download/ek-1-ulusal-byolojk-etllk-envanter-ve-zleme-projes-teklf-n-fzblte-raporu,2026-10-05,Q1/Q4 UBENİS feasibility report (not read)
+R2-013,R2,Muğla İli Biyolojik Çeşitlilik Envanter ve İzleme Projesi (DKMP Bölge 4),https://bolge4.tarimorman.gov.tr/Documents/MU%C4%9ELA%20%C4%B0L%C4%B0%20B%C4%B0YOLOJ%C4%B0K%20%C3%87E%C5%9E%C4%B0TL%C4%B0L%C4%B0K%20ENVANTER%20VE%20%C4%B0ZLEME%20PROJES%C4%B0.pdf,2026-10-05,Q1/Q4 UBENİS provincial project document (not read)
+R2-014,R2,Patara ÖÇKA Karasal ve İç Su Ekosistemleri Biyolojik Çeşitlilik Envanter ve İzleme İşi (Hacettepe),https://research.hacettepe.edu.tr/en/projects/patara-%C3%B6zel-%C3%A7evre-koruma-alaninin-karasal-ve-i%C3%A7-su-ekosistemleri--7/,2026-10-05,Q4 university as contractor for commissioned monitoring
+R2-015,R2,Biyolojik Çeşitlilik Envanter ve İzleme Çalışmaları (Alfa Eko),https://www.alfaeko.com.tr/biyolojik-cesitlilik-envanter-ve-izleme-calismalari/,2026-10-05,Q4 private consultancy offering inventory/monitoring
+R2-016,R2,Konya ve Karaman Doğal Sit Alanları Ekolojik Temelli Bilimsel Araştırma hizmet alımı (ÇŞB),https://csb.gov.tr/konya-ve-karaman-illeri-dogal-sit-alanlarinin-ekolojik-temelli-bilimsel-arastirma-projesi-hizmet-alimi-ihale-12,2026-10-05,Q4 TVK ecological research tenders
+R2-017,R2,Sulak Alanlar Envanter Sistemi SAYBİS,https://saybis.tarimorman.gov.tr/,2026-10-05,Q1 National Wetland Inventory information system
+R2-018,R2,6 bin 418 sulak alan kayıt altına alındı (AA),https://www.aa.com.tr/tr/yesilhat/dogal-yasam/6-bin-418-sulak-alan-kayit-altina-alindi/1822315,2026-10-05,"Q1 6,418 wetlands in SAYBİS, 1.6 M ha"
+R2-019,R2,Türkiye'deki sulak alanları koruma seferberliği (AA),https://www.aa.com.tr/tr/cevre/turkiyedeki-sulak-alanlari-koruma-seferberligi/2541221,2026-10-05,Q1/Q4 wetland inventory/management plans; 6.926 M TL spend figure appeared in search summary (attribution unverified)
+R2-020,R2,Sulak alanlar için beş yıllık plan (Hürriyet),https://www.hurriyet.com.tr/gundem/sulak-alanlar-icin-bes-yillik-plan-38541466,2026-10-05,Q1/Q5 wetland five-year plan; possible source of spend figure
+R2-021,R2,Sulak Alanlar (DKMP),https://www.tarimorman.gov.tr/DKMP/Menu/31/Sulak-Alanlar,2026-10-05,"Q1 14 Ramsar sites, 100 registered wetlands"
+R2-022,R2,Sulak Alanların Korunması Yönetmeliği (Resmî Gazete 2014),https://www.resmigazete.gov.tr/eskiler/2014/04/20140404-11.htm,2026-10-05,Q1/Q5 national wetland commission; annual monitoring report; national wetland strategy mandate
+R2-023,R2,"Ulusal Sulak Alan Stratejisi arama sonucu (Tarım ve Orman Bakanlığı 2024-2028 Stratejik Plan, güncellenmiş 2025)",https://www.tarimorman.gov.tr/SGB/Belgeler/stratejikplan.pdf,2026-10-05,Q5 ministry strategic plan 2024-2028 (not read; content via search summary)
+R2-024,R2,Türkiye Ramsar Alanları Değerlendirme Raporu (WWF-Türkiye),http://awsassets.wwftr.panda.org/downloads/wwf_turkiye_ramsar_alanlari_degerlendirme_raporu.pdf,2026-10-05,Q1/Q4 NGO Ramsar assessment
+R2-025,R2,"Türkiye'deki Göller, Sulak Alanlar, Kıyı Bölgeleri ve Nehirler Üzerinde İklim Değişikliği Etkilerinin Değerlendirilmesi (AB Bakanlığı)",https://www.ab.gov.tr/turkiyedeki-goller-sulak-alanlar-kiyi-bolgeleri-ve-nehirler-uzerinde-iklim-degisikligi-etkilerinin-degerlendirilmesi_53986.html,2026-10-05,"Q4 EU-funded TA project EUR 2.725 M, 36 months"
+R2-026,R2,Natura 2000 Gerekliliklerinin Uygulanması Projesi kapanış (DKMP),https://www.tarimorman.gov.tr/DKMP/Haber/40/Natura-2000-Gerekliliklerinin-Uygulanabilmesi-Icin-Ulusal-Doga-Koruma-Sisteminin-Guclendirilmesi-Projesi-Kapanis-Toplantisi-Gerceklestirildi%E2%80%A6,2026-10-05,Q5 Natura 2000 TA project (EU alignment)
+R2-027,R2,Deniz Habitatlarının ve Potansiyel Deniz NATURA 2000 Alanlarının Belirlenmesi (AB Bakanlığı),https://www.ab.gov.tr/deniz-habitatlarinin-ve-potansiyel-deniz-natura-2000-alanlarinin-belirlenmesi_53987.html,2026-10-05,Q5 marine habitat TA project aligning national biodiversity DBs with EU
+R2-028,R2,Biodiversa+ 2023 Call is Open (TÜBİTAK),https://tubitak.gov.tr/en/node/11947,2026-10-05,Q1 TÜBİTAK partner in Biodiversa+; 1071 route
+R2-029,R2,Biodiversa+ 2025 BiodivConnect call open (TÜBİTAK),https://tubitak.gov.tr/en/announcement/biodiversa-2025-call-restoration-ecosystem-functioning-integrity-and-connectivity-biodivconnect-open-application,2026-10-05,Q1/Q2 BiodivConnect Türkiye participation
+R2-030,R2,Call documents Biodiversa+ 2025-2026 BiodivConnect (TÜBİTAK),https://tubitak.gov.tr/sites/default/files/2025-09/Uluslararasi_Cagri_Belgesi.pdf,2026-10-05,Q1/Q2 BiodivConnect call document (not read)
+R2-031,R2,BiodivConnect Biodiversa+ 2025-2026 joint call (ANR),https://anr.fr/en/call-for-proposals-details/call/biodivconnect-restoration-of-ecosystem-functioning-integrity-and-connectivity-biodiversa-2025/,2026-10-05,"Q2 BiodivConnect 278 pre-proposals, 123 eligible, 36 funded >EUR 50 M; TÜBİTAK EUR 350,000 reserved (via search summary)"
+R2-032,R2,BiodivConnect funding organisations (Biodiversa+),https://www.biodiversa.eu/biodivconnect-funding-organisations/,2026-10-05,Q1/Q2 TÜBİTAK budget in BiodivConnect
+R2-033,R2,Biodiversa+ launches a new research call on ecosystem restoration (EC),https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/biodiversa-launches-new-research-call-ecosystem-restoration-2025-09-09_en,2026-10-05,Q2 BiodivConnect launch
+R2-034,R2,BIODIVERSA+ 2025 Ulusal Başvuru Koşulları (TÜBİTAK),https://tubitak.gov.tr/sites/default/files/2025-09/Ulusal_Basvuru_Kosullari.pdf,2026-10-05,"Q1 TÜBİTAK 1071 cap EUR 160,000 per project / 100,000 per institution"
+R2-035,R2,BIODIVERSA+ 2024 Ulusal Başvuru Kuralları (TÜBİTAK),https://tubitak.gov.tr/sites/default/files/2024-10/Ulusal_Basvuru_Kurallari.pdf,2026-10-05,Q1 TÜBİTAK 1071 national application rules 2024
+R2-036,R2,BiodivMon call: 33 projects funded (Biodiversa+),https://www.biodiversa.eu/2023/12/01/biodivmon-call-33-projects-funded/,2026-10-05,"Q2 BiodivMon 33 projects, >EUR 46 M"
+R2-037,R2,Improved transnational monitoring of biodiversity and ecosystem change (BiodivMon brochure),https://www.biodiversa.eu/wp-content/uploads/2024/04/Biodiversa_2022-2023_BiodivMon_WEB_Light.pdf,2026-10-05,Q2 BiodivMon projects list incl. Aydın Adnan Menderes Univ. partner (via search summary)
+R2-038,R2,TABMON Transnational Acoustic Biodiversity Monitoring Network (Biodiversa+),https://www.biodiversa.eu/2024/04/15/tabmon/,2026-10-05,Q2 acoustic monitoring project in BiodivMon
+R2-039,R2,TÜBİTAK 1001 programme page,https://tubitak.gov.tr/en/funds/academic/national-support-programs/1001-scientific-and-technological-research-projects-funding-program,2026-10-05,Q1 1001 programme
+R2-040,R2,ARDEB 1001 Başvuru Rehberi (TÜBİTAK),https://tubitak.gov.tr/sites/default/files/2024-04/ardeb_1001_basvuru_rehberi.pdf,2026-10-05,"Q1 1001 budget cap 3,000,000 TRY (2026 first period, via search summary; guide file dated 2024-04, so verify)"
+R2-041,R2,1007 Public Institutions R&D Projects Support Program (TÜBİTAK),https://tubitak.gov.tr/en/funds/akademik/ulusal-destek-programlari/1007-public-institutions-research-and-development-projects-support-program,2026-10-05,Q1 1007 programme: public institutions as customer
+R2-042,R2,1007-SGB-2026-01 TÜBİTAK call document,https://tubitak.gov.tr/sites/default/files/2026-03/1007-SGB-2026-01_0.pdf,2026-10-05,Q1 2026 1007 call (not read; content unknown)
+R2-043,R2,Türkiye Yeşil Sanayi Projesi Ar-Ge ve Yenilik Konu Başlıkları (TÜBİTAK),https://tubitak.gov.tr/sites/default/files/2024-03/db-yesil-ar-ge_ve_yenilik_konu_basliklari-v7_1.pdf,2026-10-05,"Q1 topic list; 'ecosystem and biodiversity observation networks' topic (via search summary, attribution unverified)"
+R2-044,R2,İMECE TÜBİTAK UZAY,https://uzay.tubitak.gov.tr/en/imece/,2026-10-05,Q1 İMECE EO satellite
+R2-045,R2,Coğrafi Veri Üretimi Bakış Açısı ile TÜBİTAK UZAY'daki Uzaktan Algılama (ÇŞB),https://webdosya.csb.gov.tr/db/cbsgunu/webmenu/webmenu15787.pdf,2026-10-05,Q1 TÜBİTAK UZAY remote sensing; GEZGİN portal (via search summary)
+R2-046,R2,Ulusal uzaktan algılama verilerinin entegre yönetimi heyet raporu (TUCBS),https://tucbs.gov.tr/wp-content/uploads/2025/01/UUAV_ulusal_zaktan_alg_lama_verileri_heyet_raporu-Platform.pdf,2026-10-05,Q1 national remote sensing data management report (not read)
+R2-047,R2,Mediterranean Wetland Observatory (MedWet),https://medwet.org/medwet/mediterranean-wetland-observatory/,2026-10-05,"Q2 MWO established 2008, multi-partner coordinated by Tour du Valat"
+R2-048,R2,Mediterranean Wetlands Outlook 3 (MWO-3) Tour du Valat,https://tourduvalat.org/en/publications-en/mediterranean-wetlands-outlook-3-mwo-3/,2026-10-05,"Q2 MWO-3 18 DPSIR indicators, 28 MedWet countries, published July 2025"
+R2-049,R2,Mediterranean wetlands: responses to ongoing crises (Tour du Valat),https://tourduvalat.org/en/newsletter-articles/mediterranean-wetlands-responses-to-ongoing-crises/,2026-10-05,Q2 MWO-3 summary
+R2-050,R2,Webinar for MWO-3 and the Mediterranean Wetlands Geoportal (MedWet),https://medwet.org/save-the-date-webinar-for-the-mediterranean-wetland-outlook-3-and-the-mediterranean-wetlands-geoportal/,2026-10-05,Q2 MWO geoportal
+R2-051,R2,Mediterranean Wetlands Observatory MWO 2018 Technical report,https://medwet.org/wp-content/uploads/2018/10/MWO_2018_Technical-report.pdf,2026-10-05,Q2 MWO technical report (not read)
+R2-052,R2,Large-scale mapping of existing and lost wetlands Sebou and Medjerda (Guelmami 2023),https://link.springer.com/article/10.1007/s41207-023-00443-6,2026-10-05,Q2 Tour du Valat EO wetland mapping (GEOclassifier use per search summary)
+R2-053,R2,Development of an Indicator to Monitor Mediterranean Wetlands (Sánchez 2015),https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4380444/,2026-10-05,"Q2 indicator validated vs local inventories, up to 95% reliability"
+R2-054,R2,Mapping Mediterranean Wetlands With Remote Sensing: A Good-Looking Map Is Not Always a Good Map (Perennou 2018),https://consensus.app/papers/details/d0ef7dac2e2a5d58b7bd883264311dc3/?utm_source=claude_desktop,2026-10-05,Q2/Q5 need for ecological knowledge/field validation
+R2-055,R2,Knowledge gaps conservation Mediterranean wetlands Sardinia (Fois 2021),https://consensus.app/papers/details/469d679267375a18975b78997443f725/?utm_source=claude_desktop,2026-10-05,Q2 EO + field validation inventory
+R2-056,R2,Leberger 2020 Mediterranean wetland conservation climate and land cover change,https://consensus.app/papers/details/306b1b00aa385106b1e051777c0fc240/?utm_source=claude_desktop,2026-10-05,Q2/Q5 SE Mediterranean sites lack biodiversity observation data
+R2-057,R2,Water and Wetness status 2018 (Copernicus Land Monitoring Service),https://land.copernicus.eu/en/products/high-resolution-layer-water-and-wetness/water-and-wetness-status-2018,2026-10-05,Q2 HRL W&W accuracy targets 85/80/80/80/85 percent
+R2-058,R2,Water & Wetness High Resolution Layer 2015 (EPA Ireland geoportal),https://gis.epa.ie/geonetwork/geonetwork/api/records/26ae46e4-a1d1-47b2-a5b0-52da004396fa,2026-10-05,Q2 national quality assessment: HRL wetness insufficient for peatland/temporary wet
+R2-059,R2,HRL Wetness & Water Product Specifications (Copernicus),https://land.copernicus.eu/en/technical-library/hrl-water-wetness-2015-technical-specs/@@download/file,2026-10-05,Q2 HRL W&W specs (not read)
+R2-060,R2,Ludwig 2019 highly automated wetland detection (Copernicus HRL W&W method),https://consensus.app/papers/details/3638c88ca10b520481b1beeb64bf478c/?utm_source=claude_desktop,2026-10-05,Q2 method applied in producing HRL Water-Wetness
+R2-061,R2,Kaplan 2017 Mapping and monitoring wetlands using Sentinel-2 (Sakarbaşı),https://consensus.app/papers/details/22983e3675035de4ac92a223f879c7b3/?utm_source=claude_desktop,2026-10-05,Q3 Turkish wetland EO study
+R2-062,R2,Kaplan 2018 Sentinel-1 and 2 fusion Balıkdamı,https://consensus.app/papers/details/7a4a3b1d76db57f08129e6fb3a7f6f35/?utm_source=claude_desktop,2026-10-05,Q3 Turkish wetland EO study with UAV comparison
+R2-063,R2,Dervisoglu 2022 coastal Ramsar sites in Turkey with GEE,https://consensus.app/papers/details/2e286ad9b1d2557fa372cb06ecec4536/?utm_source=claude_desktop,2026-10-05,Q3/Q1 Ramsar site water-surface trends incl. Gediz Delta +46%
+R2-064,R2,Ozer 2022 Wetland spectral unmixing Balıkdamı,https://consensus.app/papers/details/22ac966ee2e5546c977c85fc176911ed/?utm_source=claude_desktop,2026-10-05,Q3 Turkish wetland EO with 30 cm aerial reference
+R2-065,R2,Doğruyol 2025 Göksu Delta wetland change,https://consensus.app/papers/details/2228e700e1b459208c36ac36d593b1c0/?utm_source=claude_desktop,2026-10-05,Q3 Turkish Ramsar EO study
+R2-066,R2,Hüttich 2011 GlobWetland-II Landsat Menderes Delta,https://consensus.app/papers/details/d737895838a757e4a9501b9748806c79/?utm_source=claude_desktop,2026-10-05,Q2/Q3 ESA GlobWetland-II Menderes Delta and Güllük Bay test sites
+R2-067,R2,Zerrouk 2026 label-efficient coastal wetland habitat mapping Morocco,https://consensus.app/papers/details/a6940475ced35bfd8a0c50fd7a07f74f/?utm_source=claude_desktop,2026-10-05,Q5 label scarcity and cost in Mediterranean wetlands; 20-30 labels per class
+R2-068,R2,Rapinel 2023 National wetland mapping France,https://consensus.app/papers/details/422bd06d26e65ded9c2566134ec42cb0/?utm_source=claude_desktop,2026-10-05,Q2/Q5 ~3000 field validation plots; archive field data demand
+R2-069,R2,Alvarez-Vanhard 2020 UAVs fill gap between in situ and satellites,https://consensus.app/papers/details/af1e16f65ec85d9a88cb64642db71234/?utm_source=claude_desktop,2026-10-05,Q5 UAV+field reference for wetland habitat mapping
+R2-070,R2,Aras Kuş Türlerinin Ses Özellikleri Bakımından Derin Öğrenme Yöntemleriyle Tanınması (JIST),https://dergipark.org.tr/tr/pub/jist/article/1124674,2026-10-05,"Q3 Aras bird acoustic CNN/LSTM, 22 species, VGGish 94.2% accuracy"
+R2-071,R2,Kızılgerdan Kuş Popülasyonu Biyoakustik Kayıtları (DÜBİTED),https://dergipark.org.tr/en/pub/dubited/issue/55096/569642,2026-10-05,Q3 Turkish bird-sound recognition study
+R2-072,R2,An extensive database on the traits and occurrences of amphibian species in Turkey (Sci Data 2024),https://www.nature.com/articles/s41597-024-03101-w,2026-10-05,"Q3 37 amphibian species, 5,611 occurrence records, 436 sources"
+R2-073,R2,Türkiye iNaturalist place page,https://www.inaturalist.org/places/turkiye,2026-10-05,Q3 iNaturalist Türkiye (counts not verified)
+R2-074,R2,Notes on phenology of Odonata in Aras River Valley of Türkiye (Zenodo),https://zenodo.org/records/14468072,2026-10-05,Q3 Odonata data source (Aras)
+R2-075,R2,National Checklists Turkey Species List (Zenodo),https://zenodo.org/records/14838128,2026-10-05,Q3 national checklist
+R2-076,R2,Global Register of Introduced and Invasive Species Turkey (GBIF),https://www.gbif.org/dataset/acaa145f-7944-4bc8-a4cc-4e3410c41e99/metrics,2026-10-05,Q3 GBIF Turkey dataset; no country occurrence count found
+R2-077,R2,DNA barcoding commercially important fish species of Turkey (Keskin 2013),https://onlinelibrary.wiley.com/doi/10.1111/1755-0998.12120,2026-10-05,Q3 Turkish DNA barcode reference (fish only; TürBOL not found)
+R2-078,R2,Gediz Deltası (Doğa Derneği),https://dogadernegi.org/en/calismalarimiz/ekosistemler/sulak-alanlar/gediz-deltasi-2/,2026-10-05,Q4 NGO field monitoring in Gediz Delta
+R2-079,R2,2021 Yılı Gediz Deltası Kuş Araştırma ve İzleme Çalışmaları (Doğa Derneği),https://dogadernegi.org/wp-content/uploads/2021/01/2021-gediz-deltasi-kus-arastirma.pdf,2026-10-05,Q4 Gediz bird monitoring with İzmir BB support
+R2-080,R2,2022 Yılı Gediz Deltası Biyoçeşitlilik Araştırmaları ve Farkındalık Çalışmaları,https://dogadernegi.org/wp-content/uploads/2023/09/2022-yili-gediz-deltasi-biyocesitlilik-arastirmalari-ve-farkindalik-calismalari.pdf,2026-10-05,Q4 93 field days 2022; DKMP and İzmir BB support
+R2-081,R2,UNESCO Dünya Mirası Olmaya Hazırlanan Gediz Deltası Üreyen Kuş Atlası (Doğa Derneği),https://dogadernegi.org/tr/unescoizmirin-gediz-deltasinda-ureyen-kus-atlasi-calismasi-tamamlandi/,2026-10-05,Q4 breeding bird atlas Gediz
+R2-082,R2,İzmir'in Gediz Deltası'nda kuş göçü izleme programı başladı (İzmir BB),https://www.izmir.bel.tr/tr/Haberler/izmir-in-gediz-deltasi-nda-kus-gocu-izleme-programi-basladi/44884/156,2026-10-05,Q4 municipal funding of monitoring
+R2-083,R2,YENİLENEBİLİR ENERJİ ve ÇEVRE TEKNOLOJİLERİ MALİ DESTEK PROGRAMI (İZKA),https://izka.org.tr/wp-content/uploads/2025/11/2016_Yenilenebilir-Enerji.pdf,2026-10-05,Q4 İZKA programme (2016; no biodiversity/wetland call found)
+R2-084,R2,Turquoise Coast Environment Fund (Sivil Toplum için Destek Vakfı),https://siviltoplumdestek.org/turquoise-coast-environment-fund/,2026-10-05,Q4 NGO grant fund for nature/wetlands on southern and western coasts
+R2-085,R2,Ornitolojik Değerlendirme Raporu (ODR): Süre ve Yöntem (Enpark),https://www.enpark.com.tr/hizmetler/ornitolojik-degerlendirme-raporu/,2026-10-05,"Q4 ODR 30+30 day field monitoring; fee range 140,000-176,000 TL incl. VAT (2026) as stated by consultancy"
+R2-086,R2,Ihlamur RES Teknik Olmayan Özet (DFC),https://www3.dfc.gov/environment/eia/enerjisa/9-IhlamurWPP/Ihlamur%20RES_TOO.pdf,2026-10-05,"Q4 RES biodiversity baseline incl. birds, bats, herpetofauna; lender (DFC) context"
+R2-087,R2,Uygar RES Teknik Olmayan Özet (DFC),https://www.dfc.gov/sites/default/files/esia/2024/enerjisa/10-UygarWPP/Uygar%20RES_TOO.pdf,2026-10-05,Q4 RES operational-phase bird 3-year / bat monitoring
+R2-088,R2,MERLIN Kuş ve Yarasa İzleme Radar (TLY Enerji),https://tlyenerji.com.tr/merlin-kus-ve-yarasa-izleme-radar-teknolojileri/,2026-10-05,Q4 radar-based bird/bat monitoring supplier
+R2-089,R2,TSRS Uygulama Kapsamına İlişkin Kurul Kararları (KGK),https://kgk.gov.tr/Portalv2Uploads/files/Duyurular/v2/Surdurulebilirlik/Duyuru/TSRS%20Uygulama%20Kapsam%C4%B1na%20%C4%B0li%C5%9Fkin%20Kurul%20Kararlar%C4%B1na%20Dair%20Usul%20ve%20Esaslar.pdf,2026-10-05,Q5 TSRS scope and thresholds
+R2-090,R2,Sürdürülebilirlik raporlaması artık birçok şirkete zorunlu (Yeşil Haber),https://yesilhaber.net/surdurulebilirlik-raporlama-zorunlulugu-tsrs/,2026-10-05,Q5 TSRS mandatory reporting from 2024
+R2-091,R2,TSRS Türkiye Sürdürülebilirlik Raporlama Standartları (Erdem & Erdem),https://www.erdem-erdem.av.tr/bilgi-bankasi/turkiye-surdurulebilirlik-raporlama-standartlari,2026-10-05,Q5 TSRS background
+R2-092,R2,Türkiye Kalkınma ve Yatırım Bankası entegre rapor 2025 (TNFD adopter),https://kalkinma.com.tr/uploads/file/tkyb-entegre-rapor-2025.pdf,2026-10-05,Q5 TNFD adopter bank (via search summary)
+R2-093,R2,Akenerji İklim ve Doğa Bağlantılı Risk ve Fırsatlar Raporu 2024,https://akenerji.com.tr/Dosya/Dokuman/Iklim%20ve%20Doga%20Bag%CC%86lant%C4%B1l%C4%B1%20Risk%20ve%20Firsatlar%20Raporu_%20TNFD-TCFD.PDF,2026-10-05,Q4/Q5 energy company TNFD/TCFD-aligned nature report
+R2-094,R2,CarrefourSA TNFD Forumuna Katıldı (Ege Telgraf),https://www.egetelgraf.com/carrefoursa-tnfd-forumuna-katildi,2026-10-05,Q5 TNFD Forum member from TR retail
+R2-095,R2,Sabancı doğa gündemimiz,https://surdurulebilirlik.sabanci.com/2023/doga-gundemimiz.aspx,2026-10-05,Q5 corporate TNFD-aligned nature screening
+R2-096,R2,Biyolojik Çeşitlilik Ulusal Stratejisi ve Eylem Planı (WWF-Türkiye),https://www.wwf.org.tr/?14660%2FBiyolojikCesitlilikUlusalStratejisiveEylemPlan=,2026-10-05,Q5 UBSEP 2018-2028
+R2-097,R2,Nasıl bir UBSEP olmalı? (WWF-Türkiye 2024),https://wwftr.awsassets.panda.org/downloads/ubsep-22052024.pdf,2026-10-05,Q5 NGO call to update NBSAP per GBF (not read)
+R2-098,R2,Biyolojik Çeşitlilik ve Genetik Kaynaklar Politika Belgesi 2021-2025 (TAGEM),https://www.tarimorman.gov.tr/TAGEM/Belgeler/yayin/Biyolojik%20%C3%87esitlilik%20ve%20Genetik%20Kaynaklar%20SPB%202021-2025.pdf,2026-10-05,Q5 national biodiversity policy document (not read)
+R2-099,R2,Mediterranean wetlands (Wikipedia),https://en.wikipedia.org/wiki/Mediterranean_wetlands,2026-10-05,Q2 background (not relied on)
+R3-001,R3,Ministry ÇED statistics page,https://ced.csb.gov.tr/ced-istatistikleri-111186,2026-10-05,"1993-2025 olumlu/gerekli degildir tables, updated 02.03.2026"
+R3-002,R3,ÇED raporları çevresel etkiyi değerlendirebilir mi (Boell),https://tr.boell.org/tr/2014/06/16/ced-raporlari-cevresel-etkiyi-degerlendirebilir-mi-yayinlar,2026-10-05,1993-2010 decision counts
+R3-003,R3,Resmi verilerle Çevre Bakanlığı'nın ÇED tablosu (Medyascope),https://medyascope.tv/2024/03/11/resmi-verilerle-cevre-bakanliginin-ced-tablosu-akp-doneminde-72-bin-kez-ced-gerekli-degildir-karari-verildi/,2026-10-05,"72,295 gerekli degildir 2002-2023; sector shares"
+R3-004,R3,Bakanlığın raporu ortaya koydu (T24),"https://t24.com.tr/cevre/bakanligin-raporu-ortaya-koydu-binlerce-projeye-cevre-onayi-verildi,1304795",2026-10-05,2025 decision counts; energy 422 olumlu / 395 GD
+R3-005,R3,Bakanlık yeni yıla hızlı başladı (Cumhuriyet),https://www.cumhuriyet.com.tr/turkiye/bakanlik-yeni-yila-hizli-basladi-2026-nin-ortasinda-projelerin-verileri-dikkat-cekti-2507875,2026-10-05,2026 Jan-May decisions; 92 RES
+R3-006,R3,Enerji Projeleri ÇED Sonuçları Temmuz 2025 (insaattedarik),https://insaattedarik.com.tr/enerji/enerji-projeleri-ced-sonuclari-temmuz-2025/,2026-10-05,monthly energy ÇED digest; possible scrape source
+R3-007,R3,Rüzgar Enerjisinde Lider Şehirler (GMKA),https://www.gmka.gov.tr/haber/ruzgar-enerjisinde-lider-sehirler-balikesir-ve-canakkale,2026-10-05,Aegean/Marmara RES capacity by province
+R3-008,R3,Aydın'da 6 ilçeye ÇED vizesi (Aydın Times),https://www.aydintimes.com/aydinda-6-ilceye-ced-vizesi-9-proje-onaylandi,2026-10-05,Aydın olumlu decisions 2025-2026
+R3-009,R3,ÇED Yönetmeliğinde Önemli Değişiklikler (Mondaq),https://www.mondaq.com/turkey/climate-change/1644674/%C3%87evresel-etki-de%C4%9Ferlendirmesi-y%C3%B6netmeli%C4%9Finde-%C3%96nemli-de%C4%9Fi%C5%9Fiklikler,2026-10-05,2022 regulation changes Ek-1/Ek-2
+R3-010,R3,ÇED Yönetmeliği formatı duyuru 2022,https://www.cevremuhendisligi.org/index.php/cevre-aktuel/haberler/2124-ced-yonetmeligi-formati-hakkinda,2026-10-05,"29.07.2022 regulation, Ek-3/Ek-4 formats"
+R3-011,R3,"ÇED Yönetmeliği değişti, ÇED gerekli değildir kaldırıldı (Alomaliye)",https://www.alomaliye.com/2026/03/05/ced-yonetmeligi-degisti-ced-gerekli-degildir-kaldirildi-ced-raporu-hazirlanmalidir-donemi-basladi/,2026-10-05,05.03.2026 amendment
+R3-012,R3,ÇED yönetmeliği duyarlı yöreler (Emlakkulisi),https://emlakkulisi.com/guncel/ced-yonetmeligi-duyarli-yoreler/622747,2026-10-05,Ek-5 sensitive areas widened
+R3-013,R3,Resmi Gazete 5 Eylül 2026,https://www.resmigazete.gov.tr/eskiler/2026/09/20260905-24.htm,2026-10-05,Wetland regulation amendment
+R3-014,R3,Suni sulak alanlarda enerji izni (Yeşil Haber),https://yesilhaber.net/suni-sulak-alanlar-enerji-izni-cevresel-akis/,2026-10-05,Wetland regulation summary
+R3-015,R3,Biyolojik Çeşitliliği Koruma Kanunu 4. kez Meclis'e gelecek,https://www.tarimhukuku.org/biyolojik-cesitliligi-koruma-kanunu-4-kez-meclise-gelecek/,2026-10-05,nature law draft history
+R3-016,R3,Doğa Korumaya Yasayla Darbe (WWF Türkiye),https://www.wwf.org.tr/?1354%2Fdogakorumayayasayladarbe=,2026-10-05,NGO position on nature law
+R3-017,R3,Milli parklar kanun teklifi TBMM (Ajans344),https://www.ajans344.com/gundem/milli-parklar-ve-doga-korumada-yeni-donem-kanun-teklifi-tbmmde-kabul-edildi/400479,2026-10-05,"Milli Parklar law proposal, DKMP powers"
+R3-018,R3,Ekosistem Değerlendirme Raporu (Uluş Çevre),https://uluscevre.com.tr/hizmet/ced-cevresel-etki-degerlendirme/ekosistem-degerlendirme-raporu,2026-10-05,DKMP 2011 instructions on ecosystem report for RES/mining (vendor page)
+R3-019,R3,Ornitolojik Değerlendirme Raporu (Enpark),https://www.enpark.com.tr/hizmetler/ornitolojik-degerlendirme-raporu/,2026-10-05,ODR requested by DKMP for RES/GES
+R3-020,R3,ÇED Yeterlik Belgesi Tebliği (Resmi Gazete 2022),https://www.resmigazete.gov.tr/eskiler/2022/12/20221231-5.htm,2026-10-05,"competency certificate rules, 75 points"
+R3-021,R3,Yeterlik belgeli kurum-kuruluşlar listesi (Bakanlık),https://ced.csb.gov.tr/yeterlik-belgesi-tebligi-kapsaminda-yeterlik-belgesine-sahip-kurum---kuruluslar-i-4104,2026-10-05,list page of certified firms (count not visible)
+R3-022,R3,ÇED GM 2024 faaliyet raporu,https://webdosya.csb.gov.tr/db/ced/icerikler/08.10.2025_tfr_2024_nihai-1-20251008163544.pdf,2026-10-05,possible source of competency statistics (not read)
+R3-023,R3,Çınar Mühendislik raporu bilimsel bulunmadı (BirGün),https://www.birgun.net/haber/cinar-muhendislik-in-hazirladigi-rapor-bilimsel-bulunmadi-saibeli-raporlarda-bir-cinar-282190,2026-10-05,named large ÇED firm; tender history
+R3-024,R3,Kanal İstanbul'un ÇED raporunu kim hazırladı (Bianet),https://bianet.org/haber/kanal-istanbul-un-ced-raporunu-kim-hazirladi-217697,2026-10-05,Çınar Mühendislik Kanal İstanbul report
+R3-025,R3,Çedfem Mühendislik,https://www.cedfem.com.tr/,2026-10-05,Turkish ÇED consultancy example
+R3-026,R3,ÇEVTAŞ ÇED raporu hazırlayan firmalar,https://www.cevtas.net/ced-raporu-hazirlayan-firmalar/,2026-10-05,Turkish ÇED consultancy example
+R3-027,R3,Tusay ÇED raporu hazırlayan firmalar,https://tusay.com.tr/ced-raporu-hazirlayan-firmalar/,2026-10-05,Turkish ÇED consultancy example
+R3-028,R3,Enerjisa Hacıhıdırlar WPP ESIA SEP (DFC),https://www3.dfc.gov/environment/eia/enerjisa/4-HacihidirlarWPP/Hacihidirlar%20WPP_Final%20Draft%20SEP_Rev%20D.pdf,2026-10-05,Mott MacDonald Türkiye as ESIA consultant
+R3-029,R3,Falp WPP Biodiversity Management Plan (EBRD),https://www.ebrd.com/content/dam/ebrd_dxp/documents/project/54892/Falp%20WPP%20-%20Biodiversity%20Management%20Plan%20(ENG).pdf,2026-10-05,"ERM as BMP author, ESR6, Oct 2025"
+R3-030,R3,Wind and solar (Ramboll),https://www.ramboll.com/energy/wind-and-solar,2026-10-05,international consultancy profile
+R3-031,R3,ÇED'de Canlı Kavramı etik ihlaller (ResearchGate),https://www.researchgate.net/publication/339244299_Cevresel_Etki_Degerlendirmelerinde_Canli_Kavraminin_Kullanimi_Baglaminda_Yasanan_Etik_Ihlaller,2026-10-05,academic critique of species lists in ÇED
+R3-032,R3,Ekosistem Değerlendirme Raporu (Türkçev),https://turkcev.com.tr/ekosistem-degerlendirme-raporu/,2026-10-05,consultancy field methods description
+R3-033,R3,2026 ÇED harç bedelleri (Tusay),https://tusay.com.tr/2026-yili-ced-surecleri-harc-bedelleri-ced-harclari-ne-kadar-oldu/,2026-10-05,2026 ÇED report fee tiers
+R3-034,R3,2026 döner sermaye birim fiyat listesi (ÇED GM),https://webdosya.csb.gov.tr/v2/ced/2026/01/ED-2026-D-NER-SERMAYE-2-20260105111458.pdf,2026-10-05,Ministry unit price list 2026 (not read)
+R3-035,R3,ÇED Muafiyet Raporu GES (Piagrid),https://www.piagrid.com/rehber/ced-raporu,2026-10-05,vendor-quoted PTD consulting fee 5k-25k TL
+R3-036,R3,ÇED Raporu Harçları/Ücretleri (Casem),https://www.casem.com.tr/ced-raporu-ucretleri/,2026-10-05,"ÇED consultancy fee market-set, no standard"
+R3-037,R3,Asgari fiyat tarifesi duyuru (ÇED GM),https://ced.csb.gov.tr/asgari-fiyat-tarifesinin-uygulanmasina-iliskin-duyuru-haber-280961,2026-10-05,minimum fee tariff excludes ÇED reports
+R3-038,R3,DKMP ihaleler (Muğla biyolojik çeşitlilik envanter),https://www.tarimorman.gov.tr/DKMP/Sayfalar/Detay.aspx?OgeId=93&Liste=Ihaleler,2026-10-05,public biodiversity inventory tender example
+R3-039,R3,Yeni Nuh'un Gemisi veri tabanı halka açıldı (DKMP),https://www.tarimorman.gov.tr/DKMP/Haber/57/Yeni-Nuhun-Gemisi-Ulusal-Biyolojik-Cesitlilik-Veri-Tabani-Halka-Acildi,2026-10-05,Nuh'un Gemisi database description
+R3-040,R3,Ulusal Biyolojik Çeşitlilik Veri Tabanı 2 milyona yaklaştı (AA),https://www.aa.com.tr/tr/ekonomi/ulusal-biyolojik-cesitlilik-veri-tabanindaki-veri-sayisi-2-milyona-yaklasti/3226919,2026-10-05,database record count
+R3-041,R3,Ihlamur RES Teknik Olmayan Özet (DFC),https://www3.dfc.gov/environment/eia/enerjisa/9-IhlamurWPP/Ihlamur%20RES_TOO.pdf,2026-10-05,"one-year monitoring, bird/bat/herp methods"
+R3-042,R3,"Seasonal acoustic monitoring of bat activity, N. Marmara (Commagene)",https://dergipark.org.tr/en/pub/commagene/article/1680176,2026-10-05,acoustic bat monitoring in Türkiye
+R3-043,R3,Update to the global Critical Habitat screening layer (PMC),https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12627699/,2026-10-05,global CH screening layer
+R3-044,R3,Ihlamur WPP Critical Habitat Assessment (DFC),https://www3.dfc.gov/environment/eia/enerjisa/9-IhlamurWPP/Ihlamur%20WPP_CHA_20240614_clean.pdf,2026-10-05,CHA example; priority features
+R3-045,R3,Enerjisa YEKA9 BAP Framework (DFC),https://www.dfc.gov/sites/default/files/esia/2024/enerjisa/11-Project_wide_documents/Enerjisa_YEKA9_BAPFramework_Final.pdf,2026-10-05,framework BAP
+R3-046,R3,EBRD Enerjisa Wind project 54230,https://www.ebrd.com/home/work-with-us/projects/psd/54230.html,2026-10-05,EBRD project page
+R3-047,R3,SUEZ Wind interim BAP (EBRD),https://www.ebrd.com/content/dam/ebrd_dxp/documents/project/55457/55457-updated-bap.pdf,2026-10-05,Turkish wind BAP
+R3-048,R3,EBRD project 56056 BMP,https://www.ebrd.com/content/dam/ebrd_dxp/documents/project/56056/56056_BMP_EN.pdf,2026-10-05,Turkish BMP example
+R3-049,R3,TSKB Sustainable Finance Framework 2024,https://www.tskb.com.tr/uploads/file/tskb-sustainable-finance-framework-2024.pdf,2026-10-05,"TSKB biodiversity exclusions, ERET"
+R3-050,R3,TSKB Integrated Annual Report 2025,https://www.tskb.com.tr/tskbentegrerapor2025/tskb-integrated-annual-report-2025.html,2026-10-05,TSKB Nature and Biodiversity Policy
+R3-051,R3,Garanti BBVA sustainable finance (GFMag),https://gfmag.com/sustainable-finance/garanti-bbva-the-next-frontier-of-sustainable-finance-in-turkey/,2026-10-05,first Turkish EP bank; biodiversity blue bond
+R3-052,R3,IFC Performans Standardı 6 (Türkçe),https://www.ifc.org/content/dam/ifc/doc/2010/2012-ifc-performance-standard-6-tr.pdf,2026-10-05,PS6 Turkish text
+R3-053,R3,"Türbinler kuruldu, iptal geldi (Ege'de Son Söz)",https://www.egedesonsoz.com/turbinler-kuruldu-iptal-geldi-sabancinin-resi-yeniden-masada,2026-10-05,Gaia RES annulment
+R3-054,R3,Danıştay'dan dönmüştü Sabancı RES (Ege'de Son Söz),https://www.egedesonsoz.com/danistaydan-donmustu-sabancinin-projesine-bakanlik-onayi,2026-10-05,Gaia RES new olumlu
+R3-055,R3,Germencik bilirkişi heyeti raporu (Aydın 2. İdare Mahkemesi),https://akinyakan.av.tr/wp-content/uploads/2025/10/GERMENCIK-BILIRKISI-RAPORU-1.pdf,2026-10-05,6 amphibian / 6 reptile species vs literature
+R3-056,R3,91 bin ağaç Danıştay ÇED olumlu (Manşetiz),https://www.mansetiz.com/91-bin-agac-icin-kritik-donemec-danistay-ced-olumlu-iptal-kararini-bozdu,2026-10-05,fauna assessment omissions in court
+R3-057,R3,Mahkemenin ÇED iptalini Danıştay iptal etti (Halk TV),https://halktv.com.tr/gundem/mahkemenin-ced-iptalini-danistay-iptal-etti-1055728h,2026-10-05,Danıştay reversal example
+R3-058,R3,ÇED Bilirkişi Raporları ve Ekosistemlerin Korunması (Sadafag),https://sadafag.org/ced-raporlari-ve-ekosistemlerin-korunmasi-arasindaki-iliski/,2026-10-05,critique of ÇED biodiversity content
+R3-059,R3,RES raporunda kuş ve yarasa çarpışma riski (Cumhuriyet),https://www.cumhuriyet.com.tr/turkiye/res-raporunda-kus-ve-yarasalar-icin-carpisma-riski-vurgusu-ekolojik-alarm-uyarisi-2538306,2026-10-05,"bat monitoring gaps, Kütahya RES"
+R3-060,R3,ÇED Yönetmeliği değişikliği 2026 (LBF Partners),https://www.lbfpartners.com/haberler-yayinlar/ced-yonetmeligi-nde-koklu-degisiklikler-baslica-yenilikler-ve-uygulamaya-yansimalari,2026-10-05,2026 amendment analysis
+R3-061,R3,ÇED yönetmeliği 05.03.2026 (Mondaq),https://www.mondaq.com/turkey/environmental-law/1767728/05032026-tarihli-resmi-gazetede-yay%C4%B1mlanan-%C3%87evresel-etki-de%C4%9Ferlendirmesi-y%C3%B6netmeli%C4%9Finde-de%C4%9Fi%C5%9Fiklik-yap%C4%B1lmas%C4%B1na-dair-y%C3%B6netmelik-hakk%C4%B1nda,2026-10-05,2026 amendment analysis
+R3-062,R3,Bakanlık raporu: Binlerce projeye çevre onayı (dokuz8HABER),https://dokuz8haber.net/bakanlik-raporu-binlerce-projeye-cevre-onayi-verildi,2026-10-05,2025 ÇED counts (second outlet)
+R3-063,R3,Bakanlık'tan Yeni ÇED İzinleri Temmuz'da Sürüyor (Polen Ekoloji),https://www.polenekoloji.org/bakanliktan-yeni-ced-izinleri-temmuzda-suruyor/,2026-10-05,monthly energy ÇED digest
+R3-064,R3,Rüzgar İzleme ve Tahmin Sistemi RES'ler (RİTM),https://ritm.enerji.gov.tr/news/res.php,2026-10-05,RES list by province
+R3-065,R3,EBRD project 55854 framework BMP,https://www.ebrd.com/content/dam/ebrd_dxp/documents/project/55854/55854-bmp.pdf,2026-10-05,Turkish framework BMP example
+R4-001,R4,IBAT pricing page,https://www.ibat-alliance.org/pricing,2026-10-05,"IBAT tiers, PAYG prices"
+R4-002,R4,IBAT subscriptions (test site),https://web-testing.ibat-alliance.org/subscriptions,2026-10-05,IBAT tier contents
+R4-003,R4,IBAT Services Catalogue PDF,https://app.ibat-alliance.org/pdf/IBAT-Services-overview.pdf,2026-10-05,IBAT report types and datasets
+R4-004,R4,IBAT major update to PS6/ESS6 report,https://www.ibat-alliance.org/news/major-update-to-ps6-ess6-report,2026-10-05,"PS6 report scope, $1,250 PAYG, screening-only positioning"
+R4-005,R4,IBAT Estimated Species report news,https://www.ibat-alliance.org/news/species-report,2026-10-05,"Estimated Species report 1km, reptiles, STAR"
+R4-006,R4,IBAT Species Report FAQs PDF,https://cdn.prod.website-files.com/67af053fb172299b5f9ad632/693c0bccd5d5bd74254e0af5_IBAT%20Species%20Report%20FAQs.pdf,2026-10-05,"IBAT limits: global screening, local calibration"
+R4-007,R4,IBAT Alliance celebrates investment,https://www.ibat-alliance.org/news/ibat-alliance-celebrates-investment,2026-10-05,IBAT user base and 2024 data investment (snippet; 200 orgs figure from secondary summary https://currentaffairs.khanglobalstudies.com/ibat-alliance/)
+R4-008,R4,IBAT collaborations page,https://www.ibat-alliance.org/collaborations,2026-10-05,"IBAT consultancy users (ERM, TBC), PAYG for consultancies, licensing for embedding"
+R4-009,R4,Zero Extinction/AZE financial institutions factsheet,https://zeroextinction.org/wp-content/uploads/2018/08/Financial-institutions-KBA-IBA-AZE-IBAT-factsheet-09-02-18.pdf,2026-10-05,Screening limits; WDPA-only misses CH
+R4-010,R4,An update to the global Critical Habitat screening layer (Sci Data),https://www.nature.com/articles/s41597-025-06117-y,2026-10-05,CH screening layer; global-level assessment
+R4-011,R4,Global screening for Critical Habitat in the terrestrial realm (PMC),https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5863962/,2026-10-05,"12 features, likely/potential CH, in-situ assessment needed"
+R4-012,R4,IFC Guidance Note 6 (2019),https://www.ifc.org/content/dam/ifc/doc/2010/20190627-ifc-ps-guidance-note-6-en.pdf,2026-10-05,CH tiers; external experts requirement
+R4-013,R4,IFC Performance Standard 6 (2012),https://www.ifc.org/content/dam/ifc/doc/2010/2012-ifc-performance-standard-6-en.pdf,2026-10-05,"PS6 net gain, CH"
+R4-014,R4,IBAT map layers March 2012 (BirdLife),https://tokyo.birdlife.org/action/pdf/ibatmaplayers.pdf,2026-10-05,IBAT national and international protected-area layers (2012; may be outdated)
+R4-015,R4,IBAT tutorials and FAQs,https://www.ibat-alliance.org/ibat-tutorials,2026-10-05,Language support (Spanish only mentioned)
+R4-016,R4,NatureServe Explorer Pro pricing,https://www.natureserve.org/access-data/explorer-pro-pricing,2026-10-05,NatureServe licence prices
+R4-017,R4,NC Natural Heritage Data Explorer project review,https://ncnhde.natureserve.org/information-request,2026-10-05,NatureServe state review fees (also https://www.ncnhp.org/faqs)
+R4-018,R4,Calculate biodiversity value with the statutory biodiversity metric (GOV.UK),https://www.gov.uk/guidance/calculate-biodiversity-value-with-the-statutory-biodiversity-metric,2026-10-05,UK statutory metric
+R4-019,R4,ACP Consultants Statutory Biodiversity Metric 4.0,https://acp-consultants.com/biodiversity-net-gain/statutory-biodiversity-metric/,2026-10-05,UK consultant metric fee from GBP399+VAT
+R4-020,R4,BNG Cost Calculator for Developers (landbng),https://landbng.uk/blog/bng-cost-calculator-for-developers/,2026-10-05,UK BNG cost signals
+R4-021,R4,Pricing for our BNG tools (Joe's Blooms),https://www.joesblooms.com/pricing-for-bng-tools,2026-10-05,Joe's Blooms prices
+R4-022,R4,bng.ai pricing,https://www.bng.ai/pricing/,2026-10-05,bng.ai prices and expert-verified tiers
+R4-023,R4,AiDASH BNG article,https://www.aidash.com/realising-biodiversity-net-gain-with-aidash-a-streamlined-data-driven-approach/,2026-10-05,bng.ai/AiDASH relationship
+R4-024,R4,MAGIC (Defra),https://magic.defra.gov.uk/,2026-10-05,"MAGIC free, 400 layers"
+R4-025,R4,How to access Natural England's maps and data (GOV.UK),https://gov.uk/how-to-access-natural-englands-maps-and-data,2026-10-05,MAGIC access
+R4-026,R4,Natura 2000 protected areas network (EEA),https://www.eea.europa.eu/themes/biodiversity/natura-2000/the-natura-2000-protected-areas-network,2026-10-05,Natura 2000 viewer
+R4-027,R4,ENCORE launch (UNEP FI),https://www.unepfi.org/themes/ecosystems/groundbreaking-new-tool-enables-financial-institutions-to-see-their-exposure-to-natural-capital-risk/,2026-10-05,"ENCORE features, free"
+R4-028,R4,ENCORE (Green Policy Platform),https://www.greenpolicyplatform.org/tools-and-platforms/encore-exploring-natural-capital-opportunities-risks-and-exposure,2026-10-05,ENCORE free tool
+R4-029,R4,NatureMetrics eDNA and biodiversity FAQs,https://www.naturemetrics.com/faqs,2026-10-05,eDNA price per sample
+R4-030,R4,NatureMetrics shop,https://www.naturemetrics.shop/,2026-10-05,eDNA kit prices
+R4-031,R4,NatureMetrics Nature Intelligence platform,https://www.naturemetrics.com/platform,2026-10-05,Platform features
+R4-032,R4,NatureMetrics portfolio assessment launch,https://www.naturemetrics.com/news/portfolio-assessment-launch,2026-10-05,"Portfolio assessment, lender DD/PS6 baseline claim"
+R4-033,R4,NatureMetrics Intelligence Platform pricing (F6S),https://www.f6s.com/software/nature-metrics-naturemetrics-intelligence-platform,2026-10-05,Platform pricing GBP5-7.5k per site (aggregator snippet)
+R4-034,R4,NatureMetrics subscribe,https://www.naturemetrics.shop/pages/subscribe,2026-10-05,Subscription terms
+R4-035,R4,NatureMetrics infrastructure sector page,https://www.naturemetrics.com/sectors/infrastructure,2026-10-05,Infrastructure use case
+R4-036,R4,NatureAlpha Geoverse 2.0 launch (BusinessWire),https://www.businesswire.com/news/home/20250324805768/en/NatureAlpha-Exploits-Transformative-Power-of-AI-to-Launch-Its-Most-Comprehensive-Nature-Risk-Platform-Geoverse-2-0,2026-10-05,NatureAlpha coverage and free tier
+R4-037,R4,NatureAlpha site,https://www.naturealpha.ai/,2026-10-05,NatureAlpha product
+R4-038,R4,Kuyua,https://www.kuyua.com/,2026-10-05,Kuyua subscription model (also https://startupcity.hamburg/startups-ecosystem/kuyua)
+R4-039,R4,Ecometrica Global Biodiversity Metric,https://ecometrica.com/our-biodiversity-metric,2026-10-05,Ecometrica product
+R4-040,R4,Kayrros Nature Impact Platform,https://www.kayrros.com/press_release/kayrros-launches-nature-impact-platform-to-transform-nature-risk-assessment-in-finance/,2026-10-05,Kayrros FI nature platform
+R4-041,R4,Habitat Forward,https://habitatforward.com/,2026-10-05,EU site due diligence platform
+R4-042,R4,Ecobot,https://ecobot.com/,2026-10-05,Ecobot features and vendor-claimed users
+R4-043,R4,V7 Go EIA review,https://www.v7labs.com/automations/environmental-impact-assessment-review,2026-10-05,AI EIA document review
+R4-044,R4,Generative AI in automated urban ecological assessments needs human oversight,https://www.sciencedirect.com/science/article/pii/S0169204626000393,2026-10-05,Limits of AI ecological reports
+R4-045,R4,Wildlife Acoustics Song Meter SM4,https://www.wildlifeacoustics.com/products/song-meter-sm4,2026-10-05,SM4 price
+R4-046,R4,Kaleidoscope Pro annual subscription (NHBS),https://www.nhbs.com/kaleidoscope-pro-one-year-subscription,2026-10-05,Kaleidoscope price
+R4-047,R4,AudioMoth 1.2.0 (Open Acoustic Devices),https://www.openacousticdevices.info/product-page/audiomoth-1-2-0,2026-10-05,AudioMoth price
+R4-048,R4,Arbimon (WILDLABS inventory),https://wildlabs.net/en/inventory/products/arbimon,2026-10-05,Arbimon free/Pro/Enterprise tiers
+R4-049,R4,Rainforest Connection,https://rfcx.org/,2026-10-05,RFCx Guardian/Arbimon
+R4-050,R4,EBRD Performance Requirement 6 guidance,https://www.ebrd.com/content/dam/ebrd_dxp/assets/pdfs/environment---sustainability/implement-performance-requirements/prs/pr6/ebrd-performance-requirement-6.pdf,2026-10-05,EBRD PR6 2020
+R4-051,R4,Harmancik WPP Critical Habitat Assessment (DFC),https://www3.dfc.gov/environment/eia/enerjisa/6-HarmancikWPP/Harmancik%20WPP_CHA_20240614_clean.pdf,2026-10-05,Turkish CHA workflow (Enerjisa)
+R4-052,R4,Enerjisa Wind (EBRD PSD 54230),https://www.ebrd.com/home/work-with-us/projects/psd/54230.html,2026-10-05,EBRD-financed Turkish wind package
+R4-053,R4,BankTrack tracking the Equator Principles,https://www.banktrack.org/ourproject/tracking_the_equator_principles,2026-10-05,EP adopter counts (126-128; unverified; see also https://equator-principles.com/about-us/)
+R4-054,R4,Equator Principles EP4 July 2020,https://equator-principles.com/app/uploads/The-Equator-Principles_EP4_July2020.pdf,2026-10-05,"EP4 Principle 2, IFC PS alignment"
+R4-055,R4,EP guidance note on biodiversity data sharing for EPFIs,https://equator-principles.com/app/uploads/Biodiversity_Data_Sharing_EPFIs_Jul2020.pdf,2026-10-05,EP biodiversity data and KBAs as likely CH
+R4-056,R4,GBIF: Equator Principles encourage open access,https://www.gbif.org/news/6wybKvTFVZPWTLioIcOuB3/the-equator-principles-encourage-open-access-to-environmental-impact-data-through-the-gbif-network,2026-10-05,EP data sharing
+R4-057,R4,MIGA TL Solar IPP Critical Habitat Assessment,https://www.miga.org/sites/default/files/2026-01/TL%20Solar%20IPP%20-%20Appendix%204%20Critical%20Habitat%20Assessment%20and%20Habitat%20mapping-V2_0.pdf,2026-10-05,Example lender CHA using screening
+R4-058,R4,Autumn 2025 Ecology Salary and Market Overview (JSM),https://jsm-associates.co.uk/blog?+Market+Overview=&id=48&title=Autumn+2025+Ecology+Salary+,2026-10-05,UK ecologist day rate signals
+R4-059,R4,"UK tender search (Find a Tender, generic)",https://www.find-tender.service.gov.uk/Notice/077902-2025?origin=SearchResults&p=1,2026-10-05,No CHA tender values found (negative result)
+R4-060,R4,Nuh'un Gemisi new database public (DKMP),https://www.tarimorman.gov.tr/DKMP/Haber/57/Yeni-Nuhun-Gemisi-Ulusal-Biyolojik-Cesitlilik-Veri-Tabani-Halka-Acildi,2026-10-05,"Nuh'un Gemisi taxa, access"
+R4-061,R4,Ulusal Biyolojik Cesitlilik Veri Tabani 2 milyona yaklasti (AA),https://www.aa.com.tr/tr/yesilhat/dogal-yasam/ulusal-biyolojik-cesitlilik-veri-tabanindaki-veri-sayisi-2-milyona-yaklasti/1823119,2026-10-05,Nuh'un Gemisi record count
+R4-062,R4,Turkiye'de 13 bin 404 farkli canli turu yasiyor (TRT Haber),https://www.trthaber.com/haber/cevre/turkiyede-13-bin-404-farkli-canli-turu-yasiyor-890274.html,2026-10-05,Nuh'un Gemisi species count Dec 2024
+R4-063,R4,e-Taksonomi'de Sanal Herbaryumlarin Onemi (Duzce Univ.),https://cdn.duzce.edu.tr/File/GetFile/2025e52c-e502-4bd6-90a1-e16e9af5eab3,2026-10-05,TUBIVES not updated ~10 years (snippet)
+R4-064,R4,CSB ÇED 2026 birim fiyat listesi (Canakkale),https://webdosya.csb.gov.tr/v2/canakkale/2026/03/2026-Birim-Fiyat-Listesi-20260102-20260303154736.pdf,2026-10-05,Ministry ÇED fee list (regulator charge; see also https://www.casem.com.tr/ced-raporu-ucretleri/)
+R4-065,R4,Ekosistem Degerlendirme Raporu (CEVTAS),https://www.cevtas.net/ekosistem-degerlendirme-raporu/,2026-10-05,Turkish ecosystem assessment report for RES/GES
+R4-066,R4,Species list of Amphibians and Reptiles from Turkey (ResearchGate),https://www.researchgate.net/publication/348182429_Species_list_of_Amphibians_and_Reptiles_from_Turkey,2026-10-05,Turkish herpetofauna counts/assessment gaps (snippet; verify)
+R4-067,R4,European Red List of Dragonflies and Damselflies (IUCN 2024),https://iucn.org/sites/default/files/2024-08/european-red-list-of-dragonflies-and-damselflies-_de-knijf-and-al-2024.pdf,2026-10-05,Odonata assessment scope incl. Turkiye-in-Europe
+R4-068,R4,Dragonflies go thirsty in the Mediterranean (IUCN),https://iucn.org/content/dragonflies-go-thirsty-mediterranean,2026-10-05,Mediterranean Odonata status
+R4-069,R4,Emerald Network (Bern Convention),https://www.coe.int/en/web/bern-convention/emerald-network,2026-10-05,"Bern Emerald Network, Turkiye participation"
+R4-070,R4,TNFD locate assessment tools (IBAT),https://tnfd.global/assessment-guidance/locate-assessment-tools/,2026-10-05,IBAT in TNFD LEAP tooling
+R4-071,R4,IPBES IBAT entry,https://www.ipbes.net/policy-support/tools-instruments/integrated-biodiversity-assessment-tool-ibat,2026-10-05,IBAT alliance partners and users
+R4-072,R4,Biodiversity screening (The Biodiversity Consultancy),https://www.thebiodiversityconsultancy.com/fileadmin/uploads/tbc/Documents/Resources/Biodiversity-Screening-IBN_20170123-FINAL-1.pdf,2026-10-05,Consultancy screening practice
+R4-073,R4,IBAT now helping over 70 companies (CSRwire),https://csrwire.com/press-release/integrated-biodiversity-assessment-tool-now-helping-over-70-companies-assess-biodiversity-risks/,2026-10-05,Older IBAT user count
+R4-074,R4,AIIB Critical Habitat Assessment,https://www.aiib.org/en/projects/details/2024/_download/Multicountry/57342-001-eia-en.pdf,2026-10-05,"CHA example, IBAT-type limits"
+R4-075,R4,IBAT freemium (Embedding Project),https://embeddingproject.org/resources/integrated-biodiversity-assessment-tool/,2026-10-05,IBAT freemium model
+R4-076,R4,Ecologist salary guide UK 2026 (Gaia),https://gaia-search.com/ecologist-salary-guide-uk-2026.html,2026-10-05,UK senior ecologist day rate GBP280-450
+R4-077,R4,Halpin Robbins terms and conditions,https://halpinrobbins.co.uk/terms-conditions/,2026-10-05,Published consultancy hourly rates
